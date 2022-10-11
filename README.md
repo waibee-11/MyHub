@@ -1,6 +1,6 @@
 # Resume
 
-Note: Unfortunately, you will have to download the file to access all the embeded links to various pages (blue text). Sorry for the inconvenience!
+Note: Unfortunately, you will have to download the file to access all the embedded links to various pages (blue text). Sorry for the inconvenience!
 
 Hello there visitor!
 
