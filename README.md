@@ -1,4 +1,7 @@
 # Resume
+
+Note: Unfortunately, you will have to download the file to access all the embeded links to various pages (the blue text). Sorry for the inconvenience!
+
 Hello there visitor!
 
 First of all, I am incredibly grateful for being where I am today. Being able to study with some really intelligent minds at the University of Waterloo and Wilfrid Laurier University is super fun. With that being said, I always strive to get better at whatever I am doing. I believe with the pace that today's world is moving, it is super important to be relevant in terms of your skills and knowledge.
