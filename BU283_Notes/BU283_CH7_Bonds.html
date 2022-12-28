@@ -1,0 +1,670 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Interest Rates and Bonds [Ch 7]</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="22dbdca8-f485-46de-aeeb-18e241fa963b" class="page sans"><header><img class="page-cover-image" src="https://m.foolcdn.com/media/dubs/original_images/Money_with_stopwatch.jpg" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://edupal.ca/wp-content/uploads/2020/12/Wilfrid_Laurier_University-1.png"/></div><h1 class="page-title">Interest Rates and Bonds [Ch 7]</h1></header><div class="page-body"><p id="bae2b266-1df4-464d-9b04-6def3170243f" class="block-color-red"><strong>Note: These notes are only to facilitate learning. These are NOT the official course notes.</strong></p><ul id="729babd4-dcd3-4a0e-bd9e-9846a79b3ed4" class="block-color-purple_background toggle"><li><details open=""><summary><strong>Zero Coupon Bonds Features and Markets</strong></summary><ul id="7bcbd47b-a520-4764-ae7c-9cd3bbf9cc47" class="block-color-gray_background bulleted-list"><li style="list-style-type:disc">Zero coupon bonds does not pay coupons</li></ul><ul id="597b2309-0201-4336-bbe9-e90adde2a192" class="block-color-gray_background bulleted-list"><li style="list-style-type:disc">Holder pays a price less than the Face value and recieves Face value upon maturity<figure id="f889c53f-046f-4150-8908-acbd5d500ce0" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>I</mi><mi>n</mi><mi>t</mi><mi>e</mi><mi>r</mi><mi>e</mi><mi>s</mi><mi>t</mi><mo>=</mo><mi>F</mi><mi>a</mi><mi>c</mi><mi>e</mi><mi>V</mi><mi>a</mi><mi>l</mi><mi>u</mi><mi>e</mi><mo>−</mo><mi>P</mi><mi>r</mi><mi>i</mi><mi>c</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">Interest = Face Value - Price</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal">n</span><span class="mord mathnormal">t</span><span class="mord mathnormal">eres</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mord mathnormal">a</span><span class="mord mathnormal">ce</span><span class="mord mathnormal">Va</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">u</span><span class="mord mathnormal">e</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">i</span><span class="mord mathnormal">ce</span></span></span></span></span></div></figure></li></ul><ul id="e7997d6d-35e8-4965-b3d1-2195e1e90057" class="block-color-gray_background bulleted-list"><li style="list-style-type:disc">Short Maturity Zero Coupon bonds are traded on the Money Market<ul id="b4c6d666-3f34-4019-9475-0a88a71e5a93" class="bulleted-list"><li style="list-style-type:circle">Money Market is the market for the trade of Short-term (maturity length &lt; 1 year) bonds</li></ul><ul id="df918eeb-3f59-4d50-90db-5a5931537c91" class="bulleted-list"><li style="list-style-type:circle">These bonds include bankers’ acceptances, commercial papers, and government T-Bills</li></ul><ul id="7adef964-b192-4ece-93f4-29b42e50189c" class="bulleted-list"><li style="list-style-type:circle">T-Bills (a.k.a Treasury Bills) are bonds issued by the Canadian govt that have maturities of 91, 182, 364 days</li></ul><ul id="dacea587-d504-47fd-bab6-2696758fb7a4" class="bulleted-list"><li style="list-style-type:circle">Buyers of money market include Mutual Funds and Pension Funds</li></ul></li></ul><ul id="90c3bb2b-adcf-4e6d-b55f-0cdbcd33441a" class="block-color-gray_background bulleted-list"><li style="list-style-type:disc">The Government of Canada does not issue Zero Coupon Bonds of maturity more than 1 year</li></ul><ul id="63378f57-fda2-48dd-90ef-ea5845ceb4d5" class="block-color-gray_background bulleted-list"><li style="list-style-type:disc">However, financial intermediaries strip the bonds by Government of Canada and sell the stripped coupons and face values as Zero Coupon Bonds</li></ul></details></li></ul><ul id="3092c219-2827-49b2-a272-d251e03cc730" class="block-color-blue_background toggle"><li><details open=""><summary><strong>Zero Coupon Bonds Yield and Pricing</strong></summary><ul id="dafcf687-c7c4-4239-bd1d-63cdeb5bd0cf" class="block-color-gray_background toggle"><li><details open=""><summary><strong>Zero Coupon Bond Yields</strong></summary><ul id="8b853904-e650-4a22-acec-7c47628cc891" class="bulleted-list"><li style="list-style-type:disc">A zero coupon bond promises the holder a fixed amount (Face Value) at a fixed date in the future</li></ul><ul id="bccf9872-cfdb-4e3e-89de-996ff7199465" class="bulleted-list"><li style="list-style-type:disc">If the interest rates are positive (which they usually are), then:<ul id="4cfaee1c-a9bf-454d-88d3-b22fbf006c88" class="bulleted-list"><li style="list-style-type:circle">Net interest would be positive</li></ul><ul id="cebad018-caa7-4d5f-bf42-23df9ec58cff" class="bulleted-list"><li style="list-style-type:circle">So Face Value &gt; Price of the bond</li></ul></li></ul><ul id="fe0ef0d7-0bda-40f1-91e3-7ae8d8c7b012" class="bulleted-list"><li style="list-style-type:disc">Basically, the formula to calculate the return (which is the Face Value FV), we use Future Value of a lump sum</li></ul><figure id="4f2e07cb-d215-49df-bde2-a17bbc866c20" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>F</mi><mi>V</mi><mo>=</mo><mi>P</mi><mi>r</mi><mi>i</mi><mi>c</mi><mi>e</mi><mo>∗</mo><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>k</mi><msup><mo stretchy="false">)</mo><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">FV=Price*(1+k)^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">i</span><span class="mord mathnormal">ce</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7143919999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span></span></div></figure><ul id="63950175-8c43-44ee-8280-571634ec7fb1" class="bulleted-list"><li style="list-style-type:disc">We can play with this formula to find the rate (k), maturity period (n), price (Price)</li></ul><figure id="ea655c7f-21b5-4c25-9026-1fcaca8cb1d3" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mi>r</mi><mi>i</mi><mi>c</mi><mi>e</mi><mtext> </mtext><mi>o</mi><mi>f</mi><mtext> </mtext><mi>Z</mi><mi>e</mi><mi>r</mi><mi>o</mi><mtext> </mtext><mi>C</mi><mi>o</mi><mi>u</mi><mi>p</mi><mi>o</mi><mi>n</mi><mtext> </mtext><mi>B</mi><mi>o</mi><mi>n</mi><mi>d</mi><mtext> </mtext><mo>∝</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>Y</mi><mi>i</mi><mi>e</mi><mi>l</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">Price\ of\ Zero\ Coupon\ Bond\ \propto 1/Yield</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">i</span><span class="mord mathnormal">ce</span><span class="mspace"> </span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="mord mathnormal">ero</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">p</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">d</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∝</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1/</span><span class="mord mathnormal">Yi</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">d</span></span></span></span></span></div></figure></details></li></ul><ul id="fb2536f7-1c87-451f-9e03-af4eb4a054fd" class="block-color-gray_background toggle"><li><details open=""><summary><strong>Term Structure of Rates</strong></summary><ul id="7e2d68d5-447d-4ec1-9e88-318dee88faf6" class="bulleted-list"><li style="list-style-type:disc">Yields across different maturities</li></ul><ul id="8a0e0c8c-6380-430c-ae98-b9c47fcdeafc" class="bulleted-list"><li style="list-style-type:disc">Relationship between term (maturity) and interest rates</li></ul></details></li></ul><ul id="4be409e9-f1ff-43ae-b8f3-e6b107ec7870" class="block-color-gray_background toggle"><li><details open=""><summary><strong>Yield Curve</strong></summary><ul id="39a85b7b-a1e5-477b-a7e6-92468bad0563" class="bulleted-list"><li style="list-style-type:disc">Graphical representation of the Term Structure of Rates</li></ul><ul id="8389eb38-e2e0-4613-bbf7-3a4ec1d57152" class="bulleted-list"><li style="list-style-type:disc">X-axis → Maturities</li></ul><ul id="366deca9-162b-4894-9370-94edfe66fef1" class="bulleted-list"><li style="list-style-type:disc">Y-axis → Interest Rate (rate of return)</li></ul></details></li></ul></details></li></ul><ul id="680b27e2-02fb-4f68-82d0-46a6d908477d" class="block-color-teal_background toggle"><li><details open=""><summary><strong>Determinants of the Shape of the Yield Curve</strong></summary><ul id="f1f2ba14-2745-4f40-9d7a-063bd706b666" class="block-color-gray_background toggle"><li><details open=""><summary><strong>Interest Rates and Inflation</strong></summary><ul id="fd312bac-7b27-46cb-9ab0-270fc72a0e74" class="bulleted-list"><li style="list-style-type:disc">Real Interest rate is the rate that would exist without inflation</li></ul><ul id="cb356161-a9f2-4cf7-8ea7-8244b13e96a3" class="bulleted-list"><li style="list-style-type:disc">Nominal Interest rate is the rate after inflation is taken into account</li></ul><ul id="5e51bebf-852d-4e34-a48b-3d948b2ae5dc" class="bulleted-list"><li style="list-style-type:disc">If inflation was 0, Real Interest rate = Nominal Interest rate</li></ul></details></li></ul><ul id="611856be-a39a-4a98-b442-852e9ba76ce0" class="block-color-gray_background toggle"><li><details open=""><summary><strong>Expectations Theory</strong></summary><ul id="3b56b94f-636c-47a5-8daf-c9b238ea9b26" class="bulleted-list"><li style="list-style-type:disc">Yield for a long term bond (i.e. the 2-year bond) is the geometric average of the 1-year spot rate and the expected spot rate.<figure id="0b33502b-ad2d-49d8-aac3-9e6b8ae84d8b" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><msub><mi>k</mi><mn>2</mn></msub><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>=</mo><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><msub><mi>k</mi><mn>1</mn></msub><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>E</mi><mo stretchy="false">(</mo><msub><mi>k</mi><mn>1</mn></msub><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(1+k_2)^2=(1+k_1)(1+E(k_1))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.1141079999999999em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">))</span></span></span></span></span></div></figure></li></ul><ul id="73977c12-f769-424c-ab26-374f3d64d68c" class="bulleted-list"><li style="list-style-type:disc">where,<ul id="4b481dfb-c3fc-4d33-91d5-444d236d050f" class="bulleted-list"><li style="list-style-type:circle">k(1) is the 1-year spot rate</li></ul><ul id="f2b58ce9-386b-4aa6-9b39-18862045fcb9" class="bulleted-list"><li style="list-style-type:circle">k(2) is the 2-year spot rate</li></ul><ul id="8036475a-d559-4643-827f-f7cae70564ce" class="bulleted-list"><li style="list-style-type:circle">E(k1) is the expected 1-year spot rate after 1 year</li></ul></li></ul></details></li></ul><ul id="db5b48ab-2071-4cfb-89dd-7ef3d2a9dadc" class="block-color-gray_background toggle"><li><details open=""><summary><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Maturity Preference Theory</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></summary><ul id="67474084-edb1-4b36-8b4d-9c011cd39160" class="bulleted-list"><li style="list-style-type:disc">This theory assumes that investors prefer short-term maturities and so like to roll-over than lock-in</li></ul><ul id="384db516-a566-44d1-8167-94a574977c9c" class="bulleted-list"><li style="list-style-type:disc">To compensate for this, borrowers must provide additional incentives to induce owners into buying long-term bonds.</li></ul><ul id="5625d304-cbe9-4d7d-abed-ced891e4cdd0" class="bulleted-list"><li style="list-style-type:disc">This additional incentive is called the <strong>Maturity Risk Premium [MRP]</strong></li></ul></details></li></ul><ul id="7d5a2672-24e0-49f6-a1d7-8a1ffaf37986" class="block-color-gray_background toggle"><li><details open=""><summary><strong>Default Risk Theory</strong></summary><ul id="88b7621c-b8ab-4653-a14c-10b30208c93e" class="bulleted-list"><li style="list-style-type:disc">In the context of bonds and loans, a default refers to the failure of the owner to pay regular interests or the final payment.</li></ul><ul id="920491a8-1a3f-470f-9b9e-4fddf4bb73c0" class="bulleted-list"><li style="list-style-type:disc">Default risk is the major risk involved in government and foreign bonds</li></ul><ul id="efa82370-0673-42ca-9e8e-c42171713eba" class="bulleted-list"><li style="list-style-type:disc">The only way a bond investor can compensate for Default risk is by buying the bond at a lower price and earning higher returns. Hence, bonds from issuers with higher default probabilities have higher yields.</li></ul><ul id="7c9f11ee-12c0-45bf-98ee-f8b82abd7492" class="bulleted-list"><li style="list-style-type:disc">This difference in yields is called <strong>Default Risk Premium [DRP]</strong></li></ul></details></li></ul><ul id="88ef289a-885f-4482-ac5f-d59d127ddd52" class="block-color-gray_background toggle"><li><details open=""><summary><strong>Liquidity Theory</strong></summary><ul id="956476b3-3942-415d-903d-62478a9c8b63" class="bulleted-list"><li style="list-style-type:disc">Liquidity is the ease with which an asset can be converted to cash</li></ul><ul id="b13b1c71-2d00-40a5-af64-1cf29b94fe24" class="bulleted-list"><li style="list-style-type:disc">Liquidity is obviously not a problem for investors who plan to hold to maturity. Investors who buy illiquid bonds anticipate the costs of selling the illiquid assets and thus pay less for those bonds. As a result, illiquid bonds have a higher yield than equivalent liquid bonds.</li></ul><ul id="f36cdc36-5495-4785-b29f-0d30d2dfa404" class="bulleted-list"><li style="list-style-type:disc">This difference in the yields is called the <strong>Liquidity Risk Premium [LRP]</strong></li></ul></details></li></ul><ul id="8a6d7d56-b94e-4c26-912d-b320b82a9f83" class="block-color-gray_background bulleted-list"><li style="list-style-type:disc">Therefore, as we reconcile all the theories, we get<figure id="d433988a-ee33-4e9c-b4d4-8735ec22e2a2" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>Y</mi><mi>T</mi><msub><mi>M</mi><mi>t</mi></msub><mo>=</mo><msub><mi>k</mi><mrow><mi>r</mi><mi>t</mi></mrow></msub><mo>+</mo><mi>I</mi><mi>N</mi><msub><mi>F</mi><mi>t</mi></msub><mo>+</mo><mi>M</mi><mi>R</mi><msub><mi>P</mi><mi>t</mi></msub><mo>+</mo><mi>D</mi><mi>R</mi><msub><mi>P</mi><mi>t</mi></msub><mo>+</mo><mi>L</mi><mi>R</mi><msub><mi>P</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">YTM_t=k_{rt}+INF_t+MRP_t+DRP_t+LRP_t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span><span class="mord mathnormal mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">MR</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathnormal">L</span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></div></figure><ul id="1d5baaf3-4561-43e4-bcf6-5077d3fce060" class="bulleted-list"><li style="list-style-type:circle">where,<ul id="bfbf8ea1-1371-44ea-b39f-c43391ddb6f9" class="bulleted-list"><li style="list-style-type:square">YTM - Yield to Maturity</li></ul><ul id="76911e5c-bbcd-4fb1-b849-11532ffb9d12" class="bulleted-list"><li style="list-style-type:square">k(r,t) - real rate of interest</li></ul><ul id="3cd75739-022d-4e84-9c7e-fe8baf0cd01a" class="bulleted-list"><li style="list-style-type:square">INF - inflation premium</li></ul><ul id="a201bb67-3dea-4cbe-bcbb-492383cd153a" class="bulleted-list"><li style="list-style-type:square">MRP - maturity risk premium</li></ul><ul id="d16f7e36-fc7e-4841-9f52-a36e2cceb8b6" class="bulleted-list"><li style="list-style-type:square">DPR - default risk premium</li></ul><ul id="6f04a98b-d85b-4298-962e-cf4c5db5ea5b" class="bulleted-list"><li style="list-style-type:square">LRP - liquidity risk premium</li></ul></li></ul></li></ul></details></li></ul><ul id="4b58e344-a08c-4721-81e4-2bb5a2c9ed0b" class="block-color-pink_background toggle"><li><details open=""><summary><strong>Coupon Bonds Features and Markets</strong></summary><ul id="c652efd2-9ac8-44ab-ba82-c516e8aea5b9" class="block-color-gray_background bulleted-list"><li style="list-style-type:disc">A coupon bond is one that makes periodic interest payments in addition to paying a lump sum at maturity.</li></ul><ul id="51cad53a-1bec-42ca-95af-9871f14176a2" class="block-color-gray_background toggle"><li><details open=""><summary>Features of Coupon Bonds</summary><ul id="c4581450-e948-42b6-a3bf-e403f5f838fc" class="bulleted-list"><li style="list-style-type:disc">A <strong>convertible bond </strong>allows the holder of the bond to convert the face amount into a fixed number of common shares at any time before the maturity of the bond if they so choose.</li></ul><ul id="6485a9cc-74f1-4840-9c26-ca8d1087da9b" class="bulleted-list"><li style="list-style-type:disc">A callable bond is one where the issuer has the right to force early redemption of the bond (before the maturity date). When a bond is called, the holder must return the bond to the issuer. In exchange, the issuer pays the holder the face value of the bond. In some cases, the holder may receive a call premium, which is a small payment (over and above the face value) to compensate for the inconvenience of the call.</li></ul><ul id="ea0b0c73-fd93-4263-9fcd-f744b285aeaf" class="bulleted-list"><li style="list-style-type:disc">A foreign bond is a bond that is issued in a particular country and is denominated in that country’s currency (but issued by a foreigner). It is generally kept distinct from domestically issued bonds for tax and disclosure purposes.</li></ul><ul id="c276970d-0957-427c-b8ca-d044c7f3fa17" class="bulleted-list"><li style="list-style-type:disc">Finally, a bond may have a variable coupon. These bonds are called Floating Rate Bonds.</li></ul></details></li></ul><ul id="cc4a1fd9-e7b6-406a-8c94-2671f8824c6b" class="block-color-gray_background bulleted-list"><li style="list-style-type:disc">Coupon Bonds may be issued by federal, state, and municipal governments, government-sponsored enterprises (e.g., Fannie Mae and Freddie Mac), federal government–owned corporations (e.g., Amtrak, Tennessee Valley Authority, PBS), and private-sector corporations.</li></ul><ul id="97afa1c0-e2ea-4e1a-aab4-937a801b53dc" class="block-color-gray_background bulleted-list"><li style="list-style-type:disc">Coupon bonds trade in what is aptly called the bond market. The bond market is the market for both coupon and zero coupon bonds with maturities ranging from 1 to 30 years and includes bonds issued by governments and corporations.</li></ul><ul id="8dd15c64-9646-48ee-94e5-82bed829d07a" class="block-color-gray_background bulleted-list"><li style="list-style-type:disc">Both the money market and the bond market are over-the-counter or dealer markets. This means that there are no centralised physical or computerized exchanges for bonds. Transactions for bonds are privately negotiated through multiple dealers (or market-makers), such as banks and large brokerages, which post prices and stand ready to buy and sell bonds at those prices.</li></ul></details></li></ul><ul id="e3a39b21-07f4-4091-a5db-a020431e8d42" class="block-color-orange_background toggle"><li><details open=""><summary><strong>Coupon Bonds Yield and Pricing</strong></summary><ul id="96b73e90-53bb-4ce0-830b-96d9c17d7559" class="block-color-gray_background bulleted-list"><li style="list-style-type:disc">A coupon bond can be thought of as a collection of zero coupon bonds</li></ul><ul id="586e13e0-1c52-41e1-95be-225d984dff2d" class="block-color-gray_background toggle"><li><details open=""><summary>Coupon Bond Cash Flows</summary><ul id="a7bef66d-4dea-46d6-9a3d-7effb9173a94" class="bulleted-list"><li style="list-style-type:disc">Coupon bonds pay the holder annual (or semi-annual) coupons (<em>C</em>), as well as the face value (<em>FV</em>), at maturity. The coupons are usually expressed as a percentage of the face value and this percentage is known as the coupon rate.</li></ul><ul id="1ebd509c-08db-42c9-b09a-2dc2260ff26b" class="bulleted-list"><li style="list-style-type:disc">The pricing of the bond is basically bringing all the cash flows into the present (today)<figure id="f0e50fa6-89df-4f1d-802f-f1eb97e4a9c5" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>P</mi><mrow><mi>b</mi><mi>o</mi><mi>n</mi><mi>d</mi></mrow></msub><mo>=</mo><munderover><mo>∑</mo><mrow><mi>t</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mfrac><msub><mi>C</mi><mi>t</mi></msub><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><msub><mi>k</mi><mi>t</mi></msub><msup><mo stretchy="false">)</mo><mi>t</mi></msup></mrow></mfrac><mo>+</mo><mfrac><mrow><mi>F</mi><mi>V</mi></mrow><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><msub><mi>k</mi><mi>n</mi></msub><msup><mo stretchy="false">)</mo><mi>n</mi></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">P_{bond}=\sum_{t=1}^n\frac{C_t}{(1+k_t)^t}+\frac{FV}{(1+k_n)^n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">b</span><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">d</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.9185100000000004em;vertical-align:-1.267113em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.882887em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.267113em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7195559999999999em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.29633em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.590392em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></div></figure><ul id="ce478454-f5fe-46de-8077-56d64238f093" class="bulleted-list"><li style="list-style-type:circle">where,<ul id="36cfa715-8119-4efb-ab8e-dd7163f2dc03" class="bulleted-list"><li style="list-style-type:square">C = coupon payments</li></ul><ul id="44228130-4dd6-43da-b03d-fefccfd9a986" class="bulleted-list"><li style="list-style-type:square">k = yield to maturity</li></ul><ul id="a0d2d22e-fa83-418e-8422-25f5acb5aca6" class="bulleted-list"><li style="list-style-type:square">FV = face value [final payment]</li></ul></li></ul></li></ul></details></li></ul><ul id="9ccaab5d-9283-4035-9a21-d9f84253a9bc" class="block-color-gray_background toggle"><li><details open=""><summary>Yield to Maturity [k]</summary><ul id="629e48c7-30e5-4271-9804-f6bc8982c130" class="bulleted-list"><li style="list-style-type:disc">The yield-to-maturity is approximately equal to the return that the bond holder will earn if she pays the price (P ) and holds the bond to maturity.</li></ul><ul id="cac591ef-8566-43ba-b5a9-6bab727cb967" class="bulleted-list"><li style="list-style-type:disc">The yield-to-maturity calculation implicitly assumes that intermediate coupons can be reinvested at the solution rate, or 2.976%. If the bond holder’s reinvestment rate differs, then her actual return will not equal the yield-to-maturity.</li></ul><ul id="a223888a-6f9c-46a1-b4ac-16e5d341a132" class="bulleted-list"><li style="list-style-type:disc">The yield to maturity can only be calculated if the bond price is known. The yield is thus interchangeable with the price.</li></ul></details></li></ul><ul id="d7d94e11-d321-41be-9483-dd7da7ab034e" class="block-color-gray_background bulleted-list"><li style="list-style-type:disc">Here is the formula for calculating the price of a bond with semi-annual coupon payments<figure id="ec6fe667-5a1f-4bc8-b5d3-e489c22bf772" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>P</mi><mrow><mi>b</mi><mi>o</mi><mi>n</mi><mi>d</mi></mrow></msub><mo>=</mo><mfrac><mi>C</mi><mn>2</mn></mfrac><mo>∗</mo><mi>P</mi><mi>V</mi><mi>I</mi><mi>F</mi><msub><mi>A</mi><mrow><mn>2</mn><mi>n</mi><mo separator="true">,</mo><msub><mi>k</mi><mi>d</mi></msub><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub><mo>+</mo><mfrac><mrow><mi>F</mi><mi>V</mi></mrow><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><msub><mi>k</mi><mi>d</mi></msub><mi mathvariant="normal">/</mi><mn>2</mn><msup><mo stretchy="false">)</mo><mrow><mn>2</mn><mi>n</mi></mrow></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">P_{bond}=\frac{C}{2}*PVIFA_{2n,k_d/2}+\frac{FV}{(1+k_d/2)^{2n}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">b</span><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">d</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.04633em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.03853em;vertical-align:-0.3551999999999999em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.34480000000000005em;"><span style="top:-2.5198em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathnormal mtight">n</span><span class="mpunct mtight">,</span><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3487714285714287em;margin-left:-0.03148em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15122857142857138em;"><span></span></span></span></span></span></span><span class="mord mtight">/2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3551999999999999em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.29633em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">/2</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></div></figure></li></ul></details></li></ul><ul id="2faa850b-3db2-4444-a589-4bc72f775563" class="block-color-red_background toggle"><li><details open=""><summary><strong>Coupon Bond Price Properties</strong></summary><ul id="52b2d069-84be-476c-a949-a08349a2f1cd" class="block-color-gray_background toggle"><li><details open=""><summary>Premiums and Discounts</summary><ul id="50179c16-b34f-4ef0-a666-9b7f2d86d5e6" class="bulleted-list"><li style="list-style-type:disc">A premium bond is a coupon bond whose price is greater than its face value.</li></ul><ul id="9a52b05f-303e-491b-9263-8352d0c244b1" class="bulleted-list"><li style="list-style-type:disc">A discount bond is one whose price is less than its face value.</li></ul><ul id="dad8a273-027f-4d95-ada4-fb10c6291bc2" class="bulleted-list"><li style="list-style-type:disc">Let’s say that bonds today yield 12%. If you now get a bond that yields 10%, you would want to buy it at a discount, so that you can earn more than 10%. Similarly, if you get a bond that yields 14%, you would be willing to buy it at a premium to earn a yield more than 12% [the standard yield on bonds today]</li></ul></details></li></ul><ul id="13e3f298-aea7-4d52-8477-f3433181f94f" class="block-color-gray_background toggle"><li><details open=""><summary>Bond Price vs Interest Rates</summary><ul id="428489e9-b11b-4ec0-aef2-86e114531751" class="bulleted-list"><li style="list-style-type:disc">Bond prices and interest rates move inversely.</li></ul><figure id="08c7cab6-9e74-4736-aa5a-f7c3e54bd714" class="image"><a href="https://images.flatworldknowledge.com/resize/web/1000/corporate_finance_2_1-34711/corporate_finance_2_1-34711-fig278.png"><img style="width:576px" src="https://images.flatworldknowledge.com/resize/web/1000/corporate_finance_2_1-34711/corporate_finance_2_1-34711-fig278.png"/></a></figure></details></li></ul><ul id="88bbdfeb-d7a2-4434-abfc-d05b3a4af1d8" class="block-color-gray_background toggle"><li><details open=""><summary>Longer Maturity Bonds have more Interest Rate Risk</summary><ul id="e841aff1-fff6-4789-ada6-3f4bbdad8e04" class="bulleted-list"><li style="list-style-type:disc">The present value of a near-term cash flow doesn’t change much when rates change because it isn’t discounted much. </li></ul><ul id="0a50fc84-5876-4b67-8323-99d48764ca10" class="bulleted-list"><li style="list-style-type:disc">However, more distant cash flows are discounted many periods and the change in rates has a compound effect.</li></ul><ul id="946233c6-670f-4dc5-9365-9e649f535f8f" class="bulleted-list"><li style="list-style-type:disc">We can conclude that interest rate risk increases with increasing maturity.</li></ul><ul id="21bc72ad-c394-4092-9e99-49bc5cf57ca2" class="bulleted-list"><li style="list-style-type:disc">Bond portfolio managers take advantage of this bond pricing property by using a strategy called interest rate expectation. Interest rate expectation involves speculating on unanticipated interest rate changes. In effect, bond portfolio managers are using interest rate risk for profit.</li></ul></details></li></ul><ul id="ff8deda3-5c4d-4f6d-a7c2-9e1611ae4d4e" class="block-color-gray_background toggle"><li><details open=""><summary>Bonds with Low Coupon Rates have more Interest Rate Risk</summary><ul id="9298ad3e-0c17-4b59-b5f7-f83bf7118b10" class="bulleted-list"><li style="list-style-type:disc">The low coupon rate bond pays proportionately more of its cash flow at maturity.</li></ul><ul id="0b1cfafa-90ff-4612-b20b-e5f93f7c4d2d" class="bulleted-list"><li style="list-style-type:disc">The higher coupon rate bond spreads its cash flows out more smoothly over the life of the bond.</li></ul><ul id="e8bba7f9-4eee-49a7-9050-dd8b576a75da" class="bulleted-list"><li style="list-style-type:disc">Since low coupon rate bonds have more of their cash flows arriving at longer maturities, the present value of their cash flows (the bond price) changes more for a given change in yield compared to an otherwise equivalent high coupon rate bond.</li></ul></details></li></ul><ul id="a1462991-6bab-4b3a-8e0a-f81e7aeb3c5b" class="block-color-gray_background toggle"><li><details open=""><summary>Bond Price changes over time</summary><figure id="44271d03-fba2-45b3-92c5-5b513254371b" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>C</mi><mi>a</mi><mi>p</mi><mi>i</mi><mi>t</mi><mi>a</mi><mi>l</mi><mtext> </mtext><mi>G</mi><mi>a</mi><mi>i</mi><mi>n</mi><mtext> </mtext><mi>Y</mi><mi>i</mi><mi>e</mi><mi>l</mi><mi>d</mi><mo>=</mo><mi>H</mi><mi>P</mi><mi>R</mi><mo>=</mo><mfrac><mrow><mi>P</mi><mi>r</mi><mi>i</mi><mi>c</mi><msub><mi>e</mi><mn>1</mn></msub><mo>−</mo><mi>P</mi><mi>r</mi><mi>i</mi><mi>c</mi><msub><mi>e</mi><mn>0</mn></msub><mo>+</mo><mi>C</mi></mrow><mrow><mi>P</mi><mi>r</mi><mi>i</mi><mi>c</mi><msub><mi>e</mi><mn>0</mn></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">Capital\ Gain\ Yield=HPR=\frac{Price_1-Price_0+C}{Price_0}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord mathnormal">a</span><span class="mord mathnormal">p</span><span class="mord mathnormal">i</span><span class="mord mathnormal">t</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mspace"> </span><span class="mord mathnormal">G</span><span class="mord mathnormal">ain</span><span class="mspace"> </span><span class="mord mathnormal">Yi</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mord mathnormal" style="margin-right:0.00773em;">PR</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.19633em;vertical-align:-0.8360000000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.3139999999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8360000000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></div></figure><figure id="aad7a402-fc9a-4c57-8199-6aed10efed46" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>C</mi><mi>a</mi><mi>p</mi><mi>i</mi><mi>t</mi><mi>a</mi><mi>l</mi><mtext> </mtext><mi>G</mi><mi>a</mi><mi>i</mi><mi>n</mi><mtext> </mtext><mi>Y</mi><mi>i</mi><mi>e</mi><mi>l</mi><mi>d</mi><mo>=</mo><mfrac><mi>C</mi><mrow><mi>P</mi><mi>r</mi><mi>i</mi><mi>c</mi><msub><mi>e</mi><mn>0</mn></msub></mrow></mfrac><mo>+</mo><mfrac><mrow><mi>P</mi><mi>r</mi><mi>i</mi><mi>c</mi><msub><mi>e</mi><mn>1</mn></msub><mo>−</mo><mi>P</mi><mi>r</mi><mi>i</mi><mi>c</mi><msub><mi>e</mi><mn>0</mn></msub></mrow><mrow><mi>P</mi><mi>r</mi><mi>i</mi><mi>c</mi><msub><mi>e</mi><mn>0</mn></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">Capital\ Gain\ Yield=\frac{C}{Price_0}+\frac{Price_1-Price_0}{Price_0}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord mathnormal">a</span><span class="mord mathnormal">p</span><span class="mord mathnormal">i</span><span class="mord mathnormal">t</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mspace"> </span><span class="mord mathnormal">G</span><span class="mord mathnormal">ain</span><span class="mspace"> </span><span class="mord mathnormal">Yi</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.19633em;vertical-align:-0.8360000000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.3139999999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8360000000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.19633em;vertical-align:-0.8360000000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.3139999999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">i</span><span class="mord mathnormal">c</span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8360000000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></div></figure><ul id="eccd5d0b-e933-4d87-8ab4-2b6b63db7746" class="bulleted-list"><li style="list-style-type:disc">The first part is called <strong>Coupon Yield</strong>, and the second part is called <strong>Capital Gain Yield</strong></li></ul></details></li></ul></details></li></ul><p id="c7aa3397-dcdd-4aad-9c00-e5457d7e428c" class="">© 2022, Yash Harshal Barve, All Rights Reserved</p><p id="f4d08fd8-783a-43b5-bfee-f7f1c139bfea" class="">
+</p></div></article></body></html>
