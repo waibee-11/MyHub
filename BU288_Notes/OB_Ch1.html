@@ -1,0 +1,675 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>1. OB and Management</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="67fa9149-10e4-4fd6-9bc6-002641686d74" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/nasa_space_shuttle_challenger.jpg" style="object-position:center 0%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">👨🏻‍💼</span></div><h1 class="page-title">1. OB and Management</h1></header><div class="page-body"><h1 id="aa3cd259-9a2b-4991-ae63-a144ca9c47eb" class="">1.1 What are Organizations?</h1><p id="81322ad8-0384-4278-b9d8-ddc06bea25bc" class="">Organizations are social interventions for accomplishing common goals through group effort. Klick Health is obviously an organization, but so are the Toronto Raptors, CTV, and colleges and universities.</p><h3 id="f772c191-4409-4eb7-b185-393f0e38882b" class="">Social Inventions</h3><p id="5d70f50d-cbdb-4d42-97ed-29ee89630473" class="">Their essential characteristic is the coordinated presence of people, not necessarily things.</p><ul id="6f174422-c018-42fd-91d0-d2804e1794d3" class="bulleted-list"><li style="list-style-type:disc">Organizations rely on people more than physical capital.<ul id="8a9aa851-f944-4c1e-aba9-9aaf9e86c301" class="bulleted-list"><li style="list-style-type:circle">This field of organizational behaviour is about understanding people and managing them to work effectively.</li></ul></li></ul><h3 id="198b6b5e-0571-44a8-a76a-75b7b19b8c70" class="">Goal Accomplishment</h3><p id="823f2ad0-1136-41c3-9659-61f8fb77082c" class="">Organizations have very basic goals; Toronto Raptors’ goal is winning basketball games. Non-profit organizations have goals such as saving lives or educating people.</p><ul id="14ab897c-7d74-4b82-8ed4-04d4171d01ed" class="bulleted-list"><li style="list-style-type:disc">All organizations have a common goal of survival.<ul id="3fd14ae7-96b3-4252-acb4-c8e039699d21" class="bulleted-list"><li style="list-style-type:circle">However, there are organizations that have failed to survive such as: Canadian Airlines, or Sears.<ul id="dd9346d7-c7c7-4a6c-a245-5e938c7cd015" class="bulleted-list"><li style="list-style-type:square">This field of organizational behaviour is concerned with how organizations can survive and adapt to change.</li></ul></li></ul><ul id="bfeb0ab3-b12b-4e86-8e7d-a24e80b0f4a8" class="bulleted-list"><li style="list-style-type:circle">People need to be:<ul id="af951ddb-f1da-42a8-a0c0-4abaf23d23da" class="bulleted-list"><li style="list-style-type:square">Motivated to join and remain loyal to the organization.</li></ul><ul id="e8cffe6a-bdd6-4ffa-a703-42f9f16bbf9c" class="bulleted-list"><li style="list-style-type:square">Carry out their basic work reliably.</li></ul><ul id="895c3d74-6972-4dfb-bd7e-7d2fe502a1e2" class="bulleted-list"><li style="list-style-type:square">Be willing to continuously learn and upgrade their knowledge and skills.</li></ul><ul id="7a487756-a8c5-4d0d-9e36-7b97c5d4000b" class="bulleted-list"><li style="list-style-type:square">Be flexible and innovative.</li></ul></li></ul></li></ul><h3 id="0d2e105e-555b-4e6f-bb2c-dec90a8aaaa8" class="">Group Effort</h3><p id="edfbeef2-1235-4915-a0e2-3a3bbbe351af" class="">At its most general level, this means that organizations depend on interaction and coordination among people to accomplish their goals.</p><ul id="2e2611a4-900d-47aa-a354-6a9a21c96fa6" class="bulleted-list"><li style="list-style-type:disc">A lot of the work done in organizations is performed by groups.<ul id="a9f9685c-0189-4081-8908-8916aaf95063" class="bulleted-list"><li style="list-style-type:circle">Quality of this group contact can have a strong impact on goal achievement.</li></ul><ul id="e38b5e35-d3d5-4c88-978e-048c402cf1aa" class="bulleted-list"><li style="list-style-type:circle">If someone is happy to work, they will perform better.</li></ul><ul id="4dda95b4-1a1a-4157-aa6e-1d0a18547e4d" class="bulleted-list"><li style="list-style-type:circle">Informal grouping may occur in organizations as friendships develop and individuals form informal alliances to accomplish work.<ul id="e6f5ba13-e52f-4250-87c4-48ec51a8e868" class="bulleted-list"><li style="list-style-type:square">The field of organizational behavior is concerned with how to get people to practice effective teamwork.</li></ul></li></ul></li></ul><p id="dfcb01a2-308e-4cc2-8ebb-b300309ebea3" class="">
+</p><h1 id="de607b3f-935d-40cf-9270-aeee03ba62d2" class="">1.2 What is Organizational Behaviour</h1><p id="1ab465fc-bafc-4e44-af17-67190f6f1f13" class="">It is the attitudes and behaviors of individuals and groups in organizations.</p><ul id="d21b64c2-cef3-4281-9825-ad5c79ac8b33" class="bulleted-list"><li style="list-style-type:disc">OB studies the following:<ul id="9dae4518-591b-4ece-b146-085b90b65062" class="bulleted-list"><li style="list-style-type:circle">Attitudes and behaviours to provide insight about effectively managing and changing them.</li></ul><ul id="d2182368-7727-47ce-a49b-aaa6653a02fc" class="bulleted-list"><li style="list-style-type:circle">How organizations can be structured more effectively.</li></ul><ul id="c4a79c13-ed58-4de1-b5ff-e7354f147fca" class="bulleted-list"><li style="list-style-type:circle">How external events in their environment affect organizations.</li></ul></li></ul><ul id="df87215e-1ce5-45b5-a786-272753a3f0ea" class="bulleted-list"><li style="list-style-type:disc">Important behaviours include:<ul id="6124ea3b-144f-4c26-92e4-5adc113d7740" class="bulleted-list"><li style="list-style-type:circle">Cooperation</li></ul><ul id="4e2fb283-25d4-4071-bffa-8c948db12bc5" class="bulleted-list"><li style="list-style-type:circle">Conflict</li></ul><ul id="44044c70-0b94-40c9-9c6f-3068e366e23d" class="bulleted-list"><li style="list-style-type:circle">Innovation</li></ul><ul id="3cf97e91-9590-489b-8a97-d00478c1c2fe" class="bulleted-list"><li style="list-style-type:circle">Resignation</li></ul><ul id="1f3b1f71-0a39-468d-8a74-d94ed1f8119f" class="bulleted-list"><li style="list-style-type:circle">Ethical lapses</li></ul></li></ul><ul id="57a7ae8a-0503-48ff-89cc-0b204ec0cfef" class="bulleted-list"><li style="list-style-type:disc">Human resource management looks at programs, practices, and systems to acquire, develop, motivate, and retain employees in organizations.</li></ul><h3 id="29887aee-5e22-4e18-a429-07670265a7f5" class="">Why Study Organizational Behaviour?</h3><p id="47fc3c3c-822d-4afe-8022-276ab5db4cb9" class="">It is interesting and important for success and it makes a difference for employees and organizations.</p><ul id="2d202cca-3889-48fd-ac59-ba82819ae3a4" class="bulleted-list"><li style="list-style-type:disc">It is interesting because it is about people and human nature. Why does Klick Health have a people-first culture, and what effect does this have on employee attitudes, behaviour, and performance? These questions are interesting because they help us understand why employees become committed to an organization and what motivates them to work hard.<ul id="8000c554-c931-417b-ade0-9c38b710a264" class="bulleted-list"><li style="list-style-type:circle">It provides the tools to figure out why someone acts the way they do</li></ul></li></ul><ul id="6efe9635-3be0-4702-8454-58c7fc3a1023" class="bulleted-list"><li style="list-style-type:disc">It is important as what happens in an organization often has a profound impact on people.<ul id="27129648-fad5-45ff-9685-22d4e50f0061" class="bulleted-list"><li style="list-style-type:circle">The consumers of the organization’s products and services are also affected.<ul id="7ad6dc91-1d03-410b-a4ee-baad5286d1b4" class="bulleted-list"><li style="list-style-type:square">Organizational behaviour is important to understand how we can become more effective managers, employees, or consumers.</li></ul></li></ul></li></ul><ul id="02424bac-f87e-4d1f-bfd3-8861433bf756" class="bulleted-list"><li style="list-style-type:disc">Organizational behaviour makes a difference.<ul id="cee15334-3c3b-4ccc-8533-ffe844ca0502" class="bulleted-list"><li style="list-style-type:circle">Jeffrey Pfeffer argued that organizations can no longer achieve a competitive advantage through traditional sources of success, such as technology, regulated markets, access to financial resources, or economies of scale.</li></ul></li></ul><ul id="ec92b0eb-6630-4928-a917-5ab2afef49d3" class="bulleted-list"><li style="list-style-type:disc">Today, the main factor that differentiates organizations is their workforce and human capital.<ul id="69c9d0a7-ba60-4eaf-892b-d924f6c7608b" class="bulleted-list"><li style="list-style-type:circle">Human capital being the knowledge, skills, and abilities embodied in an organization’s employees.</li></ul></li></ul><ul id="8c6a4028-42c7-400e-88a0-72f7867bd792" class="bulleted-list"><li style="list-style-type:disc">Social capital, in addition, is also important for individuals and organizations.<ul id="9add967d-afe3-4342-bee6-f5d5c4e8705a" class="bulleted-list"><li style="list-style-type:circle">Social capital refers to the social resources that individuals obtain from participation in a social structure.<ul id="b0cade6c-278b-48d6-b0a0-bb1710104096" class="bulleted-list"><li style="list-style-type:square">This can include interpersonal relationships, social ties, and one’s network of relationships with others who can assist in work and careers.</li></ul></li></ul></li></ul><ul id="0bc4a283-e2b4-414a-984a-54f2b41adf9c" class="bulleted-list"><li style="list-style-type:disc">Management practices of the best companies to work for in Canada<figure id="67709223-1de2-42f7-afcc-c73ea5973f37" class="image"><a href="https://lh6.googleusercontent.com/QxT4plZwccMU78wh0jzhO5elSBTZQ0HitOEVhE_B2zQndYYKKDINeVqd9E6zwPXuzpXfUPC9IIDCJzUBK27ZvdYzRvvz25H9d9swgtTB6Fkd2gaNdCfWrgF55KVn5rutxPeqNvRjtE3vhPD7La9_z2ajW9pulEMty7NZJxEKc-X5ql8dgIQmzQqAv5oEMg"><img style="width:590px" src="https://lh6.googleusercontent.com/QxT4plZwccMU78wh0jzhO5elSBTZQ0HitOEVhE_B2zQndYYKKDINeVqd9E6zwPXuzpXfUPC9IIDCJzUBK27ZvdYzRvvz25H9d9swgtTB6Fkd2gaNdCfWrgF55KVn5rutxPeqNvRjtE3vhPD7La9_z2ajW9pulEMty7NZJxEKc-X5ql8dgIQmzQqAv5oEMg"/></a></figure><p id="792b808e-2229-42aa-9789-4fd0960ec298" class="">
+</p></li></ul><h1 id="5b6b4bfb-8996-46a0-b284-d805deac48cf" class="">1.3 Goals of Organizational Behaviour</h1><h3 id="0449e146-00c8-49db-9a2d-0c1bf9ea47ca" class="">Predicting Organizational Behaviour</h3><ul id="ecdfb466-6137-4bd9-8274-18f47201cec6" class="bulleted-list"><li style="list-style-type:disc">Predicting the behaviour of others is an essential requirement for everyday life, both inside and outside of organizations.<ul id="161120f6-4380-49f2-92e7-16f7d819af58" class="bulleted-list"><li style="list-style-type:circle">In organizations, there is considerable interest in predicting when people will make ethical decisions, create innovative products, or engage in sexual harassment.</li></ul></li></ul><h3 id="03477dca-4788-4e3d-9abc-211f7f8d4aad" class="">Explaining Organizational Behaviour</h3><ul id="e49daede-b46b-4f8f-868d-1de746692a7f" class="bulleted-list"><li style="list-style-type:disc">Being able to explain events in organizations and why they occur.<ul id="2090804e-cfa4-4a32-b0be-143312efa7b4" class="bulleted-list"><li style="list-style-type:circle">Prediction and explanation are not synonymous. In general, accurate prediction precedes explanation.</li></ul></li></ul><ul id="7fc76fb8-2dc8-4492-a988-0422b2de41cc" class="bulleted-list"><li style="list-style-type:disc">Organizational behaviour is especially interested in determining why people are more or less engaged, motivated, satisfied, or prone to resign.</li></ul><ul id="103411fb-a3ec-4a25-b9d3-47443305b89d" class="bulleted-list"><li style="list-style-type:disc">Explanation is complicated by the fact that the underlying causes of some event or behaviour can change over time.<ul id="301076f2-a000-48cf-a1d7-fe3ee027c25e" class="bulleted-list"><li style="list-style-type:circle">For example, the reasons people quit may vary greatly depending on the overall economy and whether there is high or low unemployment in the field in question.</li></ul></li></ul><h3 id="383086ae-f7ad-4e54-8683-23681c77545f" class="">Managing Organizational Behaviour</h3><ul id="9c7d6dde-384c-4cb3-b16f-a0d449bd430d" class="bulleted-list"><li style="list-style-type:disc">Management is the art of getting things accomplished in organizations through others.<ul id="82dda072-9de8-413f-bed6-65d6e342315e" class="bulleted-list"><li style="list-style-type:circle">Managers acquire, allocate, and utilize physical and human resources to accomplish goals.</li></ul></li></ul><ul id="d03af8fc-5e76-46d4-b4f2-d187c665025d" class="bulleted-list"><li style="list-style-type:disc">Evidence-based management involves translating principles based on the best scientific evidence into organizational practices.<ul id="803b342b-c1f5-4d00-89d3-3eb1bbaa31b8" class="bulleted-list"><li style="list-style-type:circle">This approach avoids personal preference and unsystematic experience.</li></ul><ul id="31734433-a03b-4171-beba-b030fce691af" class="bulleted-list"><li style="list-style-type:circle">More likely to result in the attainment of organizational goals, including those affecting employees, shareholders, and the public.</li></ul></li></ul><p id="4b6c63dc-7731-4a5f-b7ad-1e0cd9ec1f5b" class="">
+</p><h1 id="722fccc5-723d-4390-a67c-c0214f5ff7df" class="">1.4 Early Prescriptions concerning Management</h1><h3 id="f8b1d140-ada1-4af7-887d-b4c313994e86" class="">The Classical View and Bureaucracy</h3><ul id="1286de62-68cd-467d-bfac-f3c3abe39780" class="bulleted-list"><li style="list-style-type:disc">Major advocates of the Classical View were experienced managers or consultants who took the time to write down their thoughts on organizing.<ul id="465871f5-d989-42ee-93ab-29ca148a6acf" class="bulleted-list"><li style="list-style-type:circle">This generally took place in the early 1900s.</li></ul></li></ul><ul id="29216989-d571-40a7-88b8-7e991429f4ed" class="bulleted-list"><li style="list-style-type:disc">Classical writers acquired their experience in military settings, mining operations, and factories produced everything from cars to candy.</li></ul><ul id="a11caed7-26d6-43e8-bfb9-8535fba0f9c7" class="bulleted-list"><li style="list-style-type:disc">The Classical View tended to advocate a very high degree of specialization and a very high degree of coordination.<ul id="ce002b61-e873-4b60-8f1a-f1ebe7037bd2" class="bulleted-list"><li style="list-style-type:circle">Each department was to tend to its own affairs with centralized decision making from upper management that would provide the coordination.<ul id="194e9bf2-58e1-46bc-9957-4cea5431c6e4" class="bulleted-list"><li style="list-style-type:square">To maintain control, managers would have fairly few workers, except for lower-level jobs.</li></ul></li></ul></li></ul><ul id="008bc40d-2f71-41c1-9951-8b2b11323994" class="bulleted-list"><li style="list-style-type:disc">Frederick Taylor (1856 - 1915) &gt; <strong>Scientific management</strong><ul id="52e6dc04-6203-4ed0-a742-23a1a97cedca" class="bulleted-list"><li style="list-style-type:circle">The father of scientific management, was also contributor to the classical school.</li></ul><ul id="bda98268-4cc7-4afd-a3d7-ae61f7a08a18" class="bulleted-list"><li style="list-style-type:circle">Advocated the use of careful research to determine the optimum degree of specialization and standardization.</li></ul><ul id="2c90ff90-c862-4d3d-ae71-900f27a048f2" class="bulleted-list"><li style="list-style-type:circle">Also supported the development of written instructions that clearly defined work procedures, and he encouraged supervisors to standardize workers’ movements and breaks for maximum efficiency.<ul id="256de3c1-0c55-4bbd-a609-f82791e0bf81" class="bulleted-list"><li style="list-style-type:square">Extended scientific management to the supervisor’s job, advocating “functional foremanship” where supervisors would specialize in particular functions.<ul id="559975a1-fb04-4655-b341-b21d32de3c21" class="bulleted-list"><li style="list-style-type:disc">For example, one supervisor might specialize in training new workers, whereas another might fulfill the role of a disciplinarian.</li></ul></li></ul></li></ul></li></ul><ul id="9aec3ecc-8cae-4a12-a220-1d5f2d40ef51" class="bulleted-list"><li style="list-style-type:disc">Max Weber (1864 - 1920) &gt; <strong>Bureaucracy</strong><ul id="4b321cad-363f-4e8d-91d4-d3c0e3445d2a" class="bulleted-list"><li style="list-style-type:circle">Bureaucracy was Weber’s ideal type of organization that included a strict chain of command, detailed rules, high specialization, centralized power, and selection and promotion based on technical competence.<ul id="79327d61-eefb-4839-bc36-6870ece5d1e0" class="bulleted-list"><li style="list-style-type:square">Each member reports to only a single superior.</li></ul><ul id="bf8c4e80-d085-42d2-b9f0-72966cd92859" class="bulleted-list"><li style="list-style-type:square">Criteria for selection and promotion based on technical skills rather than nepotism or favoritism.</li></ul><ul id="d0d970e3-25ad-48d3-977f-9848074a83d0" class="bulleted-list"><li style="list-style-type:square">A set of detailed rules ensuring that the job gets done regardless of who the specific worker is.</li></ul><ul id="0f88f126-5f8a-4d7d-ac2c-e5da3f735c4d" class="bulleted-list"><li style="list-style-type:square">The use of strict specialization to match duties with technical competence.</li></ul><ul id="90b39bbd-c6fa-46f8-8bb1-c18634ed25e7" class="bulleted-list"><li style="list-style-type:square">Centralization of power at the top of the organization.<ul id="7b5ae370-b8ff-434d-83fd-96ee8531db2c" class="bulleted-list"><li style="list-style-type:disc">This would provide workers with security and a sense of purpose. Workers would have a fair chance of being promoted and rising in the power structure.</li></ul></li></ul></li></ul></li></ul><h3 id="6ba8a2cc-dee8-47e2-bab9-64df62bf1b43" class="">The Human Relations Movement and a Critique of Bureaucracy</h3><ul id="bd45870d-977a-42a9-b947-6e94cf61de1f" class="bulleted-list"><li style="list-style-type:disc">The human relations movement generally began with the famous Hawthorne studies of the 1920s and 1930s.<ul id="3bce0763-a130-41c7-bb6a-c28733257d88" class="bulleted-list"><li style="list-style-type:circle">Conducted at the Hawthorne plant of Western Electric near Chicago; it illustrated how psychological and social processes affect productivity and work adjustment.<ul id="3169238f-7840-4423-8b79-a56aec5856ad" class="bulleted-list"><li style="list-style-type:square">Concerned itself with the impact of fatigue, rest pauses, and lighting on productivity.</li></ul></li></ul><ul id="0ec329c6-27c9-47b6-9b48-8ce9782b4f46" class="bulleted-list"><li style="list-style-type:circle">The human relations movement was a critique of classical management and bureaucracy that advocated management styles that were more participative and oriented toward employee needs.</li></ul><ul id="44a6c987-1d05-432e-ac84-6342df086dd7" class="bulleted-list"><li style="list-style-type:circle">It addressed the following problems:<ul id="b7fccc43-b698-407f-9605-f4f03a3972c2" class="bulleted-list"><li style="list-style-type:square">Strict specialization is incompatible with human needs for growth and achievement which can lead to employee alienation from the organization and its client.</li></ul><ul id="e398d49b-e4e6-48cd-abc7-1491c35a7d94" class="bulleted-list"><li style="list-style-type:square">Strong centralization and reliance on formal authority often fail to take advantage of the creative ideas and knowledge of lower-level members, who are often closer to the customer. This causes the organization to fail to learn from its mistakes, which threatens innovation and adaptation.</li></ul><ul id="a2ee8e35-e28b-46c3-a695-7c91a3212f17" class="bulleted-list"><li style="list-style-type:square">Strict, impersonal rules lead member to adopt the minimum acceptable level of performance that the rules specify.</li></ul><ul id="0c438583-573e-4817-bd8d-6ffe08968274" class="bulleted-list"><li style="list-style-type:square">Strong specialization causes employees to lose sight of the overall goals of the organization - forms, procedures, and requires signatures become ends in themselves, divorced from the true needs of customers, clients, and other departments in the organization.</li></ul></li></ul></li></ul><p id="9ceab719-a726-441d-ae1b-be735dd3f943" class="">
+</p><h1 id="24b95b46-e844-4bff-a916-27835dc1ade2" class="">1.5 Contemporary Management - The Contingency Approach</h1><ul id="e69352ff-2c44-4ea0-953b-bef867c2c263" class="bulleted-list"><li style="list-style-type:disc">Contemporary scholars and managers recognize the merits of both approaches.</li></ul><ul id="2fe60aaf-db89-4567-a387-baeb71c2a15c" class="bulleted-list"><li style="list-style-type:disc">The classical advocates pointed out the critical role of control and coordination in getting organizations to achieve their goals.</li></ul><ul id="37d7bd7d-8253-433c-ab1c-65fe76875868" class="bulleted-list"><li style="list-style-type:disc">Human relationists pointed out the dangers of certain forms of control and coordination and addressed the need for flexibility and adaptability.</li></ul><ul id="9ab3483e-db95-42fa-a5bb-d2a0c0b57485" class="bulleted-list"><li style="list-style-type:disc">Contemporary scholars learned that management approaches need to be tailored to fit the situation.<ul id="cfec7d44-a25f-443b-93b6-b5cc67e13db9" class="bulleted-list"><li style="list-style-type:circle">Contingency approach is an approach to management that recognizes that there is no best way to manage, and that an appropriate management style depends on the demands of the situation.</li></ul></li></ul><p id="4bbc5c4b-c5d1-4271-a788-16a45bedaa59" class="">
+</p><h1 id="c428f2db-1af6-4703-b10e-5667dc4c99ce" class="">1.6 What do Managers Do?</h1><ul id="fc788d14-f1c8-41c8-8c5b-325903977bbd" class="bulleted-list"><li style="list-style-type:disc">Managers have a strong impact on what happens in and to organizations.<ul id="994059ff-2459-44f3-8600-c32b5ad157e6" class="bulleted-list"><li style="list-style-type:circle">They both influence and are influenced by organizational behaviour and the net result can have important consequences for organizational effectiveness.</li></ul></li></ul><h3 id="768c3fbc-57ec-4891-ba4b-de8bd602c24b" class="">Managerial Roles / Interpersonal Roles</h3><ul id="6206b0b3-8fa3-4049-b99c-a3fc54228b34" class="bulleted-list"><li style="list-style-type:disc">Interpersonal roles are expected behaviours that have to do with establishing and maintaining interpersonal relations.<ul id="42be8981-c904-4529-96a3-885df4126811" class="bulleted-list"><li style="list-style-type:circle">In a Figurehead role, managers serve as symbols of their organization rather than active decision makers.<ul id="92e051f1-ac66-4c2a-b447-91f935106797" class="bulleted-list"><li style="list-style-type:square">This involves making a speech to a trade group, entertaining clients, or signing legal documents.</li></ul></li></ul><ul id="ddf80a4f-7b86-4808-93cb-dc022f6c9666" class="bulleted-list"><li style="list-style-type:circle">In a Leadership role, managers select, mentor, reward and discipline employees.</li></ul><ul id="49645086-da53-4064-a6ff-62d8bfafca61" class="bulleted-list"><li style="list-style-type:circle">In a Liaison role, managers maintain horizontal contacts inside and outside the organization; discussing a project with a colleague in another department, or touching base with an embassy delegate of a country the company hopes to do future business.</li></ul></li></ul><h3 id="c825d2a6-a85f-49bf-9ead-7e1944d35e94" class="">Managerial Roles / Informational Roles</h3><ul id="c808e799-2201-46e8-bb9f-dea252773314" class="bulleted-list"><li style="list-style-type:disc">These roles are concerned with the different ways managers receive and transmit information.<ul id="74346eda-e6e2-40bf-8fc4-0733bf4a573e" class="bulleted-list"><li style="list-style-type:circle">In the monitor role, managers scan the internal and external environments of the firm to follow current performance and to keep themselves informed of new ideas and trends.<ul id="1790adf5-5339-49c4-9d00-c5ff2bd45bc2" class="bulleted-list"><li style="list-style-type:square">R&amp;D head might attend a professional engineering conference.</li></ul></li></ul><ul id="4353a01a-3b5b-41ee-bea7-82224620305f" class="bulleted-list"><li style="list-style-type:circle">In the disseminator role, managers send information on both facts and preferences to others.<ul id="36bd900c-60a0-4634-a4ad-ca876f0386a0" class="bulleted-list"><li style="list-style-type:square">R&amp;D head might summarize what was learned at a conference in an email to other employees.</li></ul></li></ul><ul id="39291e56-43a9-412c-9b7a-0c6d859ae065" class="bulleted-list"><li style="list-style-type:circle">The spokesperson role concerns mainly sending messages into the organization’s external environment.<ul id="bb957ca6-014b-4f56-a858-9888a3d1cfa8" class="bulleted-list"><li style="list-style-type:square">Drafting an annual report to stockholders; giving an interview to the press.</li></ul></li></ul></li></ul><h3 id="ddf4f426-d14b-4876-8a34-a83cdc835c4d" class="">Managerial Roles / Decisional Roles</h3><ul id="bd940652-84f6-4c59-a9e9-55554baf89a3" class="bulleted-list"><li style="list-style-type:disc">In the entrepreneur role, managers turn problems and opportunities into plans for improved changes.<ul id="1f7c2ce4-ae19-482f-996e-8732eb3aa0af" class="bulleted-list"><li style="list-style-type:circle">Suggesting a new product or service that will please customers.</li></ul></li></ul><ul id="b47b310e-579c-4cd0-80fc-0e093efb43d3" class="bulleted-list"><li style="list-style-type:disc">In the disturbance handler role, managers deal with problems stemming from employee conflicts and address threats to resources and turf.</li></ul><ul id="4addcb1c-7df5-40c2-aefc-e91c4bcb42ca" class="bulleted-list"><li style="list-style-type:disc">In the resource allocation role, managers decide how to deploy time, money, personal, and other critical resources.</li></ul><ul id="315d605d-b927-4be7-90fa-dc9c0e7e20a3" class="bulleted-list"><li style="list-style-type:disc">In the negotiator role, managers conduct major negotiations with other organizations or individuals.</li></ul><h3 id="43c0ddd7-6e35-41c0-b1eb-85c9d3fec19c" class="">Managerial Activities</h3><ul id="c7d6ed69-dafa-4abe-9510-a0ad782148f9" class="bulleted-list"><li style="list-style-type:disc">Routine communication: Sending and receiving information; handling paperwork.</li></ul><ul id="1f123bbc-fe72-4233-af7c-626838a887ee" class="bulleted-list"><li style="list-style-type:disc">Traditional management: Decision making, and controlling.</li></ul><ul id="c16f2d62-d146-4cfe-844a-491f20b1a9e0" class="bulleted-list"><li style="list-style-type:disc">Networking: Interacting with people outside of the organization, and informal socilializing with insiders.</li></ul><ul id="e2f0fbb9-0c2d-46b2-954d-032d55ed2d45" class="bulleted-list"><li style="list-style-type:disc">Human resource management: Motivating and reinforcing, disciplining and punishing, managing conflict, training and developing employees.</li></ul><h3 id="91572446-e8c3-4229-882f-95865280630a" class="">Managerial Agendas</h3><ul id="f3df7ed1-1a70-402d-8c87-7f53d7aa5b8a" class="bulleted-list"><li style="list-style-type:disc">Agenda setting; developing agendas of what they want to accomplish for the organization. Agendas are informal and are based on wide-ranging discussions with a variety of people.</li></ul><ul id="0df9f285-0383-4843-afe2-294ee02b77ea" class="bulleted-list"><li style="list-style-type:disc">Networking; Establishing a wide formal and informal network of key people.<ul id="c7fd1e02-4545-49e9-a790-4836f65f5866" class="bulleted-list"><li style="list-style-type:circle">Insiders included peers, employees, and bosses.</li></ul><ul id="84d413a0-ec49-49eb-9b1a-d889fdcadb5a" class="bulleted-list"><li style="list-style-type:circle">Outsiders included customers, suppliers, competitors, government officials, and the press.<ul id="9d720ee5-ce93-4f17-ab35-50e6fa1705e6" class="bulleted-list"><li style="list-style-type:square">Doing this establishes relationships and information gathering.</li></ul></li></ul></li></ul><ul id="b622e36d-8bf4-4aab-a1f0-32dd2fc701c8" class="bulleted-list"><li style="list-style-type:disc">Agenda implementation: Managers used networks to implement agendas. They would go anywhere in the network for help, inside and outside the organization. Additionally they employed a wide range of influence tactics, from direct orders to subtle language to communicate their message(s).</li></ul><h3 id="4bb46b6a-cb47-4f84-9894-506d980e6ee7" class="">Managerial Minds</h3><p id="2185ef2d-9978-44e4-8e5e-1a8ded7c4374" class="">Research suggests that experienced managers use intuition in several ways:</p><ul id="14ccc0f9-0cf1-43fc-9e30-7f64084efa2d" class="bulleted-list"><li style="list-style-type:disc">To sense that a problem exists.</li></ul><ul id="0cb269c8-a85c-4878-8979-999ca4613492" class="bulleted-list"><li style="list-style-type:disc">To perform well-learned mental tasks rapidly. (sizing up a written contract)</li></ul><ul id="3f077fa9-d08e-421c-96f8-427d7b5d5175" class="bulleted-list"><li style="list-style-type:disc">To synthesize isolated pieces of information and data.</li></ul><ul id="2fc50f7a-7f30-40ed-bcf3-a72fe2ce51aa" class="bulleted-list"><li style="list-style-type:disc">To double-check more formal or mechanical analyses. (confirming if projections look correct)</li></ul><p id="4895950a-675c-4532-88bf-2e7a1d5b5168" class="">
+</p><h1 id="a956597d-3b31-4fd4-a43f-cd5d97e5d8fb" class="">1.7 Some Contemporary Management Concerns</h1><ul id="d2ccc769-0a61-40d4-8e53-e329830e5ba3" class="bulleted-list"><li style="list-style-type:disc">Diversity<ul id="8c0e6adc-85e4-4240-9d18-1209f9a5a5c1" class="bulleted-list"><li style="list-style-type:circle">Women, visible minorities, indigenous peoples, and persons with disabilities.</li></ul></li></ul><ul id="ae940e1a-37a3-4596-b6e7-f1cce490f349" class="bulleted-list"><li style="list-style-type:disc">Employee Health and Well-Being<ul id="b9cb6462-21d6-4c32-8e46-27e88463c25e" class="bulleted-list"><li style="list-style-type:circle">Mental health, Engagement, Job Security, Work-Related Stress, Absenteeism, etc.</li></ul></li></ul><ul id="e21b6d78-a7ec-43b8-9248-73a3f01233c2" class="bulleted-list"><li style="list-style-type:disc">Talent Management and Employee Engagement<ul id="92934606-8ae6-430b-82f7-3b1ff28ce18e" class="bulleted-list"><li style="list-style-type:circle">Talent management refers to an organization’s processes and practices for attracting, developing, retaining, and deploying people with the required skills to meet current and future business needs.</li></ul><ul id="43ce5d97-c483-4058-8206-21f0fb66ef67" class="bulleted-list"><li style="list-style-type:circle">Work engagement is a positive work-related state of mind that is characterized by vigour, dedication, and absorption.</li></ul></li></ul><ul id="b1b4070d-3058-4994-9ccf-f804a4fa0617" class="bulleted-list"><li style="list-style-type:disc">Alternative Work Arrangements<ul id="70d30c74-33b5-4a38-a0dc-0ec738ccf8f5" class="bulleted-list"><li style="list-style-type:circle">Economics, demographics, technology are changing the nature, methods, and organization of work and employment relationships.<ul id="6f8cfbd8-ab5d-4aa5-8998-fb2c8b083417" class="bulleted-list"><li style="list-style-type:square">Full-time, full-year permanent jobs are being replaced by alternative work arrangements such as part-time, temporary, or contract work.</li></ul></li></ul></li></ul><ul id="91a8be77-6f95-4b33-916b-9804a348f257" class="bulleted-list"><li style="list-style-type:disc">Corporate Social Responsibility<ul id="ff53499e-1feb-49c6-8ad0-bab4d4047a88" class="bulleted-list"><li style="list-style-type:circle">Organization taking responsibility for the impact of its decisions and actions of its stakeholders.</li></ul></li></ul></div></article><a href="bu288_notes.html">Go Back</a></body></html>
