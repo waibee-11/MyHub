@@ -1,0 +1,676 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>2. Personality and Learning</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="89836c40-0eec-4236-85d3-4e9d43b3af0a" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/rijksmuseum_mignons_1660.jpg" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🧑🏻‍🎓</span></div><h1 class="page-title">2. Personality and Learning</h1></header><div class="page-body"><p id="51a224cf-b5d9-4b86-be66-ccd587ba1115" class="">
+</p><h1 id="0e536aa5-ef20-461f-a3c3-005cffe9708d" class="">2.1 What is Personality?</h1><ul id="40746b73-c56d-4975-b81d-fd44f08604a9" class="bulleted-list"><li style="list-style-type:disc">Personality is the relatively stable set of psychological characteristics that influences the way an individual interacts with his or her environment and how he or she feels, thinks, and behaves.</li></ul><h3 id="5905af16-7791-4a96-8330-910434f68348" class="">Personality and Organizational Behaviour</h3><ul id="39de5c7e-dfd8-49e1-8adc-37e091da657c" class="bulleted-list"><li style="list-style-type:disc">Personality is an important factor in motivation, attitudes, performance, and leadership.</li></ul><ul id="a6e79788-8713-4140-bc1a-52b7d91e6788" class="bulleted-list"><li style="list-style-type:disc">A dispositional approach is when individuals possess stable traits or characteristics that influence their attitudes and behaviours.<ul id="675648e8-4838-4991-81f8-d765936c16ad" class="bulleted-list"><li style="list-style-type:circle">An individual is predisposed to behave in certain ways.</li></ul></li></ul><ul id="994a462d-f58f-44be-8881-9be422948883" class="bulleted-list"><li style="list-style-type:disc">The situational approach is the characteristics of the organizational setting, such as rewards and punishment, influence people&#x27;s feelings, attitudes and behaviour.</li></ul><ul id="f67cbb87-3d25-4268-be53-0eea37f0665f" class="bulleted-list"><li style="list-style-type:disc">According to the interactionist approach, an organizational behaviour is the function of both dispositions and the situation.<ul id="8b77a8de-f85b-4aaf-ac8b-2116b4f73076" class="bulleted-list"><li style="list-style-type:circle">To predict and understand organizational behaviour, one must know something about an individual&#x27;s personality and the setting in which he or she works.</li></ul></li></ul><ul id="e8640847-87c3-441f-9232-747a254fa4b9" class="bulleted-list"><li style="list-style-type:disc">The trait activation theory is when traits lead to certain behaviours only when the situation makes the need for that trait important.<ul id="a5ced79c-a5ca-4848-82dc-54ace0676da6" class="bulleted-list"><li style="list-style-type:circle">For instance, personality characteristics influence people&#x27;s behaviour when the situation calls for a particular personality characteristic.</li></ul></li></ul><ul id="232826ed-5858-4094-8f40-105bafb9ed7e" class="bulleted-list"><li style="list-style-type:disc">A fit is considered putting the right person in the right job, group, or organization and exposing different employees to different management styles.</li></ul><p id="8d6e57eb-a106-4d93-a7e1-064b9715fccb" class="">
+</p><h1 id="573c2b9f-5c30-4ccf-9dad-618e222de6bc" class="">2.2 Personality Variables in Organizational Behaviour</h1><h3 id="714fd25e-0557-45c5-968f-996049ca3987" class="">The Five-Factor Model of Personality (O.C.E.A.N)</h3><p id="e75547ae-6726-4358-afbb-f0398b7b5333" class="">There are about five basic but general dimensions that describe personality.</p><ul id="7eaead9b-3c1f-4374-8dca-fc78bd08425f" class="bulleted-list"><li style="list-style-type:disc">Openness to experience is the extent to which a person thinks flexibly and is receptive to new ideas. More open people tend to use creativity and Innovation. Less open people favour the status quo.<ul id="d1c55a30-535b-4459-8334-e0b2eddff2e5" class="bulleted-list"><li style="list-style-type:circle">People who are high on openness to experience are likely to do well in jobs that involve learning and creativity given that they tend to be intellectual, curious, and imaginative, and to have broad interests.</li></ul></li></ul><ul id="ac8e0650-8c4e-452e-a50a-27b3fb902434" class="bulleted-list"><li style="list-style-type:disc">Conscientiousness is the degree to which a person is responsible and achievement oriented. More conscientious people are dependable and positively motivated. They generally tend to be more self-disciplined, hard-working and striving, while less conscientious people are irresponsible, lazy, and impulsive.<ul id="d5e2d837-49a0-4423-a49b-0516d0a72489" class="bulleted-list"><li style="list-style-type:circle">People who are high on conscientiousness are likely to perform well on most jobs given their tendency toward hard work and achievement.</li></ul></li></ul><ul id="c0b68515-32fe-4238-aa1b-68de2c55abb6" class="bulleted-list"><li style="list-style-type:disc">Extraversion is the extent to which a person is outgoing vs. shy. People who score high on extraversion tend to be sociable, outgoing, energetic, joyful and assertive.<ul id="8e69505b-996e-4932-b950-3d0460dec8ea" class="bulleted-list"><li style="list-style-type:circle">Extraversion is especially important for jobs that require a lot of interpersonal interaction, such as sales and management we&#x27;re being sociable is important for success.</li></ul></li></ul><ul id="0ca44966-af47-4935-a261-9fb46792d447" class="bulleted-list"><li style="list-style-type:disc">Agreeableness is the extent to which a person is friendly and approachable. More agreeable people are warm, considerate, friendly, cooperative, and eager to help others. Less agreeable people tend to be cold and strict.<ul id="98cf30c6-5b1c-4778-af11-3464494c0597" class="bulleted-list"><li style="list-style-type:circle">Agreeableness is most likely to contribute to job performance in jobs that require interaction and involve helping and nurturing others, as well as in jobs that involve teamwork and cooperation.</li></ul></li></ul><ul id="f21e61e1-a6ac-44bb-a5ac-d120b0e9d801" class="bulleted-list"><li style="list-style-type:disc">Emotional stability / Neuroticism is the degree to which a person has appropriate emotional control. People with high emotional stability (or low neuroticism) are self-confident and have high self-esteem. Those with lower emotional stability (or high neuroticism) tend towards self-doubt and depression.<ul id="f345e7ec-a9ce-4616-8f01-ccaea48a1cb2" class="bulleted-list"><li style="list-style-type:circle">Pretty much for any job, people with low emotional stability are likely to suffer more.</li></ul><ul id="e7575151-77c2-400b-99a9-510e685e56ed" class="bulleted-list"><li style="list-style-type:circle">People who score high on emotional stability are likely to have more effective interactions with co-workers and customers because they tend to be more comment secure.</li></ul></li></ul><h3 id="b22f5a14-3218-4bc4-a8f0-c3e669231d37" class="">Research Evidence</h3><ul id="23c620e1-be35-482d-9834-57d60c8be563" class="bulleted-list"><li style="list-style-type:disc">The Big Five is related to job performance and organizational citizenship behaviours.<ul id="6148c40a-4957-423a-ad92-7b82f27137d9" class="bulleted-list"><li style="list-style-type:circle">Such as voluntary behaviour that contributes to overall effectiveness such as helping coworkers.</li></ul></li></ul><ul id="361be709-6d58-43cf-a07f-3abe09c8b6f3" class="bulleted-list"><li style="list-style-type:disc">The BF are related to other work behaviours.<ul id="3fdde5c1-387c-4c66-bc20-7f6f54b6cfba" class="bulleted-list"><li style="list-style-type:circle">Conscientiousness is related to retention and attendance at work and is also an import antidote for counterproductive behaviours such as theft, absenteeism.</li></ul></li></ul><ul id="88bf6afe-f0f9-46a8-8c1d-b3a86d958a6a" class="bulleted-list"><li style="list-style-type:disc">The BF relates to work motivation and job satisfaction.</li></ul><ul id="b4362174-5c2a-4c06-8482-6ddf3066b1d1" class="bulleted-list"><li style="list-style-type:disc">The BF relates to job search and career success.</li></ul><h3 id="24cd5049-a777-430e-b3ae-c330f355d774" class="">Locus of Control</h3><ul id="f64a120e-4823-4c46-85cc-ba297f7c4d0d" class="bulleted-list"><li style="list-style-type:disc">A set of beliefs about whether one’s behaviour is controlled mainly by internal or external forces.</li></ul><figure id="c7d9b883-f674-4f47-a062-269d62ca1056" class="image"><a href="https://lh3.googleusercontent.com/kWnO7hWZsMJPiZizn2G9QtnGhRPW3EIqS7zPPRhnXtbzFpuAdCGFkTvnwP2IJa-w9YLRxJ78QDOabYQEaEoPE-vIMq1eO1v-ZGGLfU1iTkTRGwVaKKPiHFuXe0xL8fkJRNXmtIlNRDLwHQq4Go1DgGo_DJEoT3c1GFGtUi9AngKg7alDxdOAddS33DI-"><img style="width:192px" src="https://lh3.googleusercontent.com/kWnO7hWZsMJPiZizn2G9QtnGhRPW3EIqS7zPPRhnXtbzFpuAdCGFkTvnwP2IJa-w9YLRxJ78QDOabYQEaEoPE-vIMq1eO1v-ZGGLfU1iTkTRGwVaKKPiHFuXe0xL8fkJRNXmtIlNRDLwHQq4Go1DgGo_DJEoT3c1GFGtUi9AngKg7alDxdOAddS33DI-"/></a></figure><ul id="c0c83a48-fe08-4b62-8b85-18efa2a42ac5" class="bulleted-list"><li style="list-style-type:disc">High internals believe that the opportunity to control their own behaviour resides within themselves. At the other end of the continuum are high externals, who believe that external forces determine their behaviour.</li></ul><ul id="f2fab00d-b3fe-4fd5-abae-bbcb171045b9" class="bulleted-list"><li style="list-style-type:disc">Behaviour for high internals are determined by self-initiative, personal actions, and free will.</li></ul><ul id="63ae3a4d-b717-4faa-9cc9-e74ab4f2e8cf" class="bulleted-list"><li style="list-style-type:disc">They are also more satisfied with their jobs, more committed to their organizations, earn more money, achieve higher organizational positions, perceive less stress and engage in more careful career planning.<ul id="e29f13cd-49e6-4ecb-a430-a24b67d6b288" class="bulleted-list"><li style="list-style-type:circle">Externals see the world as an unpredictable, chancy place in which luck, fate, or powerful people control their destinies.</li></ul></li></ul><h3 id="9368d1ac-a574-4382-b4b1-9007b0f3afdd" class="">Self-Monitoring</h3><ul id="89052daa-8d6b-421e-bac7-4c59eab71b26" class="bulleted-list"><li style="list-style-type:disc">The extent to which people observe and regulate how they appear and behave in social settings and relationships.</li></ul><ul id="9994d76e-c4c9-4c0c-a84b-1b9228f4d43b" class="bulleted-list"><li style="list-style-type:disc">Take great care to observe the thoughts, actions, and feelings of those around them and control the images that they project.<ul id="c85509f0-c8e4-4c48-b08c-c5e9f52fea1d" class="bulleted-list"><li style="list-style-type:circle">High self monitors tend to show concern for socially appropriate emotions and behaviours, to tune in to social and interpersonal cues, and to regulate their behaviour and self-presentation according to these cues.</li></ul></li></ul><h3 id="c5ae5e25-9c41-4b84-a6cb-c48bc3db3251" class="">Self-Esteem</h3><ul id="e6b063a4-902b-4581-a7a4-890edaab4104" class="bulleted-list"><li style="list-style-type:disc">The degree to which a person has a positive self-evaluation.<ul id="51a9b234-b093-4a4c-8b60-21ff285c799d" class="bulleted-list"><li style="list-style-type:circle">High self-esteem equals to having a favourable self-image. Low self-esteem is the opposite, they tend to be uncertain about the correctness of their own opinions, attitudes, and behaviours.</li></ul></li></ul><ul id="ab47dbda-8c0c-40bb-8a2d-f80e9a4dd932" class="bulleted-list"><li style="list-style-type:disc">Behavioural plasticity theory is a theory that people with low self-esteem tend to be more susceptible to external and social influences than those who have high self-esteem.<ul id="c0f400ed-b248-47bc-8b7d-e6599831fa2f" class="bulleted-list"><li style="list-style-type:circle">This is since they are mostly unsure of their own views and behaviour, and so they are more likely to look to others for information and confirmation as well as seek approval from others.</li></ul></li></ul><p id="fe23b81a-0fca-49bd-b92a-34724c8fcac4" class="">
+</p><h1 id="8d7e095c-6361-4443-b219-1cca6990957f" class="">2.3 Advances in Personality and Organizational Behaviour</h1><h3 id="18ff5cab-e28f-4ac5-bde0-d1d43b60f23d" class="">Positive and Negative Affectivity</h3><ul id="a4f35141-a5fd-4b04-820e-07f2cecc44d9" class="bulleted-list"><li style="list-style-type:disc">Positive affectivity is the propensity to view the world, including oneself and other people in a positive light.<ul id="95f8a27d-1ff3-4ca5-92e3-ca9dc45497f7" class="bulleted-list"><li style="list-style-type:circle">Cheerful, enthusiastic, lively, sociable, and energetic.</li></ul></li></ul><ul id="9cdfdcc8-5b80-4a5b-b4ff-4f9a576037c6" class="bulleted-list"><li style="list-style-type:disc">Negative affectivitiy is the propensity to view the world, including oneself and other people in a negative light.<ul id="4bcd6759-0f13-4886-8eca-ce14456160bb" class="bulleted-list"><li style="list-style-type:circle">Depressed, distressed, and unhappy.</li></ul></li></ul><h3 id="ba8ab744-6366-4bf0-9137-7ee4fc0b9807" class="">Proactive Personality</h3><ul id="3f9693b7-bc45-4ce4-9f7c-483daf809a75" class="bulleted-list"><li style="list-style-type:disc">Taking initiative to improve current circumstances or creating new ones is known as proactive behaviour.<ul id="c2074b6b-130c-48b0-9918-cff178437f78" class="bulleted-list"><li style="list-style-type:circle">A proactive personality is a stable personal disposition that reflects a tendency to take personal initiative across a range of activities and situations and to effect positive change in one’s environment.</li></ul></li></ul><ul id="85c9cee9-02fe-41f1-b4b8-e9988bd90d6a" class="bulleted-list"><li style="list-style-type:disc">Includes searching for and identifying opportunities, initiatives, and taking action and persevere until they bring about meaningful change.<ul id="5d5d929d-7ae2-4dae-a8d2-ad7849261a7d" class="bulleted-list"><li style="list-style-type:circle">People who are not proactive are more likely to be passive and to react and adapt to their environment.</li></ul></li></ul><h3 id="1b0b256f-cc44-4204-bf6b-7069c67d8efd" class="">General Self-Efficacy</h3><ul id="dbb16f7c-b08c-4d18-b668-05fb03a98092" class="bulleted-list"><li style="list-style-type:disc">A general trait that refers to an individual’s belief in their ability to perform successfully in a variety of challenging situations.</li></ul><ul id="846dbf30-5e4d-4ff2-991f-beefe1070f0c" class="bulleted-list"><li style="list-style-type:disc">This is considered to be more of a motivational trait than an affective trait.</li></ul><ul id="b9f3a1c1-9bce-40a6-b791-71686d7f81bb" class="bulleted-list"><li style="list-style-type:disc">If you experiences many successes in your life, you probably have a high GSE.<ul id="32439bfd-b916-46a3-ad04-f2d6037fc628" class="bulleted-list"><li style="list-style-type:circle">People with high GSE are better able to adapt to novel, uncertain, and adverse situations.</li></ul></li></ul><h3 id="beb91108-71f3-4bb7-93c7-72090eb4d09c" class="">Core Self-Evaluations</h3><ul id="0f4bba40-a74e-474d-b754-466bcfc2afbb" class="bulleted-list"><li style="list-style-type:disc">A broad personality concept that consists of more specific traits that reflect the evaluations people hold about themselves and their self-worth.<ul id="683d4b00-5b39-4496-9ece-db1b0e39bc72" class="bulleted-list"><li style="list-style-type:circle">People with more positive CSEs have higher levels of job satisfaction, organizational commitment, and job performance. As well as, they tend to experience less stress and conflict at work.</li></ul></li></ul><h1 id="602ded51-b5cd-45c8-88a6-eb28d904069b" class="">2.4 What is Learning?</h1><ul id="d24fc5cf-9a76-4673-8b73-ba8f8e288dcb" class="bulleted-list"><li style="list-style-type:disc">Learning is a relatively permanen change in behaviour potential that occurs due to practice or experience.</li></ul><ul id="5bc807d8-f5b6-4010-b389-5c33b484464d" class="bulleted-list"><li style="list-style-type:disc">There are four primary categories of learning content:<ul id="ba16fff5-5a7f-471c-abcc-b6011f4a2198" class="bulleted-list"><li style="list-style-type:circle">Practical skills - job specific skills, knowledge, and technical competence.</li></ul><ul id="6767ffc5-a530-49b1-a3b9-d753db0acece" class="bulleted-list"><li style="list-style-type:circle">Intrapersonal skills - problem-solving, critical thinking, learning about alternative work processes, and risk taking.</li></ul><ul id="5d8434a9-5018-4a60-baf1-291bd2cb0b10" class="bulleted-list"><li style="list-style-type:circle">Interpersonal skills - interactive skills such as communicating, teamwork, and conflict resolution.</li></ul><ul id="26e850bf-83cd-472e-bb15-24f6fa8391f4" class="bulleted-list"><li style="list-style-type:circle">Cultural awareness - learning the social norms of organizations and understanding company goals, business operations and company expectations and priorities.</li></ul></li></ul><p id="4a82ba63-3dbf-48ef-b972-796b1c6c6eae" class="">
+</p><h1 id="e14cc251-ef05-4398-af07-f5bbae110595" class="">2.5 Operant Learning Theory</h1><ul id="75d78929-6e6d-4dc0-b53f-37702242267f" class="bulleted-list"><li style="list-style-type:disc">Psychologist B. F. Skinner investigated the behaviour of rats confined in a box containing a lever that delivered food pellets when pulled. Initially, the rats ignored the lever, but at some point they would accidentally pull it and a pellet would appear.<ul id="0b208dcc-56f7-42b8-9d8b-ed09fc26eddc" class="bulleted-list"><li style="list-style-type:circle">As time went on, the rats eventually acquired the lever-pulling response as a means of obtaining food.</li></ul></li></ul><ul id="bdde9cfa-cf1d-425d-9f8d-b277adb1d7ae" class="bulleted-list"><li style="list-style-type:disc">This is called operant learning because the subject learns to operate on the environment to achieve certain consequences.<ul id="daef28b6-a9d1-4f26-858b-1859298d890c" class="bulleted-list"><li style="list-style-type:circle">Operant learning can be used to increase the probability of desired behaviours and to reduce or eliminate the probability of undesirable behaviours.</li></ul></li></ul><h3 id="0bb573c4-89e7-43a9-904f-a5d4c8630d83" class="">Increasing the Probablity of Behaviour</h3><ul id="67917ea1-8874-454d-99e9-7a019578e7c1" class="bulleted-list"><li style="list-style-type:disc">Reinforcement is the process by which stimuli strengthen behaviours.</li></ul><ul id="dc263066-929e-42da-b0ae-86caf7e58bab" class="bulleted-list"><li style="list-style-type:disc">A reinforcer is a stimulus that follows some behaviour and increases or maintains the probability of that behaviour.</li></ul><ul id="a7800f0d-3fd4-41a0-8260-5abd40c0bb45" class="bulleted-list"><li style="list-style-type:disc">Positive reinforcement is the application or addition of a stimulus that increases or maintains the probability of some behaviour.<ul id="057424eb-b38e-40e6-afbf-bd7f37eb9e5c" class="bulleted-list"><li style="list-style-type:circle">Money, food, praise, or other business success.</li></ul></li></ul><ul id="7edac74c-95f6-426d-b4d3-c36704d86034" class="bulleted-list"><li style="list-style-type:disc">Negative reinforcement is the removal of a stimulus that in turn increases or maintains the probability of some behaviour.<ul id="fb9aaad2-ee27-4b7e-830e-a2010f3ef7d2" class="bulleted-list"><li style="list-style-type:circle">Nagging from a supervisor, or a threat of fines.</li></ul></li></ul><h3 id="98cc92b3-73b6-4f79-8f02-c9d4e840db34" class="">Organizational Errors Involving Reinforcement</h3><ul id="6ea8ec69-aacd-45cd-ac48-84fe24bbd9b3" class="bulleted-list"><li style="list-style-type:disc">Confusing rewards with reinforcers<ul id="caf25b47-9d1a-4bdd-a848-23f916f035a9" class="bulleted-list"><li style="list-style-type:circle">Organizations and individual managers frequently ‘reward’ workers with pay, promotions, fringe benefits, paid vacations, overtime work, and the opportunity to perform challenging tasks, such rewards can fail to serve as reinforcers.</li></ul></li></ul><ul id="7380ef58-1dbf-4cc8-ae6c-be5ed2f5676b" class="bulleted-list"><li style="list-style-type:disc">Neglecting diversity in preferences for reinforcers<ul id="36976a76-c77f-4448-b723-a403dc96389a" class="bulleted-list"><li style="list-style-type:circle">Organizations often fail to appreciate individual differences in preference for reinforcers.<ul id="3a47fe1d-33f4-48f5-8723-c97924428b59" class="bulleted-list"><li style="list-style-type:square">It may seem questionable to reinforce a workaholic’s extra effort with time off from work work, yet such a strategy is fairly common. A more appropriate reinforcer might be the assignment of some challenging task, such as work on a very demanding key project.</li></ul></li></ul></li></ul><ul id="760495eb-3a0a-43b4-bd62-a7e35422a184" class="bulleted-list"><li style="list-style-type:disc">Neglecting important sources of reinforcement<ul id="6f1cf71a-4bab-4052-9491-8c3c16330663" class="bulleted-list"><li style="list-style-type:circle">Two important sources of reinforcement that managers often ignore are performance feedback and social recognition.</li></ul><ul id="c09d52e0-4e4c-46a8-a05e-66396f30be58" class="bulleted-list"><li style="list-style-type:circle">Performance feedback provides quantitative and qualitative information on past performance for the purpose of changing or maintaining performance in specific ways.<ul id="8ba481b2-9045-4632-a527-a96a82dc5660" class="bulleted-list"><li style="list-style-type:square">Performance feedback is most effective when its conveyed in a positive manner, delivered immediately after the performance is observed and represented visually, such as in a graph or chart form. As well, when it is specific to the behaviour that is being targeted for feedback.</li></ul></li></ul></li></ul><ul id="6a83d590-3443-4458-89bf-0206bdc5970f" class="bulleted-list"><li style="list-style-type:disc">Social recognition is an informal acknowledgement, attention, praise, approval, or genuine appreciation for work well done from one individual or group to another.<ul id="328c4c8b-0ced-414c-8d74-b27cc3ba2173" class="bulleted-list"><li style="list-style-type:circle">Research has found that when social recognition is made dependent on employee behaviour, it can be an effective means for performance improvement.</li></ul></li></ul><h3 id="dbe3f15c-4bf7-46d9-b3bc-caa0bcc95353" class="">Reinforcement Strategies</h3><ul id="88bc0dd9-9d05-40ec-96cb-587857d19019" class="bulleted-list"><li style="list-style-type:disc">To obtain the fast acquisition of some response, continuous and immediate reinforcement should be used.<ul id="234988f7-5277-4a39-9381-2fbef5d9ec9c" class="bulleted-list"><li style="list-style-type:circle">Reinforcer should be applied every time the behaviour of interest occurs, and it should be applied without delay after every occurrence.</li></ul></li></ul><ul id="689c7789-5b44-4633-9837-cda9eb0c84a8" class="bulleted-list"><li style="list-style-type:disc">Behaviour tends to be persistent when it is learned under conditions of partial and delayed reinforcement.<ul id="4f86e46d-f799-49f1-80b4-74c8fd4b3fa3" class="bulleted-list"><li style="list-style-type:circle">It will tend to persist under reduced or terminated reinforcement when not every instance of the behaviour is reinforced during learning or when some time period elapses between its enactment and reinforcement.</li></ul><figure id="02e66fd9-1238-43f6-905f-a8a939ca080a" class="image"><a href="https://lh3.googleusercontent.com/PDmre2xGiWKsk4Si6-u8yhuOfgISjhW_FhP2c1EzyQr4TOX8-CQEMl0ca3ItZ4lBS3Y7hjGLyTY-Dd5xYN6Ipf1MZuWiFsQGihKDQBc4K3G88RWeZJpoPfLgz214DJ0hY-TAcLcH_PUk6ieGlloIyua9HrmbSU6NwsKnhJNmp9nrhkbbjme07xeeQzZw"><img style="width:688px" src="https://lh3.googleusercontent.com/PDmre2xGiWKsk4Si6-u8yhuOfgISjhW_FhP2c1EzyQr4TOX8-CQEMl0ca3ItZ4lBS3Y7hjGLyTY-Dd5xYN6Ipf1MZuWiFsQGihKDQBc4K3G88RWeZJpoPfLgz214DJ0hY-TAcLcH_PUk6ieGlloIyua9HrmbSU6NwsKnhJNmp9nrhkbbjme07xeeQzZw"/></a></figure><p id="98a30eea-f9eb-4cfd-a221-e560332180ef" class="">
+</p></li></ul><h1 id="4d11e477-3454-4430-bef4-67e11264a920" class="">2.6 Reducing the Probability of Behaviour</h1><h3 id="0a142e51-3ac1-44d2-84d8-ae317c330140" class="">Extinction</h3><ul id="ab47f846-7bb3-4847-9c5a-2a896aa774e3" class="bulleted-list"><li style="list-style-type:disc">The gradual dissipation of behaviour following the termination of reinforcement.<ul id="acc76b66-8a50-43bc-88fb-656539922795" class="bulleted-list"><li style="list-style-type:circle">Or terminating the reinforcement that is maintaining some unwanted behaviour.<ul id="ae98d5dc-d02e-415f-a8b3-1d31e5b5e61f" class="bulleted-list"><li style="list-style-type:square">For instance, a marketer in a company is known to crack jokes during meetings, and this behaviour was reinforced by laughs from other colleagues. To terminate this behaviour, the vice president explains to those colleagues the situation, and slowly they stop laughing at the marketers jokes. This slowly dispels the joking culture in the office.</li></ul></li></ul></li></ul><h3 id="77e8f756-f0a5-4085-8547-9fd9307e5322" class="">Punishment</h3><ul id="52f52dcb-7ab4-4a8f-bbb9-e9aa84243a52" class="bulleted-list"><li style="list-style-type:disc">Involves following an unwanted behaviour with some unpleasant, aversive stimulus. This is designed to decrease the probablity of that behaviour.<ul id="68ebe744-6e41-4cab-a528-ec43a1cc1391" class="bulleted-list"><li style="list-style-type:circle">In negative reinforcement, a nasty stimulus is <em>removed </em>following some behaviour, increasing the probability of that behaviour.</li></ul><ul id="9f880950-bcc6-4766-9eec-ee373a439209" class="bulleted-list"><li style="list-style-type:circle">With punishment, a nasty stimulus is <em>applied </em>after some behaviour, <em>decreasing </em>the probability of that behaviour.<ul id="d29a95a9-9adc-456b-acb4-d5ac6fea55ae" class="bulleted-list"><li style="list-style-type:square">If a boss criticizes an assistant after seeing them use the office phone for personal calls, we expect to see less of this activity in the future.</li></ul></li></ul><figure id="483044a7-5afc-4f6a-885e-a09ba6aec899" class="image"><a href="https://lh6.googleusercontent.com/iClxR6t3mZddA_yMM5dgmcepb7pBDBYYh25LElMCC8wbWsh_MNBxgmbhespBQY4NDPI8JZK67-gCbKuVGdxecKhV8foeL74ItmVkwL3PuTYfO5mgJQft7DKYkdWZGKSv4hhRz0Azk4pDzTYSpKREeD2pJ8N5J3obpxmd1FbhmGkxd7PsmiV87I5_AUJ3MA"><img style="width:713px" src="https://lh6.googleusercontent.com/iClxR6t3mZddA_yMM5dgmcepb7pBDBYYh25LElMCC8wbWsh_MNBxgmbhespBQY4NDPI8JZK67-gCbKuVGdxecKhV8foeL74ItmVkwL3PuTYfO5mgJQft7DKYkdWZGKSv4hhRz0Azk4pDzTYSpKREeD2pJ8N5J3obpxmd1FbhmGkxd7PsmiV87I5_AUJ3MA"/></a></figure></li></ul><h3 id="6ea06080-10da-44c8-84b1-6b1ad6e1fdc2" class="">Using Punishment Effectively</h3><ul id="5745238f-945d-4470-80fa-965a43dda313" class="bulleted-list"><li style="list-style-type:disc">No reinforced substitute behaviour is provided, punishment only temporarily suppresses the unwanted response.</li></ul><ul id="efa8b099-9224-4cd3-b848-ede6049c4748" class="bulleted-list"><li style="list-style-type:disc">Provide an acceptable alternative for the punished response.<ul id="701cfe11-b2af-4c6c-b44e-23c9e15f92d0" class="bulleted-list"><li style="list-style-type:circle">Punishment itself does not demonstrate which activities should replace the punished response.<ul id="505e9a8b-b162-47d3-873e-a98a7ade3683" class="bulleted-list"><li style="list-style-type:square">If a boss criticizes an assistant for misusing a company phone, but doesn’t provide them with other work to do, the assistant might question what they are supposed to do in their spare time.</li></ul></li></ul></li></ul><ul id="f98d8ca8-4f5a-462f-afec-bb6bb623b88a" class="bulleted-list"><li style="list-style-type:disc">Punishment has a tendency to provoke a strong emotional reaction on the part of the punished individual.<ul id="dc9d22de-7237-4893-9acc-beba1a3fd13b" class="bulleted-list"><li style="list-style-type:circle">Especially when it is delivered in anger or perceived to be unfair.</li></ul></li></ul><ul id="3e2cbf69-3b6b-4790-9b46-5d3ab0557799" class="bulleted-list"><li style="list-style-type:disc">There are several other principles that can increase the effectiveness of punishment.<ul id="9018fc2d-5637-4cd5-b173-edd9c94448b5" class="bulleted-list"><li style="list-style-type:circle">Making sure the chosen punishment is truly aversive.<ul id="6cd5baec-228d-4501-818f-5de901d8eccd" class="bulleted-list"><li style="list-style-type:square">Sometimes managers punish ineffective/slacking employees by requiring them to work overtime. The issue in this is that they are still being paid to work those extra hours.<ul id="95f5651e-2e11-4896-aca3-aab8de7b9f3c" class="bulleted-list"><li style="list-style-type:disc">Thus, the presumed punishment may act as a positive reinforcer for the unwanted behaviour.</li></ul></li></ul></li></ul><ul id="b5603a81-b591-4bbf-8c42-67446e2d9202" class="bulleted-list"><li style="list-style-type:circle">Punishing immediately.<ul id="5786378e-e0cf-484d-94de-d4af4768027f" class="bulleted-list"><li style="list-style-type:square">A lot of managers overlook or brush off early instances of unwanted behaviour in hopes that what had happened was accidental or a one time thing.<ul id="3b2b3d87-9b9a-4d3d-abe6-192db465bbd1" class="bulleted-list"><li style="list-style-type:disc">What this does, however, is it paves way for that unwanted behaviour to gain recognition, warranting it to happen again.</li></ul></li></ul></li></ul><ul id="a3046593-1496-4d0d-ba61-57b2f5256a31" class="bulleted-list"><li style="list-style-type:circle">Do not reward unwanted behaviours before or after punishment.<ul id="64e7514d-1ce8-45a3-95b5-65f5464ab8ec" class="bulleted-list"><li style="list-style-type:square">Teachers sometimes join in horseplay with their students until they feel it is time to get some work done.<ul id="a67b1385-b76e-4fd1-85f1-75d66ae6d097" class="bulleted-list"><li style="list-style-type:disc">Then out of nowhere, they’ll wait for the class to settle down. This sends a mixed signal to students as they were bonding with the professor but now they suddenly need to return to work.</li></ul></li></ul></li></ul><ul id="8d73cc76-9cfe-49e8-ad49-2d8da2d9d642" class="bulleted-list"><li style="list-style-type:circle">Do not inadvertently punish desirable behaviour.<ul id="a0f1b2b3-cf35-4b29-bc86-7c7dd93b2613" class="bulleted-list"><li style="list-style-type:square">University professors who are considered excellent teachers might be assigned to a burdensome, time-consuming duty on a curriculum committee, which cuts from their class preparation time.</li></ul></li></ul></li></ul><p id="1379216d-2fa0-4a55-ba57-f84684d02122" class="">
+</p><h1 id="9831a1d5-fbf7-405f-9da7-954e848bf007" class="">2.7 Social Cognitive Theory</h1><ul id="fa5e4162-2abf-4523-8c23-4e9874ffaf62" class="bulleted-list"><li style="list-style-type:disc">SCT emphasizes the role of cognitive processes in learning and in regulation of people’s behaviour.<ul id="a4928b05-b42f-4ad4-93d6-ce301251c3a2" class="bulleted-list"><li style="list-style-type:circle">People learn by observing the behaviour of others.</li></ul></li></ul><ul id="19c2f37e-9bf4-47ca-962e-4178f935e81a" class="bulleted-list"><li style="list-style-type:disc">Individuals manage their own behaviour by thinking about the consequences of their actions, setting performance goals, monitoring their performance, and comparing it to their goals, and rewarding themselves for goal accomplishment.<ul id="3c2474da-ac53-4a96-abb2-49142a87bd2d" class="bulleted-list"><li style="list-style-type:circle">Suggests that human behaviour can be best explained through a system of <em>triadic reciprocal causation</em>, in which personal factors and environmental factors work together and interact to influence people’s behaviour.</li></ul></li></ul><ul id="d28e81fe-1c9d-4224-8cc5-0b2d7723ad9a" class="bulleted-list"><li style="list-style-type:disc">People’s behaviour can also influence personal factors and the environment.</li></ul><h3 id="f4939f4d-871c-43d3-9eb8-319f08362494" class="">Observational Learning</h3><ul id="881d42e3-1a1e-439e-8463-dade25b20f11" class="bulleted-list"><li style="list-style-type:disc">The process of observing or imagining the behaviour of others (modelling after them), rather than through direct personal experience.<ul id="fd6ff098-9437-43e0-beb9-b5d8aab30e23" class="bulleted-list"><li style="list-style-type:circle">Examining the behaviour of others, seeing what consequences they experience, and thinking about what might happen if we act the same way.<ul id="10e70686-6a5c-4a5b-9516-83bd04039461" class="bulleted-list"><li style="list-style-type:square">If one employee decides to use the washroom eight times a day without consequence, someone else might pickup on that behaviour and also use the washroom that many times to excuse themselves from having to work.</li></ul></li></ul></li></ul><ul id="f20358c9-9e04-486a-81d1-d8f9709fe22e" class="bulleted-list"><li style="list-style-type:disc">Self-reinforcement occurs in the observational learning process.<ul id="ce46ea0a-db3d-4bf6-8ac5-3642295cff87" class="bulleted-list"><li style="list-style-type:circle">It is reinforcing to acquire an understanding of others who are viewed positively.<ul id="8ba22e88-9c2b-4724-9f4a-76013cc13bb1" class="bulleted-list"><li style="list-style-type:square">We imagine that the reinforcers that these models experience will come our way when we imitate their behaviour.</li></ul></li></ul></li></ul><ul id="6437ce7f-6ee3-4e6c-a6fc-c78476ae6a66" class="bulleted-list"><li style="list-style-type:disc">For obvious reasons, it is mostly attractive, credible, competent, high-status people that have a good chance of being imitated.<ul id="29fd7b37-64f6-432d-9d97-59ea0e42f6c6" class="bulleted-list"><li style="list-style-type:circle">It is important that the model’s behaviour provoke consequences that are seen as positive and successful by the observer.<ul id="36fa1bb3-4b89-4fe6-a101-6c6062256549" class="bulleted-list"><li style="list-style-type:square">This behaviour also must be vivid and memorable, rather than stagnant and boring as that is not as attractive to imitate.</li></ul></li></ul></li></ul><h3 id="c0f3ac8f-171b-4daf-9e89-65f76669f3d2" class="">Self-Efficacy Beliefs</h3><ul id="0ab8614c-56e9-4f63-8b6f-bcbdfc72c934" class="bulleted-list"><li style="list-style-type:disc">These are beliefs people have about their ability to successfully perform a specific task.<ul id="56ef3f15-f737-437e-8ab9-2f421a8ff7b7" class="bulleted-list"><li style="list-style-type:circle">Self-efficacy is a task-specific cognitive appraisal of one’s ability to perform a specific task.<ul id="325357a1-2dd4-4d0f-8e7a-e980e23640f4" class="bulleted-list"><li style="list-style-type:square">For example, the vice president might have strong self-efficacy for conducting an executive committee meeting, but low self-efficacy for doing well in a course on organizational behaviour.</li></ul></li></ul></li></ul><ul id="bc8f92e8-d797-42a7-9498-b04226933053" class="bulleted-list"><li style="list-style-type:disc">Because self-efficacy is a cognitive belief rather than a stable personality trait, it can be changed and modified in response to different sources of information.<ul id="968cf884-da92-4aa3-b418-a70c3b76b293" class="bulleted-list"><li style="list-style-type:circle">Self-efficacy is important because it influences the activities people choose to perform, the amount of effort and persistence they devote to a task, affective and stress reactions, and job performance.</li></ul></li></ul><figure id="dbb848b3-b5cd-41fc-b73f-d6be457b6134" class="image"><a href="https://lh3.googleusercontent.com/2dhBbiGGnPPFRC_Ks1YEU2bEJ29_9R0P6mXn5qzpce_q1Zj4xgTDT9RVxxS0I_0egAzUUNEYeL1EOOMpsE_zhK9R1yMrIoKA58sj0SxLgCydVJ8Mb2S2iuGMcc4aGcWQZ-Ap7UHuKd4buVHwNvVFr2VzIDLPNobwAtnroePx0j_MQ8lvP58SfBD3cjrpkw"><img style="width:455px" src="https://lh3.googleusercontent.com/2dhBbiGGnPPFRC_Ks1YEU2bEJ29_9R0P6mXn5qzpce_q1Zj4xgTDT9RVxxS0I_0egAzUUNEYeL1EOOMpsE_zhK9R1yMrIoKA58sj0SxLgCydVJ8Mb2S2iuGMcc4aGcWQZ-Ap7UHuKd4buVHwNvVFr2VzIDLPNobwAtnroePx0j_MQ8lvP58SfBD3cjrpkw"/></a></figure><h3 id="440be426-ec03-4ba7-bf5a-05de80775f1e" class="">Self-Regulation</h3><ul id="a8793d73-91b0-40c6-bbba-a60e7ac56294" class="bulleted-list"><li style="list-style-type:disc">The use of learning principles to regulate one’s own behaviour.</li></ul><ul id="679b8c41-fbc5-4a42-b322-0c7c26873944" class="bulleted-list"><li style="list-style-type:disc">The basic process involves:<ul id="1867e9e3-21d5-4f13-8eef-6ecd20f73c85" class="bulleted-list"><li style="list-style-type:circle">Observing one’s own behaviour (self-observation)</li></ul><ul id="5f0f74ed-c8ac-4517-854b-3e297acfba25" class="bulleted-list"><li style="list-style-type:circle">Comparing the behaviour with a standard (self-evaluation)</li></ul><ul id="ba22067f-0ad4-4a8f-97db-7a1fe9f1f51d" class="bulleted-list"><li style="list-style-type:circle">Rewarding oneself if the behaviour meets the standard (self-reinforcement)</li></ul></li></ul><ul id="f61c7799-a3ac-4982-a64d-f84dc1b1c0b3" class="bulleted-list"><li style="list-style-type:disc">Discrepancy reduction is when there exists a discrepancy between one’s goals and performance, individuals are motivated to modify their behaviour in the pursuit of goal attainment.<ul id="fdb8e6e9-adb0-4749-92ad-0698257b5b6a" class="bulleted-list"><li style="list-style-type:circle">When individuals attain their goals, they are likely to set even higher and more challenging goals, a process known as discrepancy production.<ul id="f59109c7-d8da-483c-977d-40b2c7b0df48" class="bulleted-list"><li style="list-style-type:square">This way, people continuously engage in a process of setting goals in the pursuit of even higher levels of performance.</li></ul></li></ul></li></ul><ul id="0c137fbd-849d-42b0-84c7-e6e9a0c6c5fd" class="bulleted-list"><li style="list-style-type:disc">There are a few self-regulation techniques:<ul id="bcb55d2c-0ca7-481a-8144-c409fbaea2a9" class="bulleted-list"><li style="list-style-type:circle">Collect self-observation data.<ul id="0b86e7a5-d837-4583-a598-191a34f7f9b9" class="bulleted-list"><li style="list-style-type:square">Collecting objective data about one’s own behaviour.<ul id="4cd81295-d361-4e42-a0f0-6cc5489dd597" class="bulleted-list"><li style="list-style-type:disc">A manager might stop responding to phone calls for a short period of time if they find it is distracting them or lowering their workplace efficiency.</li></ul></li></ul></li></ul><ul id="3ebfd217-3e14-4cdf-8e95-9e9f3afe9d96" class="bulleted-list"><li style="list-style-type:circle">Observe models.<ul id="11694009-f758-4986-a100-393962bf08f7" class="bulleted-list"><li style="list-style-type:square">An employee might examine the time-management skills of their colleagues to find someone successful to imitate.</li></ul></li></ul><ul id="eae26a8f-ef15-4e26-878f-c174088c18fa" class="bulleted-list"><li style="list-style-type:circle">Set goals.<ul id="ed81e0cc-d4e2-4eeb-9795-188517df8324" class="bulleted-list"><li style="list-style-type:square">The manager might set specific short-term goals to reduce telephone interruptions and unscheduled visits by making use of their secretary. Long term goals might include not working any more than four hours on weekends.</li></ul></li></ul><ul id="f8e84638-71f2-41b1-8573-1c715bd94de3" class="bulleted-list"><li style="list-style-type:circle">Rehearse.<ul id="9d70acf9-6a47-4e85-90cc-1f914219f168" class="bulleted-list"><li style="list-style-type:square">The manager might anticipate that she will have to educate her colleagues about her reduced availability.</li></ul></li></ul><ul id="d65f782c-2077-4144-96fc-79e5665518b8" class="bulleted-list"><li style="list-style-type:circle">Reinforce oneself.<ul id="51ce6d61-93e2-457e-af8d-a4ee5241d687" class="bulleted-list"><li style="list-style-type:square">The manager might promise herself a weekend at the beach with her family the first time she gets her take-home workload down to her target level.</li></ul></li></ul></li></ul><p id="cbb77c97-37ac-4995-b7f1-97c581249b34" class="">
+</p><h1 id="8ea3ca93-41b1-4db4-b26c-bb0697522d1e" class="">2.8 Organizational Learning Practices</h1><h3 id="3249e6ff-5283-4e40-83ad-765faab94b2a" class="">Organizational behaviour modification</h3><ul id="fd6c6a70-1a8d-43f2-9b84-aa3c554ae488" class="bulleted-list"><li style="list-style-type:disc">The systematic use of learning principles to influence organizational behaviour.</li></ul><ul id="4c1e3756-1507-4a4c-b163-ae887be9ed2d" class="bulleted-list"><li style="list-style-type:disc">Improves work attendance and task performance.</li></ul><h3 id="844016d9-b8ad-49c6-b959-2d142439b4f9" class="">Employee recognition programs</h3><ul id="72a364fd-7675-4453-aaf8-80d35b0b420c" class="bulleted-list"><li style="list-style-type:disc">Formal organizational program that publicly recognize and reward employees for specific behaviour.<ul id="449ad89c-0725-44f9-9bb6-ae030c775149" class="bulleted-list"><li style="list-style-type:circle">A formal employee recognition program must specify<ul id="d649b6dd-bbcb-482a-ab47-1b2d192e3389" class="bulleted-list"><li style="list-style-type:square">How a person will be recognized</li></ul><ul id="ef508a1f-c643-40af-810a-a6a3f27b4332" class="bulleted-list"><li style="list-style-type:square">The type of behaviour being encouraged</li></ul><ul id="d241d555-5c4e-41f9-9966-cc48721f3b3d" class="bulleted-list"><li style="list-style-type:square">The manner of the public acknowledgement</li></ul><ul id="837c5962-1904-42ca-8777-deeb2851798e" class="bulleted-list"><li style="list-style-type:square">A token or icon of the event for the recipient</li></ul></li></ul></li></ul><ul id="2dafba9e-20ff-4924-ae36-2848405d087a" class="bulleted-list"><li style="list-style-type:disc">Peer recognition programs are formal programs in which employees can publicly acknowledge, recognize, and reward their co-workers for exceptional work and performance.<ul id="ea8b8cb6-f64c-443f-b1dd-4a92b75c85eb" class="bulleted-list"><li style="list-style-type:circle">For example the length of service, above and beyond performance, retirement, sales performance, etc.</li></ul></li></ul><ul id="7babcefd-ba5a-4936-a2c0-59d05acb6503" class="bulleted-list"><li style="list-style-type:disc">It&#x27;s important to have employee recognition programs as it results in a number of individual and organizational outcomes such as improved job satisfaction, improved performance and productivity, and lower turnover rate.</li></ul><h3 id="2bcd5ee9-9739-46c7-b6ba-a63feba9b5bd" class="">Training and development programs</h3><ul id="986864d4-a065-4ec6-be71-3cec0664b807" class="bulleted-list"><li style="list-style-type:disc">Training is planned organizational activities that are designed to facilitate knowledge and skill acquisition to change behaviour and improve performance on one&#x27;s current job; development focus is on future job responsibilities.<ul id="46830194-e4d5-460c-9e78-01672b221f27" class="bulleted-list"><li style="list-style-type:circle">Employees can learn a variety of technical and non-technical skills such as how to work in teams, how to provide excellent customer service, and ways to understand and appreciate cultural diversity.</li></ul></li></ul><ul id="a69f92b5-6f6a-410b-b860-aaf5e906e55d" class="bulleted-list"><li style="list-style-type:disc">Behaviour modeling training (BMT) is one of the most widely used and effective methods of training, involving five steps based on the observational learning component of social cognitive theory.<ul id="180cc8e4-b646-465e-8ca2-d4c2c03754ce" class="bulleted-list"><li style="list-style-type:circle">Describe to trainees a set of well-defined behaviours (skills) to be learned.</li></ul><ul id="bdba00a2-15bc-49c7-9f33-6d4be96ca7d9" class="bulleted-list"><li style="list-style-type:circle">Provide a model or models displaying the effective use of those behaviours.</li></ul><ul id="26db2021-7f10-45e8-a6b4-71575a15efb0" class="bulleted-list"><li style="list-style-type:circle">Provide opportunities for opportunity to practice using those behaviours.</li></ul><ul id="d65b9fbe-eb31-4964-a5db-0b73eb523a43" class="bulleted-list"><li style="list-style-type:circle">Provide feedback and social reinforcement to trainees following practice.</li></ul><ul id="43e5c527-eae4-47d0-808e-562247fdb5c3" class="bulleted-list"><li style="list-style-type:circle">Take steps to maximize the transfer of those behaviours to the job.</li></ul></li></ul></div></article></body></html>
