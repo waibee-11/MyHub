@@ -1,0 +1,675 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>4: Values, Attitudes, and Work Behaviour</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="26cad35c-f7f3-4b3a-ab0f-cb7776d09c42" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/met_william_morris_1878.jpg" style="object-position:center 0%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">😪</span></div><h1 class="page-title">4: Values, Attitudes, and Work Behaviour</h1></header><div class="page-body"><h1 id="8f3cfb91-e481-41d2-94d9-acfcaeacf6f1" class="">4.1 What are Values?</h1><ul id="2ecb6b92-a678-4a55-8842-c57f308c6b53" class="bulleted-list"><li style="list-style-type:disc">A broad tendency to prefer certain states of affairs over others.</li></ul><ul id="cdeb7fa9-3cdf-4132-86de-e340e5f458df" class="bulleted-list"><li style="list-style-type:disc">There’s a preference aspect; values have to do with what we consider good and bad.<ul id="8fbff9a9-9fa4-46c4-a219-c3560c35da34" class="bulleted-list"><li style="list-style-type:circle">They signal the attractive aspect of our environment that we seek and the unattractive aspects that we try to avoid or change.</li></ul></li></ul><ul id="ddf113f1-35c6-4633-97c3-7a43b8afea52" class="bulleted-list"><li style="list-style-type:disc">They signal how we believe we should and should not behave.<ul id="5eebdf0c-080d-4121-b474-bffc68143713" class="bulleted-list"><li style="list-style-type:circle">People tend to hold values structured around achievement, power, autonomy, conformity, tradition, and social welfare.</li></ul></li></ul><h3 id="1433790f-0f2f-4c68-83ce-26039c2847ac" class="">Generational differences in values</h3><figure id="b4adb2c5-0d9d-41c2-a7d0-7af4c83cd9a3" class="image"><a href="https://lh4.googleusercontent.com/n9lWlY3_kUsC_PL-PAgtSEMw-cX2zrciag_q3blphX1xyjWfki8q862JGxZBE4fTV8HWCx0upCLpDS1rBVdLDyfl4Nq66qr3XA8xlDoul0R4nCh-omsN7WoWs83MG9yMqnzHztbyDR8oqyeEXiB9gpJVpRXIOx7QkYOkXiMFgDXV-dxS6aU9VniYohCbJA"><img style="width:699px" src="https://lh4.googleusercontent.com/n9lWlY3_kUsC_PL-PAgtSEMw-cX2zrciag_q3blphX1xyjWfki8q862JGxZBE4fTV8HWCx0upCLpDS1rBVdLDyfl4Nq66qr3XA8xlDoul0R4nCh-omsN7WoWs83MG9yMqnzHztbyDR8oqyeEXiB9gpJVpRXIOx7QkYOkXiMFgDXV-dxS6aU9VniYohCbJA"/></a></figure><h3 id="a335354a-b0f6-4499-981a-8bb13718262b" class="">Cultural differences in values</h3><ul id="e87db50b-2491-4139-af10-f4fec0c77a60" class="bulleted-list"><li style="list-style-type:disc">Business has become global in its scope.<ul id="d5eaeb19-fb50-41ac-abb5-aff3db57f1d6" class="bulleted-list"><li style="list-style-type:circle">Though it can be difficult to forge business links across cultures.<ul id="48fa8d41-8434-4018-ad44-8a93c24cb584" class="bulleted-list"><li style="list-style-type:square">Korean cars on North American roads, your helpdesk service provider resides in India, and Italian cookware is made in China.</li></ul></li></ul></li></ul><ul id="d1d8853c-8091-4653-a4bc-b64d71a7a8bd" class="bulleted-list"><li style="list-style-type:disc">Work centrality is the extent to which people perceive work as a central life interest.<ul id="9ad451b3-1a0c-4a71-ab3c-0de1b3ed6bd7" class="bulleted-list"><li style="list-style-type:circle">A highly work-centered person has a parcel of identity assigned to work-related experiences.</li></ul></li></ul><h3 id="053a52dd-c44a-47b3-b49b-6c30b1298736" class="">Hofstede’s Study</h3><ul id="527744b1-80f7-450c-969d-eef56e3ffff1" class="bulleted-list"><li style="list-style-type:disc">Hofstede analyzed and discovered four basic dimensions along which work-related values differed across cultures:<ul id="a953c889-c45a-488b-be92-a9e13e9cb892" class="bulleted-list"><li style="list-style-type:circle">Power distance<ul id="c0e7eb75-b0da-4487-ba5e-ec4cbeedbcd6" class="bulleted-list"><li style="list-style-type:square">Refers to the extent to which society members accept an unequal distribution of power, including those who hold more power and those who hold less.<ul id="29a316ca-1f25-4fd4-92f6-0b56408d24d3" class="bulleted-list"><li style="list-style-type:disc">Small power distance cultures benefit from minimized inequality, superiors are accessible, and power differences are downplayed.</li></ul><ul id="1793aae0-5bf4-4030-8a62-98bb45e920e6" class="bulleted-list"><li style="list-style-type:disc">Large power distance cultures; inequalities are accepted as usual, you can’t access superiors, and power differences are apparent.</li></ul></li></ul></li></ul><ul id="56591297-782d-4480-80ea-046cc883070b" class="bulleted-list"><li style="list-style-type:circle">Uncertainty avoidance<ul id="4e7b01c4-c606-4be8-8bd3-ca1385a36900" class="bulleted-list"><li style="list-style-type:square">The extent to which people are uncomfortable with uncertain and ambiguous situations.<ul id="ff3eec98-2a22-49fc-9ee2-9ac8ed2c712e" class="bulleted-list"><li style="list-style-type:disc">Strong uncertainty avoidance cultures stress rules and regulations, hard work, conformity, and security (to avoid meeting these situations).</li></ul><ul id="13627c46-cb69-4962-9a21-03792709f2f1" class="bulleted-list"><li style="list-style-type:disc">Weak uncertainty avoidance cultures are less concerned with rules, regulations, conformity, and hard work is not seen as a virtue.</li></ul></li></ul></li></ul><ul id="039483ca-679c-44f0-990e-99e78d2715cc" class="bulleted-list"><li style="list-style-type:circle">Masculinity/Femininity<ul id="ff9108f5-2d31-473b-8f70-66e8097ff83f" class="bulleted-list"><li style="list-style-type:square">More masculine cultures clearly differentiate gender roles, support the dominance of men, and stress economic performance. More feminine cultures accept fluid gender roles, stress sexual equality, and stress quality of life.<ul id="3c23e3a5-f73b-46e6-b171-50cd12df0497" class="bulleted-list"><li style="list-style-type:disc">Slovakia and Japan are the most masculine societies.</li></ul><ul id="21ea22d3-346d-4fda-8bdc-f1e31921f90e" class="bulleted-list"><li style="list-style-type:disc">Scandinavian countries are the most feminine.</li></ul></li></ul></li></ul><ul id="8582f134-6ec0-4b5b-b9f9-8f9760c3249a" class="bulleted-list"><li style="list-style-type:circle">Individualism/Collectivism<ul id="73998e93-1ed2-4f71-9aea-a8b19260b0af" class="bulleted-list"><li style="list-style-type:square">More individualistic societies tend to stress independence, individual initiative, and privacy. More collective cultures favour interdependence and loyalty to one’s family or clan.<ul id="720a11c0-bec5-4f06-838f-44918b114b3b" class="bulleted-list"><li style="list-style-type:disc">The US, Canada, Australia, and UK are among individualistic societies.</li></ul><ul id="c6dd7479-fdcc-451a-a7c2-1f64d6105ef1" class="bulleted-list"><li style="list-style-type:disc">Venezuela, Columbia, Pakistan are example of more collective.</li></ul></li></ul></li></ul><ul id="632e0d42-e24c-455f-a6e4-75e417457640" class="bulleted-list"><li style="list-style-type:circle">Long-term/Short-term orientation<ul id="c1bd218c-d755-480c-9733-21ba994ab2ca" class="bulleted-list"><li style="list-style-type:square">Cultures with a long-term orientation tend to stress persistence, perseverance, thrift, and close attention to status differences. Cultures with a short-term orientation stress personal steadiness and stability.<ul id="601c7819-687c-400e-b501-de997ce275c1" class="bulleted-list"><li style="list-style-type:disc">China, Hong Kong, Taiwan, Japan are characterizes to by a long-term orientation.</li></ul><ul id="1e3ea16e-a970-4697-8de0-111553580b85" class="bulleted-list"><li style="list-style-type:disc">The US, Canada, UK, are more short-term.</li></ul></li></ul></li></ul></li></ul><h3 id="cd578b0c-70a8-4ac7-a20e-8c3663452dc7" class="">Implications of Cultural Variation (Connect what has just been discussed)</h3><ul id="5b73a006-cd16-4bf7-8a2b-e88dc2341079" class="bulleted-list"><li style="list-style-type:disc">Exporting OB Theories<ul id="369ba6b2-4dc7-4a89-8254-7a74d75ada52" class="bulleted-list"><li style="list-style-type:circle">OB theories, research, and practices from North America might not translate well to other societies.<ul id="b488f5d8-4793-4c37-8b64-aafa53ad14a0" class="bulleted-list"><li style="list-style-type:square">North American managers tend to encourage participation in work decisions by employees, which translates to low power distance. It would be difficult to export these same values to countries where the culture revolves around high power distance.</li></ul></li></ul></li></ul><ul id="57d40a77-2acc-4dc0-ace6-e63ca1954de0" class="bulleted-list"><li style="list-style-type:disc">Importing OB Theories<ul id="12de3c07-87dd-4428-a606-c4e732d42c1a" class="bulleted-list"><li style="list-style-type:circle">Similarly, it would be difficult to implement Japanese management in Canadian companies where a lot of Japanese successes stem from their values and beliefs that intertwine.</li></ul></li></ul><ul id="3188d73c-688f-43b1-8934-523ad26fa7b5" class="bulleted-list"><li style="list-style-type:disc">Appreciating global customers<ul id="750f7a26-9fcd-4c0c-a7d9-06f11ba50871" class="bulleted-list"><li style="list-style-type:circle">The initial French response to the Disneyland Paris theme park was less enthusiastic than Disney management had expected, probably due in part to Disney’s failure to truly appreciate French tastes in food, lifestyle, and entertainment.</li></ul></li></ul><ul id="5f3b08b5-aaa2-4455-991d-214b32fdf9cb" class="bulleted-list"><li style="list-style-type:disc">Developing global employees<ul id="9318167a-2ddd-40d9-b1dc-6751a6049578" class="bulleted-list"><li style="list-style-type:circle">Companies need to select, train, and develop employees to have a much better appreciation of differences in cultural values and the implications of these differences for behaviour in organizations.<ul id="95989931-5ab4-4473-9d8c-f7751f8a8728" class="bulleted-list"><li style="list-style-type:square">The goal is to foster cultural intelligence; the capability to function and manage well in culturally diverse environments.</li></ul></li></ul></li></ul><p id="2f86faf0-efd4-4445-9ddb-70e2ec100ade" class="">
+</p><h1 id="5d97474b-defc-45d3-866d-dc1f367b69d7" class="">4.2 What are Attitudes?</h1><ul id="63188e38-ebf1-470c-a521-e8163b0fa64b" class="bulleted-list"><li style="list-style-type:disc">A fairly stable evaluative tendency to respond consistently to some specific object, situation, person, or category of people.<ul id="0edc697e-24d2-41de-af42-c20d4a127608" class="bulleted-list"><li style="list-style-type:circle">BELIEFS + VALUES = ATTITUDE which influences BEHAVIOUR</li></ul></li></ul><p id="ee0c5daa-1587-4681-9d53-58469fcccdbf" class="">
+</p><h1 id="6a129578-54c7-4419-ac98-0139df1df517" class="">4.3 What is Job Satisfaction?</h1><ul id="0a12d348-9574-41b2-86aa-bc5cc474a5e1" class="bulleted-list"><li style="list-style-type:disc">A collection of attitudes that people have about their job.</li></ul><ul id="13f3bdbd-ad20-4519-8151-7d3894007ebe" class="bulleted-list"><li style="list-style-type:disc">There are two aspects of satisfaction.<ul id="f894ab86-ebbc-4a35-a257-368484ec94b6" class="bulleted-list"><li style="list-style-type:circle">Facet satisfaction is the tendency for an employee to be more or less satisfied with various facets of the job.<ul id="aed42b10-b5d9-492e-a44f-8f71058068db" class="bulleted-list"><li style="list-style-type:square">Small group of facets: the work itself, compensation, career opportunities, recognition, benefits, working conditions, supervision, co-workers, and organizational policy.</li></ul></li></ul><ul id="4a526e4d-6d6f-40c6-8b1f-60a8ad36ccca" class="bulleted-list"><li style="list-style-type:circle">Overall satisfaction is an average or total of the attitude individuals hold toward various facets of the job.</li></ul></li></ul><ul id="77b51ae4-25b2-4a9e-8c0e-7141ba24d78a" class="bulleted-list"><li style="list-style-type:disc">A Job Descriptive Index (JDI) is a questionnaire designed to evaluate five facets of satisfaction: people pay, supervision, promotions, and the work itself.<ul id="09a2d47f-1e00-4d59-9d39-81b6971740e9" class="bulleted-list"><li style="list-style-type:circle">Minnesota Satisfaction Questionnaire (MSQ) is a questionnaire where respondents indicate how happy they are with various aspects of their job on a scale ranging from “very satisfied” to “very dissatisfied”.</li></ul></li></ul><p id="884c188f-c361-4caf-a70f-47178cb047c5" class="">What determines Job satisfaction?</p><h3 id="5570a527-40ff-4de7-b616-0ee4eb8e8c1d" class="">Discrepancy</h3><ul id="23dcdf4f-eb50-4c22-9142-067384dd3030" class="bulleted-list"><li style="list-style-type:disc">Discrepancy theory is a theory that job satisfaction stems from the discrepancy between the job outcomes wanted and the outcomes that are perceived to be obtained.<ul id="df4fa98b-4453-4823-bc6b-74863a395c98" class="bulleted-list"><li style="list-style-type:circle">For example, there is strong evidence that satisfaction with one’s pay is high when the gap between the pay received and the perception of how much pay should be received is small.</li></ul></li></ul><h3 id="0e950cc5-c7ae-4ce5-9080-1122d9fc89b4" class="">Fairness</h3><ul id="12aa175c-2507-4abe-8a32-c602f01fb9b9" class="bulleted-list"><li style="list-style-type:disc">Issues of fairness affect both what people want from their jobs and how they react to the inevitable discrepancies of organizational life.</li></ul><ul id="c1eee60f-b615-4218-8b24-6e0ad028773a" class="bulleted-list"><li style="list-style-type:disc">Distributive fairness is fairness that occurs when people receive the outcome they think they deserve from their jobs.<ul id="c5a110cb-9bba-4f0c-b6c2-48ffc3c05033" class="bulleted-list"><li style="list-style-type:circle">Equity theory is a theory that job satisfaction stems from a comparison of the inputs one invests in a job and the outcome one receives in comparison with the inputs and outcomes of another person or group.<ul id="bc5ac68e-a0ad-4f02-b6fd-19100778d5cb" class="bulleted-list"><li style="list-style-type:square">My outcomes / My inputs = Other’s outcomes / Other’s inputs<ul id="50b6e8a7-1874-4ede-ad61-70eeda6361cf" class="bulleted-list"><li style="list-style-type:disc">Inequity is a dissatisfying state, especially when we are on the short end of the stick.</li></ul></li></ul></li></ul></li></ul><ul id="0ac8caae-dce6-4270-af20-04bdb6034052" class="bulleted-list"><li style="list-style-type:disc">Procedural fairness is fairness that occurs when the process used to determine work outcomes is seen as reasonable.<ul id="3d60a78e-232a-4bf9-bf39-832141fc5efd" class="bulleted-list"><li style="list-style-type:circle">Relevant to pay rates, promotions, layoffs, and work assignments.</li></ul><ul id="04470eef-0b7c-46b8-ab99-8fda5f64410a" class="bulleted-list"><li style="list-style-type:circle">In allocating such outcomes, the following factors contribute to perceptions of procedural fairness:<ul id="07397a1c-6831-4e48-a862-99a3f854a866" class="bulleted-list"><li style="list-style-type:square">Follows consistent procedures over time and across people.</li></ul><ul id="3ca45b57-247a-43d4-8d6a-2f8f3518aa14" class="bulleted-list"><li style="list-style-type:square">Uses accurate information and appears unbiased</li></ul><ul id="de1fbfc8-371c-41d2-a1e6-6d37d2bab2a1" class="bulleted-list"><li style="list-style-type:square">Allows two- way communication during the allocation process</li></ul><ul id="b5c2795a-2245-4706-9cb5-b58663770f6d" class="bulleted-list"><li style="list-style-type:square">Welcomes appeal of the procedure or allocation.<ul id="b2cf8546-c938-4ad8-af06-8113ba16a3e0" class="bulleted-list"><li style="list-style-type:disc">Procedural fairness is especially likely to provoke dissatisfaction when people also see distributive fairness as being low.<ul id="ed753c25-4a7a-4f38-9b6a-bbc2e64ae5f9" class="bulleted-list"><li style="list-style-type:circle">Greg’s boss tells him that she is satisfied with the way he has been performing and that he will be entitled to a raise starting next month. Though Greg is happy about the raise, he is unhappy about the conduct of his boss’ assessment. He would have preferred to be involved in the process, whether through means of an interview, or a performance-evaluation form, or discussion so that Greg could learn more about what he could improve and what went into determining his raise.</li></ul></li></ul></li></ul></li></ul></li></ul><ul id="d001164b-9bea-477c-9584-955a9dca2701" class="bulleted-list"><li style="list-style-type:disc">Interactional fairness is fairness that occurs when people feel they have received respectful and informative communication about an outcome.<ul id="a92733f7-2cfe-4330-b41b-b05e77684847" class="bulleted-list"><li style="list-style-type:circle">Respectful communication is sincere and polite and treats the individual with dignity; informative communication is candid, timely and thorough.<ul id="7b75210b-835e-444b-aa23-e359e142ebff" class="bulleted-list"><li style="list-style-type:square">People who experience procedural unfairness would be more dissatisfied with the system at play, whereas people who experience interactional unfairness would be more upset with the boss rather.</li></ul></li></ul></li></ul><h3 id="92a03d5f-0ee8-4ac9-ae91-c3963ce49576" class="">Disposition</h3><ul id="b648b096-9269-4739-8b52-0c7921cb8fc8" class="bulleted-list"><li style="list-style-type:disc">Some personality characteristics originating in genetics or early learning contribute to adult job satisfaction.<ul id="07a3a422-40b2-434a-bf8f-1da5c2c7899a" class="bulleted-list"><li style="list-style-type:circle">Dispositional view is the idea that some people are predisposed by virtue of their personalities to be more or less satisfied despite changes in discrepancy or fairness.<ul id="27420099-c25f-4fb9-944b-14c580a8f60c" class="bulleted-list"><li style="list-style-type:square">Identical twins raised together from early childhood tend to have similar levels of job satisfaction.</li></ul></li></ul></li></ul><h3 id="122014f4-5258-4ee3-aa4e-7d78fa4c65c6" class="">Mood and Emotion</h3><ul id="a6f54490-187b-490f-9539-2a28c33d809e" class="bulleted-list"><li style="list-style-type:disc">Emotional contagion is a tendency for moods and emotions to spread between people or throughout a group.<ul id="028f5aa0-1566-414c-8b7e-c18012aa8347" class="bulleted-list"><li style="list-style-type:circle">A positive effect of emotional contagion means people or groups being more cooperative, helpful, and successful.</li></ul></li></ul><ul id="2eb4d989-c386-4882-bf47-f64e5db3826a" class="bulleted-list"><li style="list-style-type:disc">Emotional regulation or emotional labour is the requirement for people to conform to certain “display rules” in their job behaviour in spite of their true mood or emotions.<ul id="29985919-4acc-4141-8f85-db9d3bf6c0d6" class="bulleted-list"><li style="list-style-type:circle">For instance, employees are expected to be perky and upbeat whether they feel that way or not, thus exaggerating positive emotions.</li></ul><ul id="48952911-5565-4a94-9778-5efa26b87f9e" class="bulleted-list"><li style="list-style-type:circle">Or when employees are expected to remain calm and civil even if they were just harassed or insulted, thus suppressing negative emotion.</li></ul></li></ul><h3 id="bda44a6c-4df1-445e-b20c-e697a2883369" class="">Some Key Contributors to Job Satisfaction</h3><ul id="33f08933-3a07-46a4-ad71-06d4ced68ad7" class="bulleted-list"><li style="list-style-type:disc">Mentally challenging work<ul id="d1f81091-5594-4916-a276-679856827302" class="bulleted-list"><li style="list-style-type:circle">Work that tests employee&#x27;s skills and abilities and allows them to set their own working pace.<ul id="fa9cd8ef-116b-4217-b17d-36fb7122c95d" class="bulleted-list"><li style="list-style-type:square">They perceive such work as personally involving and providing them with clear feedback about their performance. This is not to be confused with work that is TOO challenging or work that is EASY AND REPETITIVE that requires the employee to exhibit minimal effort.</li></ul></li></ul></li></ul><ul id="6db39af1-5170-4e7b-8679-076d89f46ee7" class="bulleted-list"><li style="list-style-type:disc">Meaningful work<ul id="40cd9977-76e9-4bf4-b40e-c91338e2a1ba" class="bulleted-list"><li style="list-style-type:circle">For a lot of professors, teaching is more than just a job, it is an opportunity to educate students and possibly make a change in their lives. This is contributing to a vast social impact that you’d get in being a professor.</li></ul></li></ul><ul id="2de45f37-752d-4d37-81f6-c43c79934ea0" class="bulleted-list"><li style="list-style-type:disc">Adequate compensation<ul id="898a0371-c643-4ee6-8531-4494e1f39070" class="bulleted-list"><li style="list-style-type:circle">Pay and satisfaction are correlated for obvious reasons.</li></ul></li></ul><ul id="bb9498ac-8ca5-4b67-965e-01696ec21b80" class="bulleted-list"><li style="list-style-type:disc">Career opportunities<ul id="1e07ee42-b5d2-4167-aafe-669b83b708a5" class="bulleted-list"><li style="list-style-type:circle">Opportunity for promotion is an important contributor to job satisfaction. Some workplaces are moving away from title promotions towards promotions that instead grant more challenging work that allows employees to build on their skills.<ul id="2b21f16d-667f-4174-a66b-4315e9f7c92b" class="bulleted-list"><li style="list-style-type:square">Would you trade money for meaningful work?</li></ul></li></ul></li></ul><ul id="d2245214-e6e7-4f85-80b2-cc4cd0049ecc" class="bulleted-list"><li style="list-style-type:disc">People<ul id="fba66957-63de-4e4f-b4e0-067e25c1e858" class="bulleted-list"><li style="list-style-type:circle">Not much to say, people can make or break you. The opinions you hold on people as well as the influence they provide can be drastically different in each workplace setting.</li></ul></li></ul><p id="0352ddb2-9a97-4abf-bbae-0039e36b3cf0" class="">
+</p><h1 id="7d9de2d7-a564-437e-9d30-e972e06a8ad7" class="">4.4 Consequences of Job Satisfaction</h1><h3 id="b26c7374-c6f6-493f-b3eb-25c9a9898733" class="">Absence from work</h3><ul id="7a58a3ce-ad83-470a-a9e5-9d1a6a17a40e" class="bulleted-list"><li style="list-style-type:disc">Absenteeism is an expensive behaviour in North America, costing billions of dollars each year.<ul id="bfd5111f-9e19-47b7-ad26-8cd0fa3e5c82" class="bulleted-list"><li style="list-style-type:circle">Sick pay, lost productivity, and chronic overstaffing compensates for absenteeism.</li></ul></li></ul><ul id="355aa04b-668c-4d7c-a6be-666b1fbe717d" class="bulleted-list"><li style="list-style-type:disc">It’s also unavoidable due to factors such as illness, weather conditions, child care problems, and other moral issues.</li></ul><ul id="251fcce4-95a1-412e-be6d-a40aa9c76832" class="bulleted-list"><li style="list-style-type:disc">Some organizations have attendance control policies that influence absence more than satisfaction does.<ul id="2d12b6fc-842e-4ad3-b232-c0f0823b8f65" class="bulleted-list"><li style="list-style-type:circle">A prominent example of this is, a lot of organizations don’t pay workers for missed days, and even becomes punishable.</li></ul></li></ul><ul id="abe8dd34-322a-4bb8-927b-2dd0577c77ff" class="bulleted-list"><li style="list-style-type:disc">In many jobs, it may be unclear to employees how much absenteeism is reasonable.</li></ul><h3 id="7115700a-8a20-4acf-8bc5-1f8d38aa8adb" class="">Turnover</h3><ul id="ae03b362-c58d-44f7-a62d-b81089a2aa09" class="bulleted-list"><li style="list-style-type:disc">Turnover is simply put; resignation from an organization. This is another expensive behaviour.<ul id="d9ac99fb-0a0e-458d-9793-9984647e08b1" class="bulleted-list"><li style="list-style-type:circle">Turnover is not always caused by dissatisfaction in a job.<ul id="ca42c68f-da6f-44cc-8323-7ba7f5640a4b" class="bulleted-list"><li style="list-style-type:square">It can be caused by shocks such as marital breakup, the birth of a child, or a more intriguing/compensating job offer.</li></ul></li></ul></li></ul><ul id="cfc3e884-c5c4-4427-b5da-a9098045ecbf" class="bulleted-list"><li style="list-style-type:disc">It is also not necessarily a good thing for employees to be embedded in a workplace community (such as them having a lot of friends and acquaintances) if it means they have to be willing to endure a dissatisfying job.</li></ul><h3 id="b339d486-9a1e-4d19-aef1-45916ffabfd3" class="">Performance</h3><ul id="620e686d-ca5e-42f3-90ec-3e1fcb41e545" class="bulleted-list"><li style="list-style-type:disc">Job satisfaction is associated with enhanced performance.</li></ul><ul id="e51b02fd-f0cc-4acc-a159-1d8ca74c47df" class="bulleted-list"><li style="list-style-type:disc">All satisfaction facets are not equal in terms of stimulating performance.<ul id="0840d076-fb81-4e23-b3e3-add2cf66caf8" class="bulleted-list"><li style="list-style-type:circle">The most important facet is the content of the work itself - interesting, challenging jobs are more likely to stimulate high performance.<ul id="f543938f-76d1-4919-bac6-42cf89ba2d6b" class="bulleted-list"><li style="list-style-type:square">Note that, just because job satisfaction is associated with enhanced performance does not necessarily make it true in all cases.<ul id="985deebf-8e7f-418d-8c02-b4d1e00764c8" class="bulleted-list"><li style="list-style-type:disc">Sometimes it could be the other way around where enhanced performance leads to enhanced job satisfaction.</li></ul></li></ul></li></ul></li></ul><h3 id="2ec85b8e-127f-4993-a54b-700c314b9965" class="">Organizational citizenship behaviour (OCB)</h3><ul id="6d2a928b-5a50-4b23-81ca-f7c1c8350329" class="bulleted-list"><li style="list-style-type:disc">Voluntary, informal behaviour that contributes to organizational effectiveness.<ul id="27bb4eb4-7466-4cfa-acbc-76b060eb0211" class="bulleted-list"><li style="list-style-type:circle">Helping behaviour - offering assistance to others.</li></ul><ul id="5bee116f-266b-4b5b-96b2-0450fa4e7f49" class="bulleted-list"><li style="list-style-type:circle">Conscientiousness to the details of work<ul id="44382d4f-759b-4f61-8153-83ad1d8cd133" class="bulleted-list"><li style="list-style-type:square">Coming in to work even during a snowstorm.</li></ul></li></ul><ul id="b82312dc-ab26-43c7-b178-4d116ff31e28" class="bulleted-list"><li style="list-style-type:circle">Being a good sport even when the inevitable frustrations of organizational life pile up.</li></ul><ul id="13e27c22-7ea1-43da-ae5c-0117aeb1eda7" class="bulleted-list"><li style="list-style-type:circle">Courtesy an cooperation<ul id="a56ba58b-9364-40ac-b4cc-392814490872" class="bulleted-list"><li style="list-style-type:square">Warning the department that you are about to initiate a large print job and to not use the printer during this time.</li></ul><figure id="098fded0-987a-4343-acbd-b6746bf60e12" class="image"><a href="https://lh6.googleusercontent.com/s_u3XdGU4nDkhJ2rP7vgxz5iIPOGXCdX4yU8JViYkFLUHFyDHIh6zFPf5ALdoovd7JRECRp1XcE7F1WsNtIfGvWTFEA-P3A2mXp-RhCgq2Srmmec-xwi_ZEXmig7xFYrpM6NwnkI-7eIN_8taxlP-2RYIM_luELgQp552MAnKhvBsMWi1RAtVGDpnSqQvQ"><img style="width:637px" src="https://lh6.googleusercontent.com/s_u3XdGU4nDkhJ2rP7vgxz5iIPOGXCdX4yU8JViYkFLUHFyDHIh6zFPf5ALdoovd7JRECRp1XcE7F1WsNtIfGvWTFEA-P3A2mXp-RhCgq2Srmmec-xwi_ZEXmig7xFYrpM6NwnkI-7eIN_8taxlP-2RYIM_luELgQp552MAnKhvBsMWi1RAtVGDpnSqQvQ"/></a></figure><h3 id="acb387fc-008d-4d6c-9677-b61abc65b436" class="">Counterproductive work behaviour</h3><ul id="3e223d2d-a532-42df-863c-34fca686410c" class="bulleted-list"><li style="list-style-type:square">Intentional verbal or physical behaviour meant to harm one’s organization or individuals such as co-workers and customers.<ul id="db746e54-23c0-422e-a22a-60045de4f08f" class="bulleted-list"><li style="list-style-type:disc">Pretty much exactly as the title explains, this includes theft, abusive language, bullying, undermining others, sabotaging, and overall just showing frustration.</li></ul></li></ul><h3 id="01b77054-277c-4c0d-9a0a-ccbea209c77d" class="">Customer satisfaction and profit</h3><ul id="27847f3d-bc35-462e-8594-4ca3d9857b0a" class="bulleted-list"><li style="list-style-type:square">Employee job satisfaction translates into customer or client satisfaction and organizational profitability.<ul id="e28e51d9-973d-4578-bec0-060bc0cef6a5" class="bulleted-list"><li style="list-style-type:disc">Very visible in service industry jobs such as food service. The way a cashier at an establishment treats you is going to give you a sense of the vibe at the restaurant, and might dictate whether you as a customer will be revisiting.</li></ul></li></ul><ul id="5e036e8c-fc73-4f82-a71e-6e163bf944cb" class="bulleted-list"><li style="list-style-type:square">Reduced absenteeism and turnover contribute to the seamless delivery of service, as do the OCBs that stimulate good teamwork.</li></ul></li></ul></li></ul><p id="1a440406-2b88-4b1d-867e-2c216b7e4701" class="">
+</p><h1 id="089242be-0945-41f9-a7d6-4cbf7c818401" class="">4.5 What is Organizational Commitment?</h1><h3 id="c143bbcb-b71a-4cee-ab13-84031f29ed59" class="">Key Contributors to Organizational Commitment</h3><ul id="349a75e4-b8e4-48d9-9fd7-c63333403001" class="bulleted-list"><li style="list-style-type:disc">An attitude that reflects the strength of the linkage between an employee and an organization. There are three different types of organizational commitment.<ul id="513893bf-95f8-4744-8e1f-529fce04dbdb" class="bulleted-list"><li style="list-style-type:circle">Affective commitment<ul id="9d65aff7-8d99-44a1-9769-4d8c2992e372" class="bulleted-list"><li style="list-style-type:square">Commitment based on a person’s identification and involvement with an organization.<ul id="a4dda45f-0937-4030-9f9e-87864e71e571" class="bulleted-list"><li style="list-style-type:disc">People with high affective commitment stay with an organization because they WANT TO.</li></ul></li></ul></li></ul><ul id="cfe02914-e78c-4cb4-84b0-c4fee43c4ee7" class="bulleted-list"><li style="list-style-type:circle">Continuance commitment<ul id="c61e0bd2-fec8-4189-90bf-874ae9107c74" class="bulleted-list"><li style="list-style-type:square">Commitment based on the costs that would be incurred in leaving an organization.<ul id="86f12c64-3f50-4e43-b74a-b5882fc0c9f8" class="bulleted-list"><li style="list-style-type:disc">People with high continuance commitment stay with an organization because they HAVE TO. (People have a family to feed, the job market is poor, or if you’re still in school).</li></ul></li></ul></li></ul><ul id="34178064-3409-4930-b043-27d7ea722324" class="bulleted-list"><li style="list-style-type:circle">Normative commitment<ul id="571ce633-bcd8-49c9-ac78-c0bccf1d763a" class="bulleted-list"><li style="list-style-type:square">Commitment based on ideology or a feeling of obligation to an organization.<ul id="adcda2d8-48cd-4a93-9dae-be539d06e255" class="bulleted-list"><li style="list-style-type:disc">People with high normative commitment stay with an organization because they think that they SHOULD DO SO. (Not necessarily a good thing, this connects back to staying at a company and doing work that you personally find dissatisfying).</li></ul></li></ul></li></ul></li></ul><h3 id="e87cad84-a5d1-492b-9d2e-6961ad784714" class="">Consequences of Organizational Commitment</h3><ul id="080efcca-e711-4965-a2d2-9742cd4325ee" class="bulleted-list"><li style="list-style-type:disc">Affective commitment is positively related to performance because your attention is focused on goals and thus, it increases motivation.<ul id="2bd2500d-9af4-4776-ac65-07d4d1690fc9" class="bulleted-list"><li style="list-style-type:circle">Continuance commitment is negatively related to performance.<ul id="6884dcfc-5d3e-424e-8173-f6af8ac2a1d1" class="bulleted-list"><li style="list-style-type:square">A combination of low affective commitment and high continuance commitment is especially bad - this means that an employee is locked into an organization that they detest.<ul id="a49b906c-ec9d-4b5f-b9a4-db3e459ed28a" class="bulleted-list"><li style="list-style-type:disc">This usually happens during recessions where the job market is stale.</li></ul></li></ul></li></ul></li></ul><ul id="572d45f9-a227-43a5-a921-1003f5dc2d32" class="bulleted-list"><li style="list-style-type:disc">High levels of commitment can cause conflicts between family and work life, and have often been implicated in unethical and illegal behaviour.</li></ul><ul id="235416a1-a828-4a3c-a59f-c5913c0b194c" class="bulleted-list"><li style="list-style-type:disc">High levels of commitment to a particular form or style of organization can cause a lack of innovation and lead to a resistance when a change in the culture is necessary.<ul id="4bcded21-72a3-4901-bb6e-cb8058ce52f0" class="bulleted-list"><li style="list-style-type:circle">Coding based jobs, marketing, law firms, or electronics companies come to mind.</li></ul></li></ul><h3 id="104e9d99-a380-491c-a3ec-4b2af898457d" class="">Changes in the Workplace and Employee Commitment</h3><ul id="977c3d2f-21e9-40c9-83b6-80c7034c3097" class="bulleted-list"><li style="list-style-type:disc">Changes in the nature of employees’ commitment to the organization.<ul id="a08eed4b-f2f6-46f4-a5af-6b44730236a2" class="bulleted-list"><li style="list-style-type:circle">Depending on the nature of workplace changes and how they are managed, employees’ levels of affective, continuance, and normative commitment can increase and decrease.<ul id="397d8e71-f99d-4b60-adf9-55155878413a" class="bulleted-list"><li style="list-style-type:square">Thus the commitment profits of employees following a change will be different from what they were prior to the change, and maintaining high levels of affective commitment particularly will be challenging.</li></ul></li></ul></li></ul><ul id="610fc212-4a11-417d-85ed-98783d82b504" class="bulleted-list"><li style="list-style-type:disc">Changes in the focus of employees’ commitment.<ul id="f8ba9cd1-e5e7-4fe0-831d-19eb60cf563d" class="bulleted-list"><li style="list-style-type:circle">Employees generally have multiple commitments.<ul id="26596213-ecc0-4d3d-ae0a-d0a77b118c01" class="bulleted-list"><li style="list-style-type:square">Employees commitment can be directed to others within the organization, such as subunits or divisions, teams, as well as entities outside the organization, such as one’s occupation, career, or union.<ul id="71e27e91-d3c5-4b25-b70f-7355969b037d" class="bulleted-list"><li style="list-style-type:disc">Changes in the workplace might alter the focus of employees’ commitment both within and outside of the organization.</li></ul></li></ul></li></ul></li></ul><ul id="3cf68699-4d8d-4fcb-8cac-7692c3d21405" class="bulleted-list"><li style="list-style-type:disc">The multiplicity of employer-employee relationships within organizations.<ul id="61056d10-2c33-4dd1-91aa-3c2b4e8d7798" class="bulleted-list"><li style="list-style-type:circle">As organizations attempt to cope and adapt to rapid change, they need to be flexible enough to shrink or expand their workforce. At the same time, they need a workforce that is flexible enough to get any job done.<ul id="106c09f4-9d7a-41f3-bf5f-a2a9690c96b6" class="bulleted-list"><li style="list-style-type:square">This creates a potential conflict as employees who do not have guaranteed job security may be unwilling to be as flexible as the organization would like or to have a strong affective commitment toward the organization.<ul id="bfecfb23-5d2c-44bf-80ef-cc91645c01db" class="bulleted-list"><li style="list-style-type:disc">Employee groups based on contractual arrangements or individuals hired on temporary basis who do not perform core tasks, their commitment is not as important to the organization.</li></ul></li></ul></li></ul></li></ul><p id="76222da0-cb60-4628-820f-268b158225fe" class="">
+</p><p id="60d274f1-73cd-4685-8849-998fa3731bff" class="">
+</p></div></article></body></html>
