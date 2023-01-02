@@ -1,0 +1,697 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>11: Decision Making</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="734794d3-9503-464b-b878-897db3425303" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/woodcuts_sekka_1.jpg" style="object-position:center 9.999999999999998%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🚒</span></div><h1 class="page-title">11: Decision Making</h1></header><div class="page-body"><h2 id="bf07c5ea-9ec4-4c7f-bd75-7055dfca7768" class="">11.1 What is Decision Making?</h2><p id="b964a1ef-33fe-4cfe-876e-c10c6cddad58" class="">Decision making is the process of developing a commitment to some course of action</p><p id="6e87b1df-7ac2-41a9-a818-3f74342be61f" class="">
+</p><p id="b46ce2cd-8fbe-4048-ab1f-3bff1b782978" class="">There are three noteworthy things about decision-making</p><ul id="672c5938-b3ee-4720-88e3-edd814580aff" class="bulleted-list"><li style="list-style-type:disc">It involves making a choice among several action alternatives</li></ul><ul id="54ae4599-dea5-4c13-acd3-38736926130b" class="bulleted-list"><li style="list-style-type:disc">It&#x27;s a process</li></ul><ul id="ed4cf54e-168b-49ab-acb9-ee37c2cdaea4" class="bulleted-list"><li style="list-style-type:disc">Involves a commitment of resources</li></ul><p id="db16439a-e23f-44df-a50d-8f005207f2f0" class="">
+</p><p id="1df59a74-88d0-4394-84b2-9b4fa09262b3" class="">Decision-making can also be described as a process of problem solving</p><h3 id="5d8154ec-a318-4414-ace8-c957949c0495" class="">Well-Structured Problems</h3><p id="9e9bc498-dc94-4c25-a2e2-bfa2b20ea73f" class="">A problem for which the existing state is clear, the desired state is clear, and how to get from one state to the other is fairly obvious.</p><ul id="6db9b253-2847-4d74-98f5-3e98a5e655e2" class="bulleted-list"><li style="list-style-type:disc">These problems are simple and their solutions have little controversy</li></ul><p id="faf07785-bcc1-462e-9e1c-fe62235818e6" class="">
+</p><p id="b856b4d3-daf4-4cc9-bbc8-a23d5e5dd66b" class="">A problem is simply a standardized way of solving a problem</p><ul id="7328a11b-8303-49be-913d-5caff6038b59" class="bulleted-list"><li style="list-style-type:disc">Programs short-circuit the decision-making process by enabling the decision maker to go directly from problem identification to solution<ul id="da891860-262c-4c2d-8ef2-4fa246ecbc88" class="bulleted-list"><li style="list-style-type:circle">Programs usually go under labels such as rules, routines, standard operating procedures, or rules of thumb</li></ul></li></ul><ul id="09fc93a1-373e-49ee-abf1-6881d2af6067" class="bulleted-list"><li style="list-style-type:disc">Programs are only as good as the decision-making process that led to the adoption of the program in the first place</li></ul><h3 id="4ec2dc22-eb43-47b9-b098-51d5d96189d9" class="">Ill-Structured Problems (possibly covid-19)</h3><p id="2106c86b-1861-483a-bfe4-a80ec5d6b21c" class="">A problem for which the existing and desired states are unclear and the method of getting to the desired state is unknown</p><ul id="727c68f1-682d-4be2-a7a0-7afb3bfa619f" class="bulleted-list"><li style="list-style-type:disc">They tend to be unique and unusual problems that have not been encountered before, they tend to be complex, and involve a high degree of uncertainty</li></ul><ul id="6aca9c4d-bb77-4433-aaf0-4c96c10dcc20" class="bulleted-list"><li style="list-style-type:disc">They cannot be solved with programmed decisions, and you must resort to non programmed decision making</li></ul><ul id="54a93986-88d5-48a8-9528-7a3f8b1b9862" class="bulleted-list"><li style="list-style-type:disc">A rational decision maker might use a model that involves a sequence of steps that are followed when making a decision </li></ul><p id="15c64edb-565c-48e6-ae1f-b20c94417baf" class="">
+</p><h2 id="632d4e85-2c0e-4ff2-ab45-2aac472061b0" class="">11.2 The Compleat Decision Maker - A Rational Decision-Making Model</h2><h3 id="6df42836-b740-4a1b-a4fc-7952490e3042" class="">Perfect Versus Bounded Rationality</h3><p id="592c00ed-fc54-4cc2-9ebb-1e4c9057ab30" class="">There are two forms of rationality, perfect and bounded</p><ol type="1" id="68deff79-b998-4b61-a3ec-d2b2819e0497" class="numbered-list" start="1"><li>Perfect rationality <ol type="a" id="6dcb2ee1-7337-4b0d-889c-6c59d0ba14ac" class="numbered-list" start="1"><li>A decision strategy that is completely informed, perfectly logical, and oriented toward economic gain</li></ol><ol type="a" id="34d7e6c4-4d37-431f-9e8f-a7d2870aaf20" class="numbered-list" start="2"><li>The prototype for perfect rationality is the economic person who is the perfect, cool, calculating decision maker<ol type="i" id="e6c558d8-b95d-4ed8-b3fd-9cd64036ffb4" class="numbered-list" start="1"><li>Can gather information about problems and solutions without cost and is thus informed</li></ol><ol type="i" id="c1970a29-16af-480f-951f-fff910015ab9" class="numbered-list" start="2"><li>Is perfectly logical: if solution A is preferred over solution B, and B is preferred over C, then A is necessarily preferable to C</li></ol><ol type="i" id="6ea4e2ec-5c76-42c7-a0a5-a223563a8688" class="numbered-list" start="3"><li>Has only one criterion for decision making, economic gain</li></ol></li></ol></li></ol><ol type="1" id="72af262d-ce6f-4d6e-9e69-735d0a189c50" class="numbered-list" start="2"><li>Bounded rationality <ol type="a" id="ef63f26f-39ac-45bf-8490-4dd856eafdef" class="numbered-list" start="1"><li>A decision strategy that relies on limited information and that reflects time constraints and political considerations</li></ol><ol type="a" id="e847fffa-3c03-4105-b13c-3db7c17a5cfd" class="numbered-list" start="2"><li>Framing and cognitive biases both illustrate and operation of bounded rationality as does the impact of emotions and mood on decisions<ol type="i" id="e046bf3b-9fbc-4c34-936a-25d21a99c112" class="numbered-list" start="1"><li>Framing<ol type="1" id="45d15081-83b5-4250-bc17-ff3bc35ac145" class="numbered-list" start="1"><li>Aspects of the presentation of information about a problem that are assumed by decision makers</li></ol><ol type="1" id="31b05c21-8d40-45bd-aeed-28136a5e9c49" class="numbered-list" start="2"><li>How problems and decision alternatives are framed can have impact on resulting decisions</li></ol></li></ol><ol type="i" id="dd49f74f-455e-4bf6-bfe5-ccaf5ff90651" class="numbered-list" start="2"><li>Cognitive Biases<ol type="1" id="eea7279b-a570-4771-8eb8-e1324eed7499" class="numbered-list" start="1"><li>Tendencies to acquire and process information in an error-prone way</li></ol><ol type="1" id="1719297f-26c4-4c96-9069-3398709c3e4b" class="numbered-list" start="2"><li>Constitute assumption and shortcuts that can improve decision-making efficiency, but they frequently lead to serious errors in judgement</li></ol></li></ol></li></ol></li></ol><h2 id="75566f57-869b-4969-8fab-b330a058b6fd" class="">11.3 Problem Identification and Framing</h2><p id="7a47ebac-4b29-4092-a2bd-6786827c9658" class="">The perfectly rational decision maker, infinitely sensitive and completely informed, should be a great problem identifier</p><p id="82431c14-0755-4e1d-bb41-a09ceaaf43bb" class="">
+</p><p id="ff37066a-4090-4be3-a948-e3b3d8f1dac9" class="">Bounded rationality, however, can lead to the following difficulties in problem identification</p><ol type="1" id="bd333083-0cca-4110-865a-5bfbd8943aec" class="numbered-list" start="1"><li>Perceptual Defense<ol type="a" id="5fe13020-f824-4903-89cc-2a2d2491096d" class="numbered-list" start="1"><li>The perceptual system can act to defend the perceiver against unpleasant perceptions</li></ol></li></ol><ol type="1" id="94fe164d-ac8e-431e-875c-1e6679d790dc" class="numbered-list" start="2"><li>Problem Defined in Terms of Functional Specialty<ol type="a" id="e3eccc37-4f8f-4a46-8cd3-ecd3a3e95bf9" class="numbered-list" start="1"><li>Selective perception can cause decision makers to view a problem as being in the domain of their own specialty even when some other perspective might be warranted<ol type="i" id="9875e249-28a2-43bf-98e7-5e6b2e0f2da2" class="numbered-list" start="1"><li>Employees with a marketing background might fixate on a marketing solution to poor sales even though the problem resides in bad design</li></ol></li></ol></li></ol><ol type="1" id="a92a3f3c-c50a-47e2-ac49-94f01e9fa9b7" class="numbered-list" start="3"><li>Problem Defined in Terms of Solution<ol type="a" id="243618fa-3a6c-48cd-a1ca-2bf42cfa5eba" class="numbered-list" start="1"><li>This form of jumping to conclusions short-circuits the rational decision-making process<ol type="i" id="c23972ef-4a3a-4dbb-8ba8-3a802dac5b73" class="numbered-list" start="1"><li>Assuming their menus need a new look, restauranteurs frequently replace beloved dishes with culinary experiments, only irritating their loyal customers</li></ol></li></ol></li></ol><ol type="1" id="bbff914a-81e3-4316-98d2-132151013159" class="numbered-list" start="4"><li>Problem Diagnosed in Terms of Symptoms<ol type="a" id="5c430ff6-9bc2-44a4-a1b9-f5abec019ef3" class="numbered-list" start="1"><li>What we have here is a morale problem<ol type="i" id="5bef7de7-a65c-4bd1-a38e-96ad6a5e19f4" class="numbered-list" start="1"><li>Low morale due to poor pay suggests different solutions than does low morale due to boring work</li></ol></li></ol></li></ol><h3 id="ce1f420e-2a30-4c92-99a3-cfddb69afdbd" class="">Information Search</h3><p id="84fb92c3-6709-4e2d-be43-f95c2eb7d2be" class="">Once a problem is identified, a search for information is instigated</p><ol type="1" id="b408c571-1835-49d4-aee2-0a1b1aaf27f0" class="numbered-list" start="1"><li>Too little information <ol type="a" id="cd6a6f46-1900-4377-90fa-a8a9039ed7f0" class="numbered-list" start="1"><li>Decision makers do not have enough information to make good decisions</li></ol><ol type="a" id="e5c76320-e4eb-48ea-8371-eacb4288446f" class="numbered-list" start="2"><li>Confirmation bias<ol type="i" id="112b7eed-90bf-46d6-99d5-9ed7d656f46d" class="numbered-list" start="1"><li>The tendency to seek out information the conforms to one’s own definition of or solution to a problem</li></ol></li></ol><ol type="a" id="2bf24754-c187-492c-9163-31e365af23df" class="numbered-list" start="3"><li>Not invented here bias<ol type="i" id="d0d83d16-f35d-43c6-b476-adbe510d2d05" class="numbered-list" start="1"><li>The tendency to ignore or harbor negative attitudes towards ides from outside one’s own organization or project team<ol type="1" id="da84761f-6e94-40f5-b228-75b5b2f8b53a" class="numbered-list" start="1"><li>This bias has been implicated in costly and inefficient duplication of organizational efforts, such as failure to reuse existing software developed by outside sources<ol type="a" id="60bb8b44-e9a2-4773-8a72-a2472880ef2b" class="numbered-list" start="1"><li>Nokia continued to develop its own cellphone software in spite of the existence of good open-source option</li></ol></li></ol></li></ol></li></ol></li></ol><ol type="1" id="1d4184ab-9483-401c-a38f-73ea787badd8" class="numbered-list" start="2"><li>Too much information<ol type="a" id="b9b90294-41e2-498a-a6cf-137fea1d2141" class="numbered-list" start="1"><li>Too much information can damage quality of decisions</li></ol><ol type="a" id="00b8dee2-2364-4d06-b705-5718f501ecf8" class="numbered-list" start="2"><li>Information overload<ol type="i" id="f867f235-5283-4101-bf3d-e384439fa026" class="numbered-list" start="1"><li>The reception of more information than is necessary to make effective decisions<ol type="1" id="f4c00a71-2d3c-4bb5-88c8-3a74024a8376" class="numbered-list" start="1"><li>Can lead to errors, omissions, delays and cutting corners</li></ol></li></ol></li></ol><ol type="a" id="9afee90b-5317-4370-8c0b-be58ef3e2f88" class="numbered-list" start="3"><li>Why we think more information is better<ol type="i" id="c6a55faf-4f0d-4364-8802-bc75bf7aa36c" class="numbered-list" start="1"><li>If decisions do not improve with additional information, confidence in the decisions will increase</li></ol><ol type="i" id="3b56c224-8144-4f5f-9fe6-3322e56f23f3" class="numbered-list" start="2"><li>Decision makers may fear being ‘kept in the dark’ and associate the possession of information with power</li></ol></li></ol><ol type="a" id="b19c4ad7-477d-4157-9f66-55d98b227a25" class="numbered-list" start="4"><li>Star employees are prone to overload due to their many social connections</li></ol></li></ol><h3 id="ea4f8ba5-5e06-4033-bbfa-54e8686026d8" class="">Alternative Development, Evaluation, and Choice</h3><p id="907c1ae5-061e-4ece-941b-5a14d18187bf" class="">Maximization is the choice of the decision alternative with the greatest expected value</p><p id="bc8407ea-b26e-4525-ae4f-630cc85bbcc5" class="">
+</p><p id="00af6c14-e928-4558-8f67-0dc1ec11c427" class="">People are especially weak intuitive statisticians, and they frequently violate standard principles</p><ol type="1" id="296374e8-fc2c-4a61-8e85-85c1cf53545d" class="numbered-list" start="1"><li>People avoid incorporating existing data about the likelihood of events into their decisions<ol type="a" id="0aeb0d3c-783c-4361-8ad3-feabeb68ccf9" class="numbered-list" start="1"><li>For instance, firms continue to launch novelty food products even though they have a very high failure rate in the market (ex: foods squeezes from tubes or foods developed by celebrities)</li></ol></li></ol><ol type="1" id="7c34039d-3314-4b0b-a762-d8ee0e35153a" class="numbered-list" start="2"><li>Large samples warrant more confidence than small samples<ol type="a" id="9f71dd79-28f7-48fd-90aa-5f9b6113c43f" class="numbered-list" start="1"><li>Despite this, data from a couple of (vivid) focus groups might be given more weight than data from a large (but anonymous) national survey</li></ol></li></ol><ol type="1" id="d97bb2d3-6fb5-431f-885c-a18df66f0c83" class="numbered-list" start="3"><li>Decision makers often overestimate the odds of complex chains of events occurring<ol type="a" id="9b59648e-8f24-452d-be17-a044170beabd" class="numbered-list" start="1"><li>During the 2008-2009 Great Recession, it was unrealistically assumed that the economy would remain healthy and real estate prices would continue to rise and people would find a way to pay their escalating mortgages</li></ol></li></ol><ol type="1" id="41d18cb6-13a4-41bf-b31f-658d8b5894b3" class="numbered-list" start="4"><li>People are poor at revising estimates of probabilities and values as they acquire additional information<ol type="a" id="8b487b27-1384-4161-8f73-8d19a79e6449" class="numbered-list" start="1"><li>A good example is the anchoring effect which illustrates that decision makers do not adjust their estimates enough from some initial estimate that serves as an anchor<ol type="i" id="5c45981d-3a7e-4c20-bf5b-d29d48750a73" class="numbered-list" start="1"><li>Real estate agents often allow the asking price of a house to unduly influence their professional evaluation of the house</li></ol></li></ol></li></ol><p id="b79dac19-0c35-4c8d-98ed-d649bf2c66c0" class="">
+</p><p id="bf1750da-6519-4755-a5cb-de1a4d729b10" class="">Satisficing is establishing an adequate level of acceptability for a solution to a problem and then screening solutions until one that exceeds this level is found</p><ul id="92dff36c-f038-4b9b-b648-e4244394fc9e" class="bulleted-list"><li style="list-style-type:disc">The HR manager who feels that absenteeism has become too high might choose a a somewhat arbitrary acceptable level and then accept the first solution that seems likely to achieve this level<ul id="a2595533-0cd4-4bc2-8b8f-8291ac1bef67" class="bulleted-list"><li style="list-style-type:circle">Few organizations seek to maximize attendance, they just try to find solutions that bring it up to an acceptable level</li></ul></li></ul><h3 id="1314c01a-05c3-4f82-a2cf-b0b7c84dd0e3" class="">Risky Business</h3><p id="08ffb5bc-225f-48f1-a7f0-9ec89430362f" class="">Choosing between decision alternatives often involves an element of risk, and the research evidence on how people handle such risks is fascinating</p><ul id="7195cd64-5814-4f5f-a659-2ee6f6199932" class="bulleted-list"><li style="list-style-type:disc">When people frame the alternatives as a choice between gains, they tend to make conservative decisions, protecting the sure win. <ul id="c92c5d94-3c83-4928-a408-9aa6761fd2ea" class="bulleted-list"><li style="list-style-type:circle">It is very important to be aware of what reference point you are using when you frame decision alternatives. It is not necessarily wrong to frame a problem as a choice between losses, but this can contribute to a foolish level of risk taking</li></ul></li></ul><h3 id="c8c6a08a-0b19-4520-bb3d-12ca84531469" class="">Solution Implementation</h3><p id="1d5e9b2b-0336-4a1e-8446-3522e0e7a860" class="">A perfectly rational decision maker would have factored any possible implementation problems into his or her choice of solution, however, in organizations, decision makers are often dependent on others to implement their decisions which leads to implementation issues</p><h2 id="33cb10db-d0a1-4b9e-b2a7-2bfdc7f83dcd" class="">11.4 Solution Evaluation</h2><p id="1fbb1d8e-2365-4d5d-844e-dc2b3e07b1e2" class="">The perfectly rational decision maker should be able to evaluate the effectiveness of a decision with calm, objective detachment; however, the bounded decision maker might encounter problems at this stage of the process </p><p id="a41ffe13-1b85-4910-bfdc-732baf7a1e21" class="">
+</p><p id="abb29c0f-d640-43f2-9192-8c0d3453bf93" class=""><strong>Justification</strong></p><ul id="f466f186-b5bc-4625-8ca9-151f4be1af9b" class="bulleted-list"><li style="list-style-type:disc">People tend to be overconfident about the adequacy of their decisions</li></ul><ul id="816928d5-f62c-4e9d-a46b-f93b0e056d21" class="bulleted-list"><li style="list-style-type:disc">The justification of faulty decisions is best seen in the irrational treatment of sunk costs<ul id="00898374-6f7a-4b5b-a800-75bb07a505d0" class="bulleted-list"><li style="list-style-type:circle">Sunk costs are permanent losses of resources incurred as the result of a decision<ul id="82a171ee-2abf-4ba2-a014-78f4103a3edf" class="bulleted-list"><li style="list-style-type:square">Since these resources have been lost, they should not be factored into future decisions</li></ul></li></ul></li></ul><ul id="e7491094-47ed-4561-af51-bd08cf05d7d0" class="bulleted-list"><li style="list-style-type:disc">Escalation of commitment<ul id="1bbb1511-f8d7-43c5-beca-d7ea60837190" class="bulleted-list"><li style="list-style-type:circle">The tendency to invest additional resources in an apparently failing course of action</li></ul></li></ul><p id="f3f49455-b677-4d4b-aac0-1fcaabf81f24" class="">
+</p><p id="e06247d9-128e-40e9-96e1-441377fbc99b" class=""><strong>Ways to prevent escalation of commitment</strong></p><ol type="1" id="4dc8d9b7-f8ca-452b-8f51-906b505ec5c3" class="numbered-list" start="1"><li>Be alert for excessive optimism or extremely positive media attention early in a project cycle</li></ol><ol type="1" id="37f41001-dc30-40a2-977d-33e985167ae8" class="numbered-list" start="2"><li>Shift the frame to saving rather than spending; looking at the issue in terms of the
+savings involved with reversing the decision rather than looking at it In terms of
+the amount that they already put into the project</li></ol><ol type="1" id="0ffa986e-773d-4558-91f6-9ff93358a537" class="numbered-list" start="3"><li>Set specific goals for the project in advance that must be met if more resources
+are to be invested</li></ol><ol type="1" id="a8db2800-f0fc-4adc-bd81-52784c8df93f" class="numbered-list" start="4"><li>Place more emphasis when evaluating managers on how they made decisions and less on decision outcomes; this will prevent managers from trying to hide their failure and trying to fix it by using more resources</li></ol><ol type="1" id="69bc6643-7208-4bad-a26a-c3c42a15883d" class="numbered-list" start="5"><li>Separate initial and subsequent decision making so that individuals who make the initial decision to embark on a course of action are assisted or replaced by others who decide if a course of action should be continued</li></ol><p id="be32ae3c-bc29-4ff4-bbb7-0c4ea9c627e3" class="">
+</p><p id="bab345f8-9658-4fd2-9cc6-1f31f0494aba" class=""><strong>Hindsight</strong></p><p id="107feb18-8024-4a44-8e85-d21d84ea90d2" class="">The tendency to review the decision making process to find what was done right or wrong</p><ul id="f1f9395f-5c4c-41fc-a891-c7af844df54d" class="bulleted-list"><li style="list-style-type:disc">Knew it all along effect<ul id="3af549c5-66f1-4681-ba3c-c25c7fa0b74b" class="bulleted-list"><li style="list-style-type:circle">Tendency to assume that we knew all along what the outcome of a decision would be<ul id="ee44fe4e-a3d7-4713-ba26-e5907878f62f" class="bulleted-list"><li style="list-style-type:square">This is dangerous as someone who makes risky decisions which have good
+outcomes might revise their memory to assume the decision was a sure thing</li></ul></li></ul></li></ul><p id="76635b4c-d4bc-4fec-aea2-2e62575d3ebc" class="">
+</p><h2 id="8e743f17-019d-4ca9-b388-7231e59192bc" class="">11.5 How Emotions and Mood Affect Decision Making</h2><h3 id="1a29f34c-675a-4470-86df-803f7aa84600" class="">Rational Decision Making - A Summary</h3><ul id="7dfce002-b380-4f59-89f6-960b04ff61ad" class="bulleted-list"><li style="list-style-type:disc">People don’t like to be wrong and become emotionally attached to failing courses of
+action</li></ul><ul id="ded414df-781b-488e-a028-0e18dd8cf47e" class="bulleted-list"><li style="list-style-type:disc">Strong emotions figure in the decision making process that corrects ethical errors<ul id="db856081-a51a-423e-b85a-57633abe2bae" class="bulleted-list"><li style="list-style-type:circle">Such intuition can lead to the successful short-circuiting of the steps in the rational model when speed is of the essence</li></ul></li></ul><ul id="65d1b568-4f69-4c73-8a3d-45ec1c40acaf" class="bulleted-list"><li style="list-style-type:disc">Mood has a large effect on decisions</li></ul><h2 id="7aac4c58-f1f3-4172-9578-e35cd6c05b3a" class="">11.6 Group Decision Making</h2><p id="fecac78e-f4e1-4c62-8dfc-af8aab818f84" class="">Comes into play when problems are ill-structured</p><h3 id="216646d9-69d1-4014-89e7-b882bc9c52d4" class="">Why Use Groups?</h3><p id="beeb91e0-6fa0-4b77-a6b6-e7a8acb61f36" class="">This is based on the following assumptions:</p><ol type="1" id="228549e8-d6d2-4440-aefc-3b1da1a27663" class="numbered-list" start="1"><li>Groups are more vigilant than individuals are. More people scanning the environment.</li></ol><ol type="1" id="09f03ddf-39b1-4adb-98a9-c6af4988322c" class="numbered-list" start="2"><li>Groups can generate more ideas than individuals can<ol type="a" id="5c0794fd-9603-4008-929d-716b9099a4cb" class="numbered-list" start="1"><li>Groups can evaluate ideas better than individuals can as there is check and balance system</li></ol></li></ol><ol type="1" id="c077b388-7904-4207-ba3b-908eba8e2f7b" class="numbered-list" start="3"><li>Groups or teams can make better quality decisions than individuals</li></ol><p id="8a3be0d3-00ef-4d3a-99d2-947608b229eb" class="">
+</p><p id="4c99309b-a0df-46b7-acc7-5fa00c39b41c" class=""><strong>Decision acceptance and commitment</strong></p><p id="cb3f15fb-35fa-4e99-8f6e-a12f93845318" class="">Groups are often used to make decisions on the premise that a decision made in this way will be more acceptable to those involved. Based on following assumptions</p><ul id="060ad6bd-baf7-4af8-b4fb-d6c3f2dd7d43" class="bulleted-list"><li style="list-style-type:disc">People wish to be involved in decisions that affect them</li></ul><ul id="9ec360d5-7afd-471a-8d0a-e2b93e5dd5d5" class="bulleted-list"><li style="list-style-type:disc">People will better understand a decision in which they participated in</li></ul><ul id="0ba2f8af-cdbe-41fa-a459-b841e21140fe" class="bulleted-list"><li style="list-style-type:disc">People will be more committed to a decision in which they invested their time and energy</li></ul><p id="c594379f-4b79-4665-92f2-ba0b9619ef3d" class="">
+</p><p id="aadd3283-33de-4100-b129-950992187cfc" class=""><strong>Diffusion of responsibility</strong></p><ul id="a0dbff23-5188-4c0e-8392-490f2b3dffa1" class="bulleted-list"><li style="list-style-type:disc">The ability of group members to share the burden of the negative consequences of a poor decision<ul id="6647b241-aa83-48bc-b6e2-709b3b3e990f" class="bulleted-list"><li style="list-style-type:circle">Of course, when this happens, individual group members often “abandon ship” and exhibit biased hindsight—“I knew all along that the bid was too high to be accepted, but they made me go along with them.”</li></ul></li></ul><h3 id="fad05405-620d-4ef3-8fd6-9643a8a35ecb" class="">Do Groups Actually Make Higher-Quality Decisions than Individuals?</h3><p id="5920e951-db46-4e19-9c9b-9441b19443ca" class="">Groups should perform better than individuals when</p><ol type="1" id="4bda8639-840a-4f7e-a317-1c62090ad600" class="numbered-list" start="1"><li>The group members differ in relevant skills and abilities, as long as they do not differ
+so much that conflict occurs</li></ol><ol type="1" id="6e589bfb-f9a2-4cd6-b186-ce0ec2f5aee3" class="numbered-list" start="2"><li>Some division of labour can occur</li></ol><ol type="1" id="c50753a8-7be6-4c07-9859-bf97f737cea5" class="numbered-list" start="3"><li>Memory for facts is an important issue</li></ol><ol type="1" id="a93f4bd3-5f66-4cbe-9888-a99cf3104642" class="numbered-list" start="4"><li>Individual judgments can be combined by weighting them to reflect the expertise of
+the various members</li></ol><h3 id="4cf7ac0a-3862-42b2-b744-a459f194663a" class="">Disadvantages of Group Decision Making</h3><ol type="1" id="ab951288-5c94-4320-9dc9-2d9346b51a0f" class="numbered-list" start="1"><li>Time<ol type="a" id="72221d8b-0430-47e1-bbbf-d34db45ae2ef" class="numbered-list" start="1"><li>Groups seldom work quickly or efficiently compared with
+individuals because of process losses involved in discussion and coordination. </li></ol><ol type="a" id="58b3954f-7026-45e4-a543-9525f5399f96" class="numbered-list" start="2"><li>Problem increases with group size</li></ol></li></ol><ol type="1" id="2c911bfc-9a0e-4774-8387-97ec77dc1aa3" class="numbered-list" start="2"><li>Conflict<ol type="a" id="fc71a618-4d29-454b-8192-4463ee2799b1" class="numbered-list" start="1"><li>Participants in group decisions have their own personal axes to
+grind or their own resources to protect. When this occurs, decision quality may take a
+back seat to political wrangling and infighting</li></ol></li></ol><ol type="1" id="d699ca52-e9b0-48f9-82c0-5a1ee20f7c5a" class="numbered-list" start="3"><li>Domination<ol type="a" id="220a3967-a896-4548-b7e9-32dd5d5c911e" class="numbered-list" start="1"><li>The advantages of group decision making will seldom be realized if meetings are dominated by a single individual or a small coalition. Even if a dominant person has good information, this style is not likely to lead to group acceptance and commitment</li></ol></li></ol><ol type="1" id="8c1747a9-3428-4fad-a969-cc81e1a01059" class="numbered-list" start="4"><li>Groupthink<ol type="a" id="b10fbf0a-8b68-4c25-891a-59b85db62830" class="numbered-list" start="1"><li>The capacity for group pressure to damage the mental efficiency, reality testing, and moral judgment of decision-making groups.</li></ol></li></ol><p id="56a9ed9d-5ef7-4f93-b93e-bc95b32e1540" class="">
+</p><p id="c285cf26-e670-447c-94c8-aebfd75a29c5" class=""><strong>Groupthink causes</strong></p><ol type="1" id="7ed48a0c-795f-46b1-8de4-a9c0093c998f" class="numbered-list" start="1"><li>Strong identification with the group (high cohesiveness)</li></ol><ol type="1" id="25c6809b-0a20-4701-a198-1fb475344e50" class="numbered-list" start="2"><li>Concern for their approval</li></ol><ol type="1" id="30b89ecf-e4e2-431a-a993-7373af47bef6" class="numbered-list" start="3"><li>Isolation of the group from other sources of information</li></ol><ol type="1" id="8e425c5d-8eff-4748-9164-de49a4c098f0" class="numbered-list" start="4"><li>The promotion of a particular decision by the group leader appears to be the strongest cause</li></ol><p id="24a68ea6-a174-4561-bc69-308b4e5b07ab" class="">
+</p><p id="8b12e2f9-b479-4529-99a9-a1520dcdb174" class=""><strong>Groupthink symptoms</strong></p><ol type="1" id="92811dd1-4c59-4cb1-94e9-dbf0803690c5" class="numbered-list" start="1"><li>Illusion of invulnerability<ol type="a" id="9e39ec18-5b4f-45c1-bb89-81985d2239ba" class="numbered-list" start="1"><li>Members are overconfident and willing to assume great risks. They ignore obvious danger signals.</li></ol></li></ol><ol type="1" id="7abbce6a-61b7-4ca1-88c8-da5829e722c8" class="numbered-list" start="2"><li>Rationalization<ol type="a" id="dcbfecca-338f-418f-b40a-8ab49583d34b" class="numbered-list" start="1"><li>Problems and counterarguments that members cannot ignore are “rationalized away.”</li></ol></li></ol><ol type="1" id="4f21f671-5af3-426c-a07b-24f68b786bc8" class="numbered-list" start="3"><li>Illusions of morality<ol type="a" id="9daba373-3418-4997-a028-39f35ea3167f" class="numbered-list" start="1"><li>The decisions the group adopts are not only perceived as sensible; they are also perceived as morally correct</li></ol></li></ol><ol type="1" id="abaf67ed-4ccc-4a57-be2a-5ee37f06e79c" class="numbered-list" start="4"><li>Stereotypes of outsiders<ol type="a" id="70d2d38a-ba55-4669-8843-21be5253ccfa" class="numbered-list" start="1"><li>The group constructs unfavorable stereotypes of those out-side the group who are the targets of their decisions</li></ol></li></ol><ol type="1" id="64619d17-0c7d-49ae-9fc3-d9686863c82c" class="numbered-list" start="5"><li>Pressure for conformity<ol type="a" id="03f69e67-4ca0-4105-9b46-e2354b43b05d" class="numbered-list" start="1"><li>Members pressure each other to fall in line and conform with the group’s views</li></ol></li></ol><ol type="1" id="b23c8178-458f-475b-a299-5b6c98e0b45e" class="numbered-list" start="6"><li>Self-censorship<ol type="a" id="c83b2497-da23-4087-b24a-e25fb14fa579" class="numbered-list" start="1"><li>Members convince themselves to avoid voicing opinions contrary to the group</li></ol></li></ol><ol type="1" id="0d6f8ba1-894d-4b17-aa79-97dd54975891" class="numbered-list" start="7"><li>Illusion of unanimity<ol type="a" id="022d07f5-d5a0-4895-9fad-49216aece134" class="numbered-list" start="1"><li>Members perceive that unanimous support exists for their chosen course of action</li></ol></li></ol><ol type="1" id="bd3d3a97-c766-497f-9c39-5c98cea31b0e" class="numbered-list" start="8"><li>Mindguards<ol type="a" id="4af59d0a-b34d-45ee-b274-596aeb0d2ac4" class="numbered-list" start="1"><li>Some group members may adopt the role of “protecting” the group from information that goes against its decisions</li></ol></li></ol><h3 id="bbbe31a1-834d-45b6-a8d1-4a85643a0c8f" class="">Stimulating and Managing Controversy</h3><p id="b9a41227-bd49-455b-a944-a3a2a6e1ce28" class="">One interesting method of controversy stimulation is the appointment of a devil’s
+advocate to challenge existing plans and strategies</p><ul id="2f0024e5-0ea2-4473-9752-10f5e7aadf95" class="bulleted-list"><li style="list-style-type:disc">The advocate’s role is to challenge the weaknesses of the plan or strategy and state why it should not be adopted<ul id="8e577f9c-7377-4ca8-8adf-789aeb83ee5c" class="bulleted-list"><li style="list-style-type:circle">A bank might be considering offering an innovative kind of account. Details to be decided include interest rate, required minimum balance, and so on. A committee might be assigned to develop a position paper<ul id="3ce5996b-0980-4c53-8ce4-12124ed900c2" class="bulleted-list"><li style="list-style-type:square">Before a decision is made, someone would be assigned to read the paper and “tear it apart,” noting potential weaknesses</li></ul></li></ul></li></ul><h3 id="ae66915e-b7eb-4e76-8395-d05b24d36605" class="">How do Groups Handle Risk?</h3><ol type="1" id="5b5f5574-1cff-485f-b909-d0fbc258315f" class="numbered-list" start="1"><li>Risky shift <ol type="a" id="bc6bdf7b-270f-4f40-a855-48f053ab1fd4" class="numbered-list" start="1"><li>The tendency for groups to make riskier decisions than the average risk initially advocated by their individual members</li></ol></li></ol><ol type="1" id="78a5f6d1-0648-498e-ba32-631eeb1a71f3" class="numbered-list" start="2"><li>Conservative shift<ol type="a" id="7f7ebe71-a465-42eb-8cd9-64f3defebf6f" class="numbered-list" start="1"><li>The tendency for groups to make less risky decisions than the average risk initially advocated by their individual members</li></ol></li></ol><h2 id="5d6f5093-9ede-446b-989d-668d96fbc0b7" class="">11.7 Contemporary Approaches to Improving Decision Making</h2><h3 id="19021329-cbf8-411a-abb9-f14182b543c3" class="">Evidence-Based Management</h3><p id="79d08d37-f35e-4aa8-99ec-3847e568ac22" class="">Making decisions through the conscientious, explicit, and judicious use of the best available evidence from multiple sources</p><h3 id="0ce7d662-4ebc-40f4-a593-c27d124851dd" class="">Crowdsourcing</h3><ul id="2664ae5b-34e2-4f81-b355-c16c02112873" class="bulleted-list"><li style="list-style-type:disc">Outsourcing specific aspects of a decision process to a large collection of people</li></ul><ul id="d93f3164-d999-4f99-b2c0-a4a7afbbcf7b" class="bulleted-list"><li style="list-style-type:disc">Best employed when in house expertise is lacking, nature of the problem can be clearly
+stated, and a large diverse crowd is knowledgeable and motivated to participate</li></ul><h3 id="246b71dd-69ee-4dcb-b583-75ecd16e5352" class="">Analytics and Big Data</h3><ul id="98e25f37-d80b-407a-8ce7-dfd62cc493c7" class="bulleted-list"><li style="list-style-type:disc">Analytics<ul id="8eddea07-5b03-4f08-8f35-153b97029343" class="bulleted-list"><li style="list-style-type:circle">Finding meaningful patterns in large data sets</li></ul></li></ul><ul id="26bb22eb-80fa-4d6e-ac9f-fba428b94aeb" class="bulleted-list"><li style="list-style-type:disc">Big data<ul id="7f8b7273-2408-427d-8632-1dfbcbeafbf4" class="bulleted-list"><li style="list-style-type:circle">Copious amounts of information that are often collected in real time and can
+come from a wide variety of sources, particularly digital</li></ul></li></ul></div></article></body></html>

@@ -1,0 +1,695 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>7: Groups and Teamwork</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c0ca6192-9987-455f-8016-a80fa2ce3d67" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_2.png" style="object-position:center 19.999999999999996%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">⏱️</span></div><h1 class="page-title">7: Groups and Teamwork</h1></header><div class="page-body"><h2 id="d0181b31-ca06-46b7-bdc4-f6a67115b803" class="">7.1 What is a Group?</h2><p id="7c37b87a-2e60-4650-9ec7-90de0a9dd462" class="">Two or more people interacting interdependently to achieve a common goal</p><ul id="c31325d2-42cb-4080-b0ed-6d65527cbf04" class="bulleted-list"><li style="list-style-type:disc">Group members are important because; groups exert a tremendous influence on us; groups provide a context in which we are able to exert influence on others</li></ul><p id="21887641-b24d-480d-be73-da91595c3ad2" class="">
+</p><p id="305cb7af-5b3d-45a8-bdf9-71fd8d2b5739" class="">There are two types of groups</p><ol type="1" id="b05548ec-8c56-45c5-bf40-fa3ba702b1d7" class="numbered-list" start="1"><li>Formal groups<ol type="a" id="84080835-0c1a-4890-8fd1-f8d953b02c15" class="numbered-list" start="1"><li>Groups that are established by organizations to facilitate the achievement of organizational goals<ol type="i" id="2dd583cc-1262-4a46-8413-6626db6b1fb8" class="numbered-list" start="1"><li>Task forces and Project teams are temporary groups that meet to achieve particular goals or to solve particular problems</li></ol><ol type="i" id="282ddfbe-9eaa-445b-9c2e-e6fa1a804343" class="numbered-list" start="2"><li>Committees are usually permanent groups to handle recurrent assignments outside the usual work group structures</li></ol></li></ol></li></ol><ol type="1" id="73230739-0829-4706-b13f-15daabeb26bd" class="numbered-list" start="2"><li>Informal groups<ol type="a" id="4abb7e7f-2eb6-4e1f-ae31-789568a148c7" class="numbered-list" start="1"><li>Groups that emerge naturally in response to the common interests of organizational members</li></ol></li></ol><h3 id="48a90389-0864-4295-9bd5-b1eee155f31d" class="">Group Development</h3><p id="c940bc82-f6b6-478a-a66d-3ccb6195791e" class="">Leaders and trainers have observed that many groups developed through a series of stages over time</p><ol type="1" id="b481b122-8c62-4499-a25c-a06ed93963a6" class="numbered-list" start="1"><li>Forming<ol type="a" id="45850b6a-2b64-4219-981d-65808945e47b" class="numbered-list" start="1"><li>At this early stage, group members try to orient themselves by ‘testing the waters’<ol type="i" id="e91c8e88-92c4-4eb3-ad96-b4d02ae40ed4" class="numbered-list" start="1"><li>What are we doing here? and what is our purpose?</li></ol></li></ol></li></ol><ol type="1" id="3135926f-f719-4b88-a9a5-26890eb10a84" class="numbered-list" start="2"><li>Storming<ol type="a" id="5080b694-30b0-4342-8124-eb4aa2418312" class="numbered-list" start="1"><li>Conflict emerges<ol type="i" id="23350df1-e766-4cc8-8e09-072a6ec45a19" class="numbered-list" start="1"><li>Confrontation and criticism occurs as members determine whether they will go along with the way the group is developing</li></ol></li></ol><ol type="a" id="92309164-9a2a-4794-adce-bd5d7f4aa621" class="numbered-list" start="2"><li>Sorting out roles and responsibilities is often an issue here</li></ol><ol type="a" id="9e6a034d-54fd-4c76-8b12-1e5a48310f74" class="numbered-list" start="3"><li>Problems happen earlier rather than later and group development</li></ol></li></ol><ol type="1" id="2a9fa1a1-a2c7-4b38-a8d7-451e4db10c79" class="numbered-list" start="3"><li>Norming<ol type="a" id="2d1b7425-57b1-45d7-9724-78e61884115c" class="numbered-list" start="1"><li>Members resolve the issues that provoked the storming and they develop social consensus</li></ol><ol type="a" id="11a2d389-7a36-4313-862b-bd617a9a2c11" class="numbered-list" start="2"><li>Compromise is necessary</li></ol></li></ol><ol type="1" id="952eae07-9d66-460a-b68c-defecfa9c43b" class="numbered-list" start="4"><li>Performing<ol type="a" id="1ce16971-162f-4a17-96de-ef6e0551c291" class="numbered-list" start="1"><li>Group devotes its energies toward task accomplishment</li></ol><ol type="a" id="8388aed6-0f14-4b09-87fe-2a08db1fba3c" class="numbered-list" start="2"><li>Achievement, creativity, and mutual assistance are prominent themes of this stage</li></ol></li></ol><ol type="1" id="270c18bd-2bde-49c1-a6bd-5485e8738f82" class="numbered-list" start="5"><li>Adjourning<ol type="a" id="1d4bfd90-3aa9-4269-badf-c3e32d25e3ed" class="numbered-list" start="1"><li>Rites and rituals that affirm the group&#x27;s previous successful development are common<ol type="i" id="1e2712ef-1473-4e73-b7a2-3aeff5415f8a" class="numbered-list" start="1"><li>Ceremonies, parties, feedback</li></ol></li></ol><ol type="a" id="64b2d103-790f-48d1-b7e6-0368eb337166" class="numbered-list" start="2"><li>Members often exhibit emotional support for each other</li></ol></li></ol><p id="130dc91d-cc98-40a5-b120-5713d41df5f0" class="">
+</p><p id="e9303d01-c7a6-48e7-b295-e8de560b4940" class="">It is important to note that not all groups go through the stages of development</p><ul id="2791abea-99ec-4f8e-9224-82f8280de559" class="bulleted-list"><li style="list-style-type:disc">This mostly only applies to new groups that have never met before</li></ul><h3 id="9c4ebf7a-6bcf-48d4-bae5-6c0645644ca0" class="">Punctuated Equilibrium</h3><p id="8ee2eca9-190e-4144-97a7-fc8278c3e767" class="">Group development that spells how groups with deadlines are affected by their first meetings and crucial midpoint transactions</p><ol type="1" id="76fec8b5-d1f9-4481-81c3-e5d8b5bc03ec" class="numbered-list" start="1"><li>Phase 1<ol type="a" id="a577281b-76a0-4e44-be76-dfaab0c830e7" class="numbered-list" start="1"><li>The first meeting and continues until the midpoint in the group&#x27;s existence</li></ol><ol type="a" id="1faf8d54-58a0-4c0c-80ec-853db7ba47d9" class="numbered-list" start="2"><li>First meeting is critical in setting the agenda for what will happen in the remainder of this phase</li></ol><ol type="a" id="83ddfe9c-6a1d-42b9-abeb-af6440374adf" class="numbered-list" start="3"><li>Assumptions, approaches, and precedents that members develop in their first meeting dominate the first half of the group&#x27;s life</li></ol></li></ol><ol type="1" id="e4480ac3-c7aa-4436-a1f8-858b92bf5df5" class="numbered-list" start="2"><li>Midpoint transition<ol type="a" id="e7cbf45c-1488-4c0a-9e48-45facbf66280" class="numbered-list" start="1"><li>Occurs at almost exactly the halfway point in time toward the groups deadline</li></ol><ol type="a" id="3a685117-cd99-45da-a837-568bf8255ab1" class="numbered-list" start="2"><li>The transition marks a change in the group&#x27;s approach and how the group manages the change is critical for the group to show progress</li></ol></li></ol><ol type="1" id="a6aa593a-0930-4e02-b3d2-bf519b83d95b" class="numbered-list" start="3"><li>Phase 2<ol type="a" id="a25f90ea-9869-4a99-9157-d0772dc3755c" class="numbered-list" start="1"><li>Decisions and approaches adopted for the midpoint are played out</li></ol><ol type="a" id="31e18741-ef1c-42de-9aa3-c8e0ed79ef38" class="numbered-list" start="2"><li>It concludes with a final meeting that reveals a burst of activity and a concern for how outsiders will evaluate the product</li></ol></li></ol><p id="ee9db7df-7f67-488b-bad1-2fe65686b24a" class="">
+</p><p id="86f6feeb-d39d-4cde-aa77-dc138d934653" class="">Advice for managing teams:</p><ul id="543ce757-c6f4-42cb-b76e-c824b0097f62" class="bulleted-list"><li style="list-style-type:disc">Prepare carefully for that first meeting</li></ul><ul id="e505d4e6-815f-4428-a183-5d4de8677652" class="bulleted-list"><li style="list-style-type:disc">As long as people are working; do not look for radical process during phase 1</li></ul><ul id="0f4d967c-f0b0-435a-8957-5d834b53a401" class="bulleted-list"><li style="list-style-type:disc">Manage the midpoint transition carefully</li></ul><ul id="fe002021-fcf3-4ddc-b2ea-420555327ff6" class="bulleted-list"><li style="list-style-type:disc">Be sure that adequate resources are available to actually execute the phase 2 plan</li></ul><ul id="41be216a-6bce-4aec-b2d4-de5574cc67ad" class="bulleted-list"><li style="list-style-type:disc">Resist deadline changes</li></ul><h2 id="ad53da34-d3ae-4191-8da8-22df72d0d1fd" class="">7.2 Group Structure and its Consequences</h2><p id="df32856c-65ed-45cb-a580-b94e11aa8f1c" class="">Group structure refers to the characteristics of the stable social organization of a group or the way a group is put together</p><ul id="28720cbe-5009-4005-8385-472dca366982" class="bulleted-list"><li style="list-style-type:disc">The most basic structural characteristic along which group size and member diversity</li></ul><ul id="14c02d85-d4ba-4485-83bf-8c96ccaca165" class="bulleted-list"><li style="list-style-type:disc">Other structural characteristics are group norms, roles, status, and cohesiveness</li></ul><h3 id="2729cad0-7037-4e8a-9b15-22e8cbb41dd2" class="">Group Size</h3><ul id="ff54bdb3-3e56-4621-95b5-774487d65b65" class="bulleted-list"><li style="list-style-type:disc">Smallest possible group consists of two people which include the manager and the employee</li></ul><ul id="895fd06a-dcc2-4d9e-8aab-1d0e562b6a8d" class="bulleted-list"><li style="list-style-type:disc">Most work groups including task forces and committees usually have between 3 and 20 members</li></ul><p id="be394608-9a8e-4a72-b156-a866d51af71c" class="">
+</p><p id="9cf61a10-f5c1-4a6f-a1f1-117a03d0e9ee" class=""><strong>Size and satisfaction</strong></p><ul id="402e6e40-329f-4a2b-b353-65b6a036bdde" class="bulleted-list"><li style="list-style-type:disc">Members of larger groups consistently report less satisfaction with group members than those in smaller groups</li></ul><ul id="cd2cca22-f0aa-4020-b7ce-fe7cb804419d" class="bulleted-list"><li style="list-style-type:disc">The chance to work on and develop friendships decrease as size of the group increases</li></ul><ul id="2bab9f17-ede7-4499-a5d7-3a7be103928c" class="bulleted-list"><li style="list-style-type:disc">Larger groups might prompt conflict (time conflict being the main one)</li></ul><ul id="a9fa13dc-46c6-422f-af4f-6f75d7e1efb8" class="bulleted-list"><li style="list-style-type:disc">In larger groups, individual members identify less easily with the success and accomplishments of the group</li></ul><p id="ff2fe49e-83a9-447d-8527-bb4e9fbf4b2d" class="">
+</p><p id="8f193735-80f9-49e7-a72b-77945dad755e" class=""><strong>Size and performance</strong></p><ul id="012609a2-3744-4977-a72b-1952a786aa33" class="bulleted-list"><li style="list-style-type:disc">The relationship between group size and performance depends on the task the group needs to accomplish and how we define good performance</li></ul><ul id="322b76c9-bd12-40cc-b8c3-07c131c1c9d6" class="bulleted-list"><li style="list-style-type:disc">There are three types of group tasks<ul id="2ea177a9-cf6d-42bb-8569-ecc8d5ce9d3f" class="bulleted-list"><li style="list-style-type:circle">Additive tasks<ul id="9a9ada80-c858-4f1f-858b-8fdc265deca8" class="bulleted-list"><li style="list-style-type:square">Tasks in which the group performance is dependent on the sum of the performance of individual members</li></ul></li></ul><ul id="235d212c-79cc-4302-932d-419aa0511fdf" class="bulleted-list"><li style="list-style-type:circle">Disjunctive tasks<ul id="80cf2e04-b36c-49e8-a6a4-70d8501d6ec0" class="bulleted-list"><li style="list-style-type:square">Tasks in which group performance is dependent on the performance of the best group member</li></ul><ul id="76aa70be-6ccb-441b-b8cf-a4699796f293" class="bulleted-list"><li style="list-style-type:square">Potential performance of groups doing disjunctive tasks increases with group size</li></ul><ul id="1f7b7fb9-4e72-4ae0-8853-96822548d856" class="bulleted-list"><li style="list-style-type:square">For additive and disjunctive tasks larger groups might perform better up to a point but at increasing costs to the efficiency of individual members</li></ul></li></ul><ul id="3022f43f-f8ee-4c82-8b54-a64ce16f48c9" class="bulleted-list"><li style="list-style-type:circle">Conjunctive tasks<ul id="5078ad02-8be8-4565-9644-482831608805" class="bulleted-list"><li style="list-style-type:square">Tasks in which group performance is limited by the performance of the poorest member<ul id="4be2d93b-f028-45b5-9680-fdde83bdc43d" class="bulleted-list"><li style="list-style-type:disc">Both potential and actual performance of conjunctive tasks will decrease as group sizes increase</li></ul><ul id="bec8f1ff-2c54-4302-93db-9b933415b090" class="bulleted-list"><li style="list-style-type:disc">When size of the group increases, the probability of having a weak member goes up</li></ul></li></ul></li></ul></li></ul><p id="3317c871-34b1-43da-8ec2-66366d6f117d" class="">
+</p><p id="b04f24d1-99f8-48ca-a629-99239e15c355" class=""><strong>While groups become larger they suffer from process losses</strong></p><ol type="1" id="de8a64ba-7cb9-41ec-a908-eab7c235a334" class="numbered-list" start="1"><li>Group performance difficulties stemming from the problems of motivating and coordinating larger groups</li></ol><ol type="1" id="43a22d35-234c-4f81-b9bf-24f565d2aef0" class="numbered-list" start="2"><li>Problems in communication and decision-making</li></ol><ol type="1" id="74ec04fb-7c95-4c08-b4b1-97c15dbb0ed2" class="numbered-list" start="3"><li>Actual performance = potential performance - process losses</li></ol><ol type="1" id="19cc4319-b439-407b-88c2-b1b61b62fae7" class="numbered-list" start="4"><li>Average performance of members decrease as size gets bigger</li></ol><ol type="1" id="3012cb30-22e1-4dec-a4cb-1647b044df49" class="numbered-list" start="5"><li>Large groups perform better as groups, but individual members tend to be less efficient</li></ol><h3 id="1d1d9ee5-eada-484e-9f03-4deccd26401a" class="">Diversity of Group Membership</h3><p id="7d09c50d-daa8-4e46-b787-9a0843ed19b5" class="">Group diversity has strong impact on interaction patterns</p><ul id="bc6984a5-71a5-433e-86a7-f9fa8e902263" class="bulleted-list"><li style="list-style-type:disc">Diverse groups have harder time communicating effectively in becoming cohesive</li></ul><ul id="31111964-2fc7-4c6c-949a-0747de303749" class="bulleted-list"><li style="list-style-type:disc">Diverse groups perform better on tasks that require creativity and innovation</li></ul><h3 id="a4bef17e-2f5a-464d-8fa2-3acfa96537a5" class="">Group Norms</h3><p id="e8b8cf96-1bae-42c3-84fb-b66f6b380adc" class="">Collective expectations that members of social units have regarding the behaviour of each other</p><ul id="9de0dd9f-6ef7-4aee-a5cf-a68c5e2ad4e4" class="bulleted-list"><li style="list-style-type:disc">Changing group norms can change behavior</li></ul><ul id="9bced5a8-9071-4357-a7d8-7b45f3895316" class="bulleted-list"><li style="list-style-type:disc">Normative influence is unconscious, we are only aware of it in special circumstances such as when we enter new social situations</li></ul><p id="4db5095c-164b-4255-835c-a845d5e24c8c" class="">
+</p><p id="40aedd56-c3f8-4f12-955b-7952e7d49119" class=""><strong>Norm development</strong></p><ol type="1" id="5b110cc0-e512-449b-9fa5-52a583005b11" class="numbered-list" start="1"><li>Norm&#x27;s provide regulatory and predictability to behaviour</li></ol><ol type="1" id="012ed484-8147-4f49-8e36-7ef5ab70f4da" class="numbered-list" start="2"><li>They develop to regulate behaviors that are at least important to their supporters</li></ol><ol type="1" id="bda08290-e0e1-4a84-8a7f-4efb7b453214" class="numbered-list" start="3"><li>Managers are likely to adopt Norms regarding the performance and attendance of employees</li></ol><ol type="1" id="858680e7-696b-4655-a914-9f9c55dbcde2" class="numbered-list" start="4"><li>Shared attitudes among members of the group form the basis for norms</li></ol><ol type="1" id="2cfdc235-b87c-4d98-8102-606cab53862d" class="numbered-list" start="5"><li>Norms are collectively held expectations depending on two or more people for their existence</li></ol><ol type="1" id="94e10765-aa62-407a-bf18-e80b25d68616" class="numbered-list" start="6"><li>We comply with Norms because they save time and prevent social confusion and groups have a range of rewards and punishments available to induce conformity to Norms</li></ol><p id="a3ab83af-ed82-476f-8c11-2372885d95b9" class="">
+</p><p id="4e6d849f-1e4e-4600-b4af-51554d5c8082" class="">Typical norms</p><ol type="1" id="0150a785-2f13-414b-91a4-78a7f73fa30b" class="numbered-list" start="1"><li>Dress norms</li></ol><ol type="1" id="e53a6c85-727d-4901-869a-911220cd37b7" class="numbered-list" start="2"><li>Reward allocation norms (equity, equality, reciprocity, social responsibility)</li></ol><ol type="1" id="9b3f00bc-68bf-4fe5-b36b-8929085e9c33" class="numbered-list" start="3"><li>Performance norms</li></ol><h3 id="eb063f44-d85c-4efa-b46b-0478000581e4" class="">Roles</h3><p id="fe70acf7-4301-4aba-9e67-68150d4f22f6" class="">Positions in a group that have a set of expected behaviors attached to them</p><ul id="fcbe9772-499e-4f5c-8db7-2e4379f8e0b3" class="bulleted-list"><li style="list-style-type:disc">Roles represent packages of norms that apply to particular group members; there are two kinds of roles - assigned and emergent</li></ul><p id="f9a4d68a-48de-4089-9f7f-a7a23d1cc6d1" class="">
+</p><p id="9086ebcc-07cb-4101-867d-eea2532821c4" class="">Assigned roles are formally prescribed by an organization as a means of dividing labour and responsibility to facilitate task achievement</p><ul id="58f1baef-62e9-4011-b6ed-78b0470e6f22" class="bulleted-list"><li style="list-style-type:disc">Emergent roles develop naturally to meet the social emotional needs of group members or to assist in form of job accomplishment</li></ul><p id="876431fa-c0aa-49d8-b7d2-7a2f11b3d70c" class="">Role ambiguity is the lack of clarity of job goals or methods; there are a few elements that can lead to role ambiguity</p><ol type="1" id="5de41a79-26b8-47c9-b7b9-e643d6b8be06" class="numbered-list" start="1"><li>Organizational factors<ol type="a" id="3a94a389-50df-44a6-b8ee-330243caabe3" class="numbered-list" start="1"><li>Some roles are inherently ambiguous because of their function in the organization such as middle management roles might fail to provide the ‘big picture’</li></ol></li></ol><ol type="1" id="fe47438f-410a-418a-a27f-8df24dda817e" class="numbered-list" start="2"><li>The role sender<ol type="a" id="144fe2cd-a2a8-417b-b956-9e9ac4dd11cd" class="numbered-list" start="1"><li>Might have unclear expectations of focal person</li></ol><ol type="a" id="7852f7d0-373e-4770-8a83-a1f5c83f7d06" class="numbered-list" start="2"><li>Expectations might be ineffectively sent to the focal person<ol type="i" id="fcd91e64-a911-4d79-ae31-de9d2cfb29ea" class="numbered-list" start="1"><li>A weak orientation session, vague performance reviews, or inconsistent feedback and discipline, may send ambiguous role messages to employees</li></ol></li></ol></li></ol><ol type="1" id="4f605a35-03d6-417c-b406-9ecc62045077" class="numbered-list" start="3"><li>The focal person<ol type="a" id="e8a804f5-01e0-4711-b834-7292014e8dec" class="numbered-list" start="1"><li>Role expectations might not be fully digested by the focal person</li></ol><ol type="a" id="618fc2d6-1748-4c1c-9a06-1044d0f26169" class="numbered-list" start="2"><li>This happens when the focal person is new<ol type="i" id="251b1c3d-7380-4e3b-8e29-954051bd887c" class="numbered-list" start="1"><li>Ambiguity tends to decrease as the length of time in the job role increases</li></ol></li></ol></li></ol><p id="2b4e4679-2be0-46f4-ac5b-7b00ed1bc257" class="">
+</p><p id="bdd2a915-52e1-4a56-a996-9213226343ee" class=""><strong>There are some consequences of role ambiguity</strong></p><ol type="1" id="a2fdc08e-fbff-4ef4-860f-b9ad9e21a38b" class="numbered-list" start="1"><li>Job stress</li></ol><ol type="1" id="6cedf676-e362-4d5d-9a14-7c92f52f72d3" class="numbered-list" start="2"><li>Dissatisfaction</li></ol><ol type="1" id="8795ad91-9775-4cad-8e62-733ce6ac7595" class="numbered-list" start="3"><li>Reduced organizational commitment</li></ol><ol type="1" id="3068e375-a00c-4943-bf0b-657de4de944f" class="numbered-list" start="4"><li>Lowered performance</li></ol><p id="a0c3c0a7-fd79-41e4-9455-af63a918c2c0" class="">
+</p><p id="f3ee1754-7305-4643-a7f6-a777d61db6e6" class=""><strong>Role conflict</strong></p><p id="620fe2e6-3513-46b2-ab04-2e1f027f00ec" class="">This happens when an individual is faced with incompatible role expectations</p><ol type="1" id="38e99fb6-573d-4be6-a4b4-10b8cbad369f" class="numbered-list" start="1"><li>Intrasender role conflict<ol type="a" id="1eb32104-b363-4584-9ed9-74f541f17919" class="numbered-list" start="1"><li>A single sole sender provides incompatible role expectations to a role occupant<ol type="i" id="8815a3d1-2254-4d7e-b331-546e1ebfed26" class="numbered-list" start="1"><li>A manager might tell an employee to take it easy and not work so hard while subsequently delivering yet another batch of reports that require immediate attention</li></ol></li></ol></li></ol><ol type="1" id="bab63619-a8fa-4af9-8a2d-308d860b40bd" class="numbered-list" start="2"><li>Intersender role conflict<ol type="a" id="4724e708-81e5-4bb0-b6ab-934cb58829fc" class="numbered-list" start="1"><li>Two or more senders provide a role occupant with incompatible expectations<ol type="i" id="26d7db7a-7990-4224-b2b7-3550a259ad3f" class="numbered-list" start="1"><li>A first-level manager might be pressured to get the work out and keep the employees in line; the boss might be encouraged to behave in a considerate and friendly manner</li></ol></li></ol></li></ol><ol type="1" id="78eea5a6-a078-4810-8244-daa9d0ebbad4" class="numbered-list" start="3"><li>Interrole conflict<ol type="a" id="ec9c1880-d470-44a7-bc5f-263463bbd497" class="numbered-list" start="1"><li>Several roles held by a role occupant involve incompatible expectations<ol type="i" id="f07c7289-e783-437a-adcb-cace34099214" class="numbered-list" start="1"><li>One person, for example, might fulfill the roles of a functional expert in marketing, head of the market research group, subordinate to the vice president of marketing, and member of a product development task force<ol type="1" id="2a86c406-7615-4fd3-aebd-cc5c11ab2d08" class="numbered-list" start="1"><li>This is obviously a very busy person and competing demands for time are a frequent symptom of interrole conflict</li></ol></li></ol></li></ol></li></ol><ol type="1" id="321c1aec-ca3e-4561-bfce-9eb0eb19567f" class="numbered-list" start="4"><li>Person role conflict<ol type="a" id="7662702c-3a1c-494e-b069-626cf12a0865" class="numbered-list" start="1"><li>Role demands call for behaviour that is incompatible with the personality or skills of a role occupant<ol type="i" id="8514f517-d743-47e9-a32d-70cdc4beccfb" class="numbered-list" start="1"><li>Consistent consequences of role conflict are job satisfaction, stress reactions, lowered organizational commitment, and turnover intentions<ol type="1" id="6b089f88-664f-40a7-bf5f-7daceea1c136" class="numbered-list" start="1"><li>The organization has demanded some role behaviour that the occupant considers unethical</li></ol><p id="55e62f68-fdc3-4d4c-a5a5-b864820dbba5" class="">
+</p></li></ol></li></ol></li></ol><p id="f0e04da9-752a-466d-9ecc-12c2a4f4bb43" class="">Managers can help prevent role conflict by<div class="indented"><ol type="1" id="5a2baa6a-61f9-4d2e-91f2-97134a943858" class="numbered-list" start="1"><li>Avoiding self contradictory messages</li></ol><ol type="1" id="bfe7a8be-ef7f-4fc5-b2a9-8c7608695dbd" class="numbered-list" start="2"><li>Conferring with other role senders</li></ol><ol type="1" id="2e7c47fd-d7fd-42c0-9b0b-7d1b1b7a344b" class="numbered-list" start="3"><li>Being sensitive to multiple role demands</li></ol><ol type="1" id="f7cb8213-ecf8-4e14-8c42-898b79b527c4" class="numbered-list" start="4"><li>Fitting the right person to the right role</li></ol></div></p><h3 id="f158cb24-1235-47a7-99bc-75537ce93dd9" class="">Status</h3><p id="84aeb335-3b00-4b8e-acb1-07b22b9257ce" class="">The rank or social position accorded to group members in terms of prominence, prestige and respect</p><ul id="44ccc80f-965d-4f70-a257-4d4730806a25" class="bulleted-list"><li style="list-style-type:disc">Represents the group&#x27;s evaluation of a member</li></ul><p id="ff1fd813-8273-44ae-8eee-932f4b779ade" class="">
+</p><ol type="1" id="a4af9829-ffcb-4382-bffd-39eb3313437d" class="numbered-list" start="1"><li>Formal status system<ol type="a" id="d226702d-4cbc-4799-9ba7-258348652d93" class="numbered-list" start="1"><li>Represents management attempt to publicly identify those people have higher status than others</li></ol><ol type="a" id="dc0a60c4-97f9-4ef1-8ec7-9d35438492db" class="numbered-list" start="2"><li>Status symbols are tangible indicators of status (titles, pay packages, work schedules)</li></ol><ol type="a" id="b0c1c2bd-a0b8-4c6f-8c6b-43bab2190bd7" class="numbered-list" start="3"><li>Formal organization status is based on seniority in one&#x27;s group and ones assigned role in the organization</li></ol><ol type="a" id="4a563a6e-06c9-43c1-a0af-3caf3be804a9" class="numbered-list" start="4"><li>Organizations tie status symbols to assigned roles<ol type="i" id="cc00c152-2623-4bb9-a507-5abac427dffa" class="numbered-list" start="1"><li>They serve as powerful magnets to induce members to Aspire to higher organizational positions</li></ol><ol type="i" id="edaa6136-90c9-4ba4-a9c5-b32769fb1e2b" class="numbered-list" start="2"><li>Reinforces the authority hierarchy in work groups and in the organization as a whole (people pay attention to high-status individuals)</li></ol><p id="0b7fc533-84d2-4ea9-b5d1-7513cc0f1d09" class="">
+</p></li></ol></li></ol><ol type="1" id="c883dec6-f908-4284-8324-7410af20efdd" class="numbered-list" start="2"><li>Informal status systems<ol type="a" id="2480c7cc-5ba5-4206-84b0-d3cec97e4208" class="numbered-list" start="1"><li>This system is not well advertised and they might lack the conspicuous symbols and systematic support that people usually accord to the formal system</li></ol><ol type="a" id="1b31bdaa-760d-4f33-8bf5-ebb09316e8c3" class="numbered-list" start="2"><li>They operate just as effectively as formal</li></ol><ol type="a" id="7c346e84-4204-4369-a656-7e8a059d24e5" class="numbered-list" start="3"><li>Informal status is linked to job performance as well as other factors such as gender or rates</li></ol></li></ol><p id="e463615f-85e2-4ca1-a2ef-4be87cec3fc1" class="">
+</p><p id="efb50906-9cdc-4348-9cee-5c247bbd2272" class=""><strong>Consequences of status differences</strong></p><ol type="1" id="95b82643-3a93-4b20-b4ec-a1fcea1edcfc" class="numbered-list" start="1"><li>If status differences are large, people can be inhibited from communicating upward - communication gets stalled</li></ol><ol type="1" id="432e0a6b-bcdb-4f10-9005-30dad4efbe64" class="numbered-list" start="2"><li>Higher status members do more talking and have more influence</li></ol><p id="86b8bb9d-baf4-404e-8da4-a9f21feef69c" class="">
+</p><p id="08b12601-e206-4844-bfb7-575db65aad11" class=""><strong>Reducing status barriers</strong></p><ol type="1" id="6187d6ff-0474-4634-b059-f322543807af" class="numbered-list" start="1"><li>Many organizations downplay status differentiation by doing away with status symbols</li></ol><ol type="1" id="1db23137-81d9-4fa2-b9a3-e3b8c36a4799" class="numbered-list" start="2"><li>The goal is to foster a culture of teamwork and cooperation across the ranks</li></ol><ol type="1" id="55ca84de-8b6a-4921-a30d-55c92bcb78e5" class="numbered-list" start="3"><li>Email and texting has levelled status barriers</li></ol><h2 id="40ff7f1f-1a83-401c-a59a-c595fba4075a" class="">7.3 Group Cohesiveness</h2><p id="e1b8beef-1887-4ed3-9a4a-8fa7b81c4a1c" class="">The degree to which a group is attractive to its members</p><ul id="116ae4a2-90ae-4493-8682-9a3f68f3b660" class="bulleted-list"><li style="list-style-type:disc">Members want to stay and they describe the group in favorable terms</li></ul><ul id="3f4e3df4-4b49-47fd-ab7a-1d0dc27e1b65" class="bulleted-list"><li style="list-style-type:disc">Cohesiveness is a relative, rather than absolute, property of groups<ul id="22a99415-69f6-433d-a27b-d5fe3b88ca30" class="bulleted-list"><li style="list-style-type:circle">There is no objective line between cohesive and non cohesive groups</li></ul></li></ul><h3 id="1490fd53-4201-42f7-8dd9-584ee115216f" class="">Factors Influencing Cohesiveness</h3><ol type="1" id="f6d8b920-287f-459a-911f-f8b3b782d636" class="numbered-list" start="1"><li>Threat and competition<ol type="a" id="d6acbb22-4fde-4431-85bf-e1a2efe11919" class="numbered-list" start="1"><li>External threat to the survival of the group increases cohesiveness</li></ol><ol type="a" id="4ffc7b7a-160e-46d5-b37a-f7db6362527b" class="numbered-list" start="2"><li>Honest competition with another group can also promote cohesiveness</li></ol><ol type="a" id="750d342b-774a-4c06-8c4e-f0b1614c040c" class="numbered-list" start="3"><li>The group becomes more cohesive because it improves communication and coordination so they can better cope with the situation</li></ol></li></ol><ol type="1" id="e9558eaf-6a37-4875-ad43-288d8f61bc79" class="numbered-list" start="2"><li>Success<ol type="a" id="e8534f49-2087-4ced-bab1-a9fade6cff5f" class="numbered-list" start="1"><li>Groups become more cohesive when they successfully accomplish some important goal</li></ol><ol type="a" id="47fbfcc4-cb55-44bf-a932-c792da8660d5" class="numbered-list" start="2"><li>Cohesiveness will decrease after failure</li></ol></li></ol><ol type="1" id="06d1c5b2-ad5b-4c69-9623-fb871e93759d" class="numbered-list" start="3"><li>Member diversity<ol type="a" id="68f1f7f5-4ffc-4b0c-ab47-7b6e2ce0224e" class="numbered-list" start="1"><li>Groups that are diverse can have a harder time becoming cohesive than more homogeneous groups</li></ol><ol type="a" id="d85d7fe2-211f-4f71-abc4-1cea6b916ce5" class="numbered-list" start="2"><li>If the group is agreement about how to accomplish the task, it&#x27;s success will often outweigh surface dissimilarity in determining cohesiveness</li></ol></li></ol><ol type="1" id="f61f4184-7525-4ccf-b7e2-8b7ae208cf98" class="numbered-list" start="4"><li>Group size<ol type="a" id="12ef6302-746b-40f3-8169-197a13462f5a" class="numbered-list" start="1"><li>Larger groups have a more difficult time becoming and staying cohesive</li></ol><ol type="a" id="bb70b685-eda2-4019-8ec4-c6dc8981431f" class="numbered-list" start="2"><li>Larger groups have a harder time agreeing and communicating</li></ol><ol type="a" id="e6f7072b-8017-47ca-b513-f7f425653587" class="numbered-list" start="3"><li>Large groups frequently divide into subgroups, and such subgrouping is contrary to the cohesiveness of the larger group</li></ol></li></ol><ol type="1" id="074f4a35-066e-4e4c-a6c6-dcfb7e9b6925" class="numbered-list" start="5"><li>Toughness of initiation<ol type="a" id="7a4ddd7d-1259-4389-ae8f-0f26e8c8244c" class="numbered-list" start="1"><li>Groups that are tough to get into tend to be more attractive than those that are easy to join</li></ol></li></ol><h3 id="13235f6d-26a8-47b3-ac9a-e22bb1e07530" class="">Consequences of Cohesiveness</h3><ol type="1" id="615c0a87-9ebb-4965-a5f5-52efd34dcb21" class="numbered-list" start="1"><li>More participation in group activities<ol type="a" id="4562f163-46ba-497f-87db-bcc105fec043" class="numbered-list" start="1"><li>There is more participation in cohesive groups in terms of lower voluntary turnover and absenteeism, and a high degree of communication within the group</li></ol></li></ol><ol type="1" id="755499e7-bef9-4eb2-91d0-b348c63a9c31" class="numbered-list" start="2"><li>More conformity<ol type="a" id="5e0fdaf6-d8cc-4bca-8916-97e4e1acf46b" class="numbered-list" start="1"><li>High cohesive groups are able to induce greater conformity to group norms</li></ol><ol type="a" id="11e6c271-bfcc-44d2-8924-029ddb8169c1" class="numbered-list" start="2"><li>Members of cohesive groups are especially motivated to engage in activities that will keep the group cohesive</li></ol><ol type="a" id="3c003312-d016-4df6-a3bc-48388f62bacd" class="numbered-list" start="3"><li>The group can apply pressure to deviants (ex: someone frequently coming late) to get them to comply with group norms</li></ol><ol type="a" id="a803d8a7-1110-4f87-a4d0-12b069cceed4" class="numbered-list" start="4"><li>Cohesive groups react to deviants by increasing the amount of communication directed at these individuals</li></ol><ol type="a" id="cf29866c-3e10-4e16-9861-81ade9505293" class="numbered-list" start="5"><li>Cohesiveness leads to group success, achieving goals, and is related to performance</li></ol></li></ol><ol type="1" id="81054ad0-39aa-476c-948c-ed6a1ed33e6a" class="numbered-list" start="3"><li>More success<ol type="a" id="582a7b29-d2c2-42df-95f5-9567441562de" class="numbered-list" start="1"><li>There is a reciprocal relationship between success and cohesiveness</li></ol><ol type="a" id="5d284bbf-44fd-4f07-8f9f-98eac1d65f4c" class="numbered-list" start="2"><li>Cohesive groups are effective at accomplishing their own goals</li></ol><ol type="a" id="29db0db1-274a-4e30-a2c2-83ef96e696d7" class="numbered-list" start="3"><li>It concludes with a final meeting that reveals a burst of activity and a concern for how outsiders will evaluate the product</li></ol><ol type="a" id="03df2099-77e1-45cb-9497-48fb2532d1ad" class="numbered-list" start="4"><li>Highly cohesive groups tend to be more or less productive than less cohesive groups depending on a number of variables</li></ol><ol type="a" id="a90b48eb-021d-458b-b6a5-bb34f9fe5ae2" class="numbered-list" start="5"><li>Cohesiveness is more likely to pay off when the task requires more interdependence</li></ol></li></ol><h2 id="901f4325-fe57-4bb4-bc87-a7384ea33afb" class="">7.4 Social Loafing</h2><p id="29f82921-2d25-4182-9a6c-b896b08c1d2f" class="">The tendency to withhold physical and intellectual effort when forming a group task</p><ul id="e73dd8bb-ac17-493b-9289-ce139a37d024" class="bulleted-list"><li style="list-style-type:disc">Social loafing is more of a motivational problem<ul id="4e98db86-9bbc-46fc-ae4d-fa47b576f6b0" class="bulleted-list"><li style="list-style-type:circle">The tendency for social loafing is probably more pronounced in individualistic societies than in more collectivist and group-oriented cultures</li></ul></li></ul><p id="6a79c801-9813-4589-8285-b2e46d051d1d" class="">
+</p><p id="68bb49e0-bd91-489b-9673-c6e238bf5363" class=""><strong>There are two forms of social loafing</strong></p><ol type="1" id="2bbde959-6581-4f4a-b481-d40e7941d01e" class="numbered-list" start="1"><li>Free Rider effect<ol type="a" id="dd34943f-4a03-4869-a2f0-be81ee21d43a" class="numbered-list" start="1"><li>People lower their effort to get a free ride at the expense of their fellow group members</li></ol></li></ol><ol type="1" id="ab477582-e2ed-4c6f-b112-d15fb374d76f" class="numbered-list" start="2"><li>Sucker effect<ol type="a" id="727a836d-33df-4a1b-80f0-4d8a63877680" class="numbered-list" start="1"><li>People lower their effort because of the feeling others are free rider</li></ol></li></ol><p id="16b6de86-d18c-4153-bd01-52c904b7aa8b" class="">
+</p><p id="923715e3-8c04-4833-a98d-1b67861028d6" class=""><strong>Ways to counteract social loafing</strong></p><ol type="1" id="8cbe0d7c-591a-4f45-ba76-76b4bc733334" class="numbered-list" start="1"><li>Make individual performance more visible<ol type="a" id="c6f57ccd-5b0c-4754-ab05-c51d58f51ce9" class="numbered-list" start="1"><li>This is more likely to happen if the group is small</li></ol></li></ol><ol type="1" id="7e8343d1-e36a-42f7-99b4-3c701dcc15ec" class="numbered-list" start="2"><li>Make sure that work is interesting</li></ol><ol type="1" id="c5ed5d6c-61fa-4dca-a15f-82ebef5cbcb8" class="numbered-list" start="3"><li>Increase feelings of indispensability (the feeling that someone is so important, that we could not manage without them)<ol type="a" id="35dad3cc-cab9-4044-9729-9f4a1e262fcd" class="numbered-list" start="1"><li>Use training and the status system to provide group members with unique inputs</li></ol></li></ol><ol type="1" id="ca985aae-1ecb-4b7d-825b-d41df8e6ac19" class="numbered-list" start="4"><li>Increase performance feedback<ol type="a" id="69b66819-74c9-414c-8d84-18547faef293" class="numbered-list" start="1"><li>Feedback from boss or fellow peers</li></ol></li></ol><ol type="1" id="d316d4e1-ddf0-48ea-a8bf-4dd727076e50" class="numbered-list" start="5"><li>Reward group performance</li></ol><h2 id="89751003-db4b-453d-84e9-3002b2146c05" class="">7.5 Designing Effective Work Teams</h2><p id="6851cba9-db3d-4350-bbf7-84420ca5fb89" class="">What is a team?</p><ul id="05895f8b-de58-4a0f-8597-a9b246734910" class="bulleted-list"><li style="list-style-type:disc">A group becomes a team when there is a strong sense of shared commitment when a synergy is developed such that group afterwards efforts are greater than the sum of its parts</li></ul><ul id="14134e14-30fc-4ba0-a31d-e9be9c8ec523" class="bulleted-list"><li style="list-style-type:disc">Teams are major building blocks of many organizations</li></ul><p id="c3ed9ccf-2589-4206-971d-188eb8e6fcd7" class="">
+</p><p id="0cd3fd3b-28de-47ee-844e-43e30c743cfe" class="">Several qualities that are beneficial to all types of work teams</p><ul id="5cab211d-8d35-4877-970f-d2853c0e1d06" class="bulleted-list"><li style="list-style-type:disc">Psychological safety<ul id="2ae960d7-94fa-4676-9369-d665a16268f3" class="bulleted-list"><li style="list-style-type:circle">A shared belief that it is safe to take social risks<ul id="514074bd-5a79-4bad-93b1-a8b5006f2830" class="bulleted-list"><li style="list-style-type:square">In a team this might mean feeling safe to question the status quo, to suggest a new idea, or to disagree with a colleague</li></ul></li></ul></li></ul><ul id="6bc011f2-e82f-444a-b35c-ae87fd050ab6" class="bulleted-list"><li style="list-style-type:disc">Team reflexivity<ul id="3bccec09-54c5-471f-9d2f-ecc2f465b49d" class="bulleted-list"><li style="list-style-type:circle">The extent to which teams deliberately discuss team process and goals and adapt their behavior accordingly<ul id="a334699b-656d-4e9e-a14e-858a158ce84c" class="bulleted-list"><li style="list-style-type:square">Conscious, deliberate reflection enhances team coordination and avoids the problems that derive from a lack of clear communication</li></ul></li></ul></li></ul><ul id="a5b1ed3f-3293-493b-a9da-a139e1cf40dd" class="bulleted-list"><li style="list-style-type:disc">Shared mental models<ul id="48faefa1-92ea-4780-9ceb-42ff772f5f85" class="bulleted-list"><li style="list-style-type:circle">Team members share similar information about how they should interact and what their task is<ul id="b9f43351-fcfd-4dd6-93a2-bbf2a2165b41" class="bulleted-list"><li style="list-style-type:square">Shared mental models ensure that team members are on the same page</li></ul></li></ul></li></ul><ul id="f635d5c0-6bac-4f69-8253-2930f27d3111" class="bulleted-list"><li style="list-style-type:disc">Capacity to improvise<ul id="8b563bca-aa44-4010-b86c-205d1a44eb83" class="bulleted-list"><li style="list-style-type:circle">Sticking through an agreed course of action is usually a positive team quality</li></ul><ul id="b3acbd63-0a42-408b-b0ef-32936927bbfb" class="bulleted-list"><li style="list-style-type:circle">However, not everything will go as planned for teams, and flexibility and adaptability are essential for long-run team success</li></ul></li></ul><ul id="41fba3a7-1174-45f2-bba7-e93b7660f7f8" class="bulleted-list"><li style="list-style-type:disc">Collective efficacy<ul id="091a99d7-6919-48a5-b4a0-2c7760446ba8" class="bulleted-list"><li style="list-style-type:circle">Shared beliefs that a team can successfully perform a given task</li></ul></li></ul><ul id="a81d9a24-99b4-4f62-9679-ad0f325dc2cb" class="bulleted-list"><li style="list-style-type:disc">Team resilience<ul id="6b30650f-2263-4afa-8c28-6f3fb6a5fd6d" class="bulleted-list"><li style="list-style-type:circle">A team&#x27;s capacity to bounce back from setbacks or adversity</li></ul></li></ul><h3 id="78b425aa-734b-406f-b691-fb63ea941085" class="">Basic Qualities of Effective Work Teams</h3><p id="adc1c1ed-ff54-4c65-afba-24ff5b1ac831" class="">A work group is effective when</p><ol type="1" id="2b28b594-c788-481f-bfbd-b0fd83957d58" class="numbered-list" start="1"><li>Physical and intellectual output is acceptable to management and to other parts of the organization that use this input</li></ol><ol type="1" id="ce9244e4-8198-4a58-997d-b03a4649ff6f" class="numbered-list" start="2"><li>Group members needs are satisfied</li></ol><ol type="1" id="8705ed7d-49cd-4935-bfed-b01ee0b85079" class="numbered-list" start="3"><li>Group experience enables members to continue to work together</li></ol><p id="c9efcb16-dd28-4186-8999-56c251d8de4f" class="">
+</p><p id="26b72618-abd2-4107-a019-e38bb7efa0f3" class=""><strong>Group effectiveness occurs when</strong></p><ol type="1" id="4cc0c3e7-16f0-4672-8144-52a93ba7904b" class="numbered-list" start="1"><li>High-effort is directed toward group tasks</li></ol><ol type="1" id="3d431c7c-05bb-4051-9950-0f024ed550ae" class="numbered-list" start="2"><li>When knowledge and skill is directed towards tasks</li></ol><ol type="1" id="0aed3366-4098-4469-aa1f-18c88990de70" class="numbered-list" start="3"><li>When group has a sensible strategy for accomplishing goals</li></ol><h2 id="5eb6fccf-50fc-415c-9e95-8255f3ab8ab1" class="">7.6 Self-Managed Work Teams</h2><p id="f28cdb0a-ea08-4c39-802a-b7e6f2aa05aa" class="">Work groups that have the opportunity to do challenging work under reduced supervision</p><ul id="8f878144-bcf7-491a-891c-535a40a60dcd" class="bulleted-list"><li style="list-style-type:disc">Groups regulate much of their own members behavior</li></ul><p id="ce5d5da0-a04e-4385-90da-7bb0c2e66736" class="">
+</p><p id="62d1774b-feb0-4b2b-a1d0-52dc6337abb0" class=""><strong>Success factors for self-managed teams</strong></p><ol type="1" id="bf42d14e-c68c-43e2-9e57-709bcad9fff1" class="numbered-list" start="1"><li>Nature of tasks</li></ol><ol type="1" id="b43569b2-2c82-43df-ad43-7f05e98f5171" class="numbered-list" start="2"><li>Composition of the group</li></ol><ol type="1" id="8a66af88-3a5c-44a7-aef2-0a36d217d8de" class="numbered-list" start="3"><li>Support</li></ol><h3 id="8af033f5-181b-4726-8997-ca1362247108" class="">Tasks for Self-Managed Teams (should be)</h3><ol type="1" id="594f058d-57aa-4290-9201-9435000bd8eb" class="numbered-list" start="1"><li>Complex and challenging</li></ol><ol type="1" id="4662ff82-68c1-4a11-aae9-264a4e8785c2" class="numbered-list" start="2"><li>Require high interdependence among team members for accomplishment</li></ol><ol type="1" id="fb910d41-4b6a-4e95-906b-ec1c06aab0f4" class="numbered-list" start="3"><li>Members adopt roles that will make the group effective and not ones that are simply related to a narrow specialty</li></ol><h3 id="5d5e5ca6-01be-44e7-b1ca-ba199ebce813" class="">Composition of Self-Managed Teams</h3><ol type="1" id="e182cad1-8ba9-48cc-af5b-e42c886108eb" class="numbered-list" start="1"><li>Stability<ol type="a" id="999389b6-4e27-4470-8b84-4f0fcc0fd066" class="numbered-list" start="1"><li>Members should be stable; rotating members into and out of the group will cause it to fail in developing group identity</li></ol></li></ol><ol type="1" id="57d16d6e-78a5-4d8f-83d9-6960f7aaa89a" class="numbered-list" start="2"><li>Size<ol type="a" id="058648d8-b024-4720-880c-ddbc5fa13f9e" class="numbered-list" start="1"><li>As small as feasible as you want to keep coordination problems and social loafing to a minimum</li></ol></li></ol><ol type="1" id="54bb70bb-f3c8-4a08-a1d0-1c43a67dfc84" class="numbered-list" start="3"><li>Expertise<ol type="a" id="dd684bb7-6285-493e-afbf-d13769b4fa6b" class="numbered-list" start="1"><li>Members should have a high level of expertise about the task and social skills, group as whole should be knowledgeable of the tasks, and all should possess social skills</li></ol></li></ol><ol type="1" id="82849ad9-8fba-49ae-8ad1-71ede6fa2d6e" class="numbered-list" start="4"><li>Diversity<ol type="a" id="6ebea92f-7528-4671-903d-3f1feb0998c1" class="numbered-list" start="1"><li>Similar enough to work together and diverse enough to bring a variety of perspectives and skills to the task</li></ol></li></ol><p id="dca639c8-6264-4353-9929-327a78a4fcdb" class="">
+</p><p id="3b100631-9d7b-420e-8e44-a493e82e0d76" class="">One way of maintaining group composition (stability) is to let the group choose its members</p><ul id="103559f4-9553-43dc-b93d-95974411f3e2" class="bulleted-list"><li style="list-style-type:disc">The fit is important, high cohesiveness and development of group norms that stress group effectiveness is key</li></ul><ul id="795eb61a-fd3d-4d08-a112-35e9f302f300" class="bulleted-list"><li style="list-style-type:disc">Trust is critical for performance</li></ul><h3 id="c0579f06-b03e-4b1b-9800-d81c4fa038f8" class="">Supporting Self-Managed Teams</h3><p id="374f0c13-fd6d-475f-b0ee-f62bb6e95704" class="">Self-managed teams require training and that training depends on the job</p><ol type="1" id="62fe36b9-24e7-4edb-8b46-f302e70ef115" class="numbered-list" start="1"><li>Technical Training<ol type="a" id="5e0649d5-979e-4e09-a384-bed54651847f" class="numbered-list" start="1"><li>Math, computers, etc.</li></ol></li></ol><ol type="1" id="811d2ed5-c216-4f70-9245-e822505f6b8b" class="numbered-list" start="2"><li>Social skills<ol type="a" id="d7698911-09bc-4a25-abd7-3cc2e76d2d37" class="numbered-list" start="1"><li>Problem solving, decision making, etc.</li></ol></li></ol><ol type="1" id="e2f98601-933d-4727-8f25-0c7202756d20" class="numbered-list" start="3"><li>Language skills<ol type="a" id="75c7e034-4934-4cce-8a8d-f535b79a4cd4" class="numbered-list" start="1"><li>Communication</li></ol></li></ol><ol type="1" id="f325beda-4987-4fa9-a191-9189ad359530" class="numbered-list" start="4"><li>Business training<ol type="a" id="11a886d2-9db6-4a7b-b7aa-a5d0859bc26a" class="numbered-list" start="1"><li>Accounting, finance, etc.</li></ol></li></ol><p id="159395a9-c475-4768-b7e9-f9c04ef53782" class="">
+</p><p id="1d9b6c58-880c-4161-a86b-c0c399a7fcce" class="">Rewards</p><ul id="a5e4742b-1c3c-484d-b090-fb0db904e52d" class="bulleted-list"><li style="list-style-type:disc">Tie rewards to team accomplishment rather than individual</li></ul><p id="ff3613ba-4421-4ab7-9367-ef29c635e405" class="">
+</p><p id="94b3764c-b62e-443f-b8fd-49ec7c847262" class="">Management</p><ul id="20a548d7-2c0c-48f6-8ec9-7c676969a830" class="bulleted-list"><li style="list-style-type:disc">Management should help teams deal with union concerns, and coach teams to be interdependent</li></ul><p id="3775d48e-9753-4d81-84c0-13cb7fe68b9f" class="">
+</p><h2 id="e38fe575-c2e5-49ba-b532-bb3f13083a80" class="">7.7 Cross-Functional Teams</h2><p id="65c7cc2a-9eef-41a5-b3c2-fdff7fdcede4" class="">Work groups that bring people with different functional specialties together to better invent, design, or deliver a product or service</p><ul id="be1b434e-44c0-48c3-9d38-d7819a43c5a2" class="bulleted-list"><li style="list-style-type:disc">Members are experts in their own area but should to be able to cooperate with others</li></ul><ul id="454ffb99-2df8-4c46-9d41-03ba3c2a8f83" class="bulleted-list"><li style="list-style-type:disc">Cross-functional teams are best known for their success in product development<ul id="4a90cf4e-7a05-4c8c-8c37-961cc584a5db" class="bulleted-list"><li style="list-style-type:circle">The goal of using cross-functional teams has to have a combination of innovation, speed, and quality that comes from early coordination among various specialties</li></ul></li></ul><h3 id="eedb3e53-d528-4e3d-b148-f8db6efb196c" class="">Principles for Effectiveness</h3><ol type="1" id="1a20ec0d-3e80-4137-9e76-fd75822fc277" class="numbered-list" start="1"><li>Composition<ol type="a" id="327e0f86-d3a2-42fd-ae4c-cec65e55fa6f" class="numbered-list" start="1"><li>All relevant specialties are necessary and to be included</li></ol></li></ol><ol type="1" id="4ef4cc24-29e3-4ff8-8736-7666fae8bdad" class="numbered-list" start="2"><li>Superordinate goals<ol type="a" id="99bc0ecc-c797-44c2-b43c-2fbba216a720" class="numbered-list" start="1"><li>Attractive outcomes that can be achieved only by collaboration</li></ol></li></ol><ol type="1" id="e39119b9-be06-4d99-802d-38519a9a659e" class="numbered-list" start="3"><li>Physical proximity<ol type="a" id="bd09b157-ac9a-4c65-9361-48b18ce12eda" class="numbered-list" start="1"><li>Members have to be located close to each other</li></ol></li></ol><ol type="1" id="ec77381c-9859-4f1d-9ba8-4f730d82c76b" class="numbered-list" start="4"><li>Autonomy<ol type="a" id="43edc62b-e40c-4017-9acc-03c6356fc2e4" class="numbered-list" start="1"><li>Cross-functional teams need autonomy from larger organizations</li></ol></li></ol><ol type="1" id="8fb59989-682a-4415-a3ed-9610a071e247" class="numbered-list" start="5"><li>Rules and procedures<ol type="a" id="89518145-dd24-4ef1-af9a-a76882404234" class="numbered-list" start="1"><li>Basic procedures must be laid down to prevent anarchy</li></ol></li></ol><ol type="1" id="c61178c8-53e3-45d6-b486-c665392b54eb" class="numbered-list" start="6"><li>Leadership<ol type="a" id="68ad8816-ec7d-442f-b791-8ca9f1f1b8d4" class="numbered-list" start="1"><li>Cross-functional team leaders need strong people skills as well as task expertise</li></ol></li></ol><ol type="1" id="afb8e3f9-b82d-44bc-8e54-d572afc5e3d3" class="numbered-list" start="7"><li>Shared mental models<ol type="a" id="bcd8b2b8-cbee-465b-8a7e-137983e5124c" class="numbered-list" start="1"><li>Team members share identical information about how they should interact and what their task is<ol type="i" id="969df0ef-7e3f-49e0-912e-95e5d36030ee" class="numbered-list" start="1"><li>This enhances coordination and contributes greatly to effective team performance</li></ol><ol type="i" id="126f9513-79ce-48d0-b67a-102185152c05" class="numbered-list" start="2"><li>However, this is hard to instill in cross-functional teams because of different backgrounds</li></ol></li></ol></li></ol><h2 id="7044ebeb-ed7a-4e6b-aa7d-26c1668cb7ed" class="">7.8 Virtual Teams</h2><p id="7b12c7a9-4105-465d-be2a-dabdda7cc790" class="">Work groups that use technology to communicate and collaborate across time space and organizational boundaries</p><ul id="159daced-44a9-40e5-af33-6e58c21d2866" class="bulleted-list"><li style="list-style-type:disc">Virtual teams are often cross-functional and the technology they use can be either asynchronous or synchronous</li></ul><h3 id="09b8013f-56ed-430f-858d-5eb5394a128c" class="">Advantages of Virtual Teams</h3><ul id="15d94545-27ed-4ab6-8b56-7bd69b419575" class="bulleted-list"><li style="list-style-type:disc">Around the clock work<ul id="4e55e824-2692-44df-b886-120a36150cbb" class="bulleted-list"><li style="list-style-type:circle">A virtual team is a 24-hour team that never sleeps</li></ul><ul id="8beb3c81-48e2-4642-b765-3d4218216f9a" class="bulleted-list"><li style="list-style-type:circle">A team member can begin a process in London and pass it on to another team member in New York for more input; the teammate from New York can then forward the work to a colleague in San Francisco, etc.</li></ul></li></ul><ul id="2f48780a-f39c-4aa4-9fd8-50cfe1c7b92d" class="bulleted-list"><li style="list-style-type:disc">Reduces travel time and cost<ul id="acd0d9c7-8653-4f6f-a7e6-266dedd55618" class="bulleted-list"><li style="list-style-type:circle">Projects in the past required team members to board planes and travel long distances</li></ul></li></ul><ul id="0a0468fa-08da-4010-a231-be7a34b3f680" class="bulleted-list"><li style="list-style-type:disc">Larger talent pool<ul id="19a26314-e196-4dfd-a7aa-45664fdf9181" class="bulleted-list"><li style="list-style-type:circle">Virtual teams allow companies to expand their potential labour markets and go after the best people even if these people have no interest in relocating</li></ul></li></ul><h3 id="3c91fad5-7ff8-4074-b6fa-4f809c7cd019" class="">Challenges of Virtual Teams</h3><ul id="ab4f34ef-c415-46a0-af25-d1e7427638b1" class="bulleted-list"><li style="list-style-type:disc">Trust<ul id="4b9c95bf-e29b-406b-8f46-a83aa1a2a518" class="bulleted-list"><li style="list-style-type:circle">It is hard to develop trust virtually</li></ul></li></ul><ul id="f23edf88-e15a-4dc5-9233-7f8b924acfa6" class="bulleted-list"><li style="list-style-type:disc">Miscommunication<ul id="cb3ddf34-3227-41a5-96a9-0315300ff01d" class="bulleted-list"><li style="list-style-type:circle">Face-to-face communication is lost</li></ul></li></ul><ul id="cefabe25-804d-41f5-b32f-0260fa1002bd" class="bulleted-list"><li style="list-style-type:disc">Isolation<ul id="04b98213-8435-4bba-af78-4d618ff0409b" class="bulleted-list"><li style="list-style-type:circle">Lack of casual interaction can lead to feelings of isolation and detachment</li></ul></li></ul><ul id="681b2d9c-e5a7-4b80-89a4-8554ed51c2b8" class="bulleted-list"><li style="list-style-type:disc">Management issues<ul id="82a7508c-c941-4a39-a4c4-b11b8c7cee64" class="bulleted-list"><li style="list-style-type:circle">Hard to assess performance, monitor diligence, and ensure fairness</li></ul></li></ul><h3 id="de8bab96-5135-452d-a647-1d62ade23380" class="">Lessons Concerning Virtual Teams</h3><ol type="1" id="bd12f2b4-6591-4f1d-9ee7-32cbcf153961" class="numbered-list" start="1"><li>Recruitment<ol type="a" id="331da252-d438-434d-b8c6-89081559d352" class="numbered-list" start="1"><li>Find people with good interpersonal skills and intercultural skills and not just technical expertise</li></ol></li></ol><ol type="1" id="0b55013a-c4f9-4bce-b1a2-b34aaa60796c" class="numbered-list" start="2"><li>Training<ol type="a" id="c51d16ab-3dcc-46a1-b10d-d8211285891f" class="numbered-list" start="1"><li>Invest in training for both technical and interpersonal skills</li></ol></li></ol><ol type="1" id="147b5531-4308-4c69-ac90-ae28acd30d4a" class="numbered-list" start="3"><li>Personalization<ol type="a" id="647525b9-4fd2-4113-b514-7be1936f8d01" class="numbered-list" start="1"><li>Encourage members to get to know each other through informal communication, thereby reducing isolation</li></ol></li></ol><ol type="1" id="6a7f9a6f-8f25-4c97-a5ca-97f6d360a3f1" class="numbered-list" start="4"><li>Leadership<ol type="a" id="aeac6948-5e74-40b1-bb2e-30919ccfc12e" class="numbered-list" start="1"><li>Should refine goals clearly, set rules for communication and standards and responses, and provide feedback to keep members informed of progress and the big picture, resolve conflict, and implement mental models</li></ol></li></ol><p id="08fa87e3-f2af-4ce0-95e9-de1609660753" class="">
+</p></div></article></body></html>

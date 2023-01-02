@@ -1,0 +1,705 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>5: Work Motivation</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="7d94aaea-56fc-44cb-8183-a058eb02303a" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/met_william_morris_1877_willow.jpg" style="object-position:center 90%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🧠</span></div><h1 class="page-title">5: Work Motivation</h1></header><div class="page-body"><h2 id="a599dcf3-99af-467e-a03c-a9582146ad5b" class="">5.1 What is Motivation?</h2><h3 id="8ce21d26-b11c-452e-993c-283bf2434ab6" class="">Basic Characteristics of Motivation</h3><p id="0e012abb-689d-4243-b351-c1f6cf574504" class="">We can formally define motivation as the extent to which persistent effort is directed towards a goal</p><ol type="1" id="9a3caa66-7dee-4d77-9be2-1dce1233679b" class="numbered-list" start="1"><li>Effort<ol type="a" id="c8c2fcc3-f4f1-43fe-ab01-8edcc530fbb0" class="numbered-list" start="1"><li>The first aspect of motivation is the strength of the person&#x27;s work-related Behavior, or the amount of effort the person exhibits on the job</li></ol></li></ol><ol type="1" id="7dd5f752-74b9-4761-aa5e-2dcf55347a53" class="numbered-list" start="2"><li>Persistence<ol type="a" id="bf960c02-547a-40b4-b6aa-03dfaa9911b1" class="numbered-list" start="1"><li>The second characteristic of motivation is the persistence that individuals exhibit in applying effort to their work tasks</li></ol><ol type="a" id="6c890867-4501-4593-80bd-2292954d2e90" class="numbered-list" start="2"><li>Continuing to do something despite difficulties and challenges</li></ol></li></ol><ol type="1" id="f8d82ee4-fa31-433a-92cb-ad336d35adbe" class="numbered-list" start="3"><li>Direction<ol type="a" id="054d9786-d792-45cd-8159-6a2a5c532a6b" class="numbered-list" start="1"><li>The third characteristic of motivation is the direction of the person&#x27;s work-related behavior<ol type="i" id="c8a2516f-0780-477f-8d36-af8d57ce89ca" class="numbered-list" start="1"><li>Do workers channel persistent effort in a direction that benefits the organization?</li></ol><ol type="i" id="1ed591e2-5b9c-43fd-b91a-c1283c4946f8" class="numbered-list" start="2"><li>Employers expect motivated stockbrokers to advise their clients of good investment opportunities and motivated software designers to design software</li></ol></li></ol></li></ol><ol type="1" id="8aa2d3c5-fac4-4067-ad91-cc37b2ce0fed" class="numbered-list" start="4"><li>Goals<ol type="a" id="8889237a-e921-425b-8f1f-8ee93217f731" class="numbered-list" start="1"><li>All motivated behavior has some goal or objective toward which it is directed<ol type="i" id="f8dfb0ae-680a-4d14-a1b7-6c564d4ea568" class="numbered-list" start="1"><li>Goals can include but are not limited to high productivity, good attendance, or creative decisions</li></ol></li></ol></li></ol><h3 id="aee26dac-f9ea-42d8-b919-99d82a8d56d0" class="">Extrinsic and Intrinsic Motivation</h3><ol type="1" id="e4541493-925e-457a-b40e-0b0c19e28c42" class="numbered-list" start="1"><li>Extrinsic motivation stems from the work environment external to the task and is usually applied by someone other than the person being motivated<ol type="a" id="c45c8294-d5f0-43ef-a20e-2220c95b53ca" class="numbered-list" start="1"><li>Pay, fringe benefits, company policies, and various forms of supervision are examples of extrinsic motivators</li></ol></li></ol><ol type="1" id="97dc954d-fdf0-4ced-be7f-50054fb6741e" class="numbered-list" start="2"><li>Intrinsic motivation stems from the direct relationship between the worker and the task and is usually self-applied<ol type="a" id="cc782fca-4d98-4dc3-8620-2c55aec5a6bc" class="numbered-list" start="1"><li>Feelings of achievement, accomplishment, challenged, and competence derived from performing one&#x27;s job are examples of intrinsic motivators; this also includes the sheer interest of the job itself</li></ol></li></ol><p id="23ae3738-cfa9-4be1-a63b-c68ce159b012" class="">
+</p><p id="7077bedc-e4d8-42a7-a9e4-8aec8833a159" class="">It is possible for some motivators to have both extrinsic and intrinsic qualities</p><ul id="92a60e08-1bc2-4b8d-a056-c63df358ffb6" class="bulleted-list"><li style="list-style-type:disc">For example, a promotion might be applied by the boss but it can also be a clear signal of achievement and competence.</li></ul><p id="7267df50-17ed-49b4-9f06-e05eacbd0242" class="">
+</p><h2 id="be67cd9e-067d-472e-bac4-008edeb02804" class="">5.2 Motivation and Performance</h2><p id="dccf3879-c948-4122-80ed-aaf0817e18b1" class="">Performance can be defined as the extent to which an organizational member contributes to achieving the objectives of the organization</p><p id="4c704a6e-6513-4d9b-89a0-d546aef5b6db" class="">
+</p><p id="613a4ee3-81c5-4851-912e-1a860abf1b90" class="">Two forms of intelligence that are particularly important for performance are general cognitive ability and emotional intelligence</p><h3 id="6a53bd38-62fa-4256-824d-c2f0c95f5ad9" class="">General Cognitive Ability</h3><p id="36f16cca-7c0a-4e8a-8e20-5a23e530c0d5" class="">General cognitive ability is a term used to refer to a person&#x27;s basic information processing capacities and cognitive resources</p><ul id="55be8c92-9240-46e2-96aa-cbd033c0cdac" class="bulleted-list"><li style="list-style-type:disc">It reflects an individual&#x27;s overall capacity and efficiency to mentally process, understand, and learn information</li></ul><ul id="d7e1f353-3826-4b5c-bff5-0f55c3ae1649" class="bulleted-list"><li style="list-style-type:disc">It includes a number of cognitive abilities such as a verbal, numerical, spatial, and reasoning abilities that are required to perform mental tasks</li></ul><ul id="8b94d790-a78c-4acf-82d5-27b80f2cad93" class="bulleted-list"><li style="list-style-type:disc">Cognitive ability is usually measured by a number of specific aptitude tests that measure these abilities.</li></ul><ul id="8a232335-2313-4d9f-9a89-66844f513447" class="bulleted-list"><li style="list-style-type:disc">General cognitive ability predicts learning, training, and job performance in all kinds of jobs and occupations, including those that involve both manual and mental tasks</li></ul><h3 id="613c4269-2374-41b2-9423-717c9c7281dc" class="">Emotional Intelligence</h3><p id="6090f009-67c8-4e8b-90be-17975e390546" class="">Emotional intelligence has to do with the ability to understand and manage one&#x27;s own and other&#x27;s feelings and emotions</p><ul id="817d69c4-ca2d-448c-a893-0dbf627a52d1" class="bulleted-list"><li style="list-style-type:disc">It involves the ability to perceive and express emotion, assimilate emotion and thought, understand and reason about emotions and managing emotions in oneself and others<ul id="3f8da764-1b06-4cfb-a205-48ce1dd828f3" class="bulleted-list"><li style="list-style-type:circle">Individuals high in emotional intelligence are able to identify and understand the meanings of emotions and to manage and regulate their emotions as a basis for problem solving, reasoning, thinking and action</li></ul></li></ul><p id="f6e3f141-19b6-43d4-94f0-21c153ad14f5" class="">
+</p><p id="f76ef886-89ec-445d-8db0-b5a494a3c46e" class="">The four branch model of emotional intelligence</p><ol type="1" id="09aba707-9fba-447b-a6d1-9c92b0042069" class="numbered-list" start="1"><li>Perceiving emotions accurately in oneself and others<ol type="a" id="e98f64ba-f271-44f3-b6f2-b5a43bfa36d8" class="numbered-list" start="1"><li>This involves the ability to perceive emotions and to accurately identify one&#x27;s own emotions and the emotions of opposites<ol type="i" id="e9357c44-82e4-4506-a016-b2c3845e0a8a" class="numbered-list" start="1"><li>The ability to accurately identify emotions in people&#x27;s faces and nonverbal behavior</li></ol></li></ol></li></ol><ol type="1" id="b0ca3ee5-d7b5-4ef1-aba3-64fce3aae979" class="numbered-list" start="2"><li>Using emotions to facilitate thinking<ol type="a" id="e1166fa1-0b65-40c6-b4fb-999a8db06612" class="numbered-list" start="1"><li>This refers to the ability to use and assimilate emotions and emotional experiences to guide and facilitate once thinking and reasoning<ol type="i" id="1ef2613b-4020-47af-8adb-d5a0e5633484" class="numbered-list" start="1"><li>This is an important skill because, emotions and moods affect what and how people think when making decisions</li></ol></li></ol></li></ol><ol type="1" id="3b68e7b5-2eef-4a44-812c-0a075eba249b" class="numbered-list" start="3"><li>Understanding emotions, emotional language, and the signals conveyed by emotions<ol type="a" id="f15ff329-ac35-43f9-a06e-feadb3aef5ad" class="numbered-list" start="1"><li>This stage involves being able to understand emotional information, the determinants and consequences of emotion and how emotions evolve and change over time<ol type="i" id="402e26b9-5be9-40a1-b080-01bab871ec2a" class="numbered-list" start="1"><li>At this stage, people understand how different situations and events generate emotions as well as how they and others are influenced by various emotions</li></ol></li></ol></li></ol><ol type="1" id="060ab936-4763-4094-ac04-aab2376a2ea3" class="numbered-list" start="4"><li>Managing emotions so as to attain specific goals<ol type="a" id="4353df4a-9681-4cc6-a346-75839b44c767" class="numbered-list" start="1"><li>This involves the ability to manage one&#x27;s own and other&#x27;s feelings and emotions as well as emotional relationships<ol type="i" id="f5e354f8-3052-4a3d-ab59-595e74dab787" class="numbered-list" start="1"><li>This is the highest level of emotional intelligence because it requires one to have mastered the previous stages</li></ol></li></ol></li></ol><h3 id="aa61b45a-0357-45b1-b648-3891ef51ef90" class="">The Motivation-Performance Relationship</h3><p id="9fd7b0b3-2b09-475c-ba99-597cb48f31f2" class="">It is certainly possible for performance to be low even when a person is highly motivated</p><ul id="28dd3a5e-bde1-4802-a6e7-9ab72424675e" class="bulleted-list"><li style="list-style-type:disc">In addition to personality, general cognitive ability, and emotional intelligence, poor performance could also be due to a poor understanding of the task or luck and chance factors that can damage the performance of the most highly motivated individuals<ul id="0dfdf8c8-1397-47b8-9a85-8fb4d1b2d8f6" class="bulleted-list"><li style="list-style-type:circle">Similarly, an individual with rather marginal motivation might have high general cognitive ability, emotional intelligence, or might understand the task so well that some compensation occurs<ul id="6542090e-b22b-4a55-b1f7-8676061872cd" class="bulleted-list"><li style="list-style-type:square">High motivation will not result in high performance if employees have low cognitive ability and emotional intelligence, do not understand their jobs, or encounter unavoidable obstacles over which they have no control<ul id="75880b97-a626-4c81-a50f-b7d885554117" class="bulleted-list"><li style="list-style-type:disc">Motivational interventions such as linking pay to performance, simply will not work if employees are deficient in the important skills and abilities</li></ul></li></ul></li></ul></li></ul><p id="2232b3d4-9560-422d-ab42-2425a9ea49fa" class="">
+</p><h2 id="a71fdbac-f773-458a-991b-701d810ffbfe" class="">5.3 Need Theories of Work Motivation</h2><p id="6e13f774-bf6e-4933-b819-f16cc87b0677" class="">The first three theories of motivation that we will consider are need theories</p><ul id="0f321113-3b69-4aa4-996f-6fd358561da8" class="bulleted-list"><li style="list-style-type:disc">These theories attempt to specify the kinds of needs people have and the conditions under which they will be motivated to satisfy these needs in a way that contributes to performance<ul id="0919c32f-43b9-4560-a309-1bf5591f6660" class="bulleted-list"><li style="list-style-type:circle">Or with what motivates workers<ul id="d0234408-1612-4318-a435-956c411bf9cf" class="bulleted-list"><li style="list-style-type:square">Needs &gt; Behaviour &gt; Incentives and Goals</li></ul></li></ul></li></ul><h3 id="f51e64bb-0440-419b-8ae7-8ebd28ace632" class="">Maslow’s Hierarchy of Needs</h3><p id="e47e7c10-9fd0-438c-ab8b-27125d8f7eeb" class="">According to Maslow, humans have five sets of needs that are arranged in the hierarchy, beginning with the most basic and compelling needs</p><ol type="1" id="4ab3ef31-35fc-4c00-b6d3-36614648236c" class="numbered-list" start="1"><li>Psychological needs<ol type="a" id="684ce35b-fd0e-43f0-bb79-6872c6ec5bd3" class="numbered-list" start="1"><li>These include the needs that must be satisfied for the person to survive, such as food, water, oxygen and shelter</li></ol><ol type="a" id="9783e584-7075-4607-97d5-167e43e3b811" class="numbered-list" start="2"><li>In an organizational setting this might include the minimum pay necessary for survival</li></ol></li></ol><ol type="1" id="48c2a349-9312-4b08-ba73-e824a67ff028" class="numbered-list" start="2"><li>Safety needs<ol type="a" id="d4874e4a-802b-483c-92b7-aba33c83192b" class="numbered-list" start="1"><li>These include needs for security, stability, freedom from anxiety, and a structured and ordered environment</li></ol><ol type="a" id="c8adbe30-81c3-4884-85b7-1b2fc798dd67" class="numbered-list" start="2"><li>In an organizational setting this can include safe working conditions, fair and sensible rules and regulations, job security, a comfortable work environment, pension and insurance plans, and pay above the minimum needed for survival</li></ol></li></ol><ol type="1" id="343b4b7e-9767-4e9a-a34d-32175d9cf767" class="numbered-list" start="3"><li>Belongingness needs<ol type="a" id="71c47d2e-f8d1-40b2-91f5-8c97a0306c9d" class="numbered-list" start="1"><li>These include needs for social interaction, affection, companionship, love, and friendship</li></ol><ol type="a" id="b942dbb2-3304-40dd-bd7d-75e8ea553939" class="numbered-list" start="2"><li>In an organizational setting; factors that might meet these needs include the opportunity to interact with others on the job, friendly and supportive supervision, opportunity for teamwork, and opportunity to develop new social relationships</li></ol></li></ol><ol type="1" id="7baacf39-3327-4441-8ab7-97ec1bb450db" class="numbered-list" start="4"><li>Self-esteem needs<ol type="a" id="ac769492-ded5-4585-9d17-c9e3fc34c7f9" class="numbered-list" start="1"><li>These include needs for feelings of adequacy, competence, independence, strength, confidence, and the appreciation and recognition of these characteristics by others</li></ol><ol type="a" id="f17fec40-4d04-4f49-9516-def859d8bfd2" class="numbered-list" start="2"><li>In an organizational setting, factors that might satisfy these needs include the opportunity to master tasks leading to feelings of achievement and responsibility<ol type="i" id="b5bea408-3628-405b-a454-25f97c22aaae" class="numbered-list" start="1"><li>Awards, promotions, prestigious job titles, professional recognition, might satisfy these needs when they are supposed to be truly deserved</li></ol></li></ol></li></ol><ol type="1" id="0f42708d-b5eb-4cae-a871-f2b3be578695" class="numbered-list" start="5"><li>Self-actualization needs<ol type="a" id="99be8819-1704-477e-9bc3-d15c1ce0657f" class="numbered-list" start="1"><li>These involve the desire to develop one&#x27;s true potential as an individual to the fullest extent and to express one&#x27;s skills, talents, and emotions in a manner that is most personally fulfilling</li></ol><ol type="a" id="969fccee-0a8d-4a08-a2cd-96eedee0baa2" class="numbered-list" start="2"><li>In an organizational setting, conditions that might provide self-actualization include, absorbing jobs with the potential for creativity and growth as well as a relaxation of structure to permit self development and personal progression</li></ol></li></ol><p id="a463fc5a-4b4b-4839-a5f7-0ef64988bf61" class="">
+</p><p id="5dc9abd7-008a-476d-8552-01ea194fe266" class="">The motivational premise of Maslow&#x27;s hierarchy of needs is that; the lowest level unsatisfied need category has the greatest motivating potential</p><ol type="1" id="fb69f961-a12a-4228-b2a5-e20c1c61bffb" class="numbered-list" start="1"><li>This means that none of the needs is a ‘best motivator’<ol type="a" id="1bb5e4aa-8d64-4ea7-8ccd-0c65efbd60aa" class="numbered-list" start="1"><li>Motivation depends on the person&#x27;s position in the need hierarchy</li></ol><ol type="a" id="d7ccca7c-c81a-488f-bfc5-b871f32d6c13" class="numbered-list" start="2"><li>Individuals are motivated to satisfy their physiological needs before they reveal an interest in safety needs, and safety must be satisfied before belongingness needs become motivational, and so on</li></ol></li></ol><ol type="1" id="67464a1c-af79-40b3-9429-b9ff05de3a8f" class="numbered-list" start="2"><li>When a need is unsatisfied, it exerts a powerful effect on the individuals thinking and behaviour, and this is the sense in which needs are motivational<ol type="a" id="58a6dd32-d0f5-4b86-95d4-21a43067170a" class="numbered-list" start="1"><li>For example, if you already fulfilled the belongingness needs, you feel welcomed in your workplace, this need will no longer serve as a motivator for you</li></ol></li></ol><h3 id="12a2b60f-618f-4dc2-8a32-106a4d4aa267" class="">Alderfer’s ERG Theory</h3><p id="745292f1-d813-4aa1-a241-429107843d2c" class="">The ERG theory (existence, relatedness, growth) builds off of Maslow&#x27;s need classifications and makes some different assumptions about the relationship between needs and motivation</p><ol type="1" id="c3b2d7e9-30ed-48ef-8bf2-7e256101c899" class="numbered-list" start="1"><li>Existence needs<ol type="a" id="8ff1e14e-dd25-4760-ac72-98cf687f8bb5" class="numbered-list" start="1"><li>These are needs that are satisfied by some material substance or condition<ol type="i" id="7a078d55-1fde-4d22-8322-4e11464bb3b0" class="numbered-list" start="1"><li>These correspond closely to Maslow&#x27;s physiological needs and safety needs that are satisfied by material conditions rather than interpersonal relations<ol type="1" id="6554ad96-acbd-4800-993b-9ac6ec77ddbd" class="numbered-list" start="1"><li>Again this can be the need for food, shelter, pay, and safe working conditions</li></ol></li></ol></li></ol></li></ol><ol type="1" id="48d88826-27e5-4322-afb2-9161dfe9abfd" class="numbered-list" start="2"><li>Relatedness needs<ol type="a" id="9efd7414-6181-4600-bc64-aa7fb350bcd8" class="numbered-list" start="1"><li>These are needs that are satisfied by open communication and the exchange of thoughts and feelings with other organizational members<ol type="i" id="3e0a70ff-ae5f-4478-bc30-c79ae57dfa56" class="numbered-list" start="1"><li>These correspond closely to Maslow&#x27;s belongingness needs and self-esteem needs that are satisfied by receiving feedback from others</li></ol></li></ol></li></ol><ol type="1" id="b381d2f1-83b1-41ba-8caf-e690c2ab90ac" class="numbered-list" start="3"><li>Growth needs<ol type="a" id="92451e92-3615-463c-a050-c822d27d5e59" class="numbered-list" start="1"><li>These are needs that are fulfilled by strong personal involvement in the work setting<ol type="i" id="2bc03764-cca6-46b0-bfbd-dac8cea28891" class="numbered-list" start="1"><li>Growth needs correspond to Maslow&#x27;s need for self-actualization and the aspects of self-esteem needs that concern achievement and responsibility</li></ol><ol type="i" id="4cd8eba4-4ba1-4909-abf8-ed9aeee787bf" class="numbered-list" start="2"><li>Growth involves the full utilization of one&#x27;s skills and abilities and the creative development of new skills and abilities</li></ol></li></ol></li></ol><p id="a46a682e-e2e8-47d6-ab60-023d8d95c7e9" class="">
+</p><p id="16e22da6-72f4-45ef-899d-0a59ff36f305" class="">Similarly to Maslow&#x27;s model, as lower-level needs are satisfied, the desire to have higher level needs satisfied will increase</p><ul id="e080d1c8-9917-47a3-a3f7-f3ea5722752f" class="bulleted-list"><li style="list-style-type:disc">As existence needs are fulfilled, relatedness needs gain motivational power</li></ul><h3 id="82d99b1a-db39-4614-a540-d986d9f1870d" class="">McClelland’s Theory of Needs</h3><p id="17029d3a-2a24-4a64-8ecc-a42c0822163a" class="">McClelland&#x27;s theory of needs; needs reflect relatively stable personality characteristics that one acquires through early life experiences and exposure to selected aspects of one’s society</p><ul id="17b6f6e5-bd89-4128-a981-934c2e046231" class="bulleted-list"><li style="list-style-type:disc">He was more concerned with the specific behavioral consequences of needs. In other words, under what conditions are certain needs likely to result in particular patterns of motivation?</li></ul><p id="cf44699f-f33b-4801-8a86-f1f908172c95" class="">
+</p><p id="0747fd3d-e5e8-4bf0-91f0-d384cb7547e4" class="">The three needs that McClelland studied most have special relevance for organizational behaviour; needs for achievement, affiliation, and power</p><ol type="1" id="905a6fee-c147-48d9-bbe3-70702314fd29" class="numbered-list" start="1"><li>Individuals who are high in need for achievement: <ol type="a" id="ce0ef2e0-9ce5-4ef7-b562-e85102484e4b" class="numbered-list" start="1"><li>Have a strong desire to perform challenging tasks well<ol type="i" id="8497152a-a937-4f22-a7c7-b98ab4c196b5" class="numbered-list" start="1"><li>A preference for situations in which personal responsibility can be taken for outcomes<ol type="1" id="c279e403-2971-448d-890f-b48adc7d6b5c" class="numbered-list" start="1"><li>They do not prefer situations in which outcomes are determined by chance</li></ol></li></ol><ol type="i" id="2698ce9e-a0c9-4883-8e11-36d67caeadaf" class="numbered-list" start="2"><li>A tendency to set moderately difficult goals that provide for calculated risks<ol type="1" id="f69b4a13-2ba8-4627-96f9-98c7fbb0456a" class="numbered-list" start="1"><li>Achieving success with easy goals will provide little sense of achievement, while extremely difficult goals will never be reached</li></ol></li></ol><ol type="i" id="e2db0db7-cf15-4c03-86d1-3da989b3d8bb" class="numbered-list" start="3"><li>A desire for performance feedback<ol type="1" id="8e582835-5ef6-4c3b-a4af-6482b7a4d9d1" class="numbered-list" start="1"><li>Such feedback permits individuals with high need for achievement to modify their goal attainment strategies to ensure success and signals them when success has been reached</li></ol></li></ol></li></ol></li></ol><ol type="1" id="dc849d5a-6337-469e-aeed-6781bb1ed200" class="numbered-list" start="2"><li>Individuals who are high in need for affiliation:<ol type="a" id="74ebeb37-c204-463a-8ee5-85c77b254f70" class="numbered-list" start="1"><li>Have a strong desire to establish and maintain friendly, compatible interpersonal relationships<ol type="i" id="451c6b23-85c2-4188-927d-4b5eccdc743c" class="numbered-list" start="1"><li>They like to like others, and they want others to like them</li></ol><ol type="i" id="e5417830-5f15-4fdd-8069-67ce6f3f89ea" class="numbered-list" start="2"><li>They have an ability to learn social networking quickly and a tendency to communicate frequently with others, either face-to-face, by telephone, or in writing</li></ol><ol type="i" id="b3afdd36-c2f7-40ad-a297-b6ff2829da9b" class="numbered-list" start="3"><li>They also prefer to avoid conflict in competition with others, and they sometimes exhibit strong conformity to the wishes of their friends</li></ol></li></ol></li></ol><ol type="1" id="dd76d155-33c4-4dc1-8761-9f8ed4f104ce" class="numbered-list" start="3"><li>Individuals who are high in need for power:<ol type="a" id="09a9fda8-73b3-4489-b61a-9a1cc750ad18" class="numbered-list" start="1"><li>Have a strong desire to have influence over others<ol type="i" id="051ae89a-1585-46ca-9006-8c5f686c8564" class="numbered-list" start="1"><li>They seek out social settings in which they can be influential</li></ol><ol type="i" id="641ed4bb-6ea4-437b-a977-c8fe74a376dd" class="numbered-list" start="2"><li>Some people who are in need of power show a strong concern for personal prestige</li></ol><ol type="i" id="88c7b584-ed00-4011-9e2d-29a613d92644" class="numbered-list" start="3"><li>They tend to seek attention</li></ol></li></ol></li></ol><p id="7d22d652-a789-430b-af24-cc063274a460" class="">
+</p><p id="7ea5b3f5-5bf2-48fb-89a0-fcfc000a5c91" class="">McClelland predicts that people will be motivated to seek out and perform well in jobs that match their needs</p><ol type="1" id="090b4efc-2236-46de-b61a-da1425a4e6ac" class="numbered-list" start="1"><li>People who are in the high need of achievement should be strongly motivated by sales jobs are entrepreneurial positions<ol type="a" id="376b5ecf-82f5-4646-8177-3d82cb814077" class="numbered-list" start="1"><li>Such jobs offer feedback, personal responsibility, and opportunity to set goals</li></ol></li></ol><ol type="1" id="2da073c9-963d-44e2-b2c0-d09841a275bc" class="numbered-list" start="2"><li>People who are high in need for affiliation will be motivated by job such as social work or customer relations <ol type="a" id="4a9814b5-3c58-4f99-bf5b-274f439d65e8" class="numbered-list" start="1"><li>These jobs have as a primary task establishing good relations with others</li></ol></li></ol><ol type="1" id="d186adf4-ab33-49f4-b372-6c68d281c668" class="numbered-list" start="3"><li>People who are in high need of power will display high motivation in jobs that enable one to have a strong impact on others<ol type="a" id="a223fdad-f190-4bea-bbb1-c014dbc02565" class="numbered-list" start="1"><li>Jobs such as journalism and management are good examples</li></ol></li></ol><p id="c002378f-e633-40d8-8e00-594152148f7f" class="">
+</p><p id="6dafa10e-1954-4e29-8510-ac9dcf9e47ea" class="">McClelland has found that the most effective managers have a low need for affiliation, a high need for power and the ability to direct power towards organizational goals</p><h3 id="37cc5be4-f3e6-4fc7-8f61-70ec3c757437" class="">Research Support for Need Theories</h3><p id="449c671e-12ff-48ad-9ebd-e0d48ce6c732" class="">Maslow&#x27;s need hierarchy suggest two main hypotheses</p><ol type="1" id="5a404299-8cb4-46a5-a681-dc9a371393e1" class="numbered-list" start="1"><li>Specific needs should cluster into the five main need categories that Maslow proposes</li></ol><ol type="1" id="4d581ae8-f0ef-400b-ae56-253bcd911d10" class="numbered-list" start="2"><li>As the needs in a given category are satisfied, they should become less important, while the needs in the adjacent higher need category should become more important</li></ol><p id="94342775-ea21-4d3f-8687-a94d69febac3" class="">
+</p><p id="7cc40b5f-e2f0-4153-a9df-942b1b3bb314" class="">The simplicity and flexibility of ERG Theory seem to capture the human needs structure better than the greater complexity and rigidity of Maslow&#x27;s Theory</p><ul id="a8d107a2-0c90-4cd1-819b-aba0d63f8b45" class="bulleted-list"><li style="list-style-type:disc">This is because Maslow&#x27;s Theory suggests that most people experience the same needs in the same hierarchical order</li></ul><h3 id="77d3a1cd-3f2b-4cc3-bc9d-3a50dd43648b" class="">Managerial Implications of Need Theories</h3><p id="cdd13318-6c13-48e8-8ecc-cc4b2f1544e4" class="">The need theories have some important things to say about managerial attempts to motivate employees</p><ol type="1" id="3a666bf5-395c-45bd-8a89-737952448322" class="numbered-list" start="1"><li>Appreciate diversity<ol type="a" id="9a06a2b3-1d8e-4374-ad2d-3ff005ab7bc1" class="numbered-list" start="1"><li>The lack of support for the fairly rigid need hierarchy suggests that managers must be adept at evaluating the needs of individual employees and offering incentives or goals that correspond to their needs</li></ol><ol type="a" id="42da160e-3a38-4c0f-91b8-bfbba3b2bdba" class="numbered-list" start="2"><li>It is important to survey the employees to find out what their needs are then offer programs that meet their needs<ol type="i" id="0b4181be-83ab-4edb-a0a1-1c9ba124bee9" class="numbered-list" start="1"><li>The best salesperson might not make the best sales manager</li></ol><ol type="i" id="2c4f1b00-1d68-481c-8aa4-196ad4235486" class="numbered-list" start="2"><li>The needs of a young recent college graduate probably differ from those of an older employee preparing for retirement</li></ol></li></ol></li></ol><ol type="1" id="922d456e-7e6e-4811-be2a-7822375047d5" class="numbered-list" start="2"><li>Appreciate intrinsic motivation<ol type="a" id="e992bb44-f098-4415-8b1d-7e17fc38becd" class="numbered-list" start="1"><li>The need theories also serve the valuable function of alerting managers to the existence of higher-order needs (intrinsic motivators)</li></ol><ol type="a" id="0833962f-bfb0-4004-b737-a956c0ed2dff" class="numbered-list" start="2"><li>Employees that are deprived of higher-order needs gratification come to expect more and more of extrinsic factors (increased pay, bonus, promotion, etc.) in exchange for their services<ol type="i" id="85efcd66-845e-48f6-92e1-1e59c4940384" class="numbered-list" start="1"><li>This creates a cycle of deprivation, regression, and temporary gratification continues at great cost to the organization</li></ol></li></ol><ol type="a" id="3ed79bd1-2515-4a69-8e6b-609923ef85c8" class="numbered-list" start="3"><li>Intrinsic motivators; employers should provide to employees:<ol type="i" id="9bd02edc-79e7-4d54-b320-b236895edb09" class="numbered-list" start="1"><li>Work that is interesting in matches skills and abilities</li></ol><ol type="i" id="5fcebf08-919f-4017-aba2-65591ca8412d" class="numbered-list" start="2"><li>Training and development opportunities</li></ol><ol type="i" id="b4b81bd1-05a3-4f47-bdd9-76cb7026adda" class="numbered-list" start="3"><li>Opportunities for achievement and advancement</li></ol><ol type="i" id="e76bfb95-5332-42b2-bd08-6578d246e9c6" class="numbered-list" start="4"><li>Recognition for contributions</li></ol><ol type="i" id="b8b208c1-c045-444c-be54-167b4e2c444d" class="numbered-list" start="5"><li>As much responsibility as possible</li></ol></li></ol></li></ol><h3 id="81784a7c-0a02-437a-9c61-1efbfdf4abd2" class="">Self-Determination Theory</h3><p id="75fb155c-4004-4527-8c38-95b1a98bbe5d" class="">Self-determination Theory focuses on different types of motivation.</p><ul id="4898efa7-f2fa-4b49-ba61-2855c771c548" class="bulleted-list"><li style="list-style-type:disc">It relates the satisfaction of three basic psychological needs to autonomous motivation and controlled motivation<ul id="948d3124-39d9-41cc-9d5f-0f6c8af1edef" class="bulleted-list"><li style="list-style-type:circle">Autonomous motivation is self-motivation or intrinsic motivation<ul id="375e9890-2969-4ec7-8aed-99ac1cf4972f" class="bulleted-list"><li style="list-style-type:square">It occurs when people feel they are in control of their motivation, they are performing a task because it is interesting and they have chosen to do it; </li></ul><blockquote id="9e9b76da-b840-4673-bb91-9e5ff275d250" class="">So if motivation is autonomous, individuals are engaged in a task because they have made a choice to do the task and their actions are internally rather than externally regulated</blockquote></li></ul><ul id="23b48ffe-e1fe-4367-bbac-0a793b9301aa" class="bulleted-list"><li style="list-style-type:circle">Control motivation occurs when people are motivated to obtain a desired consequence or extrinsic rewards<ul id="74fd46e1-ebcb-43da-8fb5-f36f28527f7e" class="bulleted-list"><li style="list-style-type:square">When motivation is controlled, individuals feel they are pressured and have no choice but to engage in a task; therefore their motivation is external rather than internal regulated</li></ul><blockquote id="5c800549-c75d-4ee0-a17e-bdddca73ee72" class="">We studied to obtain good grades not because we were interested in the courses being taught, but instead because we needed these grades to advance to the next year of university or to apply for coop</blockquote><p id="ce6b3523-a82e-4ee9-a92f-ea9025168c7c" class="">
+</p></li></ul></li></ul><p id="e09a2640-9139-4ff7-a854-a81a4eeff743" class="">According to SDT, all individuals have three basic psychological needs that are important for psychological growth and well-being</p><ol type="1" id="f4cb7e6c-5df4-44c7-ba61-cc3895cc7cfe" class="numbered-list" start="1"><li>Competence<ol type="a" id="982fb40f-6b3a-4821-ad69-e58cb8bda269" class="numbered-list" start="1"><li>Feeling a sense of mastery and being effective in one&#x27;s environment</li></ol></li></ol><ol type="1" id="1655a508-b692-41be-bfde-922083e3b1bc" class="numbered-list" start="2"><li>Autonomy<ol type="a" id="acc91be8-0744-4314-bbb6-9c5aa9d6d3dd" class="numbered-list" start="1"><li>Having choice and feeling volitional (the ability to choose or determine) in one&#x27;s behavior</li></ol></li></ol><ol type="1" id="1bafe286-cda7-4b09-9f15-d52f5998335d" class="numbered-list" start="3"><li>Relatedness<ol type="a" id="679b6fd7-87c0-4218-a565-7be54068f60a" class="numbered-list" start="1"><li>Has to do with the feeling of being connected to others</li></ol></li></ol><p id="a0ef1d60-6ecb-4ca7-affd-9a28a38c30fb" class="">
+</p><p id="f6e12491-34f7-4b9c-b15c-83609d15d2af" class="">Self-determination theory makes a distinction between two types of motivation; autonomous (self-determined) and controlled (not self-determined) motivation</p><h3 id="6c2ba9a2-7e1c-4150-81bb-7831a566b767" class="">Research Support for and Managerial Implications of Self-Determination Theory</h3><p id="32476928-c65c-4c17-8851-6c451c7a7d24" class="">Research on self-determination theory has investigated the predictors and consequences of autonomous and controlled motivation as well as the three psychological needs</p><ul id="7cdbdcbc-495e-41e4-bd79-b83cc8f50266" class="bulleted-list"><li style="list-style-type:disc">A key predictor variable is autonomy support from one&#x27;s direct supervisor<ul id="4aa9fc68-a823-4255-8473-cc97f79deaec" class="bulleted-list"><li style="list-style-type:circle">Autonomy support involves providing employees with choice and encouragement for personal initiative</li></ul><blockquote id="294b214f-5be6-4bde-a10a-10b9d9029b04" class="">Managers provide employees with autonomy support when they give a meaningful rationale for performing an activity or task, emphasize and enable some choice rather than control, and understand and acknowledge employees’ feelings and perspectives</blockquote></li></ul><ul id="a8ee5a59-f737-4d48-a041-e2a272885b4a" class="bulleted-list"><li style="list-style-type:disc">So research has found that autonomy support is positively related to the satisfaction of the needs for competence, relatedness, and autonomy as well as autonomous motivation and more positive work outcomes<ul id="69d71421-9827-40cb-be51-4b9b7b06bcec" class="bulleted-list"><li style="list-style-type:circle">The satisfaction of the three psychological needs has been found to be positively related to job attitudes, work engagement, well-being, high quality performance, and autonomous motivation<ul id="c938cbe3-1b67-41fa-ad7d-f4addb8bb37e" class="bulleted-list"><li style="list-style-type:square">Managers can be trained to provide autonomy support, and this in turn has a positive effect on employees’ trust in management, job satisfaction, working gauge man, an autonomous motivation</li></ul></li></ul></li></ul><p id="dc4caf0f-42c5-4df4-81a7-c1ca327e6ea8" class="">
+</p><p id="cda349d6-5c62-42d8-8dfb-448192ac3136" class="">The most important managerial implication of self-determination theory is that organizations should create work environments that satisfy employee&#x27;s basic psychological needs for competence, autonomy, and relatedness and facilitate autonomous motivation</p><p id="9979cd86-790c-46ba-97f6-5a3b40d93b02" class="">
+</p><h2 id="1f5cd32c-2366-4a4d-9cfc-e24fd3513481" class="">5.4 Process Theories of Work Motivation</h2><p id="21d722b4-81b3-401d-a52d-a050faf47c6f" class="">In contrast to need theories of motivation, which concentrate on what motivates people, process theories concentrate on how motivational occurs</p><h3 id="73609732-c5f9-466e-96d6-2e3800d3a136" class="">Expectancy Theory</h3><p id="44684ffc-4d06-42c1-8d30-e081e87a865c" class="">The basic idea underlying expectancy theory is the belief that motivation is determined by the outcomes that people expect to occur as a result of their actions on the job</p><ol type="1" id="15310f0e-8f6a-4e56-b427-01ccd3594886" class="numbered-list" start="1"><li>Outcomes are the consequences that may follow certain work behaviors<ol type="a" id="ff2a0ca0-bb10-447a-a323-b57d573fbc43" class="numbered-list" start="1"><li>First level outcomes can be high productivity vs. average productivity, good attendance versus for attendance, etc.<ol type="i" id="8537e2e6-408d-46ef-b713-bf1d42359d17" class="numbered-list" start="1"><li>Expectancy theory is concerned with specifying how an employee might attempt to choose one first level outcome instead of another</li></ol></li></ol><ol type="a" id="01bd9833-059d-4f6a-887d-87e3443d3395" class="numbered-list" start="2"><li>Second level outcomes are consequences that follow the attainment of a particular first-level outcome<ol type="i" id="8f656914-6e02-46f4-9c73-bbf561dfb128" class="numbered-list" start="1"><li>Second level outcomes are most personally relevant to the individual worker and might involve amount of pay, sense of accomplishment, etc.</li></ol></li></ol></li></ol><ol type="1" id="033b4614-b012-42f3-a20b-cea683221005" class="numbered-list" start="2"><li>Instrumentality is the probability that a particular first-level outcome (such as high productivity) will be followed by a particular second-level outcome (such as fatigue)<ol type="a" id="418c8dd4-0da7-4b11-8a24-da90a414e6d5" class="numbered-list" start="1"><li>This is also known as the performance &gt; outcome link<ol type="i" id="f3bf0108-365b-4665-a41a-2b08156a46eb" class="numbered-list" start="1"><li>A bank teller might figure that the odds are 50:50 (instrumentality = 0.5) that a good performance rating will result in a pay raise </li></ol></li></ol></li></ol><ol type="1" id="1e08f57a-75d3-4a0f-97ef-39213b1377a4" class="numbered-list" start="3"><li>Valence is the expected value of outcomes; the extent to which they are attractive or unattractive to the individual<ol type="a" id="2256e745-6c7d-424b-9640-690a5a7633d3" class="numbered-list" start="1"><li>Good pay, peer acceptance, or any other second-level outcome might be more or less attractive to particular workers</li></ol><ol type="a" id="e1f1a60d-41a2-4698-bfb3-97b335ac54d0" class="numbered-list" start="2"><li>The valence of first-level outcomes is the sum of products of the associated second-level outcomes and their instrumentalities<ol type="i" id="6e30163b-da86-47c4-b60d-7609c93ca322" class="numbered-list" start="1"><li>Or the valence of a first-level outcome depends on the extent to which it leads to favorable second-level outcomest</li></ol><figure id="9b8597c6-bb1b-4a22-bf9a-9cc877b5d385" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>t</mi><mi>h</mi><mi>e</mi><mtext> </mtext><mi>v</mi><mi>a</mi><mi>l</mi><mi>e</mi><mi>n</mi><mi>c</mi><mi>e</mi><mtext> </mtext><mi>o</mi><mi>f</mi><mtext> </mtext><mo>=</mo><mtext> </mtext><mi mathvariant="normal">Σ</mi><mtext> </mtext><mi>i</mi><mi>n</mi><mi>s</mi><mi>t</mi><mi>r</mi><mi>u</mi><mi>m</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>a</mi><mi>l</mi><mi>i</mi><mi>t</mi><mi>i</mi><mi>e</mi><mi>s</mi><mo>∗</mo><mi>s</mi><mi>e</mi><mi>c</mi><mi>o</mi><mi>n</mi><mi>d</mi><mo>−</mo><mi>l</mi><mi>e</mi><mi>v</mi><mi>e</mi><mi>l</mi><mtext> </mtext><mi>v</mi><mi>a</mi><mi>l</mi><mi>e</mi><mi>n</mi><mi>c</mi><mi>e</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">the\ valence\ of\ =\ \Sigma\ instrumentalities*second-level\ valences</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mord mathnormal">e</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord mathnormal">ce</span><span class="mspace"> </span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">Σ</span><span class="mspace"> </span><span class="mord mathnormal">in</span><span class="mord mathnormal">s</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">u</span><span class="mord mathnormal">m</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord mathnormal">t</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">i</span><span class="mord mathnormal">t</span><span class="mord mathnormal">i</span><span class="mord mathnormal">es</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">seco</span><span class="mord mathnormal">n</span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mspace"> </span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord mathnormal">ces</span></span></span></span></span></div></figure></li></ol><ol type="a" id="f8d687b2-af0f-47a1-8598-16c5c7e7f73e" class="numbered-list" start="3"><li>Expectancy is the probability that the worker can actually achieve a particular first-level outcome (effort &gt; performance link)<ol type="i" id="c30fe9fa-fa96-4fd9-b797-a411d458e3fe" class="numbered-list" start="1"><li>A machinist might absolutely certain (expectancy = 1) that she can perform at an average level (producing 15 units/day) and less certain (expectancy = 0.6) that she can perform at a high level (producing 20 units/day)</li></ol></li></ol><ol type="a" id="7058deca-2d6b-421b-82fa-fb7fc2cf987c" class="numbered-list" start="4"><li>Force is the end product of the other components of the theory<ol type="i" id="aa5d03eb-ed62-4854-8a6c-a8be45d71d6f" class="numbered-list" start="1"><li>Represents the relative degree of effort that will be directed toward various first-level outcomes</li></ol></li></ol><p id="cd13007a-3b59-44da-a8c2-711557832512" class="">Force directed toward a first-level outcome is a product of the valence of that outcome and the expectancy that it can be achieved</p><p id="3c7113fc-2683-4839-8051-303ed21bfb98" class="">Force = First-level valence x Expectancy</p><p id="b96e7535-35cb-4acc-90ca-3fc80aa4007f" class="">
+</p><p id="c2f88193-5d57-4b61-a017-0eb4c6941102" class="">The mechanics of expectancy theory</p><ol type="1" id="4114816b-3ad1-445f-b8b7-2de37bf21c8b" class="numbered-list" start="1"><li>People will be motivated to perform in those work activities that they find attractive and that they feel they can accomplish</li></ol><ol type="1" id="45c05b07-21ed-4568-9162-233fb9f78296" class="numbered-list" start="2"><li>The attractiveness of various work activities depends on the extent to which they lead to favorable personal consequences</li></ol><p id="f20df805-dc46-46c6-88cf-df9d81d8468b" class="">
+</p><p id="2da90872-e872-4bcb-b8e0-76da6ad56abd" class="">The mechanics rely on an employees perception as well</p><ul id="b062a7a3-3a73-4dbe-825b-50f623e3f654" class="bulleted-list"><li style="list-style-type:disc">Two employees performing the same job might attach different valences to money, and differ in their perceptions of the instrumentality of performance for obtaining high pay, and differ in their expectations of being able to perform at a high level</li></ul></li></ol><h3 id="36540ed6-5b0f-496d-ad5f-ee375ae05d03" class="">Research Support for Expectancy Theory</h3><p id="a413ee56-c1b6-4512-bbdf-47d82b32b285" class="">There is good evidence that the valence of first-level outcomes depends on the extent to which they lead to favorable second-level consequences</p><ul id="dc917e34-a3f5-4fbe-a0c4-0e46fde0c536" class="bulleted-list"><li style="list-style-type:disc">But the complexity of expectancy theory in general makes it difficult to test</li></ul><h3 id="49602907-2ace-43ca-a01a-97e929c5074c" class="">Managerial Implications of Expectancy Theory</h3><ol type="1" id="2dd34f15-23bb-42e3-ba5b-9a0a8b05ba2e" class="numbered-list" start="1"><li>Boost expectancies<ol type="a" id="4761f84f-1bd8-444c-9690-a846c8fb3f03" class="numbered-list" start="1"><li>One of the most basic things managers can do is ensure that their employees expect to be able to achieve first-level outcomes that are of interest to the organization<ol type="i" id="28235f40-9611-406b-ab0f-3d55f2c56bf2" class="numbered-list" start="1"><li>Employees might feel that poor equipment, poor tools, or lazy co-workers impede their work progress</li></ol><ol type="i" id="8d6118d4-c02c-44da-9308-1f68ec7b07a1" class="numbered-list" start="2"><li>Employees might not understand what the organization considers to be good performance or see how they can achieve it</li></ol></li></ol><ol type="a" id="3e7660e9-2c3f-45fa-8a3a-e26c6130a601" class="numbered-list" start="2"><li>No matter how positively valent high productivity or good attendance might be, the force equation suggests that workers will not pursue these goals if expectancy is low</li></ol></li></ol><ol type="1" id="1dc07b2c-9365-4f5c-8faa-ac84fa280330" class="numbered-list" start="2"><li>Clarify reward contingencies<ol type="a" id="0254dfd1-c3e3-4e88-a878-f3985fb47743" class="numbered-list" start="1"><li>Managers should attempt to ensure that the paths between first and second level outcomes are clear<ol type="i" id="27ae0b25-74c2-4f77-ac25-8353cd5f0931" class="numbered-list" start="1"><li>Employees should be convinced that first-level outcomes desired by the organization are clearly instrumental in obtaining positive second-level outcomes and avoiding negative outcomes<ol type="1" id="9903e46c-3d3d-496f-8447-41e91efe6ce1" class="numbered-list" start="1"><li>If managers have a policy of recommending good performers for promotion, they should spell out this policy</li></ol></li></ol></li></ol></li></ol><ol type="1" id="6739bea8-d86c-4d76-81cf-19f58db780ef" class="numbered-list" start="3"><li>Appreciate diverse needs<ol type="a" id="e3429ae3-86ff-44e4-ab16-c4f269d24662" class="numbered-list" start="1"><li>It could be difficult for managers to change the valences that employees attach to second-level outcomes (individual preferences for high pay, promotion, interesting work, etc.)<ol type="i" id="266e5fb1-4369-4e05-bf69-8c67d2a9e4c5" class="numbered-list" start="1"><li>Managers should instead analyze the diverse preferences of employees and attempt to design individualized ‘motivational packages’ to meet their needs</li></ol></li></ol></li></ol><h3 id="9043b3a0-921b-4a9f-8add-1fd612eedcdb" class="">Equity Theory</h3><p id="bb558606-5743-4dd1-8cd8-df42afce452e" class="">Equity theory asserts that workers compare the inputs that they invest in their jobs and the outcomes they receive against the inputs and outcomes of some other relevant person or group</p><ul id="f8858501-3440-49ce-b9fc-1a013550866d" class="bulleted-list"><li style="list-style-type:disc">When these ratios are equal, the worker should feel that a fair and equitable exchange exists with the employing organization</li></ul><p id="47611ec5-45fc-4296-9b80-b7fab743e813" class="">
+</p><p id="926ee952-8dbc-424c-9e22-4b9b2637929d" class="">But in what sense is Equity a motivation theory?</p><ul id="fab5a9ba-641c-4b96-b2b3-f6f3731c2d75" class="bulleted-list"><li style="list-style-type:disc">Individuals are motivated to maintain an equitable exchange relationship<ul id="7eba4598-2663-4cd5-892d-1933609667b3" class="bulleted-list"><li style="list-style-type:circle">Whereas inequity is unpleasant and produces tension; people will devote energy towards reducing inequity </li></ul></li></ul><p id="c40a53a2-2c9e-409d-a15c-4e9adb36f2d1" class="">
+</p><p id="924cf3bd-8c0c-45da-a5d6-a4ccec7a594f" class="">So how can we reduce inequity/achieve equity?</p><ol type="1" id="71623342-b6ee-4ce3-8b97-144aa8e2ffc3" class="numbered-list" start="1"><li>Perceptually distorting one’s own inputs or outcomes</li></ol><ol type="1" id="2b1d448c-b490-4522-817e-5a7c4ce52d0a" class="numbered-list" start="2"><li>Perceptually distorting the inputs of the comparison person or group</li></ol><ol type="1" id="a2042d8a-353c-46cf-852b-9fba3c9f5e7c" class="numbered-list" start="3"><li>Choosing another comparison person or group<ol type="a" id="1b658c6b-d56f-4525-9746-e3bcfa059d69" class="numbered-list" start="1"><li>The three above tactics are completely based on perception, so whether it actually works is not guaranteed</li></ol></li></ol><ol type="1" id="5ddba0bc-106e-4fee-8742-85af66234ff8" class="numbered-list" start="4"><li>Altering one’s own inputs or altering one’s outcomes</li></ol><ol type="1" id="9b40d247-7f5c-4c66-8d12-4796e0336140" class="numbered-list" start="5"><li>Leaving the exchange relationship<ol type="a" id="a449055e-4e5f-4fe4-a965-caa3cd1cabb4" class="numbered-list" start="1"><li>These two involve changes in behavior</li></ol></li></ol><p id="2f6cf2eb-a35d-41a1-ab78-d40e3a977343" class=""><strong>Gender and Equity</strong></p><ul id="971c310b-bc0e-4494-8cf5-8a796824bee7" class="bulleted-list"><li style="list-style-type:disc">It is interesting that both women and men have some tendency to choose same-sex comparison persons <ul id="440c4464-b81e-4c78-a26e-f0c044692839" class="bulleted-list"><li style="list-style-type:circle">When judging the fairness of outcomes that they receive, women will compare themselves to other women </li></ul><ul id="7b22ca82-f2dc-454b-9f49-c362e212bf65" class="bulleted-list"><li style="list-style-type:circle">This might be a partial explanation for the wage gap between men and women<ul id="9ed25415-2bbc-497e-ad72-41e5508d6420" class="bulleted-list"><li style="list-style-type:square">Women could be comparing themselves to lesser-paid women which is backwards thinking when you are trying to solve the issue of wage inequity<ul id="7bbf9aac-c26b-4d58-8ad3-7deee36edf16" class="bulleted-list"><li style="list-style-type:disc">It is important to choose relevant comparators regardless of gender</li></ul></li></ul></li></ul></li></ul><h3 id="f007daf5-d0ce-44e3-88ae-09f654ce2236" class="">Research Support for Equity Theory</h3><p id="a62b9789-1147-472d-bd8e-e4c1dd324bd3" class="">When workers are underpaid on an hourly basis, they tend to lower their inputs by producing less work</p><ul id="7c277b85-a230-4673-9c37-2f5981bb3d26" class="bulleted-list"><li style="list-style-type:disc">This brings inputs in line with low outcomes</li></ul><p id="654bfb05-9ab6-4565-ad89-5727f02a7af5" class="">
+</p><p id="e3863ada-6501-4814-8b67-005c669c3ddc" class="">Or if workers are paid on a piecewise basis ($1 for each burger produced)</p><ul id="dfc89ba1-90ee-4195-90fb-69cddeaa1dd7" class="bulleted-list"><li style="list-style-type:disc">They will tend to produce a high volume of low quality work<ul id="e7d6717f-b85c-40a9-8a11-616c00147021" class="bulleted-list"><li style="list-style-type:circle">Sloppy presentation of the burger, skimping on ingredients, etc.</li></ul></li></ul><p id="ef8f86e5-3aea-42d3-8772-1c77d20ec5fa" class="">
+</p><p id="3ea3cac0-69bb-4ddd-96e1-85c005d9c85f" class="">Underpayment inequity also leads to increases in resignation straight up as people would rather search for equity in a different workplace than to question it</p><ul id="63f4f673-1901-48de-a105-7286b58bcbcd" class="bulleted-list"><li style="list-style-type:disc">This theory is problematic in general because people won’t have an issue with being overpaid (compared to underpaid), and if anything, they’ll just increase their own inputs to put themselves further ahead <ul id="8ce47951-f89f-4581-a216-55101b6fdfca" class="bulleted-list"><li style="list-style-type:circle">No one is going to ask to receive a pay cut so that they are equal to the comparison person</li></ul></li></ul><h3 id="03dd5308-356f-4639-945b-6dd1e65beeb1" class="">Managerial Implications of Equity Theory</h3><p id="6e940927-269c-41fc-96b3-54e65dde1a50" class="">Perceived underpayment will have a variety of negative motivational consequences for the organization, including low productivity, low quality, theft, or turnover (employees resigning)</p><ul id="d48a09aa-a48c-4c8e-8d49-f12975a17fc3" class="bulleted-list"><li style="list-style-type:disc">On the other hand, overpayment wouldn’t necessarily solve the problem either in terms of increasing motivation<ul id="11a76b91-1227-4782-9a02-ecb42253f06c" class="bulleted-list"><li style="list-style-type:circle">Its also important to note that employees are the ones that determine the level of inputs, outcomes, and comparison people<ul id="a6ee1122-9d19-428f-ac82-ff5aa2f70d2a" class="bulleted-list"><li style="list-style-type:square">So if a manager, for instance, offered the outcome of more interesting work to an employee, this might not be perceived to them as equitable when better pay is the more relevant outcome</li></ul></li></ul></li></ul><p id="6aae4bbb-dcc1-4854-be0a-7ae919bcf068" class="">
+</p><ul id="b43a96ea-7e95-4383-b762-ba3407d26db6" class="bulleted-list"><li style="list-style-type:disc">If the best software engineer in your office is earning $2000 more (annually) than the other software engineers in your office, though they might not compare themselves to their peers, they could compare themselves to people who hold the same position as them but in different companies, so it could be worth for managers to invest even more into retaining their talent</li></ul><h3 id="10a37de1-9979-4f02-a7da-77684d3b5e6a" class="">Goal-Setting Theory</h3><p id="0f677813-5a6f-4ef9-908f-e6138c8b9b2e" class="">A goal is the object or aim of an action </p><ul id="342f0a77-20d5-49f7-9130-6e5144e2e072" class="bulleted-list"><li style="list-style-type:disc">All firms have goals</li></ul><h3 id="5f4f1ba6-e18d-46e8-86ac-816f1e27713c" class="">What Kinds of Goals are Motivational?</h3><p id="e3facfc8-b3bf-49cf-ab13-94673e3bd420" class="">According to goal-setting theory, goals are most motivational when they are specific and challenging and when organizational members are committed to them</p><ul id="8bd12d13-cbf6-4d19-a812-a3c433df3c5e" class="bulleted-list"><li style="list-style-type:disc">In addition, feedback about progress toward goal attainment should be provided</li></ul><p id="2485d84c-6349-4548-9985-59374a697a48" class="">
+</p><p id="7a074fbb-96db-49a7-b9d2-0ee50bfdfe0f" class="">The positive effects of goals are due to four mechanisms</p><ol type="1" id="0c0488b5-7fd2-479c-b6b1-99206a56623f" class="numbered-list" start="1"><li>They direct attention toward goal-relevant activities</li></ol><ol type="1" id="402fe960-0d17-4754-a420-20f701ba7c58" class="numbered-list" start="2"><li>They lead to greater effort </li></ol><ol type="1" id="bfb340f8-8c0c-4dc4-b06e-c379f602a4c2" class="numbered-list" start="3"><li>They increase and prolong persistence</li></ol><ol type="1" id="efbba744-ea14-48a7-b1c7-c2b75c78cec0" class="numbered-list" start="4"><li>They lead to the discovery and use of task-relevant strategies for goal attainment</li></ol><p id="d15775b3-eba4-4272-892b-48443637d0e3" class="">
+</p><p id="30637ed5-e758-45f2-9f46-7fa8a8029aaf" class="">Let’s consider the motivational characteristics of goal setting</p><ol type="1" id="5e2d182b-76d2-4fc0-b357-bb0fd7e3bb34" class="numbered-list" start="1"><li>Goal specificity<ol type="a" id="9bb36551-c84e-47ac-89b4-9397072ceb8a" class="numbered-list" start="1"><li>Specific goals are goals that specify an exact level of achievement for people to accomplish in a particular time frame<ol type="i" id="9243907a-91b2-4eb0-9597-c9daf1faec8c" class="numbered-list" start="1"><li>“I will enroll in five courses next semester and achieve a 70% or better in each course”</li></ol></li></ol></li></ol><ol type="1" id="97009bc9-2697-481c-a31a-94e3d42602d5" class="numbered-list" start="2"><li>Goal challenge<ol type="a" id="17444c46-279f-45d1-b4de-6bc938606e9e" class="numbered-list" start="1"><li>Goals that are easy to achieve will not motivate effective performance<ol type="i" id="e5a31a34-a2bb-4880-80a5-dd65b9d90721" class="numbered-list" start="1"><li>Similarly goals that are perceived as impossible to achieve will lose their potential to motivate</li></ol><ol type="i" id="def728ae-a498-447d-9375-14ff51b3afed" class="numbered-list" start="2"><li>So goal challenge should be adjusted per individual</li></ol><ol type="i" id="53ba95fe-3da2-4bf3-9b75-e1818737b739" class="numbered-list" start="3"><li>A guidance counselor might encourage a 50% student to set a goal of achieving 60% in the coming semester, and a 60% student to achieve 70%</li></ol></li></ol></li></ol><ol type="1" id="33632bcc-7c2e-4da0-b64e-9de79d51e676" class="numbered-list" start="3"><li>Goal commitment<ol type="a" id="017deda8-708b-4924-89f8-a53939eaad83" class="numbered-list" start="1"><li>Individuals must be committed to specific, challenging goals if the goals are to have effective motivational properties<ol type="i" id="3bf1d083-f8e8-4964-9736-1d10f1e61733" class="numbered-list" start="1"><li>↑ Effect of goals on performance = ↑ High goal commitment</li></ol></li></ol><ol type="a" id="7d108a9f-274e-4a62-a7f1-e56a248d88a2" class="numbered-list" start="2"><li>Also, goals are not goals if an individual is not committed to them, and goals cannot improve performance unless an individual accepts them and works towards them; especially when they are hard to achieve</li></ol></li></ol><ol type="1" id="9d24feb9-c140-46f9-ac43-74bfa442f2c2" class="numbered-list" start="4"><li>Goal feedback<ol type="a" id="f8667689-e3c8-4024-a063-2e76192188cd" class="numbered-list" start="1"><li>Specific and challenging goals have the most beneficial effect when they are accompanies by ongoing feedback that enables the person to compare performance with the goal<ol type="i" id="8491ef11-7811-442d-8e5d-993871462aa0" class="numbered-list" start="1"><li>Creating a schedule of tasks and following through is the easiest way to achieve goal feedback, since people are often motivated when they see how much they have accomplished and how much less is left to do<ol type="1" id="8c89c7a0-0368-40ea-bfeb-029182cdfcff" class="numbered-list" start="1"><li>Progress against the schedule is considered feedback</li></ol></li></ol></li></ol><ol type="a" id="86afa27b-fd12-4397-846a-f94e5eea185f" class="numbered-list" start="2"><li>Feedback also must be accurate, specific, credible, and timely</li></ol></li></ol><h3 id="24d56c4e-46be-4fdd-8b28-dd601b497443" class="">Enhancing Goal Commitment</h3><p id="42a374e5-1916-4274-8904-892ac6ca111a" class="">There are factors to consider that might affect commitment to challenging, specific goals</p><ol type="1" id="a6fb9f47-b5c6-4a51-91ed-2743e1561c29" class="numbered-list" start="1"><li>Participation<ol type="a" id="24c72e12-acd8-4973-9130-3841c5e2a2cc" class="numbered-list" start="1"><li>If it wasn’t obvious, research shows that participation can improve performance by increasing the difficulty of the goals that employees adopt </li></ol><ol type="a" id="3a57126b-940b-43db-aa19-f0674ba2ed54" class="numbered-list" start="2"><li>Also, organizational members should be more committed to goals that are set with the variable being participation, than any other goal</li></ol></li></ol><ol type="1" id="a2e98f03-3884-4a09-9b7f-bffa6cf807c3" class="numbered-list" start="2"><li>Rewards<ol type="a" id="132e075a-6478-4625-87d4-d4aa17085b4a" class="numbered-list" start="1"><li>Would you be more incentivized to be committed to a goal and accomplish it if there was a promise of extrinsic rewards (such as a raise)?<ol type="i" id="351f7308-3fff-4004-83d9-52567709b17b" class="numbered-list" start="1"><li>It’s very likely, but there is also evidence that goal setting has led to performance increases without extrinsic rewards<ol type="1" id="23ce6848-beb2-4d7d-869b-2e024f7dc312" class="numbered-list" start="1"><li>One reason for this is that some goals are designed to involve nothing more or less than just doing your job<ol type="a" id="fc964688-f815-49c4-9c11-627a564586f7" class="numbered-list" start="1"><li>Encouraging employees to pack crates to within 5% of their maximum capacity; this goal is designed in such a way that it does not require any greater effort or work from the employees part</li></ol></li></ol></li></ol></li></ol></li></ol><ol type="1" id="d58ca1cb-338c-41d7-b0b4-fab1332f9d18" class="numbered-list" start="3"><li>Management support<ol type="a" id="717db975-5d8c-4426-92b5-7611a96391d8" class="numbered-list" start="1"><li>When supervisors behave in a coercive (threatful) manner to encourage goal accomplishment, they can badly damage an employees’ goal commitment<ol type="i" id="e0dabcca-97ed-424b-a46b-d5687940001a" class="numbered-list" start="1"><li>For goal setting to work properly, supervisors must demonstrate a desire to assist employees in goal accomplishment and behave supportively if failure occurs<ol type="1" id="f5213e68-d810-4e1e-9841-b6cd539fc672" class="numbered-list" start="1"><li>Even making the goal a bit easier counts as managerial support</li></ol></li></ol></li></ol><ol type="a" id="52395b88-a3d5-437c-9a61-ce321321ea42" class="numbered-list" start="2"><li>Threats and punishment are counterproductive when in response to failure</li></ol><ol type="a" id="6298607c-426a-4aa1-86e9-6c8bf4f0b33e" class="numbered-list" start="3"><li>Trust in management is also a variable that plays a part in allowing goals to lead to improved performance</li></ol></li></ol><h3 id="0a567dca-090b-4312-8205-25d9f596e16d" class="">Goal Orientation</h3><p id="7886609d-d0db-48e4-bb4d-47284f12f5de" class="">Goal orientation refers to an individual’s goal preferences in achievement situations </p><ul id="5775039f-7aff-4e9e-b151-df6bde9e9562" class="bulleted-list"><li style="list-style-type:disc">Some individuals have a preference for learning goals while other have a preference for performance goals (performance-prove or performance-avoid goals)</li></ul><p id="6d189873-5e9e-49f2-a73d-5443d607addd" class="">
+</p><p id="fc91c649-44c5-4a07-89da-b1707b8a229b" class="">Individuals with a learning goal orientation are most concerned about learning something new and developing their competence in an activity by acquiring new skills and mastering new situations</p><ul id="ee29cc6c-3191-49e4-bccd-f88b59aa154d" class="bulleted-list"><li style="list-style-type:disc">Research has shown that learning goal orientation is positively related to learning as well as academic, task, and job performance</li></ul><p id="a3bfa177-6115-4e66-b131-9d63d78466f9" class="">
+</p><p id="d94f8aa2-bd44-4722-a777-e61e528ac889" class="">Individuals with a performance-prove goal orientation are concerned about demonstrating (proving) their competence in performing a task by seeking favorable judgments about the outcome of their performance</p><ul id="f73a2541-cdc1-4a8c-8e57-5b56ff558410" class="bulleted-list"><li style="list-style-type:disc">Studying for an exam with the aim of getting a high mark; the good mark would be a favorable judgment about the outcome of their performance</li></ul><p id="1f2a2e76-9eb0-467a-8c47-eaf1139306f1" class="">
+</p><p id="31934711-00fb-4c4c-b7f3-4f20b4aff4fd" class="">Individuals with a performance-avoid goal orientation are concerned about avoiding negative judgments about the outcome of their performance</p><ul id="feac3e97-44e7-445e-bfe4-27c4cdea0e0e" class="bulleted-list"><li style="list-style-type:disc">When working on a report, you try to check your report against the rubric given to you by your IA and try to fulfill each requirement as to give your IA less of a reason to provide negative feedback</li></ul><h3 id="2816daff-fe2c-4e60-9c02-de69ab529aae" class="">Goal Proximity</h3><p id="5d939c18-5984-4932-84e7-23a585ca0509" class="">Goals can also be distinguished in terms of whether they are distal or proximal goals</p><p id="21f12ccc-4728-41ab-bc71-6272b73c4d07" class="">
+</p><p id="415e89aa-5c01-4a43-a3f1-6add208dd7da" class="">A distal goal is a long-term or end goal</p><ul id="514b6560-596b-49d3-9f5d-79c1f1dc8475" class="bulleted-list"><li style="list-style-type:disc">Such as achieving a certain level of sales performance</li></ul><p id="8da10515-d204-4db4-bdd4-67eeb0e1756c" class="">
+</p><p id="1cace370-8d26-4fb8-a7f4-0915d69a0009" class="">A proximal goal is a short-term or sub-goal that is instrumental for achieving a distal goal</p><ul id="636ae7e6-4b2c-4aef-8957-7c4704280905" class="bulleted-list"><li style="list-style-type:disc">They involve breaking down a distal goal into smaller, more attainable sub-goals</li></ul><ul id="4de2ac4c-b348-499a-b3fc-6a6d2b4aef00" class="bulleted-list"><li style="list-style-type:disc">They provide more clear markers of progress towards a distal goal because they result in more frequent feedback</li></ul><h3 id="0074cdb7-19e7-484f-96d4-1b9f99635dab" class="">Research Support for Goal-Setting Theory</h3><p id="b0fea9fa-8c16-4b67-baa7-cc735f910e6a" class="">Goal-setting theory is considered to be one of the most valid and practical theories of work motivation</p><ul id="c6f22ec6-3dfa-46ba-9748-ba3689a77cd4" class="bulleted-list"><li style="list-style-type:disc">Group goals result in superior group performance, especially when groups set specific goals and when the group members participate in setting the goals</li></ul><p id="28fe8026-3199-48ae-a46b-648e4596bcb4" class="">
+</p><p id="2943ff55-55a0-4a2d-8d52-ff1ad38f93d1" class="">For example,</p><ul id="b92b204e-2e74-4151-b940-b705c00db727" class="bulleted-list"><li style="list-style-type:disc">A classic study conducted in Washington; truck drivers were assigned the specific, challenging performance goal of loading their trucks to 94 percent of legal weight capacity<ul id="8710720e-5bd5-461a-a1a8-5ca82d72c720" class="bulleted-list"><li style="list-style-type:circle">Before setting this goal, management had simply asked the drivers to do their best to maximize their weight</li></ul><ul id="f61d727a-015c-444b-afbb-bed42ec4fa6e" class="bulleted-list"><li style="list-style-type:circle">Over the first several weeks, load capacity gradually increased to more than 90 percent and remained that high for 7 years<ul id="b752f7dc-ba47-4009-a038-b913c2be0fbc" class="bulleted-list"><li style="list-style-type:square">In the first 9 months alone, the company accountants conservatively estimated the savings at $250K<ul id="02949c33-facc-4408-bded-f7ec400f8464" class="bulleted-list"><li style="list-style-type:disc">These results were achieved without driver participation in setting the goal and without monetary incentives for goal accomplishment</li></ul><ul id="ede49be7-bd89-40d5-a1e4-45eb9bd5a3ee" class="bulleted-list"><li style="list-style-type:disc">Drivers found the 94 percent goal motivating in and of itself; they frequently recorded their weights in informal competition with peer drivers</li></ul></li></ul></li></ul></li></ul><h3 id="ec6a48ab-dd7b-49c1-b9a2-35e73e544d4c" class="">Managerial Implications of Goal-Setting Theory</h3><p id="e1817a6e-5caf-4003-8006-0e9e11ecbd46" class="">The managerial implications of goal-setting theory seem straightforward</p><ul id="ec2e41d1-db4b-4e28-9f9d-d05fe9fb9739" class="bulleted-list"><li style="list-style-type:disc">Set specific and challenging goals</li></ul><ul id="b668836f-5e34-428b-89c2-1bbab9b5f42c" class="bulleted-list"><li style="list-style-type:disc">Provide ongoing feedback so that individuals can compare their performance with their goal</li></ul><p id="ccf2ef25-d39a-4f5a-9a44-300f7325afad" class="">
+</p><p id="a0dc1498-a44e-4e97-8402-2eaea4905231" class="">While goals are mostly motivational, there are limitations to this</p><ul id="21ae4d92-260d-40c1-a8e7-61c09532b341" class="bulleted-list"><li style="list-style-type:disc">The performance impact of specific, challenging goals is strongest for simpler jobs in comparison to complex jobs (such as doctors, and engineers)<ul id="a3976e1c-7d6e-4b7b-b72c-57114c849099" class="bulleted-list"><li style="list-style-type:circle">So, if the task is complex, it is more beneficial for individuals to set specific learning goals that allow them to gather the knowledge necessary to perform their task optimally<ul id="d3a287f1-18a1-43e5-aa19-8dac1e62784f" class="bulleted-list"><li style="list-style-type:square">Setting a high-performance goal would follow once the individual has become familiar with their task</li></ul></li></ul></li></ul><p id="d131eb23-a3d0-4865-b419-334371fa84bc" class="">
+</p><p id="d095a5af-5cc9-49d2-943b-c23461b9bc54" class="">Proximal goals should be set in conjunction with distal goals when employees are learning a new task or performing a complex one</p><h2 id="0ab962ef-c320-4736-bb42-dd0a1d5cf852" class="">5.5 Do Motivation Theories Translate across Cultures?</h2><p id="c60ed38f-e990-4d03-b3bc-1d4a638a3a56" class="">It is safe to assume that most theories that revolve around human needs will come up against cultural imitations to their generality</p><ul id="8c054083-e0b8-4857-bdfe-739b1a92abdf" class="bulleted-list"><li style="list-style-type:disc">Both Maslow and Alderfer suggest that people pass through a social stage (belongingness, relatedness) on their way to a higher-level personal growth or self-actualization stage<ul id="4eeb9cc9-0e0b-4825-9522-538007caa461" class="bulleted-list"><li style="list-style-type:circle">However, as discussed in Chapter 4, it is well established that there are differences in the extent to which societies value a more collective or a more individualistic approach to life</li></ul></li></ul><p id="e01a972c-edaa-4489-af9a-6e8b09f7143f" class="">
+</p><p id="1dfdb5a3-2100-4d41-aa1f-fe5ef557884a" class="">Research on SDT across various cultures has been largely supportive</p><ul id="8bea231a-3d55-442c-af5f-c0def3d8ef96" class="bulleted-list"><li style="list-style-type:disc">A study of SDT in nine different countries found that the three psychological needs are positively related to autonomous motivation, although the size of the relationships varied across countries for competence and autonomy<ul id="ac4cc12c-136a-4f89-b7b1-eca524bbbec6" class="bulleted-list"><li style="list-style-type:circle">This suggests that the importance of the three needs might vary across cultures</li></ul><ul id="99d204ec-42d0-4c55-97c8-d5111ae4a32a" class="bulleted-list"><li style="list-style-type:circle">Positive relationships were found across the countries studied, and managers’ autonomy support has been found to predict the satisfaction of employees’ autonomy, competence, and relatedness needs in different cultures<ul id="590f088d-09a0-4d70-a11c-815e37fa4f92" class="bulleted-list"><li style="list-style-type:square">SDT has been found to be a cross-culturally valid theory of work motivation</li></ul></li></ul></li></ul><p id="6e8b37fc-f529-4c21-a4bd-e666d6c36069" class="">
+</p><p id="2dd5459b-06f6-438e-9071-e68bdfe7803f" class="">Expectancy theory is very effective when applied cross-culturally</p><ul id="a391ec3f-d7cb-4e90-85b7-b5fcfb461857" class="bulleted-list"><li style="list-style-type:disc">The theory allows for the possibility that there may be cross-cultural differences in the expectancy that effort will result in high performance<ul id="3eb2f171-d82b-462b-b7f0-747234bfbe8f" class="bulleted-list"><li style="list-style-type:circle">Work outcomes (such as social acceptance vs. individual recognition) might have different valences across cultures</li></ul></li></ul><p id="6d821284-37fb-4746-a54d-0b096e2d125f" class="">
+</p><p id="49338037-3339-4a74-83c9-35d4df13a093" class="">Goal setting should also be motivational when applied cross-culturally</p><ul id="8378c563-518b-4c88-9f4f-0f3a9d35d8c4" class="bulleted-list"><li style="list-style-type:disc">It has been found to predict, influence, and explain behavior in numerous countries around the world</li></ul><ul id="85b750a3-fe20-4dca-8198-085bce275d4c" class="bulleted-list"><li style="list-style-type:disc">It is worth noting though that individualistic goals tend to not be realistic or motivational in collectivist cultures, hence it can’t be motivational either</li></ul><p id="64cdd4b1-967e-4a37-9009-58e7c05aa21f" class="">
+</p><p id="7b820b85-de22-461b-80bf-cbf34277f8c8" class="">Similarly with equity theory</p><ul id="a5bd8a57-9d8d-4142-b60a-e730c8da1ff4" class="bulleted-list"><li style="list-style-type:disc">In collectivist cultures, there is a push for equality rather than equity, so managers will distribute rewards accordingly so that everyone has a “fair” chance</li></ul><ul id="833a7d36-25af-4f93-96db-5ce964297084" class="bulleted-list"><li style="list-style-type:disc">This is also holds true even if there are certain individuals outperforming others, since in collectivist cultures, solidarity is the dominant motive<ul id="8907646b-712e-436f-801b-f7e4e14e06db" class="bulleted-list"><li style="list-style-type:circle">Thus, the North American (individualistic) approach to rewarding the high performing individual could backfire in said cultures</li></ul></li></ul></div></article></body></html>

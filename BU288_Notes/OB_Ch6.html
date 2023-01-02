@@ -1,0 +1,689 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>6: Work Motivation II</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="119d8c37-c6d7-4a7b-b87f-d7ff9d64c04a" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/nasa_new_york_city_grid.jpg" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🌡️</span></div><h1 class="page-title">6: Work Motivation II</h1></header><div class="page-body"><h2 id="9a9415e0-ed04-4056-81f0-67f23a9e145e" class="">6.1 Money as a Motivator</h2><p id="82da113b-0bfb-4d21-9236-180af1526446" class="">The money that employees receive in exchange for organizational membership is, in reality, a package made up of pay, and various fringe benefits, that have dollar value such as insurance plans, sick leave, and vacation time</p><ul id="e54fdb2b-bf3d-4a61-8735-f824260c3f3b" class="bulleted-list"><li style="list-style-type:disc">According to Maslow and Alderfer, pay should prove especially motivational to people that strong lower-level needs<ul id="823f76a5-bc37-4fd8-81ad-562b16edb7b1" class="bulleted-list"><li style="list-style-type:circle">For these people, pay can be exchanged for food, shelter and other necessities of life</li></ul></li></ul><p id="132c1993-30fd-4f39-9daf-26adddebb7ef" class="">
+</p><p id="4f8bcd0d-e7d2-4d4d-b01d-f1f3ff43bed8" class="">According to expectancy theory, if pay can satisfy a variety of needs, it should be a very valent and it should be a good motivator to the extent that it is clearly tied to performance</p><ul id="a031ef9c-7e04-4a50-bded-eb9af72cc471" class="bulleted-list"><li style="list-style-type:disc">Research on pay and financial incentives is consistent with the predictions of need theory and expectancy theory</li></ul><ul id="64d006e1-aa07-450d-8a72-1abe772ded4b" class="bulleted-list"><li style="list-style-type:disc">Financial incentives and pay for performance plans have been found to increase performance and lower turnover</li></ul><ul id="4acb3d35-06e3-4dd9-9d06-e5c0daed8888" class="bulleted-list"><li style="list-style-type:disc">Research not only supports the motivational effects of pay but also suggests that pay might as well be the most important and effective motivator of performance</li></ul><h2 id="643d2c42-7c61-44ee-98f8-0c9cc449690d" class="">6.2 Linking Pay to Performance on Production Jobs</h2><p id="a474051f-464f-4b01-9100-ba316e01bc9e" class="">The prototype of all schemes to link pay to performance on production jobs is piece rate</p><ul id="c716ca2b-f6d7-4891-8cb4-5bdaab970228" class="bulleted-list"><li style="list-style-type:disc">Piece rate is set up so that individual workers are paid a certain sum of money for each unit of production they complete<ul id="800cfe1e-b287-4c17-ae9d-b4242ee638e9" class="bulleted-list"><li style="list-style-type:circle">A sewing machine operator might be paid $2 for each dress that they have stitched</li></ul></li></ul><p id="d97df849-99f1-4756-8cae-17fbe7861655" class="">
+</p><p id="93421fa8-475e-4fcf-88ca-5a241cb09a78" class="">There are even systems where a worker is paid an hourly wage and paid a piece-rate differential on top of this hourly wage</p><ul id="73f4799f-ccef-4095-9fb8-dbe87801d34c" class="bulleted-list"><li style="list-style-type:disc">A forge operator might be paid $15 an hour plus 50 cents for each unit produced</li></ul><p id="af4669b6-c6cd-4237-8074-003a28641614" class="">
+</p><p id="fcb98365-1aff-428b-a0da-22b4e171a1c7" class="">It is very difficult to measure the productivity of an individual worker because of the nature of the production process</p><ul id="bd2c9b89-0b73-4444-a04c-f8b71630193d" class="bulleted-list"><li style="list-style-type:disc">This is why group incentives are sometimes employed</li></ul><ul id="2b5551d8-ff8c-4e18-a443-61fa0946a880" class="bulleted-list"><li style="list-style-type:disc">Workers in a steel mill might be paid an hourly wage and a monthly bonus for each ton of Steel produced over some minimum quota</li></ul><p id="173c7102-a33b-4813-97a3-84d4305c2cf5" class="">
+</p><p id="642a2156-4d32-4288-8a58-350de5edea8a" class="">These various schemes to link page of performance and production jobs are called wage incentive plans</p><ul id="f2cee776-66d1-4253-bd5f-d66ceae3f9c5" class="bulleted-list"><li style="list-style-type:disc">Compared with a straight hourly pay, wage incentives usually lead to substantial increases in productivity<ul id="b68d0a7d-7b60-42e0-ad94-a7d22dbde4a4" class="bulleted-list"><li style="list-style-type:circle">A study of 400 manufacturing companies found that those with wage incentive plans achieved between 43 to 64% greater productivity in those without such plans</li></ul></li></ul><h3 id="21171c5b-81ef-4bb0-89e9-3d1876c37c9f" class="">Potential Problems with Wage Incentives</h3><ol type="1" id="64690f1e-04d3-4fdf-a321-34d614176aa9" class="numbered-list" start="1"><li>Lowered quality<ol type="a" id="bd3ace23-8d68-404c-9d75-052e3ccb218d" class="numbered-list" start="1"><li>It is sometimes argued that wage incentives can increase productivity at the expense of quality</li></ol></li></ol><ol type="1" id="11a6ccd3-d0e8-4483-89e5-ceb00ab1bfa4" class="numbered-list" start="2"><li>Differential opportunity<ol type="a" id="b6480eb6-0367-4766-87d8-86472b0f942b" class="numbered-list" start="1"><li>Wage incentives can be problematic when workers have different opportunities to produce at a higher level</li></ol><ol type="a" id="8eb7c124-d024-42a0-ac25-dc30da07fd80" class="numbered-list" start="2"><li>Someone with a chainsaw will be able to chop down trees much faster than someone with an axe</li></ol></li></ol><ol type="1" id="724cc496-32ab-4f22-aab4-860cc4198a74" class="numbered-list" start="3"><li>Reduced cooperation<ol type="a" id="92eedf58-925f-4116-a439-8a954e5f08d3" class="numbered-list" start="1"><li>Wage incentives that reward individual productivity my decrease cooperation among workers<ol type="i" id="b60c90ca-2e1e-4797-bb51-d23f92f4c502" class="numbered-list" start="1"><li>To maintain a high wage rate, machinists might hoard raw materials or refuse to engage in peripheral tasks, such as keeping the shop clean or unloading supplies</li></ol></li></ol></li></ol><ol type="1" id="11693ff8-c8e3-426e-b145-a614baa1cefc" class="numbered-list" start="4"><li>Incompatible job design<ol type="a" id="bb61f752-2143-4ce6-af75-c97e85e033a3" class="numbered-list" start="1"><li>In some cases, the way jobs are designed can make it very difficult to implement wage incentives<ol type="i" id="1f5cce84-ca5b-4559-a91c-92c2b8c2db52" class="numbered-list" start="1"><li>On an assembly line, it is almost impossible to identify and reward individual contributions to productivity</li></ol><ol type="i" id="a1a8199c-0e19-4cdc-aadc-b9cf7c278287" class="numbered-list" start="2"><li>On a group report, it is almost impossible to identify one students work individually and provide them with a higher mark for their contribution (unless people name their parts but in formal studies that’s not done)</li></ol></li></ol></li></ol><ol type="1" id="7289e212-78ed-43f6-ba00-9fb693e728e5" class="numbered-list" start="5"><li>Restriction of productivity<ol type="a" id="a39f87af-4819-4631-9115-d54640cbc4b9" class="numbered-list" start="1"><li>A psychological impediment to the use of wage incentives is the tendency for workers to restrict productivity<ol type="i" id="cde2f306-aee9-4020-b4d0-7e256f95e614" class="numbered-list" start="1"><li>When wage incentives are introduced, workers sometimes come to an informal agreement about what constitutes a fair day&#x27;s work and artificially limit their output accordingly</li></ol></li></ol><ol type="a" id="5bc62d91-3988-4c45-8035-b6428336ec09" class="numbered-list" start="2"><li>Sometimes an employee will believe that if they produce too much on a certain day, it will become an expectation of them to produce that same amount or more going forward<ol type="i" id="8b34c9af-4712-4081-821c-b5958293bf95" class="numbered-list" start="1"><li>Therefore, they intentionally produce a lower amount of goods (in comparison to what they are capable of producing) each day in order to not overwork themselves assuming that they still get the same pay for their work</li></ol></li></ol></li></ol><h2 id="5c32519d-edfe-4721-8ff4-881a3060f0fe" class="">6.3 Linking Pay to Performance on White-Collar Jobs</h2><p id="ac349871-b31e-454b-b5bc-d574ee2f6fde" class="">Attempts to link pay to performance on White Collar jobs are often called merit-pay plans</p><ul id="2ad3a837-be53-4de5-842a-91f2dbc68544" class="bulleted-list"><li style="list-style-type:disc">Periodically, managers are required to evaluate the performance of employees on some form of rating scale or by means of a written description of performance<ul id="f37f9509-740f-4aa8-b172-75abc2bf2fe1" class="bulleted-list"><li style="list-style-type:circle">And then using these evaluations, the managers then recommend that some amount of Merit pay be awarded to individuals over and above the basic salary<ul id="c3355c8c-f00c-4f80-a8e6-baf6d30eb2cc" class="bulleted-list"><li style="list-style-type:square">Individuals who see a strong link between rewards and performance tend to perform better</li></ul></li></ul></li></ul><p id="c471f58d-6ec9-406b-94a4-97c8077ec68d" class="">
+</p><p id="67072c23-af9e-4100-94c3-de4dd522bfa0" class="">White collar workers support the notion that performance should be an important determinant of pay</p><ul id="20c68498-f921-462a-968a-c13a71676caf" class="bulleted-list"><li style="list-style-type:disc">So they have a pay-for-performance system</li></ul><h3 id="c1e556a8-3bc8-4ec9-8f6c-c4b87cdf2fbc" class="">Potential Problems with Merit Pay Plans</h3><ol type="1" id="51935e83-fe81-4e3d-8b5d-9b7a0647369c" class="numbered-list" start="1"><li>Low discrimination<ol type="a" id="6048e486-02d0-47d4-b40e-6ba733d996d2" class="numbered-list" start="1"><li>Managers are unable or unwilling to discriminate between good and poor performance</li></ol><ol type="a" id="67cadc09-15a5-44e0-92b4-c8d9b962ba39" class="numbered-list" start="2"><li>Subjective evaluations are often distorted by perceptual errors</li></ol></li></ol><ol type="1" id="5fbc97e0-ac8e-4252-8fa2-fb8f7d79948e" class="numbered-list" start="2"><li>Small increases<ol type="a" id="27c4ef46-f273-4a87-925d-2f778141c10f" class="numbered-list" start="1"><li>Merit increases are too small to be effective motivators</li></ol><ol type="a" id="7882e061-55b1-411a-9370-394d37614d62" class="numbered-list" start="2"><li>Sometimes a reasonable amount of merit pay is provided, but it&#x27;s motivational impact has reduced because it is spread out equally over a year or because the organization fails to communicate how much of a raise is for merit and how much is for the cost of living</li></ol><ol type="a" id="6332cbde-09f8-43a0-9110-408e37dc5fbb" class="numbered-list" start="3"><li>Sometimes even inflation and other factors negate the small increases in merit pay</li></ol><ol type="a" id="96efe841-76b9-434a-a51b-5ff4ceed5763" class="numbered-list" start="4"><li>To overcome this, some firms have introduced a lump sum bonus: <ol type="i" id="118c283c-17e7-418f-a03a-358e53e4da41" class="numbered-list" start="1"><li>Merit pay that is awarded in a single payment and not built into base pay</li></ol><ol type="i" id="5834728e-0783-4528-aba8-f7abb0633c24" class="numbered-list" start="2"><li>This receive people&#x27;s attention, and there is some evidence that bonus pay has a stronger effect on job performance than conventional merit pay</li></ol></li></ol></li></ol><ol type="1" id="9e6c1e7a-30cd-429d-a8a7-6d3f9706c539" class="numbered-list" start="3"><li>Pay secrecy<ol type="a" id="9c17c21a-782d-417c-9454-6ce3faa9e639" class="numbered-list" start="1"><li>Extreme secrecy that surrounds salaries in most organizations</li></ol><ol type="a" id="61a08e9b-8ca7-41fb-8bee-0a497a334116" class="numbered-list" start="2"><li>Such secrecy might severely damage the motivational impact of a well-designed merit plan<ol type="i" id="4f274e42-b9d6-4fdb-8cff-d69d333e5ef3" class="numbered-list" start="1"><li>Management frequently advises employees who receive Merit increases not to discuss these increases with their coworkers</li></ol><ol type="i" id="67523c5e-ef8e-4611-8f88-e7e75f26fe80" class="numbered-list" start="2"><li>So finally when you realize Merit pay, we feel the need to compare ourselves to other employees</li></ol></li></ol></li></ol><h2 id="545d3a5d-f389-4a95-a83b-99b1e85053a0" class="">6.4 Using Pay to Motivate Teamwork</h2><p id="71920e55-1951-445e-a3c0-7c10f466f3a5" class="">People sometimes end up pursuing their own agendas (and pay) at the expense of the goals of their work group or organization</p><ul id="67ff7bfe-390d-4a43-bab4-cb2084a1dc71" class="bulleted-list"><li style="list-style-type:disc">As a result, some firms have either replaced or supplemented individual incentive pay with plans designed to foster more cooperation and teamwork</li></ul><h3 id="3ecb7417-5194-4a1e-810b-555fa93293bf" class="">Profit Sharing</h3><p id="6e1569c7-1093-46c2-9b4a-fc190bbd56f5" class="">Profit sharing is one of the most commonly used group-oriented incentive systems</p><ul id="c2317647-1fb9-443c-9c3b-fbbb6e1f864c" class="bulleted-list"><li style="list-style-type:disc">In years in which the firm makes a profit, some of this is returned to employees in the form of a bonus, sometimes in cash and sometimes in a different retirement fund</li></ul><p id="36c618ff-5a06-41e6-a4ac-1dcfd2e5f70e" class="">
+</p><p id="881bfef2-6c1d-4ec9-910e-f0b0f5890b30" class="">It is unlikely though, that profit sharing is highly motivational</p><ul id="555609ae-5673-48f9-b0a8-8fee22d91642" class="bulleted-list"><li style="list-style-type:disc">Its biggest problem is that too many factors beyond the control of the workforce can affect profits no matter how well people perform their jobs<ul id="470f4819-4b7c-4f07-9478-a5179be1ac53" class="bulleted-list"><li style="list-style-type:circle">If the VP of international relations strikes a deal with a new partner, your firms revenues will increase, but that isn’t as a result of anyone other than the VP and their specific team</li></ul></li></ul><h3 id="c6a827d7-87a4-4365-a47d-1e1b6e1e5888" class="">Employee Stock Ownership Plans (ESOPs)</h3><p id="4b1ab5e4-2d49-4950-bca1-a0c5b71c1110" class="">These are incentive plans that allow employees to own a set amount of a company shares and provide employees with a stake in the company&#x27;s future earnings and success</p><ul id="cb990262-b707-4a4d-a1f7-6bc2941cdcd4" class="bulleted-list"><li style="list-style-type:disc">Increases employees’ loyalty and motivation because they align employees goals and interests with those of the organization and create a sense of legal and psychological ownership</li></ul><ul id="6d1c55f5-c056-423c-a014-deeffa036aec" class="bulleted-list"><li style="list-style-type:disc">However this is mostly only better in small companies where employees feel like their effort actually matters</li></ul><h3 id="4263088d-b19e-4f03-a817-40f183a93dba" class="">Gainsharing</h3><p id="0ea29851-56a0-47c2-bd1d-20c92f86ef36" class="">This is a group pay incentive plan based on productivity or performance improvements over which the workforce has some control</p><ul id="88605a8e-315b-4e7e-961c-56552bf454fa" class="bulleted-list"><li style="list-style-type:disc">For instance, such plans often include reductions in the cost of labour, materials or supplies; <ul id="12016c75-2f54-4010-bbf5-784b05198cc4" class="bulleted-list"><li style="list-style-type:circle">So when measured costs of the company decrease, the company pays a monthly bonus according to a predetermined formula that shares this ‘gain’ between employees and their firm</li></ul></li></ul><h3 id="8cfe725d-2454-4318-b37b-3ce2320129c7" class="">Skill-Based Pay</h3><p id="e7795567-42ae-4d58-bc35-7bed3e99ed48" class="">A system in which people are paid according to the number of job skills they have acquired</p><ul id="3f7d9f79-1c2d-4c21-b5d4-1118e3e32184" class="bulleted-list"><li style="list-style-type:disc">Also called pay for knowledge</li></ul><ul id="f2383eda-9b0a-4207-996e-a22aaa45dfde" class="bulleted-list"><li style="list-style-type:disc">Encourages employee flexibility and task assignments and to give them a broader picture of the word process<ul id="ecff83b1-ec51-4403-bc33-4097d8616cd8" class="bulleted-list"><li style="list-style-type:circle">This motivates employees to learn a wide variety of work tasks, irrespective of the job that they might be doing at any given time</li></ul></li></ul><p id="49c62812-f17f-4194-9d89-4e9c1b81bd4a" class="">
+</p><h2 id="d394f4f0-0cc7-4fbd-bcb8-ae8d25eef5a7" class="">6.5 Job Design as a Motivator</h2><p id="5566b624-6505-4c47-9f6d-81b442a54335" class="">Job design refers to the structure, content and configuration of a person’s work tasks and roles</p><ul id="18e186ce-46d1-4df3-877c-a500c3f66e37" class="bulleted-list"><li style="list-style-type:disc">In essence, the goal of job design is to identify the characteristics that makes some tasks more motivating than others and to capture these characteristics in the design of jobs</li></ul><h3 id="94d10f06-d28d-4232-9aba-74c568888e2b" class="">Traditional Views of Job Design</h3><ul id="ba6e04ff-43ee-4e5e-b0f2-ba41cb0bd17d" class="bulleted-list"><li style="list-style-type:disc">From the time of the Industrial Revolution up till the 1960s there was a great deal of job simplification<ul id="0be321c2-9a49-4509-a12b-a254f2a96c9b" class="bulleted-list"><li style="list-style-type:circle">With complex machinery and an uneducated, untrained workforce, these organizations recognized that specialization was the key to efficient productivity</li></ul><ul id="0796a2d9-d65f-418b-b28d-b34940dff5c4" class="bulleted-list"><li style="list-style-type:circle">If the production of an object could be broken down into very basic, simple steps, even uneducated and minimally trained workers could contribute their share by mastering one of these steps</li></ul></li></ul><p id="ccba2b61-51c7-42fe-9b48-743f523126fa" class="">
+</p><p id="dfed5e9c-10a7-4d52-b032-bb897562179c" class="">Motivational strategies in this period involved close supervision and piece-rate pay</p><h3 id="9605624c-8592-42f7-babc-69a5bb0a13ba" class="">Job Scope and Motivation</h3><p id="1dec3446-115e-491e-b121-0c4cd331417b" class="">ob scope is the breadth and depth of a job</p><ul id="5c996389-8163-437c-b519-1bb6e7b4f41e" class="bulleted-list"><li style="list-style-type:disc">Breadth is the number of different activities performed on the job</li></ul><ul id="f695f332-2ffe-484c-9384-0c4d3cca5c24" class="bulleted-list"><li style="list-style-type:disc">Depth is the degree of discretion or control the worker has over how these tasks are performed</li></ul><p id="982dece2-de7d-47b3-88bc-0a9adc1445ea" class="">
+</p><ol type="1" id="e73dfc01-4d7b-4bae-acc0-d064026dd641" class="numbered-list" start="1"><li>Broad jobs require workers to do a number of different tasks</li></ol><ol type="1" id="324fd109-d4e5-4518-af9a-f34ea4da29f2" class="numbered-list" start="2"><li>Deep jobs emphasize freedom in planning how to do the work</li></ol><ol type="1" id="a3275581-3434-49e5-aa43-14e072bbe9a8" class="numbered-list" start="3"><li>High scope jobs (consists of both broad and deep) should provide more intrinsic motivation than low scope jobs<ol type="a" id="fb160f8d-d526-4883-ae0a-3abc9f6e5d32" class="numbered-list" start="1"><li>Maslow&#x27;s need hierarchy and ERG Theory both seem to indicate that people can fulfil higher-order needs by the opportunity to perform high scope jobs</li></ol></li></ol><ol type="1" id="95a5a258-d36a-48d2-b576-f195d6e6d528" class="numbered-list" start="4"><li>Expectancy Theory suggests that high-scope jobs can provide intrinsic motivation if the outcomes derived from such jobs are attractive</li></ol><p id="adaac566-0e6a-403d-91fe-f316a44620e8" class="">
+</p><p id="2a094017-e1ed-4e97-a86c-935daa585272" class="">Stretch assignments increase job scope</p><ul id="a31b8745-e6b2-46d3-bf4b-339091efa4c5" class="bulleted-list"><li style="list-style-type:disc">They offer challenging opportunities for employees to broaden their skills by working on a variety of tasks with new responsibilities</li></ul><p id="f41d9d98-aa23-4d26-b139-174555bf4d39" class="">
+</p><p id="4f4d743a-b51a-4062-a782-a564267e829e" class="">Job rotation is rotating employees to different tasks and jobs in an organization and this increases job scope</p><ul id="c54ba571-711c-472b-83fc-70e270539216" class="bulleted-list"><li style="list-style-type:disc">Job rotation can also prepare employees for future roles in the company</li></ul><h3 id="fddfd303-89ad-41fc-b9e6-3abdeb795a9f" class="">The Job Characteristic Model</h3><p id="75fc741e-c264-4a75-b7dc-50abdabc3367" class="">The concept of job scope provides an easy-to-understand introduction to why some jobs see more intrinsically motivating than others</p><ul id="4b8cb337-8f63-4b4d-bb3a-db3c1363ba79" class="bulleted-list"><li style="list-style-type:disc">As you can observe by the given model, this proposes that there are several core job characteristics that have a certain psychological impact on workers<ul id="80ae8fc7-b3ed-48d0-bb2c-6b9275220a26" class="bulleted-list"><li style="list-style-type:circle">And in turn, the psychological states induced by the nature of the job lead to certain outcomes that are relevant to the worker and the organization<ul id="5255d9b7-75e4-4304-8f0b-3e5754541487" class="bulleted-list"><li style="list-style-type:square">Finally, several other factors (or moderators) influence the extent to which these relationships hold true</li></ul></li></ul></li></ul><h3 id="a05ca21f-b384-490c-867a-3c219e29b90e" class=""><strong>Core Job Characteristics</strong></h3><ol type="1" id="86d72c78-3224-475f-8d4d-4268967bea7e" class="numbered-list" start="1"><li>Skill variety<ol type="a" id="44e36227-89df-4c15-9dd8-d004c7dcb9b9" class="numbered-list" start="1"><li>The opportunity to do a variety of job activities using various skills and talents (job breadth)</li></ol></li></ol><ol type="1" id="b1400d0d-8849-4d1a-a617-27cbbeec6c7a" class="numbered-list" start="2"><li>Task identity<ol type="a" id="d75b4705-b9ff-4618-a095-a1eaa2580ce7" class="numbered-list" start="1"><li>The extent to which a job involves doing a complete piece of work, from beginning to end</li></ol></li></ol><ol type="1" id="469928e1-109c-4cf3-828f-07ec6671ec88" class="numbered-list" start="3"><li>Task significance<ol type="a" id="111a2f93-d496-4f67-ba8c-f9138f74fcb6" class="numbered-list" start="1"><li>The impact that a job has on others</li></ol></li></ol><ol type="1" id="7b92c478-7ec6-49ec-867b-9f65b4c5fee1" class="numbered-list" start="4"><li>Autonomy<ol type="a" id="465e51a1-53ea-4fdc-b68a-8a2e1cdf5206" class="numbered-list" start="1"><li>The freedom to schedule one&#x27;s own work activities and to decide work procedures (job depth)</li></ol></li></ol><ol type="1" id="bece7c62-d589-451c-82e1-75020d3da23a" class="numbered-list" start="5"><li>Feedback from job<ol type="a" id="f2216322-638c-460c-be26-49d5d45056b1" class="numbered-list" start="1"><li>Information about ones performance effectiveness</li></ol></li></ol><h3 id="b6271636-8797-4c2c-8cae-8affd74da6ca" class=""><strong>Critical psychological states</strong></h3><ul id="f4786f40-c45a-4883-958b-7a7780ac7549" class="bulleted-list"><li style="list-style-type:disc">Work will be intrinsically motivating when it is perceived as meaningful, when the worker feels responsible for the outcomes of the work, and when the worker has knowledge about his or her work progress</li></ul><ul id="b0132f5b-b86b-4ab1-ac24-7d8afaf890bc" class="bulleted-list"><li style="list-style-type:disc">Core job characteristics affect meaningfulness, responsibility and knowledge of results in a systematic manner</li></ul><ul id="0d9836d2-334c-4ea0-960f-b82ccc15dab8" class="bulleted-list"><li style="list-style-type:disc">When an individual uses a variety of skills to do a whole job that is perceived as significant to others, he or she perceives the work as meaningful</li></ul><ul id="2e72b4e2-ee19-4e12-9f0c-9eaa9e795c37" class="bulleted-list"><li style="list-style-type:disc">When a person has autonomy to organize and perform the job as he or she sees fit, the person feels personally responsible for the outcome of the work</li></ul><ul id="c64e378e-d316-4ef2-93f4-9fb5a05b11b2" class="bulleted-list"><li style="list-style-type:disc">When the job provides feedback about performance, the worker will have knowledge of the results of this opportunity to exercise responsibility</li></ul><h3 id="d4290149-18d4-471d-b808-88913c079db2" class=""><strong>Outcomes</strong></h3><ul id="8bdc7da6-8893-4c03-b3ba-2af8f7dc7498" class="bulleted-list"><li style="list-style-type:disc">When the worker is truly in control of a challenging job that provides good feedback about performance, the key prerequisites for intrinsic motivation are present</li></ul><ul id="605d11ed-1049-42d4-b3eb-6151dd38678b" class="bulleted-list"><li style="list-style-type:disc">The following, all leads to reduced absenteeism and turnover</li></ul><h3 id="2ec833ab-69da-4307-8b7c-755840f62912" class=""><strong>Moderators</strong></h3><ul id="da75db7a-78aa-40d6-ad9b-2cfb5561d3b6" class="bulleted-list"><li style="list-style-type:disc">If jobs that are high in motivating potential do not lead to favorable outcomes, certain moderators should intervene between job characteristics and outcomes</li></ul><ul id="fdba750a-33c6-475b-9049-771546ea3d0b" class="bulleted-list"><li style="list-style-type:disc">Job relevant knowledge and skill of the worker<ul id="2907e94d-ad58-4300-9c4f-7da0695f9220" class="bulleted-list"><li style="list-style-type:circle">Workers with weak Knowledge and Skills should not respond favorably to jobs that are high in motivating potential since such jobs will prove to be too demanding</li></ul></li></ul><ul id="5df47ee7-7660-470c-973a-9b390aacfc8c" class="bulleted-list"><li style="list-style-type:disc">Growth need strength<ul id="4cf512e9-99d1-4e4a-9adb-26a5d70dc10f" class="bulleted-list"><li style="list-style-type:circle">The extent to which people desire to achieve higher order need satisfaction by performing their jobs</li></ul><ul id="566dbbd0-614b-49f8-b4da-a47d93f376fa" class="bulleted-list"><li style="list-style-type:circle">Those with high growth needs should be most responsive to challenging work</li></ul></li></ul><ul id="a73912c8-8222-4e84-9e22-ab4308714f5e" class="bulleted-list"><li style="list-style-type:disc">Workers who are dissatisfied with the context factors surrounding the job<ul id="a151c1d2-42b9-4b9c-8bf6-ea08d2c14f67" class="bulleted-list"><li style="list-style-type:circle">Such as pay, supervision, and company policy will be less responsive to challenging work than those who are reasonably satisfied with context factors</li></ul></li></ul><h3 id="d57897ba-d721-4afa-b01a-e96bd309d998" class="">Job Enrichment</h3><p id="d9d07dbb-e6b8-42d4-b72b-6e17b0f4d8cd" class="">The design of jobs to enhance intrinsic motivation, the quality of working life, and job involvement</p><ul id="44dfd9ed-8987-4a01-94f0-4c2c2449a3a0" class="bulleted-list"><li style="list-style-type:disc">Job involvement is a cognitive state of psychological identification with one&#x27;s job and the importance of work to one&#x27;s total self image</li></ul><p id="a4aca883-e573-42be-9b7a-8fb0d890b648" class="">
+</p><p id="772290af-1b5b-47c8-9e2d-8f92a6c7c17c" class="">Job enrichment strategies include</p><ol type="1" id="a661b0c1-ad30-4345-99de-405d2fd46240" class="numbered-list" start="1"><li>Combining tasks<ol type="a" id="101c45c4-ded8-47c4-9565-8761fc5c1bd3" class="numbered-list" start="1"><li>Assigning tasks that might be performed by different workers to a single individual</li></ol><ol type="a" id="2049a809-08b8-46f3-b9fc-b48c052f96ab" class="numbered-list" start="2"><li>This should increase the variety of skills employed and might contribute to task identity as each worker approaches doing a unified job from start to finish</li></ol></li></ol><ol type="1" id="56884d6f-e3b0-4c33-ac6e-1e990968ed10" class="numbered-list" start="2"><li>Establishing external client relationships<ol type="a" id="0e96427f-ac5a-4cb3-b173-d6178a0b7db9" class="numbered-list" start="1"><li>Putting employees in touch with people outside the organization who depend on their products or services</li></ol><ol type="a" id="de120682-0e24-4d9c-ba4c-95d5a96dad3c" class="numbered-list" start="2"><li>This might involve the use of new interpersonal skills, increase the identity and significance of the job and increase feedback about one&#x27;s performance</li></ol></li></ol><ol type="1" id="3208984c-fb9a-4dfa-b655-0382e088cd19" class="numbered-list" start="3"><li>Establishing internal client relationships<ol type="a" id="eb3e4eaa-feb6-4345-8fef-7c26d506fb99" class="numbered-list" start="1"><li>Putting employees in touch with people who depend on their products or services inside the organization</li></ol><ol type="a" id="529e6cb6-4c8d-4fe0-bd1d-80194d234514" class="numbered-list" start="2"><li>Includes the same examples of motivation that you&#x27;d get from establishing external client relationships</li></ol></li></ol><ol type="1" id="55944590-7052-45c2-86ff-23c62afdf0be" class="numbered-list" start="4"><li>Reducing supervision or reliance on others<ol type="a" id="de9e8ff1-d7c6-4635-9770-fa159e604af2" class="numbered-list" start="1"><li>Goal is to increase autonomy and control over one&#x27;s own work</li></ol></li></ol><ol type="1" id="6492b540-c985-4e14-8732-e62b613420f1" class="numbered-list" start="5"><li>Forming work teams (opposite to 1)<ol type="a" id="31e6debc-853a-4105-8742-247f84f52ccc" class="numbered-list" start="1"><li>Alternative to a sequence of small jobs that individual workers perform when a product or service is too large and complex for one person to complete alone</li></ol><ol type="a" id="7ff5d8ed-0dd3-4240-bebe-619db462ed1d" class="numbered-list" start="2"><li>This leads to the formal and informal development of a variety of skills and increases the identity of the job</li></ol></li></ol><h3 id="91c6417c-deb8-401f-bf0d-72f70aaec171" class="">Potential Problems with Job Enrichment</h3><ol type="1" id="fb228658-142b-44aa-a0c9-e85d57628fcf" class="numbered-list" start="1"><li>Poor diagnosis<ol type="a" id="e75415b7-56ea-4e86-bc7c-b13280aec6d4" class="numbered-list" start="1"><li>There has been no careful diagnosis of the needs of the organization and particular jobs</li></ol><ol type="a" id="f87b2c8a-def8-4180-8455-33b6cc8b0307" class="numbered-list" start="2"><li>Involves job enlargement<ol type="i" id="48202132-f369-4d31-a17d-efb8312f8cd5" class="numbered-list" start="1"><li>Increases job breadth by giving employees more tasks at the same level of difficulty to perform but leaving other core characteristics unchanged<ol type="1" id="9a3b2cfd-0512-4c9c-9a42-043d1f25887e" class="numbered-list" start="1"><li>Works are given more boring, routine tasks to do<ol type="a" id="e9d23eb7-243c-47c3-b30b-c2c114145511" class="numbered-list" start="1"><li>If you were in charge of sweeping the floors, well now you are in charge of washing the dishes too</li></ol></li></ol></li></ol></li></ol><ol type="a" id="a54d218b-0d64-4139-88c6-f3e8f7df489f" class="numbered-list" start="3"><li>Involves job engorgement<ol type="i" id="fd7508a3-62eb-47a2-9adb-cfb62f9ee180" class="numbered-list" start="1"><li>Attempting to enrich jobs that are already perceived as too rich by their incumbents (employees)<ol type="1" id="083e924c-ed96-49b7-917a-696d40fb781f" class="numbered-list" start="1"><li>Sometimes workers are assigned too many extra responsibilities which leads to role overload and work stress</li></ol></li></ol></li></ol></li></ol><ol type="1" id="e147ac17-504f-46f4-888b-4e924f732a1e" class="numbered-list" start="2"><li>Lack of desire or skills<ol type="a" id="27a85595-7497-4021-a6ba-cc9abc464009" class="numbered-list" start="1"><li>When workers do not desire enriched jobs</li></ol><ol type="a" id="52c19cc3-57c2-44ee-84ee-e4ac1009aa6a" class="numbered-list" start="2"><li>Some might not want extra work responsibilities, they might lack the skills or competence to perform enriched jobs effectively which would entail substantial training costs</li></ol></li></ol><ol type="1" id="d4637e58-d372-4801-a0ee-b7933a378d0a" class="numbered-list" start="3"><li>Demand for rewards<ol type="a" id="fbd314b3-0650-4688-9fb3-397080448b58" class="numbered-list" start="1"><li>When workers experience job enrichment, they ask for extrinsic rewards (pay)<ol type="i" id="5303d172-c0eb-4f23-a9f9-a236e254175c" class="numbered-list" start="1"><li>They ask for this since the redesigned jobs require a new set of skills and responsibilities which must be compensated for</li></ol></li></ol></li></ol><ol type="1" id="d9639fda-75da-4e7d-b0e0-3e5504ecdaf2" class="numbered-list" start="4"><li>Union resistance<ol type="a" id="03157269-51d7-446a-a606-500cf58a75cc" class="numbered-list" start="1"><li>When unions are not enthusiastic about job enrichment<ol type="i" id="b4c5141e-0e1d-45b7-876f-cf5fd3b5d0fc" class="numbered-list" start="1"><li>Public school teachers went on strike a few years ago when it was announced that class sizes were increasing by 10 students (they already teach 20, so now they’d teach 30)</li></ol></li></ol></li></ol><ol type="1" id="7e163758-fec5-409d-a719-e62a4c5c837f" class="numbered-list" start="5"><li>Supervisory resistance<ol type="a" id="75b7bcaa-974d-419e-ad38-327240fbcfb7" class="numbered-list" start="1"><li>Enrichment schemes might fail because of the unanticipated impact on other jobs or parts of the organizational system</li></ol><ol type="a" id="e9bc8bbe-279c-48ad-864e-83ef269d56fd" class="numbered-list" start="2"><li>Increase of employee autonomy can decrease supervisor autonomy &gt; this makes the supervisors job less enriched at the expense of yours being more enriched</li></ol></li></ol><h3 id="214db618-e649-4c5f-98cd-a1b8fb5418dd" class="">Work Design</h3><p id="0dc8a75e-116a-4d01-a7ea-17b08f0b0eea" class="">Work design characteristics involve the attributes of the task, job and social and organizational environment</p><h3 id="fae38424-6b4f-43f7-bb4a-756dcd0646d8" class="">Relational Job Design</h3><p id="88f63c06-dd16-4cbb-b06a-6630fce2e84b" class="">Relational architecture of jobs is the structural properties of work that shape employees’ opportunities to connect and interact with other people</p><ul id="71839611-aaf6-4c72-85ab-5d77f11f2ef2" class="bulleted-list"><li style="list-style-type:disc">The goal is to motivate employees to make a difference in other people&#x27;s lives; this is called prosocial motivation<ul id="bf094e99-6147-4e78-81ec-f3503f6f0472" class="bulleted-list"><li style="list-style-type:circle">Prosocial motivation is the desire to expend effort to benefit others<ul id="266ed91c-3650-4689-845c-abd971d7f709" class="bulleted-list"><li style="list-style-type:square">Firefighters and surgeons have frequent opportunities to make a lasting difference in the lives of others, while janitors and cashiers have few such opportunities</li></ul></li></ul></li></ul><h3 id="735d91c1-9264-4cab-8b44-2a2b5be38a98" class="">Job Crafting</h3><p id="5cd3dacc-f283-4f6d-bde7-1725519becbb" class="">Job crafting involve self-initiated changes that employees make in their job demands (ex: workload) and job resources (ex: variety) to improve the fit or match between characteristics of their job and their personal abilities and needs</p><p id="cabf84e4-9acc-4100-adcf-24e791544407" class="">Job crafting consists of four dimensions or types of job crafting behaviors</p><ol type="1" id="af3c753d-ab76-44ab-b9fe-24988f045cb6" class="numbered-list" start="1"><li>Increasing social job resources<ol type="a" id="9208633f-26f5-4e26-9fcb-cec4f939a835" class="numbered-list" start="1"><li>This involves asking for feedback, advice and support from supervisors and colleagues</li></ol></li></ol><ol type="1" id="1ed35c84-b219-4d14-ba28-6cd35db93e41" class="numbered-list" start="2"><li>Increasing structural job resources<ol type="a" id="f86cfef7-fcce-44f2-9f7a-90aa1fe57e13" class="numbered-list" start="1"><li>This involves behaviors to increase job characteristics such as autonomy and skill variety</li></ol></li></ol><ol type="1" id="83ef5604-3397-406e-9cfe-98a9f29ac545" class="numbered-list" start="3"><li>Increasing challenging job demands<ol type="a" id="083030c2-8700-4234-a6ea-c31cf13f9360" class="numbered-list" start="1"><li>This involves behaviors such as asking for more responsibilities and volunteering for special projects</li></ol></li></ol><ol type="1" id="dd3cca09-e2ff-4844-8587-6e52f4a469cb" class="numbered-list" start="4"><li>Decreasing hindering job demands<ol type="a" id="7b7f2fa5-8ec9-4b94-8601-013e9050a1b7" class="numbered-list" start="1"><li>This involves behaviors to minimize physical, cognitive, and emotional demands, such as reducing one&#x27;s workload or work-family conflict</li></ol></li></ol><p id="82363e64-7c1b-4ff0-9b81-2a5a78d7476a" class="">
+</p><p id="8b3881df-41c9-49e8-a5aa-d5cf14531a61" class="">For work outcomes, job crafting is positively related to job satisfaction, work engagement and job performance</p><ul id="312fea2c-1bbf-4e22-a101-0c1dae787667" class="bulleted-list"><li style="list-style-type:disc">An alternative approach to job design is to encourage employees to engage in job crafting behaviors and to provide them with opportunities to do so</li></ul><ul id="b3cace7f-123a-4ea4-8fc9-da5fc3d072fd" class="bulleted-list"><li style="list-style-type:disc">Work outcomes are also negatively related to job stress and burnout (as in they are less likely to happen)</li></ul><h2 id="657c1305-a628-4327-80e5-52aff7f754ae" class="">6.6 Management by Objectives (MBO)</h2><p id="937b0fc0-c6a2-4bab-aed2-c3b1ff31281a" class="">Management by objectives is an elaborate, systematic, ongoing management program designed to facilitate and goal establishment, goal accomplishment, and employee development</p><ul id="74a5dc76-044a-4557-baa2-4e261e446918" class="bulleted-list"><li style="list-style-type:disc">This goes back to goal setting theory<ul id="f2d0cdd8-f706-4903-b18c-c6e417399bf4" class="bulleted-list"><li style="list-style-type:circle">Goals are most motivational when they&#x27;re specific and challenging, when members are committed to them, and when feedback is provided</li></ul></li></ul><p id="38f4ce08-4cc1-43c8-b25b-62c748696aa2" class="">
+</p><ol type="1" id="c5f3e9e8-4a54-41dd-bf32-f9e4c4af25d6" class="numbered-list" start="1"><li>Manager meets with individual employees to develop and agree on employee objectives for the coming months<ol type="a" id="6b9f2144-1b28-4ff8-a660-3400c72aed37" class="numbered-list" start="1"><li>Objectives are made specific, time frames and priorities are also specified and put into writing</li></ol></li></ol><ol type="1" id="0e97e2a9-df4e-41da-8e20-bf5b9af375de" class="numbered-list" start="2"><li>Period meetings are held to monitor employee progress in achieving objectives<ol type="a" id="d95b1514-6bcb-4b85-9da4-2312382109af" class="numbered-list" start="1"><li>Objectives can be modified as new needs and problems arrive</li></ol></li></ol><ol type="1" id="48329e3e-cb3d-4579-8010-f9a753b28d19" class="numbered-list" start="3"><li>An appraisal meeting is held to evaluate the extent to which the agreed-upon objectives have been achieved</li></ol><ol type="1" id="f94942dc-c94c-4a1c-ab3f-36a711c80628" class="numbered-list" start="4"><li>The MBO cycle is repeated<ol type="a" id="e81a37d5-9b85-43c4-bf9c-b7d8d40758d3" class="numbered-list" start="1"><li>MBO programs result in productivity gains but are time-consuming, difficult, and elaborate, and implementation requires full commitment of top management</li></ol></li></ol><h2 id="2b0b2c83-41f8-4f39-9973-836d6a91408b" class="">6.7 Flexible Work Arrangements as Motivators for a Diverse Workforce</h2><p id="bcca3c66-fdc0-4232-9361-557568c3e182" class="">Flexible work arrangements are work options that permit flexibility in terms of where and/or when work is completed</p><ul id="74f07c8b-032a-4123-ab1b-19e59ae0e7ee" class="bulleted-list"><li style="list-style-type:disc">The purpose is to meet the diverse needs of the workforce, promote job satisfaction and help employees manage work and non-work responsibilities<ul id="51c9b8b6-1ba6-48df-a458-843f2ad853cc" class="bulleted-list"><li style="list-style-type:circle">This should facilitate recruiting and retaining the best talent and reduce costly absenteeism and turnover</li></ul><blockquote id="ad087e41-ce8b-4397-b715-176a4caa30ab" class="">I have a flexible work arrangement in that the company tries to meet my diverse needs
+I am permitted the flexibility in terms of where and when work is completed
+This results in job satisfaction and helps me manage work responsibilities and non-work responsibilities (school, clubs, housework)
+The company effectively reduced turnover, and as a result of the arrangement, is not required to pay as much (in comparison to me or anyone else working full-time) 
+They have retained the best available talent meaning that they do not have to spend any additional resources on trying to train someone else to do the job</blockquote></li></ul><h3 id="88a503e9-ade4-4880-853d-6d90d6789446" class="">Flex Time</h3><p id="caf5ea91-df58-4167-87c3-afd194c7f0bd" class="">This is an alternative work schedule in which arrival and departure times are flexible</p><ol type="1" id="41393cb0-00ec-45b5-a151-5b9f0d087909" class="numbered-list" start="1"><li>You are still expected to report for work and work given hours</li></ol><ol type="1" id="98867dd6-0631-4094-807f-f61bcecadcb6" class="numbered-list" start="2"><li>This plays a role in reducing absenteeism plus it signals prestige and trust</li></ol><ol type="1" id="05ad02d7-db53-4ec8-aed1-cf571a5b782c" class="numbered-list" start="3"><li>Highly interdependent jobs can&#x27;t really have flex time (assembly line, factory jobs)</li></ol><ol type="1" id="003bad8f-c513-4a61-b189-05b237818448" class="numbered-list" start="4"><li>Employees always preferred this system to fixed hours<ol type="a" id="d1ab5e28-c4d7-40a2-9233-b961a1da4837" class="numbered-list" start="1"><li>Work attitudes become positive</li></ol><ol type="a" id="468ff6aa-64f7-4ef5-9c61-cbdd16a74c88" class="numbered-list" start="2"><li>Slight productivity increase</li></ol><ol type="a" id="ae8809f7-e635-42e0-9e1b-4e8e2453fe99" class="numbered-list" start="3"><li>Increased job satisfaction</li></ol></li></ol><h3 id="10fa3129-02f8-436e-abc5-3537fe9a9004" class="">Compressed Workweek</h3><p id="13cbb91e-a1cc-4623-b50f-c07429006312" class="">This is an alternative work schedule in which employees work fewer than the normal 5 days a week but still put in a normal number of hours per week (note you are still working the same number of hours, just fewer days, ex: 4 days, 10 hours)</p><ul id="5a73ae38-209b-49d2-ab9e-7ba975df7982" class="bulleted-list"><li style="list-style-type:disc">Same advantages of flex time, but possibility of reduced customer service plus fatigue (of having to work longer than usual)</li></ul><ul id="31c512de-c1a2-49f2-b487-641bb7b99f18" class="bulleted-list"><li style="list-style-type:disc">Employees typically like the system, but this is better for personal life than work life (a day that you’d normally spend working is now considered personal time)<ul id="7b7c508c-2869-446c-91a9-c85ac34fd480" class="bulleted-list"><li style="list-style-type:circle">There is an uneven impact on absenteeism; fatigue can result in increased absenteeism</li></ul><ul id="d035bb38-f0e0-40bc-916d-d13d30cfe5d3" class="bulleted-list"><li style="list-style-type:circle">And there are no lasting productivity changes</li></ul></li></ul><h3 id="fe949fc7-9c81-46d1-8711-c2ac7ca2c36c" class="">Job and Work Sharing</h3><p id="64a98d35-79c3-4e8b-801f-e7092d778046" class="">Job sharing is an alternative work schedule in which two part-time employees divide the work of a full-time job</p><ul id="e1ce53cb-dfc1-47db-94dc-f4fd45cd3959" class="bulleted-list"><li style="list-style-type:disc">This is good for family life, organizations can retain employees who might otherwise decide against full-time employment<ul id="d779b087-4364-45aa-9e5b-aaaab2408508" class="bulleted-list"><li style="list-style-type:circle">Performance appraisal problems can occur since two people are sharing one job</li></ul><ul id="bd11e820-eaae-429c-9918-d46233d3237a" class="bulleted-list"><li style="list-style-type:circle">Job sharing can result in coordination problems if communication is not adequate</li></ul></li></ul><p id="50557638-29dd-423d-a833-9010dea4e6c1" class="">
+</p><p id="f2745f93-d392-48c0-af51-7ba7d0e19e13" class="">Work sharing is reducing the number of hours employees work to avoid layoffs when there is a reduction in normal business activity</p><ul id="fc8395be-2ce2-41ec-9a02-6e992f2ec73f" class="bulleted-list"><li style="list-style-type:disc">Doing this saves jobs, and avoids layoffs, plus removes the cost of losing talent, and this retains skilled workers<ul id="c994cfa7-e746-42d4-bdad-452d6f1eb169" class="bulleted-list"><li style="list-style-type:circle">Rogers gave full-time staff the opportunity to reduce their work week and accept 20% pay cut to avoid layoffs to 20% of its staff<ul id="0e33e133-0917-4d9e-98a7-be701901d005" class="bulleted-list"><li style="list-style-type:square">Organizations that use the work sharing program can supplement employee wages with employment insurance benefits for the days that they are not working</li></ul></li></ul></li></ul><h3 id="f47f46ef-55b0-4c1e-80eb-842cd6b5afb7" class="">Telecommuting (working remote)</h3><p id="0f57890d-9795-4e60-8e88-9a19a56f30bc" class="">A system by which employees are able to work at remote locations but stay in touch with their offices through the use of information and communication technology</p><ul id="cb81e351-a733-4624-bee9-82f5c4b0ae39" class="bulleted-list"><li style="list-style-type:disc">Provides work flexibility</li></ul><ul id="74665ef9-9869-4530-be5c-c295b1ffae64" class="bulleted-list"><li style="list-style-type:disc">Employers can hire best people regardless of where they live through distant staffing</li></ul><ul id="714141f0-9c95-4e5c-b314-0bca1bc65eed" class="bulleted-list"><li style="list-style-type:disc">Distributed work program (Hybrid work-model)<ul id="4ec54108-e5b2-40a2-b7ab-38b05d5ec3f2" class="bulleted-list"><li style="list-style-type:circle">Combination of remote work arrangements that allow employees to work at their business office, and a home office</li></ul></li></ul><ul id="2c038acc-1b4e-41ec-b95a-2bd36ca78672" class="bulleted-list"><li style="list-style-type:disc">Benefits to the organization is that they can <ul id="9e8ce615-e800-4f88-bd90-34c9ae3e2c69" class="bulleted-list"><li style="list-style-type:circle">cut costs for equipment</li></ul><ul id="6095bd6b-a378-4c24-a027-e9a8f00a1af8" class="bulleted-list"><li style="list-style-type:circle">reduce turnover</li></ul><ul id="0c8146ae-923d-41a3-802b-ff08bd5fe280" class="bulleted-list"><li style="list-style-type:circle">reduce the need for office space</li></ul><ul id="219e4f4f-49ce-4d35-bc9e-d9fe534eef9c" class="bulleted-list"><li style="list-style-type:circle">improve employee work-life balance and increase productivity / reduce stress<ul id="8af7b206-3efe-4c08-8060-90f914a77dd4" class="bulleted-list"><li style="list-style-type:square">And why all this happens is because of increased employee perception of autonomy (being in control of your work situation)</li></ul></li></ul></li></ul><ul id="b3186a5a-085f-4afe-96a2-60041d96654f" class="bulleted-list"><li style="list-style-type:disc">Disadvantages to the organization<ul id="cf39c823-1334-42ab-b5e6-5142e2cd0d19" class="bulleted-list"><li style="list-style-type:circle">Negative effects on workplace relationships<ul id="536c8fb5-aca1-469b-8ab3-42b338b98135" class="bulleted-list"><li style="list-style-type:square">Since I haven&#x27;t been to the office in such a long time, it is going to be pretty difficult for them to recognize me (a year later) and develop the same conversations we used to have when I would work full time</li></ul></li></ul><ul id="762a7066-670c-4413-9a1b-39b4182109aa" class="bulleted-list"><li style="list-style-type:circle">Decreased visibility for promotions<ul id="1ca9b5b7-2f13-4ad6-bc77-e29408623414" class="bulleted-list"><li style="list-style-type:square">It becomes difficult for your manager to provide a performance appraisal when they themselves are not supervising your work</li></ul></li></ul><ul id="a532e05d-49c5-43d4-b830-1dea7c38bc19" class="bulleted-list"><li style="list-style-type:circle">Distractions in home environment</li></ul><ul id="7352ddc1-a33c-4015-98ad-9917ee5caa0c" class="bulleted-list"><li style="list-style-type:circle">Feelings of isolation and overworking</li></ul><ul id="b09da785-6182-46be-8348-9505a71eabee" class="bulleted-list"><li style="list-style-type:circle">It can be difficult to keep track of your projects when half of your personnel are working at home while half of them in the workplace (lack of communication)</li></ul></li></ul><h2 id="e5c7d1de-709e-4b8f-bfed-9248ad862872" class="">6.8 Motivational Practices in Perspective</h2><p id="b9561189-787d-435a-92ec-49e5b38b002d" class="">Like all of organizational behaviour, when it comes to employee motivation, there is no ‘cookbook’ to follow</p><ul id="d712febb-0ae7-44ad-a0cc-6d123fa15579" class="bulleted-list"><li style="list-style-type:disc">Clearly, the motivational practices used by the best companies are effective because they fit in with and are part of a larger organizational culture and system of management practices<ul id="0ca9b0fa-17cd-424a-b957-30365de138b2" class="bulleted-list"><li style="list-style-type:circle">The choice of motivational practices requires a thorough diagnosis of the organization and the needs and desires of employees<ul id="3f2950df-8a65-4557-8f52-29f88adf773e" class="bulleted-list"><li style="list-style-type:square">The most effective approach will depend on a combination of contingency factors, including employee needs (money, challenging work), the nature of the job (individual, or group work) characteristics of the organization (strategy, culture) and the outcome that an organization wants to achieve (job performance, retention)<ul id="62c582d9-7077-4ccf-a546-c8e6cc8c04cd" class="bulleted-list"><li style="list-style-type:disc">Ultimately motivational systems that make use of a variety of motivators such as performance-based pay and job enrichment - used in conjunction with one another are likely to be most effective</li></ul></li></ul></li></ul></li></ul><p id="152f5088-b3c8-41f5-bef5-d0ad1c26df9d" class="">
+</p></div></article></body></html>
