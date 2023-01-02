@@ -1,0 +1,690 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>10: Communication</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="81c92697-d6a7-4e9e-b676-4a05165a5901" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/webb1.jpg" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🏬</span></div><h1 class="page-title">10: Communication</h1></header><div class="page-body"><h1 id="0f09d25d-0e87-4303-9895-016762537090" class="">10.1 Basics of Organizational Communication</h1><p id="58283795-268d-41f2-a6ce-84b926bae832" class="">Communication is the process by which information is exchanged between a sender and a receiver</p><ul id="4eac7af5-5b52-4e97-9a15-d2086e885b85" class="bulleted-list"><li style="list-style-type:disc">The simplest prototype is a one-on-one exchange between two individuals<ul id="dc002cfd-c787-4d6a-a6a7-daa30a8e84d0" class="bulleted-list"><li style="list-style-type:circle">The sender must encode thoughts into some form that can be transmitted to the receiver</li></ul><ul id="023f3c6e-993d-4bc6-995b-f5ea7bf0683b" class="bulleted-list"><li style="list-style-type:circle">The receiver must perceive the message and accurately decode it to achieve accurate understanding<ul id="2269be32-7873-4b92-bb30-3761d20338be" class="bulleted-list"><li style="list-style-type:square">The receiver might initiate feedback that tells the original sender that the message has been received and understood</li></ul></li></ul></li></ul><p id="1e20c74e-c6e9-424d-9a70-21f805053d7c" class="">
+</p><p id="d2571438-23f1-47f9-b62d-c7b84f47c49f" class="">This simple model is valuable because it points out the complexity of the communication process and demonstrates a number of points at which errors can occur</p><p id="d1a2872d-b434-4793-82cf-5f63bff6103e" class="">
+</p><p id="00ae5d0f-b62f-41f6-a6b9-c0c3c27214c2" class="">Effective communication occurs when the right people receive the right information in a timely manner</p><ul id="a6d21273-4438-4ce8-9f8d-c698421f8f0f" class="bulleted-list"><li style="list-style-type:disc">Violating any of these three conditions results in a communication episode that is ineffective</li></ul><h2 id="21c44e95-6c1d-4632-a5b4-91755f06ad1f" class="">Communication by Strict Chain of Command</h2><p id="c1ca4997-fd35-4da4-a464-d885db09e9c6" class="">A vice president has authority over the plant manager, who has authority over the production supervisors</p><ul id="69608e5e-78ca-41e9-99f0-c2144fc97265" class="bulleted-list"><li style="list-style-type:disc">Conversely, production workers report to their supervisors, who report to the plant manager, and so on<ul id="9941218e-8bd1-4847-8e26-d58805375242" class="bulleted-list"><li style="list-style-type:circle">In theory, organizational communication could stick to this strict chain of command</li></ul></li></ul><p id="9dae1291-cf11-403e-83ee-24563f78a876" class="">
+</p><p id="dee2dd2a-99d3-4d32-a31a-ffc44629d385" class="">Under this system, three necessary forms of communication can be accomplished</p><ol type="1" id="09ed263d-0b8b-4455-a890-a3d7080af206" class="numbered-list" start="1"><li>Downward communication<ol type="a" id="139bdd60-ab4b-4ebe-a815-b07ec0d0aba2" class="numbered-list" start="1"><li>Flows from the top of the organization towards the bottom<ol type="i" id="8071e47e-32f9-4edf-b3d4-0f28c53693cb" class="numbered-list" start="1"><li>A vice president of retail banking might instruct regional managers to gear up for introducing a new mutual fund product</li></ol></li></ol></li></ol><ol type="1" id="b9ad878d-740d-4130-9608-6ec67692f128" class="numbered-list" start="2"><li>Upward communication<ol type="a" id="2364d7bf-403b-4609-b698-704a6c9cb106" class="numbered-list" start="1"><li>Flows from the bottom of the organization towards the top<ol type="i" id="631bed1f-f442-4e24-9de3-7757e7d7332b" class="numbered-list" start="1"><li>A chemist might conceive a new plastic formula with unique properties; he might pass this on to the R&amp;D manager</li></ol></li></ol></li></ol><ol type="1" id="adee8720-369d-4b30-bcb1-1d6e03afba73" class="numbered-list" start="3"><li>Horizontal communication<ol type="a" id="bac986e5-a6c2-4c82-b788-bf185063384a" class="numbered-list" start="1"><li>Occurs between departments or functional units, usually as a means of coordinating effort<ol type="i" id="55daf71f-345a-4618-b64f-c97575d89fd6" class="numbered-list" start="1"><li>Suppose a salesperson gets an idea of a new product from a customer; to get this idea to the R&amp;D staff, it would have to be transmitted up to and down from the Vice president of marketing and R&amp;D</li></ol></li></ol></li></ol><h2 id="75173939-f707-48ce-8fe8-8c6f53661a13" class="">Deficiencies in the Chain of Command</h2><p id="f3ef3803-b98e-4a9c-a15a-73d9bac51af6" class="">A lot of organizational communication does follow the formal lines of authority shown on organizational charts</p><ul id="165587a2-f731-45ef-81b5-eb88bcd17660" class="bulleted-list"><li style="list-style-type:disc">Directives and instructions usually pass downward through the chain of command, and ideas and suggestions pass upward<ul id="c346697b-12e8-42cc-b6c7-db79d1d35eea" class="bulleted-list"><li style="list-style-type:circle">However, reality shows that the formal chain is an incomplete and often ineffective path of communication</li></ul></li></ul><h3 id="543d550c-753d-4881-b2f8-4da3a24db25e" class="">Informal Communication</h3><p id="3cc276ff-7e70-4d14-b954-1adfe5cc9b5e" class="">The chain of command obviously fails to consider informal communication between members</p><ul id="074ac3aa-2294-44c5-b069-519ec30c8dd1" class="bulleted-list"><li style="list-style-type:disc">In previous chapters, we discussed how informal interaction helps people accomplish their jobs more effectively<ul id="ccd9a9db-334c-4e0b-951d-5f2623ffc6e9" class="bulleted-list"><li style="list-style-type:circle">Good ideas don&#x27;t respect organizational boundaries and informal networks can be important sources of innovation by freeing up communication</li></ul></li></ul><h3 id="b9b098a0-b9e2-40d9-8549-0c04ef0f83f4" class="">Slowness</h3><p id="519c0d8b-5250-4a65-88a2-c01c78c8a6f6" class="">Even when the chain of command transmits information faithfully, it can be painfully slow</p><ul id="3fe98621-a09b-4bfc-a46f-86620e76db32" class="bulleted-list"><li style="list-style-type:disc">The chain can be especially slow for horizontal communication between departments, and it is not a good mechanism for reacting quickly to customer problems<ul id="5393be68-8056-4a73-848e-e2d656b3ff16" class="bulleted-list"><li style="list-style-type:circle">Cross-functional teams and employee empowerment, concepts we introduced earlier, have been used to improve communication in these areas by short-circuiting the chain of command</li></ul></li></ul><h3 id="1fb3352c-3826-4828-bf4f-8ba4277ac99c" class="">Filtering</h3><p id="af7575d7-d716-4c57-b098-98a229febc81" class="">This is the tendency for a message to be watered down or stopped altogether at some point during transmission</p><ul id="c981e310-c00b-4b57-8106-4391b0ce6942" class="bulleted-list"><li style="list-style-type:disc">Overzealous filtering will preclude the right people from getting the right information, and the organization will suffer accordingly</li></ul><ul id="2057d518-4163-4b69-8cfe-1291bb04a1a8" class="bulleted-list"><li style="list-style-type:disc">Upward filtering often occurs because people are afraid that management will use the information against them</li></ul><ul id="762b60fc-ac6b-4b29-a823-10579c613580" class="bulleted-list"><li style="list-style-type:disc">Downward filtering is often due to time pressures, or simple lack of attention to detail, but more sinister motives may be at work<ul id="a0a66fb8-ed91-4983-b5ff-35237a9225b7" class="bulleted-list"><li style="list-style-type:circle">A manager who feels that an up-and-coming employee could be promoted over him might filter crucial information to make the subordinate look bad at a staff meeting</li></ul></li></ul><h1 id="f8640483-071e-4fb5-b465-3f34fe4c0312" class="">10.2 Voice, Silence, and the Mum Effect</h1><p id="f7a62514-4873-47d6-b955-3bdc0cef8d22" class="">Speaking generally, the free flow of information contributes to effective communication</p><ul id="62077d4c-61d2-440d-b174-3b5bf92ed308" class="bulleted-list"><li style="list-style-type:disc">One aspect of this free flow is employee voice, the constructive expression of disagreement or concern about work unit or organizational practices<ul id="ff65ab92-8b3e-4ab7-9e54-d043a92812bc" class="bulleted-list"><li style="list-style-type:circle">Voice refers to speaking up, and can be contrasted with silence, which means withholding relevant information<ul id="f6734109-c50e-4307-9c69-57ce486684e1" class="bulleted-list"><li style="list-style-type:square">Speaking up can be perceived as risky due to inherent power differentials in organizations</li></ul><ul id="63254e94-ca46-4f6c-9f94-c11f0e46fd69" class="bulleted-list"><li style="list-style-type:square">However, ‘high voicers’ report less work stress than those who remain silent<ul id="49de8cf6-67a6-46a3-b83a-0c72d3a1c0da" class="bulleted-list"><li style="list-style-type:disc">More satisfied employees who identify more strongly with their work unit or organization are more likely to speak up, as are those who are conscientious and extraverted</li></ul></li></ul></li></ul></li></ul><ul id="0ad9d2b9-7fbd-4433-9b81-abfb1211e7e2" class="bulleted-list"><li style="list-style-type:disc">A more general factor that contributes to silence and works against voice is the mum effect<ul id="fa746203-7fab-48d9-982f-7d99d06b9856" class="bulleted-list"><li style="list-style-type:circle">This is the tendency to avoid communicating unfavorable news to others; note that the sender doesn&#x27;t necessarily need to be responsible for the bad news</li></ul></li></ul><h1 id="f8d58487-db17-4c8f-8f32-f48560d364e8" class="">10.3 The Grapevine</h1><h2 id="e13f6631-cab9-40e4-86a9-2a9477b490d3" class="">Characteristics of the Grapevine</h2><p id="827eaffc-11f0-4e5b-93d8-ccb866fe39ce" class="">The Grapevine is the informal communication network that exists in any organization</p><ul id="6ee45ab8-d027-4f5a-b8a8-3848f929ce3d" class="bulleted-list"><li style="list-style-type:disc">We generally think of the Grapevine as communicating information by ‘Word of Mouth’</li></ul><ul id="00926886-7bb7-43d1-bb77-7d3b2f71df4b" class="bulleted-list"><li style="list-style-type:disc">The Grapevine can transmit information relevant to the performance of the organization as well as personal gossip</li></ul><h2 id="6de05a3b-0372-4e70-9eaf-fef2f20e2749" class="">Who Participates in the Grapevine, and Why?</h2><p id="8f628740-de12-4c5d-a63f-7b0314351a88" class="">Personality characteristics may play a role</p><ul id="4d8679ef-02bc-4adc-97bb-3378a8818415" class="bulleted-list"><li style="list-style-type:disc">Extroverts might be more likely than introverts to pass on information</li></ul><ul id="27558915-e3a3-414e-93f1-872ea9409c35" class="bulleted-list"><li style="list-style-type:disc">Similarly, those who lack self-esteem might pass on information that gives them a personal advantage</li></ul><p id="9d903049-8e05-4338-8430-495e1461ea16" class="">
+</p><p id="d41b5cf2-af97-456a-8dfe-afe7e230e59c" class="">What motivates people to gossip via the Grapevine?</p><ul id="e4f1b70e-acd2-414f-9f71-b2d977804260" class="bulleted-list"><li style="list-style-type:disc">For one thing, it can be a timely, inexpensive source of information that simply isn&#x27;t available through other channels</li></ul><ul id="9833a779-54ba-44af-972f-e6a50e9e8817" class="bulleted-list"><li style="list-style-type:disc">In turn, this information can provide an alternative source of power and influence available to all, not just those with access to formal information channels<ul id="ac437722-4cd4-4db2-be56-7a28a3557e61" class="bulleted-list"><li style="list-style-type:circle">Though, much of Grapevine material involves releasing pent-up emotions concerning bosses or customers, that can&#x27;t otherwise be comfortably expressed, and the exchange of delicate information does build a bond of trust between Sanders and Receivers</li></ul><ul id="446ec427-da99-4315-a061-920aef784e1d" class="bulleted-list"><li style="list-style-type:circle">On the other hand, some jobs are so boring that gossip provides one of the few available sources of social and intellectual stimulation; enough gossip can actually contribute to effective communication between people</li></ul></li></ul><h2 id="da5c8f96-58e9-4c18-813b-cfe6af31c42c" class="">Pros and Cons of the Grapevine</h2><p id="c039ba30-7fd0-4313-9723-01e3d8d61fdb" class="">Is the Grapevine desirable from the organization&#x27;s point of view?</p><ul id="f0448d3e-6f26-4055-874c-4a8ab7dd96ab" class="bulleted-list"><li style="list-style-type:disc">It can keep employees informed about important organizational matters, such as job security<ul id="0fcaa15f-8d62-47af-9fe1-55346106196b" class="bulleted-list"><li style="list-style-type:circle">Sometimes management is not vocal enough (or very relaxed), so Grapevine can be a substitution for formal communication</li></ul></li></ul><p id="58b07e39-10a6-4558-b203-4143ef990863" class="">
+</p><p id="bbb2d712-1e44-4743-98d7-48d2ede33582" class="">The Grapevine can become a real problem for the organization when it becomes a constant pipeline for rumours; rumours are generally ‘unverified’</p><ul id="b889cb55-3c66-40a1-a754-d702db533d94" class="bulleted-list"><li style="list-style-type:disc">Because people cannot verify the information as accurate, rumours are susceptible to severe distortion as they are passed from person to person<ul id="4f5d9221-b5e1-4029-9062-6c92b0eab6f5" class="bulleted-list"><li style="list-style-type:circle">And as we know, rumours seem to spread fastest and farthest when the information is especially ambiguous, when the content of the rumour is important to those involved, when the rumour seems credible, and when the recipient is anxious</li></ul></li></ul><h1 id="db33b5b4-30a7-439c-84a5-3ae4dccfe3e8" class="">10.4 The Verbal Language of Work</h1><h3 id="caf7065a-5f74-4314-9515-938fcf34380e" class="">Jargon</h3><p id="a2f6d9b2-a95f-4984-9141-6a22e113acd8" class="">In many jobs, occupations, and organizations, we see the development of a specialized language or ‘jargon’ that members used to communicate with one another</p><ul id="d9ddacd1-34a2-407b-8b2e-db9bb8bc40a6" class="bulleted-list"><li style="list-style-type:disc">OB means organizational behavior to business professors (and students taking the course), but to physicians, OB means obstetrics</li></ul><p id="00d0ad67-15f0-4e25-8882-c0335d2dc262" class="">
+</p><p id="9f53f8d2-2705-4ee3-8ee7-6fad4f1af945" class="">To those who have mastered jargon, it can provide a touch of status, though on the other end, it can even serve as a barrier to communication with others</p><ul id="884d31d4-de80-410f-98ed-33b56e2490e8" class="bulleted-list"><li style="list-style-type:disc">Slang that has been developed in Ontario might serve as a barrier to clear communication between local residents and international students (they might find it intimidating or confusing)</li></ul><ul id="1005fab1-52f5-49f2-9e3a-cb07c46833fe" class="bulleted-list"><li style="list-style-type:disc">A second problem with jargon is the barrier that it presents to those outside of the organization or profession<ul id="3428e9f0-790b-4bfb-8480-3903ae3fe47c" class="bulleted-list"><li style="list-style-type:circle">In the pharmaceutical industry; PC might mean placebo control to R&amp;D, PC might mean personal computer to IT, PC might mean politically correct to HR, PC might mean preclinical to the regulatory division</li></ul></li></ul><h3 id="85194c7d-f6c6-4074-93e0-4e78631f4f3b" class="">Humour</h3><p id="6ac3061f-8200-4345-9b82-ce8ce6748cb1" class="">Most people enjoy a good laugh, but does the use of humour contribute to effective organizational communication?</p><ul id="36946763-9d46-4279-9729-a011252f20c6" class="bulleted-list"><li style="list-style-type:disc">Humour can create positive emotions that can in turn, facilitate attention, understanding, and message acceptance on the part of the receiver</li></ul><ul id="255fda51-126a-46d9-89d1-655bc1438787" class="bulleted-list"><li style="list-style-type:disc">Positive emotions can facilitate creativity because they create a ‘fun’ atmosphere that makes people less critical and more open to new ideas</li></ul><ul id="3c526791-7992-485a-9236-102da0d011e3" class="bulleted-list"><li style="list-style-type:disc">Humour can serve as a potent antidote to workplace stress, reducing threat and conveying the message that ‘we are all in this together’<ul id="980d4b55-8df4-493e-90c3-9db054c58385" class="bulleted-list"><li style="list-style-type:circle">Effective leaders often employ self-deprecating humour to reduce the social distance between themselves and their subordinates</li></ul></li></ul><p id="a817a553-91bf-42d7-8bd0-2b24293e0f9b" class="">
+</p><p id="49f0f8b9-a52c-464f-a04d-0e3411357b51" class="">Humour can also be risky</p><ul id="d7850245-df4f-4981-b9cc-782cc4ff38f8" class="bulleted-list"><li style="list-style-type:disc">Inappropriate jokes signal a lack of competence and can reduce the communicator’s status</li></ul><h2 id="ac0e9f1d-b30b-4ea8-bb0e-85a4e3306112" class="">The Non-Verbal Language of Work</h2><p id="623050be-566b-46c9-bbab-58e7e58852f3" class="">Professors frequently hear students say that they understand a concept but somehow know that they do not; how can we account for these messages that we receive in spite of the words we hear?</p><ul id="c1f3d838-3bd4-4173-a41f-87e323b9f45d" class="bulleted-list"><li style="list-style-type:disc">Nonverbal communication is the transmission of messages by some medium other than speech or writing</li></ul><p id="b404f936-7139-4397-96d3-edc88391d703" class="">
+</p><p id="9616b5ca-dbc7-4b9c-8248-1aa89c95dd47" class="">Nonverbal messages can be very powerful in that they often convey ‘the real stuff’ while words serve as a smokescreen</p><ul id="82d1ae86-b37f-4027-aca3-c91bbd3f11d4" class="bulleted-list"><li style="list-style-type:disc">Raised eyebrows, an empathic shrug, or an abrupt departure from the room, can all convey a lot of information to the receiver </li></ul><h3 id="ed82536a-4eff-4612-9fd8-1407eae5be8a" class="">Body Language</h3><p id="d5984839-2196-44bf-a61f-77333b09348b" class="">This is nonverbal communication that occurs by means of the sender’s bodily emotions and facial expressions, or the sender&#x27;s physical location in relation to the receiver</p><ul id="43b1201b-3fd0-44b9-b899-d7c63b05ef5d" class="bulleted-list"><li style="list-style-type:disc">Senders communicate liking and interest when they direct their torso toward the receiver, positioning themselves physically closely, maintaining eye contact, and leaning forward during the interaction</li></ul><ul id="30e31ba6-4f19-431a-8f52-4eee8e2bd5b6" class="bulleted-list"><li style="list-style-type:disc">Senders who feel themselves to be of higher status than the receiver act more relaxed than those who perceive themselves to be of lower status</li></ul><ul id="d56d2584-5f07-4e89-95ef-61dcab8ab083" class="bulleted-list"><li style="list-style-type:disc">Employment interviewers are faced with applicants who are always motivated to make a good verbal impression<ul id="4754d57b-45e7-4b6b-a359-3853c279f629" class="bulleted-list"><li style="list-style-type:circle">So interviewers might turn their attention to nonverbal cues on the assumption that they are less likely to be censored than verbal cues</li></ul><ul id="5c7286a9-532b-4840-b39f-7a1cfd0d1f9a" class="bulleted-list"><li style="list-style-type:circle">Nonverbal behaviours such as smiling, gesturing, and maintaining eye contact, have a favorable impact on interviewers when they are not overdone</li></ul></li></ul><h3 id="dd766ff8-8722-43c9-b393-77a12e81dd75" class="">Props, Artifacts, and Costumes</h3><ol type="1" id="18881336-7b8f-41b1-9909-e01121961266" class="numbered-list" start="1"><li>Office decor and arrangement<ol type="a" id="3e24b5c2-c687-4853-a9b0-bc7065572b72" class="numbered-list" start="1"><li>A study found that students would feel more welcome and comfortable in a professor&#x27;s office when it is tidy, decorated with posters and plants, and had the desk against the wall instead of between the student and the prof</li></ol></li></ol><ol type="1" id="21d455cd-c247-486d-87a3-75f411cad5c9" class="numbered-list" start="2"><li>Clothing<ol type="a" id="fc67c598-5563-4f1e-b20d-e72082103046" class="numbered-list" start="1"><li>The clothing employees wear sends clear signals about their confidence, seriousness, and promotability</li></ol><ol type="a" id="bf771fb9-df90-4f72-8826-b6949b29d562" class="numbered-list" start="2"><li>Speaking generally, people who are conventionally well-dressed communicate high-status, competence, and authority to others<ol type="i" id="de3a6ce1-7e4b-41be-b0c1-a186adc4fdac" class="numbered-list" start="1"><li>Proper clothing may enhance self-esteem and self-confidence to a noticeable degree</li></ol></li></ol></li></ol><h1 id="845d9916-f0e3-4e0b-8d40-16d51b3b6558" class="">10.5 Gender Differences in Communications</h1><p id="7b539f3a-3043-4726-86c8-7455623b2450" class="">There are gender differences in communication styles</p><ol type="1" id="f2ba02e9-e5c8-415d-bbca-cd18ff8daf10" class="numbered-list" start="1"><li>Many girls see conversations as a way to develop networks of connection and intimacy<ol type="a" id="2b6dd02a-27e5-4867-b787-58410bb77636" class="numbered-list" start="1"><li>While many boys view conversations as a way to achieve status and to maintain independence</li></ol></li></ol><ol type="1" id="f586ecb3-ebe1-4c4c-94e4-1a326d593ff7" class="numbered-list" start="2"><li>Men tend to be more sensitive to power dynamics and will use communication as a way to position themselves in a one-up situation<ol type="a" id="6064b01b-6b6c-470b-9c5a-bb485b7d1d33" class="numbered-list" start="1"><li>Women tend to be more concerned with rapport-building, and they communicate in ways that avoid putting others down (as a result putting themselves in a one-down position)</li></ol></li></ol><p id="5aa04db6-65a9-44ff-a72c-dc0e9d5853c4" class="">
+</p><p id="40fe174c-d9a5-4caa-95bb-0418503fda4d" class="">There are a number of key differences in male and female communication styles (read if you want but mostly common sense):</p><ol type="1" id="25d18ea7-4103-4e89-827a-3a70bc5c0ef1" class="numbered-list" start="1"><li>Getting credit<ol type="a" id="aa6a83fd-7777-4b4f-be01-34622137c147" class="numbered-list" start="1"><li>Men are more likely than women to boast about something good they have done</li></ol></li></ol><ol type="1" id="6c86f207-9ed7-4f24-9136-a78b0e647fc4" class="numbered-list" start="2"><li>Confidence and boasting<ol type="a" id="cee8fa25-c68f-43d5-b442-4a66b3d7a548" class="numbered-list" start="1"><li>Compared with women, who downplay their certainty, men tend to be more boastful about themselves and their capabilities, and to minimize their doubts</li></ol></li></ol><ol type="1" id="25776acf-dfa2-4b9f-b916-ca5c79d71f53" class="numbered-list" start="3"><li>Asking questions<ol type="a" id="738678e1-95be-4a40-91c9-c1323f5cef93" class="numbered-list" start="1"><li>Men are less likely than women to ask questions because they realize that asking questions can put them in a one-down position, and reflect negatively on them</li></ol></li></ol><ol type="1" id="47b17ff7-ee20-44a3-8b00-cf919f58d2f7" class="numbered-list" start="4"><li>Apologies<ol type="a" id="b1cde5f5-0f13-44e2-81d4-1715109bd830" class="numbered-list" start="1"><li>For Women, apologies are part of a ritual that is used to establish rapport. While for many men, apologies are seen as a weakness</li></ol></li></ol><ol type="1" id="7b248e26-4862-4421-a702-c564290564bf" class="numbered-list" start="5"><li>Feedback<ol type="a" id="52e7e1f4-6a6c-45e4-af9b-854ec5a5e0ba" class="numbered-list" start="1"><li>Women will often buffer criticism by beginning with praise, as a way to save face for the person receiving the criticism, and avoid putting them in a one down position</li></ol><ol type="a" id="0fbe9ff3-24ff-44ec-999b-6f834ca8c167" class="numbered-list" start="2"><li>Men tend to be much more blunt and straightforward</li></ol></li></ol><ol type="1" id="2f069a91-527a-4a5e-8069-027b96a7d087" class="numbered-list" start="6"><li>Compliments<ol type="a" id="4e6fe065-fe60-4805-8bb0-55a8d3834bac" class="numbered-list" start="1"><li>Women are more likely to provide a compliment such as “great presentation” or “great job”</li></ol><ol type="a" id="bbc33629-b256-449b-aa7d-81cf34d971fd" class="numbered-list" start="2"><li>Men are more likely to interpret the criticism involved with the presentation</li></ol></li></ol><ol type="1" id="8870e7ce-1473-423c-9b85-6812fa2e1368" class="numbered-list" start="7"><li>Ritual opposition<ol type="a" id="4377dfe0-8b59-46e2-a801-fd4c68f26018" class="numbered-list" start="1"><li>Men often use ritual opposition as a form of communication and to exchange ideas<ol type="i" id="6b69ebbb-cae7-42c6-8180-6cc1bdee84d2" class="numbered-list" start="1"><li>This takes the form of attacking others points of view, challenging them in public, and being argumentative</li></ol></li></ol><ol type="a" id="fd558cc5-66b0-4b0e-8caf-cee925aec927" class="numbered-list" start="2"><li>For many women, ritual opposition is seen as a personal attack and something to be avoided</li></ol></li></ol><ol type="1" id="6449d0a8-430c-4f3f-8cfb-d79a0d51d3cb" class="numbered-list" start="8"><li>Managing up and down<ol type="a" id="adec2ada-7bb8-4bcb-a1fb-4ffc2efeebee" class="numbered-list" start="1"><li>Many women believe that, to be recognized and rewarded, what matters most is doing a good job</li></ol><ol type="a" id="38eddd7e-aef6-40b3-83ae-51c5d1c2df1e" class="numbered-list" start="2"><li>Men spend much more time communicating with their superiors and talking about their achievements<ol type="i" id="91b6da6d-0219-4b36-a05b-f1857c54717a" class="numbered-list" start="1"><li>This type of communication influences who gets recognized and promoted</li></ol></li></ol></li></ol><ol type="1" id="5156557a-610e-403b-af5b-9fb9e9853c04" class="numbered-list" start="9"><li>Indirectness</li></ol><p id="ae1cd0a1-0221-42ad-aa7b-58566bea11f5" class="">What would be your response if your superior asked you a relatively simple question as “how would you feel about helping the human resources department hiring a new person for our department?”</p><ol type="a" id="83b7fb9c-870f-4f77-97a2-6467aa9ab458" class="numbered-list" start="1"><li>Women tend to be indirect when giving orders<ol type="a" id="d9b92753-3f58-495f-b16f-335f61a8b43e" class="numbered-list" start="1"><li>In the example, what is really being said is “help the human resources department hire a person for our department”<ol type="a" id="c756798e-b284-4881-93e2-4caac3535943" class="numbered-list" start="1"><li>So this is not a question, but rather a command, but this can come off as indirectness due to misunderstandings</li></ol></li></ol></li></ol><h1 id="3a896920-c7d8-4357-8b65-a52c23471870" class="">10.6 Cross-Cultural Communication</h1><h2 id="8de61c36-ea0b-4f07-9e8a-727063188941" class="">Language Differences</h2><p id="96cef58c-86a7-40bf-b4cd-0ebea9ea2b6e" class="">Communication is generally better between individuals or groups who share similar cultural values; and especially, if they share a common language</p><ul id="1e4dbbb4-5f74-42a9-8a84-43284bc102f5" class="bulleted-list"><li style="list-style-type:disc">Though it may not always be the case and a common language can sometimes cause visitors to misunderstand or be surprised by legitimate cultural differences because they get lulled into complacency<ul id="75b0430b-44cd-4f33-b1ae-2fb4d8aa17cd" class="bulleted-list"><li style="list-style-type:circle">There might be miscommunication or misunderstanding between people who speak American English versus Australian English</li></ul></li></ul><p id="48bc9e54-4fde-4579-89cb-a533e64f5798" class="">
+</p><p id="c8df922b-086c-4318-8e4d-68f1682ba757" class="">It goes without saying that learning a second language would facilitate cross-cultural communication</p><ul id="be217d76-2510-4557-892a-e5b9ed421196" class="bulleted-list"><li style="list-style-type:disc">Employees forced to speak English often feel reduced professional status and report extreme anxiety about having to communicate about important business matters in a language other than their native one</li></ul><h2 id="ae7e041f-aac0-49c9-a309-c729bfc8aba3" class="">Non-Verbal Communication Across Cultures</h2><ol type="1" id="e6faaf97-f714-41d0-8670-2001cf199d93" class="numbered-list" start="1"><li>Facial expressions<ol type="a" id="ba339d83-7302-4901-a96d-88abbb25b616" class="numbered-list" start="1"><li>Paying particular attention to the face in cross-cultural encounter has will often yield communication dividends; people are generally very good at decoding basic simple emotions, and facial expressions even across cultures<ol type="i" id="4c6429b5-7319-4656-b9fa-05f9356150d9" class="numbered-list" start="1"><li>Though some cultures, especially collectivist cultures, tend to frown on the display of negative facial expressions</li></ol></li></ol></li></ol><ol type="1" id="c62d9afc-e548-4a56-8b4b-4b02402f9666" class="numbered-list" start="2"><li>Gestures<ol type="a" id="d1573052-b112-4a80-a28f-0cc18ff7e7ac" class="numbered-list" start="1"><li>Within cultures, gestures actually contribute to understanding over and above words; though gestures can differentiate in meaning across cultures<ol type="i" id="017b6339-e870-4940-a787-9733688d1bdf" class="numbered-list" start="1"><li>In the United States, a raised thumb is used as a signal of approval; in Greece, it is employed as an insult</li></ol></li></ol></li></ol><ol type="1" id="1ca33502-7d5a-4441-b43f-bcc5d67aca99" class="numbered-list" start="3"><li>Gaze<ol type="a" id="4f988e8f-b8fd-4558-aaf7-6e924b2fce2f" class="numbered-list" start="1"><li>There are cultural differences in the extent to which it is considered suitable to look at others directly in the eye<ol type="i" id="dee154c0-41fe-470f-9340-18de43d2386f" class="numbered-list" start="1"><li>In many parts of East Asia, avoiding eye contact is a means of showing respect; while in North America it often is considered disrespect</li></ol></li></ol></li></ol><ol type="1" id="e0af55d5-ce8a-44bb-812d-ad63bdd4427a" class="numbered-list" start="4"><li>Touch<ol type="a" id="67627ce3-3b09-461c-bc45-dc7bcdd1a24b" class="numbered-list" start="1"><li>In some cultures people tend to stand close to one another when meeting and often touch each other as an adjunct to conversation<ol type="i" id="3b8cf923-1d61-4fcc-af3f-1fb6e3232035" class="numbered-list" start="1"><li>This is common in Arab, Latin American, and Southern European countries</li></ol><ol type="i" id="0a431453-5023-4792-a841-989d89bed36c" class="numbered-list" start="2"><li>North Europeans and North Americans prefer to keep their distance</li></ol></li></ol></li></ol><h2 id="f9008f73-33d7-42c4-9153-73cc687a3c0b" class="">Etiquette and Politeness Across Cultures</h2><p id="8c6fc1a0-99ad-4c6e-84d4-950f73883234" class="">Cultures differ considerably in how etiquette and politeness are expressed</p><ol type="1" id="bf6d43c6-bda8-40ac-825b-71d1d36b11b3" class="numbered-list" start="1"><li>A British executive who describes a business proposal as “interesting” might actually mean “it&#x27;s rubbish”</li></ol><ol type="1" id="68c2753f-6b70-4f70-9e25-fc3f0d668798" class="numbered-list" start="2"><li>A Canadian manager who says to an employee: “would you like to calculate those figures for me?”<ol type="a" id="a9a1938f-d326-4255-a050-6eba1f8ddc2d" class="numbered-list" start="1"><li>This is really an order, and not an opportunity to say no to the boss&#x27;s invitation</li></ol><ol type="a" id="c473bcfe-184b-487a-bb84-7c78e9e7d7e9" class="numbered-list" start="2"><li>However put yourself in the place of a foreign employee who has learned that Canadians generally speak directly and expect directness in return</li></ol></li></ol><h2 id="1eed4432-e727-4051-a7aa-7f7d2b851610" class="">Social Conventions Across Cultures</h2><p id="50dad493-306f-4808-b650-ff46d7d67e69" class="">There are a number of social conventions that vary across cultures and can lead to communication problems</p><ol type="1" id="835a0b5f-8521-4a33-8072-6e11a2ebb41d" class="numbered-list" start="1"><li>Greetings and how people say hello vary across cultures and these differences can lead to misunderstandings<ol type="a" id="8d4b2621-5d4d-4fff-8ad6-87720d1f6f59" class="numbered-list" start="1"><li>In North America, people often greet one another by asking “how are you?” and yet seem uninterested in the response</li></ol><ol type="a" id="1c0e6b09-88dc-4514-8fb4-ad77fa4a01f6" class="numbered-list" start="2"><li>In other cultures, people greet each other by asking “where are you going?”<ol type="i" id="376eaf90-3386-4695-a1f0-83bb2a231706" class="numbered-list" start="1"><li>Such a question is considered intrusive to North Americans who do not realize that this too is just a way of greeting somebody</li></ol></li></ol></li></ol><ol type="1" id="c721c96a-5763-4837-ae7e-2235611da203" class="numbered-list" start="2"><li>What people consider proper punctuality of also varies greatly around the world<ol type="a" id="3bd21679-cbd2-4738-8ccf-667adf3369e0" class="numbered-list" start="1"><li>In North America and Japan, punctuality at meetings is expected and esteemed</li></ol><ol type="a" id="eb5e718a-1cee-4916-ba28-e6fe2b620714" class="numbered-list" start="2"><li>In the Arab world and Latin America, being late for a meeting is not viewed negatively</li></ol></li></ol><h2 id="d5b49ba8-3253-476c-b433-195d0c7a0dd3" class="">Cultural Context</h2><p id="ffc9267c-446d-417a-b7bc-4516283107cb" class="">We provided many examples of communication differences across cultures; is there some organizing principle underlying these differences, something that helps to summarize them?</p><ul id="cda09914-24b0-4652-902e-1970676d5e39" class="bulleted-list"><li style="list-style-type:disc">Cultural context is the cultural information that surrounds a communication episode; context is always important in accurately decoding a message</li></ul><p id="483d33c9-7470-4a20-96e2-75e050fb205e" class="">Differences in the importance of context across cultures have some interesting implications for organizational communication, especially when we consider what might occur during business negotiations</p><ol type="1" id="5d44c3b8-cfbc-4c41-b5db-c1d00e2b7134" class="numbered-list" start="1"><li>People from high-context cultures want to know about you and the company that you represent in great detail<ol type="a" id="6344d215-ae21-425d-9284-febc4089a876" class="numbered-list" start="1"><li>This information provides a context for understanding your messages to them</li></ol></li></ol><ol type="1" id="9c9a6a32-a452-4353-bb3c-d3d491beea4d" class="numbered-list" start="2"><li>Getting to the point quickly is not a style of communication that people in high-context cultures favour<ol type="a" id="ec798186-9ec8-47e6-99f7-dfc50d657ca3" class="numbered-list" start="1"><li>Longer presentations and meetings allow people to get to know one another and to consider a proposal in a series of stages</li></ol></li></ol><ol type="1" id="4e9ab44c-aa4d-444d-be84-52abb32e4f6d" class="numbered-list" start="3"><li>When communicating with people from a high-context culture, give careful consideration to the age and rank of the communicator<ol type="a" id="ab2eb026-4a4b-40b6-9f5e-ba51185c9ee9" class="numbered-list" start="1"><li>Age and seniority tend to be valued in high-context cultures and the status of the communicator is an important contextual factor that gives credibility to a message</li></ol></li></ol><ol type="1" id="7d110a68-0f84-48fd-8db4-dcb3af209e5f" class="numbered-list" start="4"><li>Since people from low-context cultures tend to devalue cultural context, they tend to favour very detailed business contracts<ol type="a" id="27bbecef-3b89-403e-b4d6-a8a2b21839a1" class="numbered-list" start="1"><li>For them the meaning is in the message itself</li></ol></li></ol><h1 id="4da0b6e9-b2ad-4cf5-8bcc-5800e46d27da" class="">10.7 Computer-Mediated Communication and Social Media</h1><p id="98af2117-c36a-47f7-a7a5-2710a4b38c29" class="">Does communicating digitally differ from communicating face-to-face?</p><ul id="80d26f49-a685-4a88-ba26-3a8bd005c2e3" class="bulleted-list"><li style="list-style-type:disc">A good way to begin thinking about this issues to consider information richness, the potential information carrying capacity of a communication medium</li></ul><p id="0c898c35-9122-4c28-8961-c36c604f43de" class="">
+</p><p id="733e2043-f7c2-4b5c-a9f7-6ea3eb6670dc" class="">There are two dimensions of information richness:</p><ol type="1" id="602f3b1a-46cf-4a54-b5f1-55c78e6f9ad3" class="numbered-list" start="1"><li>The degree to which information is synchronous between senders and receivers (two-way, in real time)</li></ol><ol type="1" id="072ca263-3f13-4ccd-a354-18ef4d89a826" class="numbered-list" start="2"><li>The extent to which both parties can receive nonverbal and paraverbal (tone of voice) cues </li></ol><p id="c7a383a7-e7eb-4647-bf57-c9fb92a1e05d" class="">
+</p><p id="75df47ed-6402-4542-8636-b1a04354bd1e" class="">A face-to-face conversation is very high in richness because the sender is personally present, audio and visual channels are synchronous, body language and verbal language are occurring, and feedback to the sender is immediate and ongoing</p><ul id="18b3e356-154d-4062-93f7-c57713d1f985" class="bulleted-list"><li style="list-style-type:disc">A phone conversation is also fairly rich, but it is limited to the audio channel</li></ul><ul id="faafa215-f53a-429c-ad31-0b364cd4aaca" class="bulleted-list"><li style="list-style-type:disc">On the low side of synchronization, memos, letters, and emails, are essentially a series of one-way messages<ul id="3ae5bb0c-80e3-45d6-9d40-0f07b5f8571d" class="bulleted-list"><li style="list-style-type:circle">Nonverbal and paraverbal cues are essentially absent in text-based media</li></ul></li></ul><h2 id="e9a822a5-c94c-40bd-a713-3be5c50ab11c" class="">Communication Media</h2><ol type="1" id="eac5f1d6-eab3-44f1-a3ef-d051a022c460" class="numbered-list" start="1"><li>Digital media include email, texting, video conferencing, and various chat-type decision support systems</li></ol><ol type="1" id="e02ad5b9-e383-47a8-a6eb-cdfcba958454" class="numbered-list" start="2"><li>Social media include Facebook, LinkedIn, Twitter, YouTube, and various private company social media platforms<ol type="a" id="fb4688e7-c6d7-4294-ac8e-510b7e2348c1" class="numbered-list" start="1"><li>Web media are commonly classified as computer-mediated communication (CMC) in that they rely on digital technology to facilitate information exchange</li></ol><ol type="a" id="ccbdb497-df18-4db4-b5f0-b0abcc9bfd09" class="numbered-list" start="2"><li>These media permit discussion and decision-making without employees having to be in the same location, potentially saving time, money, and travel hassles</li></ol></li></ol><h2 id="6c85ba52-e116-4887-be63-c0be1a6aa071" class="">Social Media</h2><p id="0f5963eb-9a81-405a-aaec-1173b0d13b1b" class="">Although public social media sites are frequently used externally in support of marketing and public relations, the impact of such media on behavior within organizations and at the interface between employees and their organizations has only recently received attention</p><ul id="fdb233f1-23c3-4fbd-b81d-cd992f67dd39" class="bulleted-list"><li style="list-style-type:disc">In short, social media poses both challenges and opportunities for organizations and their members</li></ul><p id="a3265420-7c39-449b-b51d-5a8a5a96597d" class="">
+</p><p id="2683ee9f-0581-4e73-8f9f-bd862fb449ce" class="">One challenge posed by social media is that they can be addictive to the extent that employees engage in ‘cyberloafing’ while at work, updating their profiles rather than serving customers</p><ul id="99f46bf6-bf2e-48ad-8d05-748e530da05a" class="bulleted-list"><li style="list-style-type:disc">Compounding the wasted time, high levels of social media consumption contribute to reduced personal well-being</li></ul><ul id="e5a6e7d1-cff0-47c0-8cc2-c1b5819259e8" class="bulleted-list"><li style="list-style-type:disc">Cyberbullying is also an ongoing issue with employees repeatedly directing negative messages to coworkers</li></ul><p id="101e700c-5b73-4c53-bb71-ea77222b739d" class="">
+</p><p id="2974d86e-7be3-4f0a-aa27-3ffcbed6a7d7" class="">Social media tend to blur out the distinction between the work and non-work domains, and senders may not be aware of just who receives their messages</p><ul id="4a1d6f53-84cf-493d-a211-39340bb698bf" class="bulleted-list"><li style="list-style-type:disc">Employees have been fired for derogatory postings about their employer, having been judged to have damaged the organization&#x27;s reputation</li></ul><h1 id="cfc4cd89-4fbc-41d3-a301-03468bcc2d6c" class="">10.8 Personal Approaches to Improving Communication</h1><p id="9b2fadda-273f-40db-96c1-968d70105af6" class="">People are learning that developing their communication skills is just as important as developing their accounting skills, their computer skills, or anything else that will give them an edge in the job market</p><h2 id="a8bec7c3-a133-451e-9e2f-54b66fc16537" class="">Basic Principles of Effective Communication</h2><h3 id="efe91a4f-0ac0-4152-9b8c-642c1bafae53" class="">Take the Time</h3><p id="c7d32c44-3d12-4a1b-b3b1-64dc69608a3c" class="">Good communication takes time</p><ul id="36168753-4178-4942-846f-4e611d36a1a9" class="bulleted-list"><li style="list-style-type:disc">Managers in particular have to devote extra effort to developing good rapport with employees</li></ul><h3 id="3f1827c8-27b2-48d6-973a-814163c06440" class="">Be Accepting of the Other Person</h3><p id="19a45ae1-79fd-4f9c-9d9a-d4b28de31779" class="">Try to be accepting of the other person as an individual who has the right to have feelings and perceptions that may differ from your own</p><ul id="d9ab7e20-21e4-4fd0-9fac-28f69150ad11" class="bulleted-list"><li style="list-style-type:disc">Having empathy with others will increase your acceptance of them</li></ul><h3 id="37f1e4a5-a563-4307-9436-f302de87cff1" class="">Do not Confuse the Person with the Problem</h3><p id="8d77ac31-7835-407c-a75b-ed6fae901726" class="">Although you should be accepting of others, it is generally useful to be problem-oriented rather than person oriented</p><ul id="8a52f4a9-8c80-40af-b0cc-f0af4c5419ca" class="bulleted-list"><li style="list-style-type:disc">For example, suppose an employee does something that you think might have offended a client<ul id="d214e241-7027-45b7-8eb8-a7de2bdc07a5" class="bulleted-list"><li style="list-style-type:circle">It is probably better to focus on this view of the problem than to impute motives to the employee (”Don’t you care about the client’s needs?”)</li></ul><ul id="3b4eeed6-8874-4a90-937f-5549e161c324" class="bulleted-list"><li style="list-style-type:circle">The focus should be on what the person did, and not who the person is</li></ul></li></ul><h3 id="a5782e08-957d-4441-93be-d8b3d746bc7c" class="">Say what you Feel</h3><p id="3ebeabdc-d47b-4a67-9c3a-ed0c13fda16c" class="">Be sure that your words, thoughts, feelings and actions exhibit congruence - that they all contain the same message</p><ul id="52efe79c-af7d-4363-8915-825836c0e0be" class="bulleted-list"><li style="list-style-type:disc">Congruence can be thought of as honesty or authenticity</li></ul><h3 id="166063a6-cab5-4d75-9bce-415234b04c83" class="">Listen Actively</h3><p id="0ee6c227-e829-45af-a853-21b447e5fc8c" class="">Effective communication requires good listening</p><ul id="71b658b1-ee3a-45c8-86ff-d2e45a8b9782" class="bulleted-list"><li style="list-style-type:disc">Good listening improves the accuracy of your reception, but it also shows the acceptance of speakers and encourages self-reflection on their part</li></ul><p id="8de7736e-2a46-4cbb-a5d2-709c9be8e4fe" class="">
+</p><p id="d5d1dba1-1e2b-45ac-83e0-4bf163b0bf7f" class="">Good communicators employ ‘active listening’ to get the most out of an interaction</p><ul id="152c6314-55b6-4363-9f17-092c40ed8362" class="bulleted-list"><li style="list-style-type:disc">Watch your body language <ul id="62b864b5-e7fd-4cf6-a281-c88217bc5fa8" class="bulleted-list"><li style="list-style-type:circle">Sit-up, lean forward, and maintain eye contact)</li></ul></li></ul><ul id="c811cdc3-8109-4153-a98a-1a3ab991b655" class="bulleted-list"><li style="list-style-type:disc">Paraphrase what the speaker means <ul id="81e435a7-bc10-447a-b19c-07babda9ace9" class="bulleted-list"><li style="list-style-type:circle">Reflecting back what the speaker has said shows interest and ensures that you have received the correct message</li></ul></li></ul><ul id="6e23fbce-9f42-48ef-88c0-474cd463569a" class="bulleted-list"><li style="list-style-type:disc">Show empathy<ul id="6e9ee79f-b3d0-4992-ab4a-2888ff0df57d" class="bulleted-list"><li style="list-style-type:circle">Show that you understand the feelings that the speaker is trying to convey (includes demonstrating your own feelings)</li></ul></li></ul><ul id="6f403fd4-bbd1-4376-90af-c2828d4552c7" class="bulleted-list"><li style="list-style-type:disc">Ask questions</li></ul><ul id="865eaeb9-372e-42a0-be52-26453523715f" class="bulleted-list"><li style="list-style-type:disc">Wait out pauses<ul id="16ebae6d-bb89-4b6e-8770-51a1b62890fd" class="bulleted-list"><li style="list-style-type:circle">Do not feel pressured to talk when the speaker goes silent; this discourages the speaker from elaborating</li></ul></li></ul><h3 id="c162d4af-c5d3-4651-86ab-61630516623c" class="">Give Timely and Specific Feedback</h3><p id="ec1a1d46-af2e-4c27-9737-0baa1e0fd807" class="">Speed maximizes the reinforcement potential of the message and explicitness maximizes its usefulness to the recipient</p><h2 id="529f65a0-dfc9-4872-844c-744d284b6961" class="">Tell a Story</h2><p id="4d4dad4b-efed-4b38-8f3a-e46646520977" class="">Depending on the situation, storytelling can be used to convey subtle knowledge, reinforce organizational norms and values, stimulate organizational change, tell a cautionary tale, or motivate the receiver to action</p><ul id="1526c8ba-48ef-483e-b88f-f7f790662c5b" class="bulleted-list"><li style="list-style-type:disc">Used properly (and not excessively), stories can be powerful because they tend to be memorable and contextually rich, they transmit information holistically, and they can convey emotion</li></ul><h2 id="aabbc42b-80c8-4ee7-9361-a875aeb2f1cd" class="">When in Rome…</h2><p id="0e65510a-221c-4589-ba3a-7b1dad593e24" class="">You are off to a pretty good start in cross-cultural communication if you can do a careful job of applying the basic communication principles we discussed earlier</p><ul id="124bfbb9-073d-4f52-95e0-bf785abca1ef" class="bulleted-list"><li style="list-style-type:disc">However, people&#x27;s basic skills sometimes actually deteriorate when they get nervous about a cross-cultural encounter</li></ul><h3 id="7e8bbec1-361c-4673-99a5-d3914d75758f" class="">Assume Differences until you know Otherwise</h3><p id="ac2ef153-e600-451b-8d08-49816a7b4edd" class="">In a cross-cultural situation, caution dictates that we should assume that differences exist until we are proven wrong</p><ul id="36b2f189-335c-47bb-9337-5dba001f5f27" class="bulleted-list"><li style="list-style-type:disc">We have a tendency to project our own feelings and beliefs onto ambiguous targets, leading us to ignore differences</li></ul><h3 id="96c599a9-26cb-494c-ab5c-741c8ec49e24" class="">Recognize Differences within Cultures</h3><p id="e50af5d2-259f-4bed-8f28-6992f7f55ac8" class="">Appreciating differences between cultures can sometimes blind us to the differences among people within a culture</p><ul id="b7f235d5-37a8-47eb-9198-a03392256b62" class="bulleted-list"><li style="list-style-type:disc">This is generally the result of stereotypes</li></ul><p id="c118e3d6-1ca2-4454-a2c7-1c86c73f7d82" class="">
+</p><p id="b054b73f-560c-4a3d-8b71-9892ee98b61a" class="">Your German employees will have as many different personalities, skills, and problems as your North American employees</p><ul id="a4f47528-2061-4f63-b5bf-4f931dd5da66" class="bulleted-list"><li style="list-style-type:disc">There are also occupational and social class differences in other countries just like there are at home, although they can be harder to decipher</li></ul><h3 id="eee7cb74-7fa8-4f5b-b847-23ab02122f28" class="">Watch your Language (and Theirs)</h3><p id="5571568e-9d84-448f-a8aa-562f4ad694bd" class="">Unless the person with whom you are communicating is very fluent in English, speak particularly clearly, slowly, and simply</p><ul id="27d951d5-2415-4c7a-beb4-d0da7bc296c5" class="bulleted-list"><li style="list-style-type:disc">Avoid clichés, jargon and slang</li></ul><ul id="cff3e06e-6f30-4be1-9476-2b2147b4408a" class="bulleted-list"><li style="list-style-type:disc">Conversely, do not assume that those who can speak your language are smarter, more skilled, or more honest than those who cannot</li></ul><h2 id="e1605d7e-61ea-455b-a1af-b36a628881e7" class="">Organizational Approaches to Improving Communication</h2><h3 id="af96754f-aa85-404b-9252-b9477609ccf5" class="">Employer Branding</h3><p id="5370874c-78d6-4140-8095-48bcf30c9465" class="">Effective communication should begin even before people join an organization; one way to accomplish this is through employer branding</p><ul id="491d1a7e-8bb4-4651-b066-496ffd576ed2" class="bulleted-list"><li style="list-style-type:disc">Employer branding is to promote a clear and consistent image of the positive and distinctive features of an organization as an employer</li></ul><ul id="84c9a2cc-21d5-4160-9a47-f6ab79d145a9" class="bulleted-list"><li style="list-style-type:disc">Branding is first and foremost used to attract and recruit new employees, but it can also be effective in retaining existing employees by reinforcing their commitment to the organization</li></ul><ul id="e267703f-d0bd-4e49-a7b8-b010cc81f2c0" class="bulleted-list"><li style="list-style-type:disc">Branding is meant to convey the values of the organization and emphasize why it is an attractive place to work</li></ul><p id="3b41b50a-cfff-489c-92fb-09d915867899" class="">
+</p><p id="e8fbab58-a64a-45e7-a6ce-fa7a698642e6" class="">Good communication practices enhance the strength, awareness, and reputation of the employer brand</p><ul id="f8337b61-cbc9-43ce-9ec3-dbd484d30b7a" class="bulleted-list"><li style="list-style-type:disc">Effective branding conveys both tangible and more symbolic aspects of the employment experience<ul id="377b39f4-c717-4568-a9fc-9c6f19d5d435" class="bulleted-list"><li style="list-style-type:circle">Tangible factors might include pay, location, responsibilities, learning opportunities, or a wide variety of perks</li></ul><ul id="a5bc6b0b-a779-4ac6-96a0-4deb2139e117" class="bulleted-list"><li style="list-style-type:circle">Symbolic factors might stress an employers prestige, innovation, informal culture or social responsibility to the community or environment<ul id="7f274e07-1243-4910-be95-0fd87c4614ef" class="bulleted-list"><li style="list-style-type:square">Done correctly, branding gets the right information to the right people, encouraging those who will be a good fit to join the organization and reminding current employees why they should stay here</li></ul></li></ul></li></ul><h3 id="07b7bf6e-97cf-4b89-a693-787bceeac957" class="">Provision of Explanations</h3><p id="81ee4c9c-6a6a-4f49-bda9-8ddc2d64a5de" class="">Organization sometimes have to enact controversial policies that have the potential to spark employee resistance</p><ul id="0ffc2052-ae7d-46c1-9deb-2fb154367963" class="bulleted-list"><li style="list-style-type:disc">Examples might include restructuring, layoffs, pay rollbacks, or affirmative action programs<ul id="fcdc72e9-843a-4ab5-9622-0b724da52b65" class="bulleted-list"><li style="list-style-type:circle">However, in line with the mum affect, many organizations simply announce such policies with little to no explanation, evidently fearing to dwell on negative views or provoking lawsuits</li></ul></li></ul><p id="6ab011b3-7311-4ac6-9246-a4211fb89b56" class="">
+</p><p id="269ee49a-d722-4a5d-a25d-777d4d78dd9a" class="">Two factors are critical to the perceived fairness of controversial policies</p><ol type="1" id="355447ea-bbf8-4615-ab93-18e1e5f6c2e7" class="numbered-list" start="1"><li>The adequacy of the explanation<ol type="a" id="f8dfdb62-4550-4f61-b789-14957d3b2c64" class="numbered-list" start="1"><li>Explanations are specific, detailed, and highlight the reasons for the policy, how the decision was made, and the benefits that will accrue from it</li></ol></li></ol><ol type="1" id="3e7b32bf-e7cf-4085-aaad-9272ba598603" class="numbered-list" start="2"><li>The style in which it is delivered<ol type="a" id="4e090713-290c-4848-a94b-a7d8b5c49469" class="numbered-list" start="1"><li>The message should be truthful, sincere, respectful, and sensitive</li></ol></li></ol><h3 id="b2632ffb-aca2-40ed-8512-d978f89c24e6" class="">360-Degree Feedback</h3><p id="2d05613d-c01a-4e28-9485-b8c946a1b6f9" class="">Employee performance appraisal has been viewed as an exercise in downward communication in which the boss tells employees how they are doing</p><ul id="087f28b6-dc9b-4b52-a547-89d6028a098c" class="bulleted-list"><li style="list-style-type:disc">More recently, performance appraisal has become a two-way communication process in which employees are able to have upward impact concerning their appraisal</li></ul><p id="924db4d8-20d7-414c-ba44-26c87309436f" class="">
+</p><p id="892f2f94-09a6-45ea-921c-56a32917721c" class="">More recently, some firms have expanded the communication channels in performance appraisal to include not only superior and self ratings, but also ratings by subordinates, peers, and clients</p><ul id="4e54388b-1481-48af-b004-76ec46f9c955" class="bulleted-list"><li style="list-style-type:disc">This is called multi-source or 360-degree feedback<ul id="e7f64ed4-481e-42c5-830e-0ecb3632fa8b" class="bulleted-list"><li style="list-style-type:circle">The 360-degree system usually focuses on required behavioral competencies rather than bottom-line performance</li></ul></li></ul><h3 id="bcd9c2b5-9c3e-4a04-bccd-893af900752e" class="">Employee Surveys and Survey Feedback</h3><p id="1906e408-3369-4d4f-881a-cd36320f9f93" class="">Surveys of the attitudes and opinions of current employees can provide a useful means of upward communication</p><ul id="6b56c312-b11b-47b5-aefc-24ed8723bd88" class="bulleted-list"><li style="list-style-type:disc">Since surveys are usually conducted with questionnaires that provide for anonymous responses, employees should feel free to voice their genuine views<ul id="4ecebab8-fa2b-423a-a7c5-81ada3cece8b" class="bulleted-list"><li style="list-style-type:circle">A good employee survey contains questions that reliably tap into employee concerns, and also provide information that is useful for practical purposes</li></ul></li></ul><p id="2ccf41a5-b0b2-4c6c-b0e3-54383a0d27d6" class="">
+</p><p id="bc0a9ced-01d3-40c1-b5c6-4a9e723211b8" class="">Survey feedback shows employees that management has heard and considered their comments</p><ul id="a52d85fb-4f34-4a0f-baeb-6008e4bbf053" class="bulleted-list"><li style="list-style-type:disc">Plans for changes in response to survey concerns indicate a commitment to two way communication</li></ul><h3 id="57102ae4-cb8f-4b3d-9a4e-f083856a0037" class="">Suggestion Systems</h3><p id="28edc8ec-6608-4731-999f-5fed322d0360" class="">Suggestion systems are designed to enhance upward communication by soliciting ideas for improved work operations from employees</p><ul id="a8272604-c8c1-405e-9d94-5fc23bd3af9f" class="bulleted-list"><li style="list-style-type:disc">They represent a formal attempt to encourage useful ideas and prevent their filtering through the chain of command</li></ul><h3 id="bbca3045-7853-4809-a1f7-ea652f69e5bd" class="">Telephone Hotlines and Webcasts</h3><p id="5cbaa79f-c11f-42e7-9dae-bd0b3403eeb6" class="">Many organizations have adopted telephone hotlines to further communication</p><ul id="57985b0a-5e0c-4f72-b84f-a9f31c5711e3" class="bulleted-list"><li style="list-style-type:disc">Some hotlines use a news format represent company information</li></ul><ul id="180eb487-d603-4763-823e-25b9d65fd3f0" class="bulleted-list"><li style="list-style-type:disc">Other hotlines serve as query systems in that employees can call in for answers to their questions</li></ul><ul id="3958ade9-a06a-4b69-bed4-f8da169a4c58" class="bulleted-list"><li style="list-style-type:disc">In many instances, companies employ a hotline so that employees can report on ethical or illegal behavior; these hotlines can support anonymous reporting</li></ul><p id="49941a70-3cb5-419f-9f86-768e31ad1a0c" class="">
+</p><p id="8d45b59b-a342-4a71-a850-07df2a5f3d55" class="">Corporate webcasting constitutes a rich communication medium that can reach employees located anywhere in the world</p><ul id="448ec34d-5efb-47f7-b25f-81e21d28a5e1" class="bulleted-list"><li style="list-style-type:disc">Multi-point webcasting allows for a number of presenters who can be located in multiple cities<ul id="314f6e57-5701-4980-af43-94b5014b3e60" class="bulleted-list"><li style="list-style-type:circle">This medium is especially good for general information sessions, training, and new product information</li></ul></li></ul><ul id="e6ee63a7-cb27-486c-8ce8-67af7906b616" class="bulleted-list"><li style="list-style-type:disc">The synchronous, interactive nature of webcast supports audience engagement, either through written questions, audio questions, or where possible, video interaction</li></ul><h1 id="add8ef4b-39b0-4a66-87eb-c12534fe4418" class="">Slide Extras</h1><h2 id="193bb560-07bd-426d-a5dc-98467a109a1b" class="">Effectiveness Depends on</h2><ol type="1" id="c4cba943-74a2-4abb-874c-f597342c7a3c" class="numbered-list" start="1"><li>How employees allocate time</li></ol><ol type="1" id="1d7ca3ba-8854-48e8-b5e9-908e4d512b37" class="numbered-list" start="2"><li>How long it takes to learn a job</li></ol><ol type="1" id="90363dfc-6502-47ce-a8c8-6cf19ddc72ac" class="numbered-list" start="3"><li>Importance employees attach to pay</li></ol><ol type="1" id="f0fff121-4f79-42fd-a944-340b95606185" class="numbered-list" start="4"><li>Amount of authority an employee has</li></ol><ol type="1" id="8d3d044c-d5b6-444e-9764-b387af172653" class="numbered-list" start="5"><li>Employees skills and abilities</li></ol><ol type="1" id="faa9a8d0-9467-403a-a4b5-235ec238a8cc" class="numbered-list" start="6"><li>Employees performance and obstacles to performance</li></ol><ol type="1" id="1f2ab38f-1424-4f26-b6ea-843fd551fc7b" class="numbered-list" start="7"><li>Managers leadership style</li></ol><h2 id="03c5a9a9-285a-494a-9732-391da8266056" class="">Cultural Context</h2><ol type="1" id="0a9c2208-52bf-4481-8012-5587b0ffa49d" class="numbered-list" start="1"><li>High context<ol type="a" id="4eceb2bb-77da-4a16-8873-7fe320be4da8" class="numbered-list" start="1"><li>Message is strongly influenced by the culture in which it is sent</li></ol><ol type="a" id="d78b8204-d771-4423-86d7-ddce10f3ad11" class="numbered-list" start="2"><li>Literal interpretations are often incorrect</li></ol><ol type="a" id="7a890667-6603-4d18-8684-8a7f9cba36e9" class="numbered-list" start="3"><li>Age, seniority, and status of sender gives message credibility</li></ol></li></ol><ol type="1" id="3e44203a-06dc-4d0e-bc1b-0635bad5985b" class="numbered-list" start="2"><li>Low context<ol type="a" id="352d43b3-934d-4e59-b10b-eaae3c78f443" class="numbered-list" start="1"><li>Messages are made explicit in words and can be interpreted literally</li></ol><ol type="a" id="d97253b3-f5b2-4efd-a63d-9a8aeff9b29b" class="numbered-list" start="2"><li>Meaning resides more in the message than the context</li></ol><ol type="a" id="aed8674f-262b-4997-b0ba-8ea88cb4ebcf" class="numbered-list" start="3"><li>Favour detailed contracts and getting to the point quickly</li></ol></li></ol></div></article></body></html>

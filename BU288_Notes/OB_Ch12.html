@@ -1,0 +1,687 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>12: Ethics</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b67b1f3a-b479-44c4-891d-bc0098cb8df0" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_5.png" style="object-position:center 40%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🛕</span></div><h1 class="page-title">12: Ethics</h1></header><div class="page-body"><h1 id="a1bbc16d-68d9-4268-8702-21d4ede3d288" class="">12.7 Ethics in Organizations</h1><p id="3ea05ad8-fc5a-46e3-802c-22d013e8fc1a" class="">Ethics can be defined as systematic thinking about the moral consequences of decisions</p><ul id="a3117cc5-f7c8-4c84-884c-46ac4404de3d" class="bulleted-list"><li style="list-style-type:disc">Moral consequences can be framed in terms of the potential for harm to any stakeholders in the decision<ul id="91c68432-a395-45e3-b3d6-247ff1b70560" class="bulleted-list"><li style="list-style-type:circle">Stakeholders are simply people inside or outside the organization who has the potential to be affected by the decision; this could range from the decision makers themselves to innocent bystanders</li></ul></li></ul><h2 id="15bad85a-1a2c-49ab-8443-47a8cb6ccb44" class="">The Nature of Ethical Misconduct</h2><p id="8709ba15-a955-48a6-8e06-c605e51c4e99" class="">Ethical issues are often occupationally specific; let&#x27;s consider the ethical dilemmas faced by the subspecialties of marketing</p><ul id="63a7027c-0b85-422a-ac77-5ccc3487be4c" class="bulleted-list"><li style="list-style-type:disc">Among market researchers, telling research participants the true sponsor of the research has been an ongoing topic of debate</li></ul><ul id="1afec292-c489-4e68-be91-c59b34ffc40c" class="bulleted-list"><li style="list-style-type:disc">Among product managers, issues of planned obsolescence, unnecessary packaging, and differential pricing raise ethical concerns</li></ul><ul id="73494fd1-621d-41ef-a882-6663af81b22d" class="bulleted-list"><li style="list-style-type:disc">Among purchasing managers, where to draw the line in accepting favours from vendors poses ethical problems</li></ul><p id="7a9065ff-f025-4665-a20b-28a263a5e6a1" class="">
+</p><p id="e3a85041-c30c-472e-8a13-8e34fb4d292d" class="">A study of an occupationally diverse group of managers discovered seven themes that define their moral standards for decision making</p><ol type="1" id="7826ae0e-316c-4d09-a897-9e6331068738" class="numbered-list" start="1"><li>Honest communication<ol type="a" id="3b124d83-cd4e-4901-a609-deff757cab27" class="numbered-list" start="1"><li>Evaluate subordinates candidly; advertise and label honesty; do not slant proposals to Senior Management</li></ol></li></ol><ol type="1" id="52983226-d18b-4192-b895-6a2089de1951" class="numbered-list" start="2"><li>Fair treatment<ol type="a" id="2bd868ab-bc3f-4d16-9830-b79995aad10b" class="numbered-list" start="1"><li>Pay equitably; do not give preference to suppliers with political connections; do not use lower-level people as scapegoats</li></ol></li></ol><ol type="1" id="4815dd15-774f-4de9-b9ac-5df2a6e1e004" class="numbered-list" start="3"><li>Special consideration<ol type="a" id="3d10bd3e-5a32-48bf-a381-03ed7fcf65ba" class="numbered-list" start="1"><li>The fair treatment standard can be modified for special cases, such as helping out a longtime employee, giving preference to hiring people with disabilities, or giving business to a loyal but troubled supplier</li></ol></li></ol><ol type="1" id="745535db-bbf3-4e46-aace-039c6cc636ff" class="numbered-list" start="4"><li>Fair competition<ol type="a" id="d005563c-9b46-409d-9354-3374e9683f15" class="numbered-list" start="1"><li>Avoid bribes and kickbacks to obtain business; do not fix prices with competitors<ol type="i" id="0fb103a2-c0f7-4827-881a-7057af18b308" class="numbered-list" start="1"><li>Price-fixing is the maintaining of prices at a certain level by agreement between competing sellers</li></ol></li></ol></li></ol><ol type="1" id="96af9a78-a671-4d12-8ba7-fcd617854d9d" class="numbered-list" start="5"><li>Responsibility to organization<ol type="a" id="57df0069-1ede-4abc-b637-c3f71ecad618" class="numbered-list" start="1"><li>Act for the good of the organization as a whole and not out of self-interest</li></ol></li></ol><ol type="1" id="d78630fc-5ec6-4681-87b6-be1cdbdd012b" class="numbered-list" start="6"><li>Corporate social responsibility<ol type="a" id="1b3ca5a4-ff0b-41c3-aae0-5b46abfbcafd" class="numbered-list" start="1"><li>Do not pollute; think about the community impact of closures and downsizing; show concern for employee health and safety</li></ol></li></ol><ol type="1" id="190fa3c0-6dc4-4752-a948-8f93802452a4" class="numbered-list" start="7"><li>Respect for law<ol type="a" id="6f5f143c-e4af-4e17-8bca-60eb45fa96ab" class="numbered-list" start="1"><li>Legally avoid taxes - do not evade them; do not bribe government inspectors; follow labour laws</li></ol></li></ol><h2 id="1e8c24f6-8a1c-48cc-aa6f-75ae25dba7cc" class="">Causes of Unethical Behaviour</h2><p id="f3f8ea88-47b2-4ee8-b146-a6fb8c3ee4cc" class="">Clearly there are bad apples who will engage in unethical activity in almost any situation, and we will consider some personality factors associated with poor ethics</p><ul id="65bb2cc7-0fd3-4ca3-86ea-b0e9555e9eec" class="bulleted-list"><li style="list-style-type:disc">However, more interestingly, and arguably more important is the power of sometimes strong and sometimes subtle situational factors to make basically good people do bad things or to entrap people in unethical spirals of action</li></ul><p id="e0add110-5f7a-4f7a-9c71-dcbe1e3e676e" class="">
+</p><p id="7c86a441-ad7a-4b24-862b-ef7c60707906" class="">A useful concept here is bounded ethicality, the psychological process by which people come to engage in behaviour that violates their own ethical standards</p><ul id="ccc45c56-1cdf-4de3-b232-dcf11af9d053" class="bulleted-list"><li style="list-style-type:disc">Similar to how bounded rationality can challenge good decision-making, people operating under bounded ethicality would probably act different with more active reflection</li></ul><ul id="38a8fdf8-a789-4bb5-b2e7-1deb488e819a" class="bulleted-list"><li style="list-style-type:disc">Bounded ethicality means that people are prone to ethical blind spots<ul id="683a4857-8298-4c6d-bcf1-0538cf66a544" class="bulleted-list"><li style="list-style-type:circle">So they fail to see, focus on, or process information that signals to a course of action might be inappropriate<ul id="75a47a4c-713a-4eab-84d7-7c0d6970ccff" class="bulleted-list"><li style="list-style-type:square">For instance, people tend to be insensitive to their own conflicts of interest or to how showing favoritism to people like themselves (in hiring) may unfairly damage the interests of minorities</li></ul></li></ul></li></ul><ul id="c2483a91-3c05-45f3-b908-3d14e4973ee3" class="bulleted-list"><li style="list-style-type:disc">If things seem to be going well, we are disinclined to be alert for ethical violations</li></ul><p id="cd408e67-1dfc-41c1-bf95-83cb25a48fbd" class="">
+</p><p id="5e72c431-4eba-43de-9543-c6bbeae6903d" class="">Bounded ethicality sets the stage for the following factors to negatively influence ethical behavior</p><h3 id="3878f4f7-d5c2-4631-b013-e5472bb35fcf" class="">Personality</h3><p id="288db5cc-5efb-4c14-8c1d-862b475fbe57" class="">Are certain types of personalities more prone to unethical decisions?</p><ul id="535b906b-eb81-48de-a06f-acd1529825a0" class="bulleted-list"><li style="list-style-type:disc">The cynical and those with external locus of control are less tuned in to ethical matters</li></ul><ul id="4feeb15a-b63d-49d5-a3c1-fe0cbe08a217" class="bulleted-list"><li style="list-style-type:disc">People with a high need for personal power may be prone to make an ethical decisions, using this power to further self-interest rather than for the good of the organization</li></ul><p id="26260e9f-3431-435b-842b-16a775088a39" class="">
+</p><p id="e938315a-79c1-4de3-97d7-42cee7ff134e" class="">Some people are morally disengaged, rejecting responsibility for their actions, and using euphemistic labelling to obscure moral issues</p><ul id="82a0382a-9e4c-4b39-927a-25c5a5b4235e" class="bulleted-list"><li style="list-style-type:disc">Other people are morally attentive, spotting moral issues, and thinking about moral matters, which generally is associated with more ethical behavior</li></ul><h3 id="c86c1660-b75c-47af-b632-617506d1f4fa" class="">Gain</h3><p id="80a9c5fa-4a3a-40d2-a2ff-d81bb38af892" class="">It is critical to recognize the role of temptation in unethical activity</p><ul id="b12fada8-ca7f-40a4-a14c-40cc6523e566" class="bulleted-list"><li style="list-style-type:disc">This can be seen in compensation systems designed around very high bonuses or stock options that encourage the devious inflation of stock prices<ul id="53dafb94-4fb4-4c0b-b8d0-5541727ef64d" class="bulleted-list"><li style="list-style-type:circle">These systems have often been implicated in ethically questionable behavior as ethics are sacrificed to boost income</li></ul></li></ul><ul id="06966f7b-10a2-4ae8-8779-d85df45cdf84" class="bulleted-list"><li style="list-style-type:disc">On the flip side, people who are unfairly underpaid, are also more inclined to act unethically to offset this underpayment<ul id="1efa6f43-a945-49c4-b225-efbc3d131acc" class="bulleted-list"><li style="list-style-type:circle">Especially when they have knowledge of others who are more fairly paid</li></ul></li></ul><h3 id="752564f8-b612-438a-80e5-ff8f7a20c34e" class="">Extreme Performance Pressure</h3><p id="e85e7f4b-2780-4395-bbcf-413c444342be" class="">Although challenging goals lead to higher performance, there is a point at which goal challenge can be so extreme as to induce unethical behavior</p><ul id="d8782138-ce6b-4874-b202-f4aaa686aa30" class="bulleted-list"><li style="list-style-type:disc">This is especially true when a consecutive series of high or increasing performance goals results in extreme performance pressure<ul id="fc927f6a-c452-4338-b1e4-30ad6e5e2c49" class="bulleted-list"><li style="list-style-type:circle">In this situation, people&#x27;s ethical focus is depleted as they become angry and self-protective in the face of such difficult goals</li></ul></li></ul><p id="be720971-1cba-42df-a532-c60f52d3e115" class="">
+</p><p id="7c680dd1-0153-47f8-93a1-146c8a04e875" class="">Pressure from analysts and investors for better and better financial performance has been implicated in ethical lapses among prominent and successful firms</p><ul id="6409580f-25cf-4635-9390-e0cc3fc86bea" class="bulleted-list"><li style="list-style-type:disc">This pressure often results in bottom-line mentality, a narrow focus on organizational economic indicators, such as profits or stock price, to the exclusion of espoused (supported) organizational values and fair procedures<ul id="7d6132ac-2e07-4602-be7d-fb7ace8ee720" class="bulleted-list"><li style="list-style-type:circle">Although it can boost customer service by inducing strong focus on work, bottom-line mentality has been more associated with a variety of negative outcomes, such as abusive supervision, reduced organizational citizenship, and ethical shortcuts</li></ul></li></ul><h3 id="74ee5d2e-f5ed-4af1-b20b-387a9fcc7172" class="">Role Conflict</h3><p id="eeaa5b78-e127-4b8a-8c29-24b5b85da478" class="">Many ethical dilemmas are actually forms of role conflict that get resolved in an unethical way</p><ul id="ab6cf4a2-e292-4dd9-83f0-6cdc7d350911" class="bulleted-list"><li style="list-style-type:disc">Consider the ethical theme of corporate social responsibility we listed earlier<ul id="d9432bd2-b25e-4bb1-8e07-1c12e403ad51" class="bulleted-list"><li style="list-style-type:circle">Here, an executives role as custodian of the environment (do not pollute) might be at odds with her role as a community employer (do not close the plant that pollutes)</li></ul></li></ul><p id="5a07200a-6d4a-452c-a439-83c3b016a72a" class="">
+</p><p id="5087cc12-e92b-4072-8d0c-3449a7656f4c" class="">A very common form of role conflict that provokes unethical behavior occurs when our bureaucratic role as an organizational employee, is at odds with our role as the member of a profession</p><ul id="97c68581-5db3-4003-bd15-935b20b26722" class="bulleted-list"><li style="list-style-type:disc">For example, Engineers who in their professional role opposed the Fatal launch of the Space Shuttle <em>Challenger </em>due to cold weather were pressured to put their bureaucratic “managers hats” and agreed to the launch</li></ul><h3 id="736c33d4-b890-4e5d-b366-7335ccbac67c" class="">Strong Organizational Identification</h3><p id="adc8f748-de4b-40b9-b106-abebf8d576df" class="">Some employees identify very strongly with their organizations, seeing their membership as an integral part of their identity</p><ul id="7de00f93-874a-49e3-adf4-5ccc4676198e" class="bulleted-list"><li style="list-style-type:disc">This can sometimes lead them to ignore ethical lapses or even engage in unethical activities to “help” the organization<ul id="1d58d3ef-4612-4a7b-99cc-0f6fd21a70c3" class="bulleted-list"><li style="list-style-type:circle">Strong identifiers seem most likely to do this when they expect their loyalty will be reciprocated with favours, and they often have an entitled mentality</li></ul></li></ul><h3 id="8694cb02-50c0-4edc-bd66-478cde11a278" class="">Competition</h3><p id="5404835b-1955-496c-88e5-55975c504186" class="">Stiff competition for scarce resources can stimulate unethical behavior</p><ul id="183066f9-1366-4e7b-8569-44d79175fe97" class="bulleted-list"><li style="list-style-type:disc">Hence, trade offenses, such as price-fixing and monopoly violations have been shown to increase with industry decline<ul id="07190e83-a41f-45da-823c-7f5333129712" class="bulleted-list"><li style="list-style-type:circle">For example, observers cite a crowded and mature market as one factor prompting price-fixing violations in the folding-carton packaging industry</li></ul></li></ul><ul id="70332821-b09e-408e-97ef-6ea67624543e" class="bulleted-list"><li style="list-style-type:disc">There is an exception to “competition stresses ethics”<ul id="a9ce0c77-a6c4-4e01-b9b5-37eed9462b7f" class="bulleted-list"><li style="list-style-type:circle">In cases in which essentially no competition exists, there is also a strong temptation to make unethical decisions<ul id="62121247-0f31-4569-b04f-231e29c16b71" class="bulleted-list"><li style="list-style-type:square">This is because the opportunity to make large gains is not offset by market checks and balances</li></ul></li></ul></li></ul><h3 id="5df971d3-881a-4775-b493-730b54070f99" class="">Organizational and Industry Culture</h3><p id="09bd0f70-6bfd-4073-b565-1238dd5949e5" class="">Researchers have found that there were considerable differences in ethical values across organizations</p><ul id="5304e64f-7b97-4851-950b-a9081acc0e32" class="bulleted-list"><li style="list-style-type:disc">These differences involve factors such as consideration for employees, respect for the law, and respect for organizational rules</li></ul><ul id="51034af1-cf90-40c5-911b-8bd52a06c4c3" class="bulleted-list"><li style="list-style-type:disc">In addition, there were differences across groups within these organizations; this indicates that aspects of an organization&#x27;s culture can influence ethics</li></ul><p id="3a8d13ee-0e83-4c8d-b281-47e805fb1253" class="">
+</p><p id="6fa0a11a-2c21-4556-a230-fb461c10c91e" class="">This corresponds to the repeated finding in executive surveys that the conduct of peers and superiors is viewed as strongly influencing ethical behavior, whether it is for the good or for the bad</p><ul id="2146e908-6114-4e99-9dec-5c799870ed64" class="bulleted-list"><li style="list-style-type:disc">The presence of Role Models helps to shape the culture; if these models are actually rewarded for unethical behavior, rather than punished, the development of an unethical culture is likely</li></ul><p id="dd6160c1-3c63-4ad4-a779-f64cd26e932a" class="">
+</p><p id="c0ceb20e-8c58-4a9e-92cf-29df89930aed" class="">There is no one thing that creates a “culture of corruption” in organizations</p><ul id="acc23282-fd0b-4833-addc-73bf4520ce3a" class="bulleted-list"><li style="list-style-type:disc">Rather it is often a combination of factors such as evaluating managers “solely by the numbers,” denying responsibility, denying injury to others, and teaching newcomers corrupt practices that lead to unethical corporate cultures</li></ul><p id="d1146bda-f4e6-49fc-8af3-a42c82116fc0" class="">
+</p><p id="3eb95962-3a01-415c-830e-16f0082606b4" class="">Finally, considering culture suggests the conditions under which corporate codes of ethics might actually have an impact on decision-making</p><ul id="c05c2217-143e-4e6f-be72-befd06330414" class="bulleted-list"><li style="list-style-type:disc">If such codes are specific, are tied to the actual business being done, correspond to the reward system, and are rigorously enforced, they should bolster an ethical culture</li></ul><ul id="02176241-4ec2-42ec-bfde-1e832397c53c" class="bulleted-list"><li style="list-style-type:disc">If vague codes that do not correspond to other cultural elements exist, the negative symbolism may actually damage the ethical culture</li></ul><h2 id="4bfbceec-398e-4b17-b6b9-77aa750b59b6" class="">Whistle-Blowing</h2><p id="e447f605-60c6-48ae-ba66-e0b461738cb3" class="">Whistleblowing occurs when a current or former organizational member discloses illegitimate practices to some person or organization that may be able to take action to correct these practices</p><ul id="f708c099-785d-42fe-b86c-d380f6096ec1" class="bulleted-list"><li style="list-style-type:disc">Therefore, the whistle may be blown either inside or outside of the offending organization, depending on the circumstances</li></ul><ul id="5bfbc789-c9e8-4f24-a354-daa652e6b0a0" class="bulleted-list"><li style="list-style-type:disc">The courage of insiders to call attention to organizational misdoing is especially important in large contemporary organizations, because their very complexity often allows for such misdoing to be disguised from outsiders <ul id="da5226fb-0391-45d0-b160-79ca5789cb81" class="bulleted-list"><li style="list-style-type:circle">Also, given pervasive conflicts of interest, there is no guarantee that external watchdogs (ex: accounting firms that perform audits) will do their job</li></ul></li></ul><p id="65b26e80-2887-4d78-a367-9c262a4e3323" class="">
+</p><p id="a45cf9b7-e12f-432c-888e-bce4e99bb3ea" class="">Most organizations seem to rely on a vague open-door policies rather than having specific channels and procedures for whistleblowers to follow</p><ul id="2b2610f0-fa11-4838-8057-93ec9f74c2af" class="bulleted-list"><li style="list-style-type:disc">This is not the best way to encourage principal dissent</li></ul><h1 id="a877518f-04bb-4c4a-a058-b0d9f18bd90c" class="">12.8 Sexual Harassment; When Power and Ethics Collide</h1><p id="35adfceb-9388-4802-ad8d-53f29ef6ba3b" class="">Sexual harassment is behaviour that derogates, demeans, or humiliates an individual based on that individual’s sex</p><ul id="598b7e9a-acdd-4a81-b0ea-f5e1b8ba6b60" class="bulleted-list"><li style="list-style-type:disc">As such it could include touching, sexual force, and sexist jokes, comments, and materials</li></ul><ul id="71b7f303-680a-4603-afc9-737772852cf9" class="bulleted-list"><li style="list-style-type:disc">However, such harassment need not have explicit sexual content, rather it is harassment based on one’s sex<ul id="e1d88b4a-0175-4cfc-9818-76502500b0a6" class="bulleted-list"><li style="list-style-type:circle">Such harassment could be psychological (emotionally threatening), social (ridiculing), or legal (affecting one’s livelihood)</li></ul></li></ul><p id="5fb3b9c6-ec1d-4547-b1e0-0242a98874bd" class="">
+</p><p id="38467e4e-b164-4583-99e8-d40a0151d276" class="">Sexual harassment is a form of unethical behaviour that stems in part from the abuse of power, and the perpetuation of a gender power imbalance</p><ul id="134c6b9f-e44a-4287-a458-bd3a6255cee7" class="bulleted-list"><li style="list-style-type:disc">Managers who use their position, reward, or coercive power, to request sexual favours, or demonstrate verbal, or physical conduct, of a sexual nature as a basis for employment decisions toward those in less powerful positions are abusing their power and acting unethically</li></ul><p id="be90c947-5ff8-4adb-ae80-781bb15dcf8f" class="">
+</p><p id="0d6016ea-97e5-461c-8ba6-b5e6c4411e4c" class="">Sexual harassment is also prevalent in hostile work environments that perpetuate the societal power imbalance between men and women</p><ul id="b60b0cd3-92f7-4a96-9797-a6db1e3969cd" class="bulleted-list"><li style="list-style-type:disc">The high incidence of harassment reported in the military is partly a function of its rigid hierarchy and power differentials</li></ul><p id="43b16b17-d620-43ec-aae7-da5cfbb30c87" class="">
+</p><p id="6888d018-300a-4b68-aae9-911518754fea" class="">Clients and customers can also engage in harassment</p><ul id="27961290-d001-40eb-8c25-5105181dcc47" class="bulleted-list"><li style="list-style-type:disc">Many service jobs are performed by women, who are required to spend virtually their entire work day with customers</li></ul><ul id="259dce70-a3b9-42ee-8c77-c3991fbd5c4e" class="bulleted-list"><li style="list-style-type:disc">Other jobs required the development of strong client relationships (ex: sales reps)<ul id="3378a775-d88c-47eb-b76d-5f1c6255ca83" class="bulleted-list"><li style="list-style-type:circle">In a survey of professional women; 86% reported having experienced sexist hostility, 40% reported unwanted sexual attention, and 8% reported sexual coercion</li></ul></li></ul><p id="3329901b-0b43-4026-91ac-a50eb3a2d1d6" class="">
+</p><p id="4c27720d-f620-47a1-b1c5-6e066fe8be92" class="">Organizations can effectively deal with allegations of sexual harassment and increase their responsiveness by taking a number of important measures</p><ol type="1" id="223a689d-8a55-41ad-9553-6b251bfdc5f2" class="numbered-list" start="1"><li>Established visible top management support<ol type="a" id="8d1e99b1-da33-4950-9661-6a310ed0cb41" class="numbered-list" start="1"><li>The support should foster a fair and positive at the goal climate that stands against harassment</li></ol></li></ol><ol type="1" id="c7023c71-62e7-4f66-a1b6-a1505c486b05" class="numbered-list" start="2"><li>Create state-of-the-art policy<ol type="a" id="4606a5e0-7746-4728-9fba-276a8818db10" class="numbered-list" start="1"><li>Sexual harassment policies and procedures need to clearly define what constitutes harassment, and the sanctions that will be brought to bear on those found guilty of it</li></ol></li></ol><ol type="1" id="1df2afd8-062f-4ff4-a2cd-f9da68e32638" class="numbered-list" start="3"><li>Establish clear reporting procedures<ol type="a" id="3616d5b8-6a62-4b15-8382-46589efcfdd1" class="numbered-list" start="1"><li>User-friendly policies need to be designed so that there are clear procedures for filing complaints and mechanisms in place for the impartial investigation of complaints</li></ol></li></ol><ol type="1" id="ee39c358-12d9-4ce0-8e01-28465e4dc860" class="numbered-list" start="4"><li>Take immediate action<ol type="a" id="f0d20246-d77a-4eec-b4d0-d8b6106f87cd" class="numbered-list" start="1"><li>Failure to act is likely to result in negative consequences for the organization and the victims of sexual harassment</li></ol></li></ol><ol type="1" id="c946ebbb-4c09-4262-a007-cc3e8c3f543a" class="numbered-list" start="5"><li>Examine the characteristics of deaf ear organizations<ol type="a" id="3bc71b72-5a71-44b0-b72b-e41ac43c8314" class="numbered-list" start="1"><li>Managers should examine their own organizations to determine if they have any of the characteristics that would make them susceptible to the deaf ear syndrome</li></ol></li></ol><ol type="1" id="064e37c3-3135-49fd-9175-122b23d7a77c" class="numbered-list" start="6"><li>Foster education<ol type="a" id="10fbe952-e2f4-486d-8979-99c85a219e06" class="numbered-list" start="1"><li>Sexual harassment training programs are necessary to educate managers on how to respond to complaints in a sensitive and respectful manner and all employees on how to call out observed instances of harassment</li></ol></li></ol><ol type="1" id="1f8c37e6-459e-4c73-b42a-7e5b367d55ea" class="numbered-list" start="7"><li>Stay vigilant<ol type="a" id="a8e29679-3e5c-483e-875c-6a857b34c268" class="numbered-list" start="1"><li>Managers must monitor the work environment and remove displays of a sexual nature and factors that can contribute to a hostile work environment</li></ol></li></ol><ol type="1" id="09eb4496-ec95-40de-94d1-c259a41efdea" class="numbered-list" start="8"><li>Hire and promote women<ol type="a" id="0c030f36-fa7e-4fe3-a727-bea0f95c1147" class="numbered-list" start="1"><li>One of the best ways to combat harassment against women is to achieve gender balance in jobs and industries dominated by men and to ensure women occupy a senior leadership positions</li></ol></li></ol><h2 id="6c038959-133e-4f75-ba67-68103b1f5c9e" class="">Employing Ethical Guidelines</h2><p id="2973354f-e484-4359-94ad-655ec0a46b30" class="">A few simple guidelines, regularly used, should help in the ethical screening of decisions; the point is not to paralyze your decision-making but to get you to think seriously about the moral implications of your decisions before you make them</p><ol type="1" id="62cfa2ff-7155-4d96-8c69-02cde338295a" class="numbered-list" start="1"><li>Identify the stakeholders will be affected by any decision</li></ol><ol type="1" id="3693903c-11f7-4b7b-bb45-255dc7bea102" class="numbered-list" start="2"><li>Identify the costs and benefits of various decision alternatives to these stakeholders</li></ol><ol type="1" id="7746b476-9966-4133-990b-8f4f36d8d8c0" class="numbered-list" start="3"><li>Considered the relevant moral expectations that surround a particular decision<ol type="a" id="70b77bc1-f659-4c1d-a606-1e306b53f6c2" class="numbered-list" start="1"><li>These might stem from professional norms, laws, organizational ethics, codes, and principles, such as honest communication and fair treatment</li></ol></li></ol><ol type="1" id="4f782f49-775a-4cbb-b311-1334dc4739ec" class="numbered-list" start="4"><li>Be familiar with the common ethical dilemmas that decision-makers face in your specific organizational role or profession</li></ol><ol type="1" id="8a1193e5-d038-46ec-a033-736a05c77891" class="numbered-list" start="5"><li>Discuss ethical matters with decision stakeholders and others<ol type="a" id="a80bf249-b910-43c4-b499-badc79cc64a0" class="numbered-list" start="1"><li>Do not think ethics without talking about ethics</li></ol></li></ol><ol type="1" id="55c103c8-9734-4b79-bab4-37bca2f1bf09" class="numbered-list" start="6"><li>Convert your ethical judgments into appropriate action</li></ol><p id="e773af0f-3707-4a32-88ad-8f8558698b2d" class="">
+</p><p id="441d19cb-5685-4c49-bab3-1d81205ba30d" class="">What this advice does is enable you to recognize ethical issues, make ethical judgments, and then convert the judgments into behavior</p><p id="4f152a10-e42a-4000-8cbd-d8a5168bdde7" class="">
+</p><p id="ca68955d-43a4-4505-91fa-de089bc9181b" class="">Is this ethical? Which one criteria is most important? It is not required that all three criteria are satisfied</p><p id="a7840d26-ff01-4c2e-845c-203f5e069c7b" class="">Utilitarian → COVID, Lockdowns</p><p id="1cfafe94-b04b-4bb7-8683-57dd66e2c34d" class="">Rights</p><p id="d5b3dd8b-6804-4181-ade0-a1dd1525d3f5" class="">Justice</p><h1 id="d132ca0a-1f0a-4c19-a2d1-0402af673ed7" class="">Slide Extras</h1><h2 id="3e5c56a3-c760-4f3b-9c27-341da79adf0e" class="">Moral Awareness</h2><p id="3d89e90e-388b-4fca-baea-dc59ed6cb385" class="">A person&#x27;s determination that a situation contains moral content and legitimately can be considered from a moral point of view</p><ul id="029bcdc1-80a5-4355-8ed1-93d3e126a442" class="bulleted-list"><li style="list-style-type:disc">The presence of harm</li></ul><ul id="b90bee23-eb27-48ca-8138-bbf98180056c" class="bulleted-list"><li style="list-style-type:disc">The violation of a behavioral norm</li></ul><ul id="eba2acd2-62e3-4e4e-86b9-a993ac259f64" class="bulleted-list"><li style="list-style-type:disc">Individual characteristics<ul id="129c0547-435e-4275-8041-869009783ef0" class="bulleted-list"><li style="list-style-type:circle">Perspective-taking, moral reasoning skills</li></ul></li></ul><p id="b4376e46-552f-4148-ba00-fa9df2fc8964" class="">
+</p><p id="eeee750e-b778-42cb-a749-c881a0222fb2" class="">Pays attention to moral emotions - these are important clues that we are faced with in an ethical dilemma</p><ul id="263a96c5-aa75-4907-b862-a6ba293541d6" class="bulleted-list"><li style="list-style-type:disc">Anger and disgust<ul id="835903d2-bffc-443f-9972-04f7502a4a37" class="bulleted-list"><li style="list-style-type:circle">Other-condemning emotions</li></ul></li></ul><ul id="9425068b-aa1d-469f-b669-0af3a1e8a1a9" class="bulleted-list"><li style="list-style-type:disc">Shame guilt and embarrassment<ul id="03f6b4ce-1069-4a33-a5d0-8232652f808d" class="bulleted-list"><li style="list-style-type:circle">Self-conscious emotions</li></ul></li></ul><ul id="a663b966-4820-4b12-8080-7110b5bfd9e1" class="bulleted-list"><li style="list-style-type:disc">Sympathy and compassion<ul id="0e35a6ea-0fd3-4717-839b-fb1d97dd053e" class="bulleted-list"><li style="list-style-type:circle">Other-suffering emotions</li></ul></li></ul><h2 id="d0878ada-71f7-4967-8e1f-ba2631a73223" class="">Sources of Ethical Values in Organizations</h2><ol type="1" id="c4f56d58-c2ed-4553-9d52-6f6c081547de" class="numbered-list" start="1"><li>Personal ethics<ol type="a" id="71cf2ea9-8751-44c5-bfb9-aaf5a097c946" class="numbered-list" start="1"><li>Role of leaders (Role model, “linking-pin”)</li></ol></li></ol><ol type="1" id="449be1e3-e5f8-4c4d-a0e2-8dae7fbcd350" class="numbered-list" start="2"><li>Organizational culture<ol type="a" id="ec4a2301-1e8d-47de-84cc-58e87f004405" class="numbered-list" start="1"><li>Embed ethical values</li></ol></li></ol><ol type="1" id="db168afd-d82a-4585-a762-3a51eca1e10e" class="numbered-list" start="3"><li>Organizational systems<ol type="a" id="ee9aa023-88cc-4b79-a0c9-8abd8c91205d" class="numbered-list" start="1"><li>Employee selection, training, rewards</li></ol><ol type="a" id="71510ba8-ea97-42b1-b4f8-ea0ccf6c0fce" class="numbered-list" start="2"><li>Presence of ethics codes</li></ol></li></ol><ol type="1" id="ab4760e5-9e0e-49af-a2a6-58db149c0114" class="numbered-list" start="4"><li>External stakeholders<ol type="a" id="8b5ecad1-7400-475d-a447-5a38aa6a4a38" class="numbered-list" start="1"><li>Reward/value ethical behavior</li></ol></li></ol><h2 id="53f6a218-5c2f-42e6-ab78-b67a9e80d0cd" class="">Formal Structure and Systems</h2><ol type="1" id="b1b34942-1c7e-46d8-9579-06904d46fde8" class="numbered-list" start="1"><li>Structure<ol type="a" id="c25ff1d8-8cde-482f-8044-848c959f41a7" class="numbered-list" start="1"><li>Assigning an ethics committee or ethics officer</li></ol></li></ol><ol type="1" id="8e59867e-926e-4cce-94bf-b71f8f5c497f" class="numbered-list" start="2"><li>Disclosure mechanisms<ol type="a" id="9c661bcc-3405-41f4-ba37-0d07dc29df7c" class="numbered-list" start="1"><li>Visibly reward ethical acts and punish unethical ones</li></ol><ol type="a" id="b3b56006-906d-4b91-8a2e-7681ee454fcf" class="numbered-list" start="2"><li>Provide protective mechanisms so that employees are able to discuss ethical dilemmas and report behavior against the code of ethics</li></ol></li></ol><ol type="1" id="b6bbdb18-a3bb-42ad-b648-f580688910eb" class="numbered-list" start="3"><li>Code of ethics<ol type="a" id="7afb62f8-11c5-4c91-9a5a-01f8ef577db0" class="numbered-list" start="1"><li>Used by an increasing number of organizations</li></ol><ol type="a" id="4d832781-a702-404d-863a-8b5895ded6c2" class="numbered-list" start="2"><li>Not enough to have a policy, must also be followed</li></ol></li></ol><ol type="1" id="57c46095-22aa-4d96-9850-220ce9d75131" class="numbered-list" start="4"><li>Training programs</li></ol><h2 id="62f5d84c-2ff7-453b-8285-d3b851d51d16" class="">Ethical Principles / Decision Criteria</h2><ol type="1" id="a8655ce9-4713-487a-a670-b7a9f0dc7cc3" class="numbered-list" start="1"><li>Utilitarian<ol type="a" id="c5e6300d-3d8d-48be-90b9-012c49dec61b" class="numbered-list" start="1"><li>Behaviour is ethical if it delivers the greatest good to the greatest number of people</li></ol><ol type="a" id="f437334d-1d16-47e1-b213-380746ba5fd6" class="numbered-list" start="2"><li>Focus on outcomes; ends justify the means<ol type="i" id="6a121647-aace-4142-9928-e5793b068a47" class="numbered-list" start="1"><li>Advantages<ol type="1" id="71b6291e-7abc-4c24-8aab-b1ec39f9994f" class="numbered-list" start="1"><li>Promotes efficiency and productivity</li></ol></li></ol><ol type="i" id="abd1450f-2862-4180-a79c-48adaa3f680d" class="numbered-list" start="2"><li>Disadvantages<ol type="1" id="0ab430a3-3704-4f30-8135-f8aa2286c6bb" class="numbered-list" start="1"><li>Ignores rights of some individuals</li></ol><ol type="1" id="122becd2-41de-4c85-8199-29d11d85fb76" class="numbered-list" start="2"><li>Difficult to apply to values that cannot be easily quantified (health, life, employment)</li></ol></li></ol></li></ol></li></ol><ol type="1" id="608be5aa-0f1b-4700-9270-d84d3ab72ab0" class="numbered-list" start="2"><li>Rights<ol type="a" id="32ed9863-d752-4bb2-9ec4-e303dda16b06" class="numbered-list" start="1"><li>Behaviour is ethical if it respects the fundamental rights shared by all human beings</li></ol><ol type="a" id="e9a6afa8-1f31-4419-bdc3-9aa26d449d9a" class="numbered-list" start="2"><li>Example: the Charter of Rights and Freedoms (free speech, due process, freedom of religion, freedom of association)<ol type="i" id="28aef290-4908-44a3-b2bc-10f41e6aac0d" class="numbered-list" start="1"><li>Advantages<ol type="1" id="5c64ecf2-8eec-4ed7-96c3-0c081aad6568" class="numbered-list" start="1"><li>Protects individuals from injury consistent with freedom and privacy</li></ol></li></ol><ol type="i" id="ed255eca-af97-43a6-a2e4-267b3b9d07ab" class="numbered-list" start="2"><li>Disadvantages<ol type="1" id="8a68f07f-f09e-4896-80b8-ecfd81bf3da8" class="numbered-list" start="1"><li>Creates overly legalistic environment</li></ol><ol type="1" id="e63e118e-0dfc-4396-a092-eb7f4f0892f2" class="numbered-list" start="2"><li>Hinders productivity and efficiency</li></ol></li></ol></li></ol></li></ol><ol type="1" id="5bc63f5f-d68f-4ac6-a7eb-2f0baadc5859" class="numbered-list" start="3"><li>Justice<ol type="a" id="178fb35a-4775-447e-b010-9c8282987452" class="numbered-list" start="1"><li>Behaviour is ethical if it is fair and impartial in its treatment of people</li></ol><ol type="a" id="21c992df-542f-4ffe-9aa7-2a59b59e735b" class="numbered-list" start="2"><li>Impose and enforce rules fairly<ol type="i" id="c52ef5d7-25de-4318-9426-b04ee8170b9e" class="numbered-list" start="1"><li>Advantages<ol type="1" id="ad80cd52-7705-4d0e-8a3d-5ce5bbfeda7f" class="numbered-list" start="1"><li>Protects interests of under-represented and less powerful</li></ol></li></ol><ol type="i" id="2fe1725c-9071-413a-ae51-df99ce1cc81f" class="numbered-list" start="2"><li>Disadvantages<ol type="1" id="864efe91-8b2f-4ccd-a46a-b094ddd77439" class="numbered-list" start="1"><li>Encourages sense of entitlement</li></ol><ol type="1" id="a18c8f23-4f1c-48d4-87b2-c3a368652c6c" class="numbered-list" start="2"><li>Difficult to agree on the definition of fairness</li></ol><ol type="1" id="e1692a11-26c2-421a-876b-a2c757c6c153" class="numbered-list" start="3"><li>Reduces risk taking, innovation, and productivity</li></ol></li></ol></li></ol></li></ol><h2 id="bb15461b-4e38-44ea-9988-eabca7d98144" class="">Zimbardo&#x27;s Stanford Prison Experiment</h2><p id="fba7b6c5-d62e-4fa3-9f99-8053e94ad57e" class="">Elements of the social environment can facilitate unethical behaviour and abuses of power</p><ol type="1" id="ca357439-1ab6-44e4-b3ee-083efeebd27e" class="numbered-list" start="1"><li>Deindividuation<ol type="a" id="ae653015-f84c-4bfc-b2da-91042771c96e" class="numbered-list" start="1"><li>A phenomenon in which people engage in seemingly impulsive, deviant, and sometimes violent acts in situations in which they believe they cannot be personally identified (ex: groups, crowds)</li></ol></li></ol><ol type="1" id="fd11e258-ddb8-4e82-8394-910965888db3" class="numbered-list" start="2"><li>Social modelling<ol type="a" id="bf0456cc-f22c-4cfe-ab7e-b46d33c0904b" class="numbered-list" start="1"><li>We learn to imitate others by observing their behaviour and that we learn to behave in certain ways by watching others do what they do</li></ol></li></ol><ol type="1" id="e40269eb-71d4-4226-bf42-8cc55b325e70" class="numbered-list" start="3"><li>Pressures to conform or comply<ol type="a" id="30237db8-b2de-4c12-86b5-8422ed1821b4" class="numbered-list" start="1"><li>A change in behavior or belief as a result of real or imagined group pressure</li></ol></li></ol><p id="6564ec01-5e74-4827-ae8b-aa9572c55a41" class="">
+</p><p id="47379cad-3f6b-44e7-85b2-a9f37fc2e45f" class="">The findings of the study challenges the notion that it is simply ‘bad people’ who do ‘bad things’</p><h2 id="e3366431-feaa-428e-ad0d-f6ad18b0d4d3" class="">Ethical Decision-making Strategies</h2><ol type="1" id="25bdabdb-c6b3-42e8-9778-060246013954" class="numbered-list" start="1"><li>Identify the impact on people<ol type="a" id="ff235111-5413-4e96-a772-70c380b5ca84" class="numbered-list" start="1"><li>Stakeholders</li></ol><ol type="a" id="375b002e-a658-4740-b49d-e5ec798578b2" class="numbered-list" start="2"><li>What is the potential for harm?</li></ol><ol type="a" id="839e33f4-d326-4062-8d1d-4d34026409fa" class="numbered-list" start="3"><li>Costs and benefits</li></ol></li></ol><ol type="1" id="71f8ca69-af28-4001-9745-93ab6714310a" class="numbered-list" start="2"><li>Organizational systems<ol type="a" id="bf9d4605-1320-4267-913a-338e1f920040" class="numbered-list" start="1"><li>How does the organization usually do business?</li></ol><ol type="a" id="c6b4f95d-432b-413f-b2ed-9996566e21c4" class="numbered-list" start="2"><li>What policies or procedures can help?<ol type="i" id="d8285229-00f8-4e48-bdbb-3311fde61775" class="numbered-list" start="1"><li>Norms, laws, ethical codes, etc.</li></ol></li></ol></li></ol><ol type="1" id="cefb4a64-dde3-4102-b89f-3d4fafacb107" class="numbered-list" start="3"><li>Choices<ol type="a" id="f0121904-728a-4356-a032-0d8789084465" class="numbered-list" start="1"><li>What other alternatives are available?</li></ol><ol type="a" id="4dd28bd4-9141-4f7f-a74e-cd00f14dd0c7" class="numbered-list" start="2"><li>What are the risks of behaving ethically (or unethically)?</li></ol></li></ol></div></article></body></html>

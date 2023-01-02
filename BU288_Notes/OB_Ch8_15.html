@@ -1,0 +1,709 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>8/15: Culture and Change</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="7323f22a-fb77-426a-b326-b37d60b2eaf0" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/met_william_morris_1878.jpg" style="object-position:center 0%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🎪</span></div><h1 class="page-title">8/15: Culture and Change</h1></header><div class="page-body"><h1 id="1799c590-8ad1-4fd7-aa52-b7245fc89e88" class="">8.5 Organizational Culture</h1><p id="fb4f150c-875c-430e-b848-1bb7b0e26fcf" class="">An organization&#x27;s culture can have a strong effect on the attitudes and behaviours of employees</p><ul id="dcb7bab9-e883-43b7-a1fe-fdc26ee3e468" class="bulleted-list"><li style="list-style-type:disc">Organizations with a strong culture of health and safety excelled when it came to meeting the challenges of the Covid-19 pandemic</li></ul><h2 id="f0246626-7606-4ca9-94f4-e546bf2e3e27" class="">What is Organizational Culture?</h2><p id="80ee33eb-9c48-40a0-bdc4-22ff621cc75b" class="">Organizational culture consists of the shared beliefs, values, and assumptions that exist in an organization</p><ul id="305d12a8-3502-4e6f-a9cf-043621e95168" class="bulleted-list"><li style="list-style-type:disc">In turn, these shared beliefs, values and assumptions determine the norms that develop and the patterns of behaviours that emerge from these norms<ul id="d8aaa5bc-e849-4e8f-a5c8-33140f71630f" class="bulleted-list"><li style="list-style-type:circle">The term shared does not necessarily mean that members are in close agreement on these matters, although they could be</li></ul></li></ul><p id="d9a15852-4008-4c3c-91b6-2dd0eba56420" class="">
+</p><p id="c8a9fa41-9f55-461a-aa8a-a99b658be515" class="">Several characteristics of culture are important:</p><ol type="1" id="0b85ecdd-9d02-42bd-8fcb-b42dd869fcc8" class="numbered-list" start="1"><li>Culture represents a true “way of life” for organizational members<ol type="a" id="ec4c4493-f70e-48cb-8679-37bb3a513c69" class="numbered-list" start="1"><li>An organization’s culture becomes obvious only when it is contrasted with that of other organizations or when it undergoes changes</li></ol></li></ol><ol type="1" id="4f9c8ab6-c208-4be7-804a-966d9be3ff5f" class="numbered-list" start="2"><li>Because culture involves assumptions, values, and beliefs, it tends to be fairly stable over time<ol type="a" id="dc690477-b3bd-41a2-8edd-20ec1316beef" class="numbered-list" start="1"><li>Once a culture is well-established, it can persist despite turnover among organizational members, providing social continuity</li></ol></li></ol><ol type="1" id="86fecd06-241f-4755-b823-43b8ef34035e" class="numbered-list" start="3"><li>The content of a culture can involve matters that are internal to the organization or external<ol type="a" id="29dd430e-392a-4b3d-b55e-00d922ca7bc4" class="numbered-list" start="1"><li>Internally, a culture might support innovation, risk-taking, or secrecy of information</li></ol><ol type="a" id="cfa08959-b6f9-4cca-b36d-86dcf1424122" class="numbered-list" start="2"><li>Externally, a culture might support “putting the customer first” or behaving unethically towards competitors</li></ol></li></ol><ol type="1" id="0d72051f-74ca-4580-8457-11427654a2ca" class="numbered-list" start="4"><li>Culture can have a strong impact on both organizational performance and member satisfaction<ol type="a" id="fd44a448-ceb1-4129-a695-c86e012cb7b3" class="numbered-list" start="1"><li>Informally, culture might be thought of as an organization’s style, atmosphere or personality</li></ol></li></ol><p id="a12a1678-7840-4033-ad04-e7756feecddb" class="">
+</p><p id="2027df8e-973c-429c-a923-cf4356bd998b" class="">Culture is truly a social variable </p><ul id="68291cff-6d73-4794-a3e2-0e6e0252f7d2" class="bulleted-list"><li style="list-style-type:disc">Thus, culture is not simply an automatic consequence of an organization&#x27;s technology, products, or size</li></ul><p id="99edf340-5e21-4b3c-8b18-d0ccc263bb8d" class="">
+</p><p id="8964d597-55ed-4290-9693-dd646e2dcdae" class="">Can an organization have several cultures? Yes</p><ul id="1215ea4f-cc7b-43f7-8601-c2eb389b5de9" class="bulleted-list"><li style="list-style-type:disc">Often, unique subcultures develop that reflect departmental differences or differences in occupation or training</li></ul><h2 id="58546e4f-8d84-4364-b1d7-6c13659d9af2" class="">The “Strong Culture” Concept</h2><p id="51dd4c3a-45f6-4214-9287-aa1406f2595e" class="">In a strong culture, the beliefs, values, and assumptions that make up the culture are both immense and pervasive across the organization</p><ul id="d4cc5496-c5f8-44df-a96e-bc681e5a8fa1" class="bulleted-list"><li style="list-style-type:disc">They are strongly supported by the majority of members, even cutting across any subcultures that might exist</li></ul><p id="22f2dea7-a521-4c08-bb5f-c3d9eac7459c" class="">
+</p><p id="028a61fd-a69c-4106-97fe-65bc82336da5" class="">And weak cultures on the other hand, beliefs, values, and assumptions are less strongly ingrained or less widely shared across the organization</p><ul id="9d0cd250-2fd0-4204-b13b-81d50a9b6c5a" class="bulleted-list"><li style="list-style-type:disc">Weak cultures are fragmented and have less impact on organizational members</li></ul><p id="8a2f3f45-78ed-42dc-bc17-42853edbea98" class="">
+</p><p id="8c89b1c6-a708-4c1c-8a58-3339fbdeebf3" class="">Three points are worth emphasizing about strong cultures:</p><ol type="1" id="ad37e1cd-60b6-44bf-b5a7-d8a36effee70" class="numbered-list" start="1"><li>An organization need not to be big to have a strong culture<ol type="a" id="695d588f-11df-4938-accc-fa208faf05c0" class="numbered-list" start="1"><li>If its members agree strongly about certain beliefs, values, and assumptions, a small business can have a strong culture</li></ol></li></ol><ol type="1" id="f6a95553-e1ed-41c1-a605-3e110a013e38" class="numbered-list" start="2"><li>Strong cultures do not necessarily result in blind conformity</li></ol><ol type="1" id="2086940e-b04a-4598-9472-43af4dfed327" class="numbered-list" start="3"><li>Strong cultures are associated with greater success and effectiveness</li></ol><h2 id="3ad4e8e3-8073-4b8c-ba17-d55f3c778331" class="">Assets of Strong Cultures </h2><p id="db4d8f71-9838-4b13-8b2e-04f5fa410a5c" class="">Strong cultures have potential advantages over those lacking a strong culture</p><h3 id="81e823a6-9b25-4fa3-baee-14b992be05cd" class="">Coordination</h3><p id="14e98355-9347-4770-bc07-2ae956c06c75" class="">In effective organizations, the right hand (finance) knows what the left hand (production) is doing </p><ul id="07a58172-baaa-4944-86c6-4557bb6800c7" class="bulleted-list"><li style="list-style-type:disc">The overarching values and assumptions of strong cultures can facilitate such communication</li></ul><ul id="27545a4d-89cd-43ec-bf9f-217dbb5dcaac" class="bulleted-list"><li style="list-style-type:disc">In turn, different parts of the organization can learn from each other and can coordinate their efforts<ul id="f88c15ed-e26e-45dd-b423-0fb286aadd63" class="bulleted-list"><li style="list-style-type:circle">This is especially important in decentralized, team-oriented organizations</li></ul></li></ul><h3 id="bea9fad8-8978-40ef-8688-fabf0404fb17" class="">Conflict Resolution</h3><p id="e4541a59-de5c-42f6-8aab-7af84273b424" class="">Sharing core values can be a powerful mechanism that helps to ultimately resolve conflicts</p><ul id="dc91cbdf-8297-445f-afa5-2b248685ae14" class="bulleted-list"><li style="list-style-type:disc">In a firm with a core value of excellent customer service, it is still possible for managers to differ about how to handle a particular customer problem<ul id="1fa642fa-702a-4d86-a14c-8d27c5b5e731" class="bulleted-list"><li style="list-style-type:circle">However, the core value will often suggest an appropriate dispute resolution mechanism</li></ul><ul id="09b85d20-9d61-43b8-a953-d7144b3c8287" class="bulleted-list"><li style="list-style-type:circle">“Let&#x27;s have the person who is closest to the customer make the final decision”</li></ul></li></ul><h3 id="28badcf3-31ac-4c5c-b69b-63de664d5a36" class="">Financial Success</h3><p id="4860d723-541e-4696-ac57-5d8cb24f64aa" class="">Do the assets we discussed get translated into bottom line financial success? Yes</p><ul id="633fd841-77f0-4ac8-b7d9-9322644af93a" class="bulleted-list"><li style="list-style-type:disc">There is growing consensus that strong cultures contribute to financial success and other indicators of organizational effectiveness when the culture supports the mission, strategy, and goals of the organization</li></ul><h2 id="414bfd3c-8b3d-4425-b0c2-c5d74f14be6f" class="">Liabilities of Strong Cultures</h2><h3 id="ceeb53bf-c356-4ea8-922f-9ba70c1d9ba6" class="">Resistance to Change</h3><p id="fe552b78-7f35-48eb-909c-9fffe0d5a40e" class="">The mission, strategy, or specific goals of an organization can change in response to external pressures, and a strong culture that was appropriate for past success might not support the new order</p><ul id="f96717b4-2d66-45ef-b185-b95e6c4d7868" class="bulleted-list"><li style="list-style-type:disc">A strong culture can damage a firm&#x27;s ability to innovate<ul id="5e5d28f4-8130-4654-acc2-094a9c141874" class="bulleted-list"><li style="list-style-type:circle">Take for example IBM<ul id="edb7463f-6dbf-4a96-96ee-ed11b3063a3e" class="bulleted-list"><li style="list-style-type:square">It had a strong culture dedicated to selling and providing excellent service for mainframe computers contributed to the firm&#x27;s remarkable success<ul id="03baf008-c2aa-407f-8b0b-0c20bde23bba" class="bulleted-list"><li style="list-style-type:disc">However this strong culture also bred strong complacency that damaged the company&#x27;s ability to compete effectively with smaller, more innovative firms</li></ul><ul id="2bad4782-d21d-4bf6-a93b-6aff835d9431" class="bulleted-list"><li style="list-style-type:disc">Its strong mainframe culture limited its competitiveness in desktop computing, software development, and systems compatibility</li></ul></li></ul></li></ul></li></ul><h3 id="a703a315-9461-451f-9ded-d75df882f75b" class="">Culture Clash</h3><p id="30712f82-d069-418e-8258-308e827803c0" class="">Strong cultures can mix as badly as oil and water when a merger or acquisition pushes two of them together under the same corporate banner</p><ul id="9c746ff8-c1cd-4200-9e2c-ba4d654e867e" class="bulleted-list"><li style="list-style-type:disc">When HBC acquired 50 Towers department stores along with 3,000 employees, with plans to convert the locations to Zellers store, almost every Towers store manager quit<ul id="80a4c3a7-9ab7-4a47-8f2a-b7f6f6716ef9" class="bulleted-list"><li style="list-style-type:circle">This is because the culture of Towers was that management treated employees very positively, and believing that Zellers treated employees poorly, they fear that they would be forced to treat their employees poorly</li></ul></li></ul><h3 id="5beaff78-bcd8-4c4e-8873-6edada20af72" class="">Pathology</h3><p id="d3df124f-720e-4042-b34c-7f99d0fb6049" class="">Some strong cultures can threaten organizational effectiveness simply because the cultures are in some sense, pathological</p><ul id="7824a9a0-a2a5-4e41-ac91-98b45d971749" class="bulleted-list"><li style="list-style-type:disc">Such cultures may be based on beliefs, values, and assumptions that support infighting, secrecy, and paranoia, pursuits that hardly leave time for doing business</li></ul><ul id="4350d711-df7e-4e6f-a2ee-b18d07511da5" class="bulleted-list"><li style="list-style-type:disc">Pathological culture can also focus on the leader&#x27;s personal interests and resources<ul id="d0f9cd9f-5644-4a5b-ab8d-87fc32c81739" class="bulleted-list"><li style="list-style-type:circle">The collapse of Enron has been blamed in part due to a culture that valued lies and deception, rather than honesty and truth, and the collapse of WorldCom has been attributed to a culture of secrecy and blind obedience in which executives were encouraged to hide information from directors and auditors and told to simply follow orders</li></ul></li></ul><h1 id="2c87eef8-1c4d-4eec-ad5b-cc4b49ea9709" class="">8.6 Contributors to the Culture</h1><p id="549c7350-a258-4dc1-9997-3c35f7fe8856" class="">How are cultures built and maintained?</p><h2 id="5b18817b-ca19-4163-89a8-41c72eccd82d" class="">The Founder’s Role</h2><p id="4d7c5e9f-8f80-47e5-976d-19a8298712a6" class="">It is certainly possible for cultures to emerge overtime without the guidance of a key individual, however, it is remarkable, how many cultures especially strong cultures reflect the values of an organization&#x27;s founder</p><ul id="63d9bdb4-4b3e-48cc-b861-b9f484cf0dfb" class="bulleted-list"><li style="list-style-type:disc">Most experts agree that top management strongly shapes the organization&#x27;s culture; the culture will usually begin to emulate what top management “pays attention to”</li></ul><p id="c76e775c-35e8-4082-8078-b38190cbcc91" class="">
+</p><p id="5c302f2f-ed0e-4783-b713-e16b3423b069" class="">Louis Gerstner Jr, who took over as CEO in 1993 until his retirement in 2002, made diversity a top priority at IBM</p><ul id="e7665b18-7c81-4e81-a450-6b226e3f08ae" class="bulleted-list"><li style="list-style-type:disc">As a result the culture of IBM became a more people-friendly one in which individuals are valued for their unique traits, skills, and contributions<ul id="ca25c03a-bc3e-48bb-99ff-d3c4a52851f5" class="bulleted-list"><li style="list-style-type:circle">This is a sharp contrast to the culture of conformity under the leadership of Thomas Watson</li></ul></li></ul><h2 id="d81a8c9d-6667-4811-aab2-99a5ae62e950" class="">Socialization</h2><p id="b41f83b1-f922-41ca-905c-e7dfb96d4693" class="">The precise nature of the socialization process is a key to the culture that emerges in an organization because socialization is one of the primary means by which individuals learn about the culture’s beliefs, values, and assumptions</p><ul id="6296979f-1a95-4524-b218-7634c6109fad" class="bulleted-list"><li style="list-style-type:disc">Weak or fragmented cultures often feature haphazard (lacking any obvious principle) selection and a nearly random series of job assignments that fail to present the new hire with a coherent set of experiences</li></ul><p id="cbe0afbb-47b8-4284-88f3-8f512406f578" class="">
+</p><p id="251b4634-ead7-4a18-ae89-217cc88a2350" class="">Richard Pascale, of the University of Oxford, notes that organizations with strong cultures go through great pains to expose employees to a careful step-by-step socialization process:</p><ol type="1" id="958e36d1-2910-46a2-bae6-56da42cb71c8" class="numbered-list" start="1"><li>Selecting employees<ol type="a" id="3245baf6-4ce8-45d6-a594-b998f0a958a1" class="numbered-list" start="1"><li>New employees are carefully selected to obtain those who will be able to adapt to the existing culture, and realistic job previews are provided to allow candidates to deselect themselves</li></ol></li></ol><ol type="1" id="ef57d3a1-0594-47ca-8e8e-6df1d408f85d" class="numbered-list" start="2"><li>Debasement<ol type="a" id="6a0a6019-dc5a-490f-ab1a-66794b1e4797" class="numbered-list" start="1"><li>Debasement (divestiture socialization tactics) provokes humility in new hires so that they are open to the norms of the organization</li></ol></li></ol><ol type="1" id="73b27c1d-5317-4f2d-8b58-4b5f412b8cf5" class="numbered-list" start="3"><li>Training “in the trenches”<ol type="a" id="b53cd0a4-d0ef-486f-94e0-950e61cec121" class="numbered-list" start="1"><li>Training begins “in the trenches” so that employees begin to master one of the core areas of the organization<ol type="i" id="1ccc8ebe-1529-4dfc-91da-e1d67c6782f0" class="numbered-list" start="1"><li>Even experienced MBAs will start at the bottom of the professional ladder to ensure that they understand how this organization works</li></ol></li></ol></li></ol><ol type="1" id="ccc6ae4a-5274-4802-aeca-a840d520ac38" class="numbered-list" start="4"><li>Reward and promotion<ol type="a" id="0e628ac1-536d-46e3-be8b-12261aa73a74" class="numbered-list" start="1"><li>The reward and promotion system is carefully used to reinforce those employees who performed well in areas that support the values and goals of the organization</li></ol></li></ol><ol type="1" id="26c586bc-e5d9-4b6a-8f7a-ca0af20be885" class="numbered-list" start="5"><li>Exposure to core culture<ol type="a" id="5d06eaf2-21f9-4f46-8e9b-f8dae191d57a" class="numbered-list" start="1"><li>Again and again, the cultures core beliefs, values, and assumptions, are asserted to provide guidance for member behavior<ol type="i" id="3e646a32-742d-4a4e-9ea6-c06f7f6f5fb8" class="numbered-list" start="1"><li>This is done to emphasize that the personal sacrifice is required by the socialization process have a true purpose</li></ol></li></ol></li></ol><ol type="1" id="5e70ef32-abe5-4870-bf17-fedcda407665" class="numbered-list" start="6"><li>Organizational folklore<ol type="a" id="a415574c-0a45-4b15-8690-aa4f64a265a9" class="numbered-list" start="1"><li>Members are exposed to Folklore about the organization, stories that reinforce the nature of the culture</li></ol></li></ol><ol type="1" id="31fc4893-fabf-4577-b79b-4e1a03942922" class="numbered-list" start="7"><li>Role models<ol type="a" id="c588f1a8-1d75-4214-bf7a-f2cff16008b7" class="numbered-list" start="1"><li>Identifying people as “fast trackers” provides new members with Role Models whose actions and Views are consistent with the culture<ol type="i" id="65e109a8-c6c0-4d2c-a8ad-5871cff2b918" class="numbered-list" start="1"><li>These Role Models serve as tangible examples for new members to imitate</li></ol></li></ol></li></ol><h1 id="a1ffba36-d92b-4966-941d-3729b79f4cbd" class="">8.7 Diagnosing a Culture (Cultural Artifacts)</h1><p id="20c0d631-e990-432c-a658-5ca673855016" class="">Earlier, we noted that culture represents a ‘way of life’ for organizational members</p><ul id="9c25edb7-3c3d-4a92-80ee-edc509324b85" class="bulleted-list"><li style="list-style-type:disc">Even when the culture is strong, this ‘way of life’ might be difficult for uninitiated outsiders to read and understand<ul id="210d3e54-9293-480d-8f61-a64328113e72" class="bulleted-list"><li style="list-style-type:circle">One way to grasp a culture is to examine the symbols, rituals, and stories, that characterized the organization&#x27;s way of life</li></ul></li></ul><h2 id="c7de1fe6-00b9-43c9-bf0b-59220e39035d" class="">Symbols</h2><p id="e8ba98e3-b8c5-4ac1-9c87-1933def732e0" class="">At the innovative Chaparral Steel company in Texas, employees have to walk through the human resources department to get to their lockers</p><ul id="e35392ba-43df-411b-9e9d-77df8c942077" class="bulleted-list"><li style="list-style-type:disc">Although this facilitates communication, it also serves as a powerful symbol of the importance the company places on its human resources</li></ul><h2 id="52314711-c88a-4cb1-aba2-0e52fbad0f2c" class="">Rituals</h2><p id="8b6c17ac-3abb-4cf8-92d8-a2386607ad12" class="">Observers have noted how rites, rituals, and ceremonies, can convey the essence of a culture</p><ol type="1" id="ce810c5a-5bbb-406e-802e-37dc8cb30eb5" class="numbered-list" start="1"><li>At Flight Centre, the monthly parties called “Buzz nights,” at which employees are recognized for their accomplishments are indicative of a youthful, energetic, and fun culture</li></ol><ol type="1" id="e40cc186-6a39-4f28-afdb-83e8879aeedf" class="numbered-list" start="2"><li>The Disney picnics, beach parties, and employee nights, are indicative of a peer-oriented, youth-oriented culture</li></ol><p id="e644dac1-3828-43fd-9412-90fc071e9c37" class="">
+</p><p id="0e1ba210-d47b-467f-b1cb-358ee7ff8f7f" class="">Rituals do not need to be exotic to send a cultural message</p><ul id="007ca7bd-86a3-4ad6-b9ac-690833b17334" class="bulleted-list"><li style="list-style-type:disc">In some companies, the annual performance review is an act of feedback and development<ul id="2dbbc848-0380-40d8-b04a-df0c3881a536" class="bulleted-list"><li style="list-style-type:circle">In others, it might be viewed as an exercise in punishment and debasement</li></ul></li></ul><h2 id="8a449a31-d202-4a41-aceb-1c5d773be436" class="">Stories</h2><p id="a4b1a576-6709-4645-8c92-8cfc49cfbe54" class="">Organizations often communicate their culture through the use of stories</p><ul id="91372112-6386-496f-9e11-3337ccdabaf1" class="bulleted-list"><li style="list-style-type:disc">As we noted earlier, the folklore of organizations; stories about past organizational events, is a common aspect of culture</li></ul><ul id="9dda5546-12ff-43ec-bbf9-1773843925d4" class="bulleted-list"><li style="list-style-type:disc">These stories told repeatedly to successive generations of new employees, are evidently meant to communicate “how things work,” whether they be true, false, or a bit of both</li></ul><p id="048015b6-55dc-4bbd-9615-94f13402e324" class="">
+</p><h1 id="cbf136b1-4585-4551-96b2-568413407615" class="">15.1 The Concept of Organizational Change</h1><p id="ab80ed9d-9e1d-4c9e-8136-0f2128338a5d" class="">Consider the following example of organizational change:</p><ol type="1" id="db282a28-c876-4323-9987-c21c39819c12" class="numbered-list" start="1"><li>The transition to shopping on smartphones occurred so fast that even e-commerce Pioneers such as Shopify had to scramble to embrace the mobile-first technology</li></ol><p id="d2b09ed0-055f-44c9-a4dd-286612458037" class="">
+</p><p id="317f821d-636e-4680-959f-62575a49da32" class="">As consumers, we are aware that a change such as smartphone shopping can strongly influence our satisfaction with the product or service in question</p><ul id="b04c00e0-733f-40b7-9fcc-7ab4e536f430" class="bulleted-list"><li style="list-style-type:disc">This change can also have a strong impact on the people who work at the organizations that are pursuing and affected by these transformations</li></ul><h2 id="f6787a55-95d3-43ad-bcf9-d645e08f9ae2" class="">Why Organizations Must Change</h2><p id="8ae67a58-8d19-4966-bd1f-d3ad55ecb122" class="">All organizations face two basic sources of pressure to change:</p><ol type="1" id="068eac06-fbd1-467f-b17c-c70e34989c96" class="numbered-list" start="1"><li>External sources</li></ol><ol type="1" id="40415084-895c-4bb3-9e91-05792b3c6274" class="numbered-list" start="2"><li>Internal sources</li></ol><p id="13cb78cd-fc82-4e6c-b84e-2b6f8961f24a" class="">
+</p><p id="bf97b858-565b-41a0-bb69-49bf5d4f1b0b" class="">Organizations work hard to stabilize their inputs and outputs</p><ul id="961a6d5b-3751-4290-9dea-207fcb679c91" class="bulleted-list"><li style="list-style-type:disc">For example, a manufacturing firm might use a variety of suppliers to avoid a shortage of raw materials, and attempt to turn out quality products to ensure demand<ul id="2e5d690c-ba36-4b15-aec3-f29162674f7b" class="bulleted-list"><li style="list-style-type:circle">In this case, environmental changes must be matched by organizational changes if the organization is to remain effective</li></ul></li></ul><p id="12f7cac1-440d-4216-ba58-f95bb21909da" class="">
+</p><p id="93810119-b840-4cb2-a0dd-bb4fd75bda7f" class="">A prime example of the impact of the external environment in stimulating organizational change is the increased competitiveness of business</p><ul id="9efb05ff-6e5e-4160-9f93-98b2a82661b6" class="bulleted-list"><li style="list-style-type:disc">Brought on, in part, by a more global economy, deregulation, and advanced technology, this competitiveness has forced businesses to become leaner and meaner<ul id="fcec024e-a925-4acd-b04e-a7bf2a575b36" class="bulleted-list"><li style="list-style-type:circle">Many firms have laid off thousands of employees, and done away with layers of middle managers, developing flatter structures, that are more responsive to competitive demands</li></ul></li></ul><p id="1f287fa2-c4f3-4f21-9bf3-8f8a78405669" class="">
+</p><p id="3bb4c127-a75e-4b99-a4ed-33e737c15ebb" class="">Change can also be provoked by forces in the internal environment of the organization</p><ul id="eab9dae1-4f35-4686-acad-4e1e635feb06" class="bulleted-list"><li style="list-style-type:disc">Low productivity, conflict, strikes, sabotage, and high absenteeism and turnover, are some of the factors that signal that change is necessary</li></ul><ul id="07d2a690-f739-44fd-8c59-766b8bd3a8d6" class="bulleted-list"><li style="list-style-type:disc">Employee opinion can also be a force for change<ul id="42c3a07d-f52a-4dea-868d-69bcc7138af2" class="bulleted-list"><li style="list-style-type:circle">For example, a number of Microsoft employees publish online blogs, some of which are critical of the firm’s strategy</li></ul></li></ul><p id="4b04490b-5931-4562-9590-f7f731b913fd" class="">
+</p><p id="5398ac2e-1871-4efb-baa5-d347f8623b12" class="">Very often, internal forces for change, can occur in response to organizational changes that are designed to deal with the external environment</p><ul id="b1c587f5-9e51-4655-9cf6-fc812d346df8" class="bulleted-list"><li style="list-style-type:disc">An example of this; many mergers and acquisitions that were to bolster competitiveness have been followed by cultural conflict between the merged parties<ul id="e02ad5fc-0695-4817-8dd6-a4064ed9729a" class="bulleted-list"><li style="list-style-type:circle">Here, an organizational change that is designed to deal with the external environment has resulted in an internal conflict</li></ul></li></ul><p id="764d20a4-916d-41d2-9bb6-6d12292cc72a" class="">
+</p><p id="a81b8ef8-8bbc-4c0e-b419-21eed4aaa9fa" class="">A word should be said about the perception of threat and change</p><ul id="94421706-bec5-4a31-ba19-6959eabd80c5" class="bulleted-list"><li style="list-style-type:disc">Sometimes, when threat is perceived, organizations ‘unfreeze’ (discussed later), scan the environment for solutions, and use the threat as a motivation for change</li></ul><ul id="5ff6f798-4696-42aa-aa18-d914657304e2" class="bulleted-list"><li style="list-style-type:disc">Other times, though, organizations seemed paralyzed by threat, behave rigidly, and exhibit extreme inertia (tendency to do nothing, or remain unchanged)</li></ul><ul id="8be02dc6-8910-4b03-bcd8-9f0c82b4a516" class="bulleted-list"><li style="list-style-type:disc">Change almost always entails some investment of resources, be it money or management time<ul id="3042daa5-0311-4d5e-80ce-8996ff9ec597" class="bulleted-list"><li style="list-style-type:circle">Also, it almost always requires some modification of routines and processes</li></ul></li></ul><p id="6301bb54-68c3-4bc2-adee-a6a195ee4b26" class="">
+</p><p id="9b0c2c90-4582-428f-9029-8235ba6f1735" class="">In spite of trends toward change, the internal and external environments of various organizations will be more or less dynamic</p><ul id="5edc2475-c56d-4989-b435-7a85feb97729" class="bulleted-list"><li style="list-style-type:disc">According to the diagram, organizations in a dynamic environment must generally show more change to be effective than those operating in a more stable environment<ul id="e3c4ce1d-a428-4b7d-b809-2f3374def82f" class="bulleted-list"><li style="list-style-type:circle">Also, change is, in and of itself, not a good thing and organizations can exhibit too much change as well as to little change</li></ul><ul id="5348d4e0-c452-478b-9354-6bad9a54d9f9" class="bulleted-list"><li style="list-style-type:circle">The company that is in constant flux fails to establish the routines that are necessary for effectiveness, and employees become cynical</li></ul></li></ul><h2 id="21b85c5f-f074-445a-8352-73a0df723679" class="">What Organizations can Change</h2><p id="1da2abb0-f689-4bf8-8b43-4be033c240e0" class="">Since change is a broad concept, it is useful to identify several specific domains in which modifications can occur</p><p id="bf07665b-48d6-4585-b05a-a9d1358c21f0" class="">
+</p><p id="bb30cab1-2f6b-4d4d-927a-411d027cfa02" class="">The choice of what to change depends on a well-informed analysis of the internal and external factors signaling that change is necessary, factors include:</p><ol type="1" id="afbc834a-fea4-4e16-ab06-3fbf273495ab" class="numbered-list" start="1"><li>Goals and strategies<ol type="a" id="95f52519-9728-4a27-828d-2dbfbfec65d5" class="numbered-list" start="1"><li>Organizations frequently change their goals and the strategy they use to reach these goals</li></ol><ol type="a" id="6a80cc6e-cf46-4458-b706-6e6b247ee45a" class="numbered-list" start="2"><li>Expansion, the introduction of new products, and the pursuit of new markets, represent such changes</li></ol></li></ol><ol type="1" id="399b07fa-8ba1-400a-9404-2ba69d2c020d" class="numbered-list" start="2"><li>Technology<ol type="a" id="7321480e-c13c-4b8b-8ea2-b3b76237ffcd" class="numbered-list" start="1"><li>Technological changes can vary from minor to major<ol type="i" id="25df2c52-9820-40fb-9c2f-72153b976895" class="numbered-list" start="1"><li>The introduction of Enterprise social media is a fairly moderate change</li></ol><ol type="i" id="02cdeac5-0a58-4197-ac5f-c4b9b68142c0" class="numbered-list" start="2"><li>Moving from a rigid assembly line to flexible manufacturing is a major change</li></ol></li></ol></li></ol><ol type="1" id="67e94d79-a78a-4873-9238-4309fe9850d9" class="numbered-list" start="3"><li>Job design<ol type="a" id="480f886f-15fe-420b-835b-dade2c3f178e" class="numbered-list" start="1"><li>Companies can redesign individual groups of jobs to offer more or less variety, autonomy, identity, significance, and feedback</li></ol></li></ol><ol type="1" id="572c5ed5-8cad-467a-ade6-853590a5a13e" class="numbered-list" start="4"><li>Structure<ol type="a" id="23b1243a-8295-41b7-9ded-03884ea3c75f" class="numbered-list" start="1"><li>Organizations can be modified from a functional to a product form or vice versa<ol type="i" id="31a2d977-3f2f-4977-bc44-2d6663b519a4" class="numbered-list" start="1"><li>Formalization and centralization can be manipulated, as can tallness, spans of control, and networking with other firms</li></ol></li></ol><ol type="a" id="cc442e18-31a6-41f4-bd73-c9770a1cca33" class="numbered-list" start="2"><li>Structural changes also include modification in rules, policies, and procedures</li></ol></li></ol><ol type="1" id="a70fcdbf-8fd9-45a5-97fa-959e04490a66" class="numbered-list" start="5"><li>Processes<ol type="a" id="e8524b8f-a47a-4ef4-82c2-a71a37d3ab82" class="numbered-list" start="1"><li>The basic processes by which work is accomplished can be changed<ol type="i" id="787f7bbd-c663-4756-89de-c499c04cd7d9" class="numbered-list" start="1"><li>Some stages of a project might be done concurrently rather than sequentially</li></ol></li></ol></li></ol><ol type="1" id="e0521536-39f5-4982-8ca8-5ae19d10eefb" class="numbered-list" start="6"><li>Culture<ol type="a" id="41d0604e-b67d-4174-afcc-7b7eafd283b5" class="numbered-list" start="1"><li>One of the most important and difficult changes that an organization can make is to change its culture<ol type="i" id="2e3d5768-437b-43b1-96b3-656764b9b9b3" class="numbered-list" start="1"><li>In fact, culture change is so critical that the main reason recorded for the failure of organizational change programs is the failure to change an organization&#x27;s culture</li></ol></li></ol><ol type="a" id="9321cb56-79c4-49ef-99fa-eb9dcdaafe48" class="numbered-list" start="2"><li>In addition, because organizational culture is known to be a major factor in providing an organization with a competitive advantage and long-term effectiveness, changing an organization&#x27;s culture is considered to be a fundamental aspect of organizational change</li></ol></li></ol><ol type="1" id="3ca2884a-2a79-4cd2-aecc-6b93649ba6b1" class="numbered-list" start="7"><li>Branding<ol type="a" id="2ad94ece-871f-4737-878b-161f8911fd81" class="numbered-list" start="1"><li>Rather than looking internally to change culture, or in addition to culture change, an organization might have strategic reasons to change its externally viewed identity or brand</li></ol></li></ol><ol type="1" id="8e69bff0-9f18-439b-8cfa-b5d17feb46c3" class="numbered-list" start="8"><li>People<ol type="a" id="f9c90958-961c-4346-a03f-c1893bf5ebaf" class="numbered-list" start="1"><li>The membership of an organization can be changed in two senses<ol type="i" id="16ed03b2-6867-4308-bd4d-556bdc12d2e1" class="numbered-list" start="1"><li>The actual content of the membership can be changed through the hiring process</li></ol><ol type="i" id="2be03a8a-2304-4bb4-a568-bdc085964df9" class="numbered-list" start="2"><li>The existing membership can be changed in terms of skills and attitudes by various training and development methods</li></ol></li></ol></li></ol><p id="5fab722c-6c81-4a3a-86b7-b273189f2a78" class="">
+</p><p id="94966614-7546-4b59-a335-168731a3d4b6" class="">A change in one area very often calls for changes in others</p><ul id="660547b8-319d-4588-a58b-d9a123f9b15d" class="bulleted-list"><li style="list-style-type:disc">To be effective, the goal and strategy change might require some major structural changes, including a more geographic form, and decentralization of decision-making power<ul id="aa4b8d49-c760-4be2-90ae-8aca24ebc2f0" class="bulleted-list"><li style="list-style-type:circle">Additionally, any of these changes almost always require that organizations give serious attention to people changes</li></ul></li></ul><h2 id="73ffc03e-bdf1-4c08-b49c-a3e69a7f1563" class="">The Change Process</h2><p id="7fab62bc-bac2-4bf5-b936-a591e24dd1ff" class="">Change involves a sequence of events or a psychological process that occurs over time; this sequence or process involves three basic stages</p><h3 id="c53d1446-6f42-4145-b242-a05fe049110b" class="">Unfreezing</h3><p id="2ba2db27-b24b-4ec9-83bf-cceea376691e" class=""><mark class="highlight-yellow_background">Unfreezing occurs when it is recognized that the current situation is unsatisfactory</mark></p><ul id="69c9252c-986f-418e-b9c9-d71307ae409f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow_background">This might involve the realization that the present structure, task design, or technology is ineffective or that member’s skills or attitudes are inappropriate</mark></li></ul><p id="f9559e96-0ecf-4a88-b708-710dae1f55b2" class="">
+</p><p id="1abb6c24-e782-4ff0-ae4a-f0388a07c6e9" class="">Crises are especially likely to stimulate unfreezing</p><ul id="39b2963f-9adf-41c0-968d-21c621d375fa" class="bulleted-list"><li style="list-style-type:disc">This includes a dramatic drop in sales, a big lawsuit, or an unexpected strike</li></ul><p id="7e946555-d582-4545-a0a0-eb5e0ed54e27" class="">
+</p><p id="a6ee24fb-dc5e-4b94-8ba7-eb26a6ad36c4" class="">Unfreezing can also occur without such drama</p><ul id="7f3f5217-bdec-4004-a7b8-28da2b652fdc" class="bulleted-list"><li style="list-style-type:disc">Employee attitude surveys, customer surveys, and financial data are often used to anticipate problems and initiate change before crises are reached</li></ul><p id="359e74f2-51a2-423d-bc2a-9ea3c8245f53" class="">
+</p><p id="5a2c76aa-8d38-44c1-85cb-c2f7626196ef" class=""><mark class="highlight-yellow_background">For major organizational changes, a clear and compelling vision, repeated via multiple communication channels, will contribute to unfreezing and serve as a beacon during the change process</mark></p><ul id="3633b853-6fed-4bd7-a8c9-38e2828f66b2" class="bulleted-list"><li style="list-style-type:disc">A vision will be most effective when it appeals to a variety of organizational stakeholders so as to constitute a shared vision</li></ul><h3 id="10265341-b3ec-48b2-a968-c1f436bce919" class="">Change</h3><p id="60a5c7c9-dac1-4743-85ff-09a8f06ad2ac" class=""><mark class="highlight-brown_background">Change occurs when some program or plan is implemented to move the organization or its members to a more satisfactory state; change efforts can range from minor to major</mark></p><ul id="68035c17-c388-4631-89d2-a5a35b5636d3" class="bulleted-list"><li style="list-style-type:disc">A simple skills training program and a revised hiring procedure constitute fairly minor changes in which few organizational members are involved</li></ul><ul id="72a32e23-f353-4732-a4fd-bba612c2d0aa" class="bulleted-list"><li style="list-style-type:disc">Major changes that involve many members might include extensive job enrichment, radical restructuring, serious attempts at empowering the workforce, or opening new markets</li></ul><p id="5a8da0f8-4231-4c47-bc59-248ccb6283f5" class="">
+</p><p id="529dffb6-2935-4fe7-8a15-97dfb4536aec" class=""><mark class="highlight-brown_background">In order for change to occur, people must have the capability, the opportunity, and the motivation to change</mark></p><ul id="4bece304-355c-4982-b352-700b41c1e2ca" class="bulleted-list"><li style="list-style-type:disc">Some degree of all three factors must be present for successful change</li></ul><p id="bfb88670-5312-49a2-9792-f30c7404d8cb" class="">
+</p><p id="40374c82-ecb0-4326-b1da-9ea51aa74cd4" class="">For example, suppose top management envisions a cultural change to make a traditional firm more innovative and entrepreneurial</p><ul id="b51ee04f-7f9f-4a7d-83ec-bea0897be3e9" class="bulleted-list"><li style="list-style-type:disc">This might suggest creativity training to enhance the capability of key employees</li></ul><ul id="51f24165-c3f4-47fa-a9f8-92580e26b0ef" class="bulleted-list"><li style="list-style-type:disc">Also, opportunities for innovation must be presented to employees</li></ul><ul id="7400d544-99ef-495c-864a-a90741591079" class="bulleted-list"><li style="list-style-type:disc">For the motivation aspect, incentive systems should be aligned to reward innovative ideas and avoid punishment for the inevitable failures that accompany innovation</li></ul><h3 id="c0a341a8-e55b-4371-88a7-d4a44095b320" class="">Refreezing</h3><p id="f591efd0-8903-45ac-9462-37c6b84d884b" class=""><mark class="highlight-teal_background">When changes occur, the newly-developed behaviours, attitudes, or structures, must be subjected to refreezing</mark></p><ul id="3d05ba7f-dd78-4567-afe0-99cd06a3d4a2" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-teal_background">Meaning that they must become an ongoing aspect of the organization</mark><ul id="45570252-8abf-4c6d-b494-8a2943ecd23f" class="bulleted-list"><li style="list-style-type:circle">Refreezing does not mean ‘fixed in stone’, rather, it simply means that routines and policies are in place to support the change</li></ul></li></ul><h1 id="4c7abcf6-c01b-437c-aac9-72a29813e4ef" class="">15.2 The Learning Organization</h1><p id="989ba339-1dd6-43f4-aeef-9f592f936e24" class="">No event in memory has underlined the importance of organizational learning more than the COVID-19 pandemic</p><ul id="62bf09e7-2e1e-4ebe-9c13-9102993d5d85" class="bulleted-list"><li style="list-style-type:disc">Exclusive restaurants had to learn how to do take out, universities had to learn how to teach remotely, and small businesses had to learn how to do ecommerce</li></ul><ul id="87406ed9-e1b5-49f3-9ed7-ed462762b020" class="bulleted-list"><li style="list-style-type:disc">Many more organizations had to learn how to facilitate employees working from home</li></ul><p id="838e7d93-ca69-4c44-ba26-d329972767f6" class="">
+</p><p id="55cd4b77-b289-433c-a50f-fc1893ed0c1f" class=""><mark class="highlight-blue_background">Organizational learning refers to the process through which organizations acquire, develop, retain, and transfer knowledge throughout the organization; there are two primary methods of organizational learning</mark></p><ol type="1" id="eeb9891d-2a5e-473e-974c-e6d8331ed6ff" class="numbered-list" start="1"><li><mark class="highlight-blue_background">Organizations learn through knowledge acquisition</mark><ol type="a" id="64a3b55e-5e80-4ca4-bb47-472dd4cf8511" class="numbered-list" start="1"><li>This involves the acquisition, distribution, and interpretation of knowledge that exists external to the organization</li></ol></li></ol><ol type="1" id="59b5d940-9f9a-4dee-843c-ee88cac27acd" class="numbered-list" start="2"><li><mark class="highlight-blue_background">Organizations also learn through knowledge development</mark><ol type="a" id="9dfc607d-bed5-44d2-bc50-60ed3ad1462b" class="numbered-list" start="1"><li>This involves generating new knowledge internally through dialogue and experience</li></ol></li></ol><p id="add2618e-f412-4b67-b6f3-777dbd11a5aa" class="">
+</p><p id="c57f0830-d268-4d99-823f-ecd18542f793" class="">Organizational learning occurs when members interact and share experiences and knowledge, which are retained and distributed throughout the organization</p><p id="6e1c89e7-0b98-4ad1-bcc2-eaf35d40bcd1" class="">
+</p><p id="ddc36683-ffb0-4ecc-9881-9de328868a06" class="">Some organizations are better at learning than others because they have processes and systems in place to facilitate learning, retention, and the transfer of knowledge throughout the organization</p><ul id="abc36dd3-ba21-494f-82b6-a0345d5f2346" class="bulleted-list"><li style="list-style-type:disc">A learning organization is an organization that has systems and processes for creating, acquiring, retaining, and transferring knowledge to modify and change its activities to reflect new knowledge and insights<ul id="78dea4dc-cc81-4c9f-908b-f0faa7c8d741" class="bulleted-list"><li style="list-style-type:circle">As an addition, it is also adept at “unlearning” outdated or superseded routines<ul id="7013e5c1-1e9d-43ff-a2e3-1a2cbc1e9b4f" class="bulleted-list"><li style="list-style-type:square">As a result, successful organizational change is much more likely to occur in a learning organization</li></ul></li></ul></li></ul><p id="cae558c4-47bf-4a1d-8cf1-369b14001228" class="">
+</p><p id="505ea84d-1481-4ac1-a33c-1babe9984e70" class="">Four key dimensions are critical for a learning organization:</p><ol type="1" id="525a4e48-5a4f-4b69-bf8f-a01259f3fd6d" class="numbered-list" start="1"><li>Vision <ol type="a" id="95ecd012-8eda-43fe-8d0e-ac5dec3e765c" class="numbered-list" start="1"><li>Leaders must communicate a Clear Vision of the organization&#x27;s strategy and goals, in which learning is a critical part and key to organizational success</li></ol></li></ol><ol type="1" id="1e867217-c001-476e-bdb7-17290f1d500f" class="numbered-list" start="2"><li>Culture<ol type="a" id="5d0bdb22-1bac-480d-8035-e94d9df5e72c" class="numbered-list" start="1"><li><mark class="highlight-purple_background">A learning organization has a culture that supports learning</mark><ol type="i" id="f60e172b-4451-47ec-9e16-d2548f4b7619" class="numbered-list" start="1"><li>Knowledge and information sharing, risk-taking, and experimentation are supported, and continuous learning is considered to be a regular part of organizational life and the responsibility of everybody in the organization</li></ol></li></ol></li></ol><ol type="1" id="7b28b67d-bf14-40aa-9c5a-505e20b26783" class="numbered-list" start="3"><li>Learning systems<ol type="a" id="f4f7b25c-7c00-4f89-ac23-d448545bcc1f" class="numbered-list" start="1"><li><mark class="highlight-purple_background">Employees are challenged to think, solve problems, make decisions, and act accordingly to a systems approach, by considering patterns of interdependencies and by “learning by doing”</mark><ol type="i" id="652cb05e-e16b-456a-9500-aac8f6e3b028" class="numbered-list" start="1"><li>Job rotation and cross-functional teams can facilitate this, as can managers oriented toward coaching, mentoring, and facilitating learning</li></ol></li></ol></li></ol><ol type="1" id="3a8b0dbd-9b83-4113-b579-da73ffafd267" class="numbered-list" start="4"><li>Knowledge management<ol type="a" id="252f4d06-ae89-400e-bd05-8f8210048086" class="numbered-list" start="1"><li>Learning organizations have established systems and structures to acquire, code, store, and distribute important information and knowledge so that it is available to those who need it, when they need it<ol type="i" id="78c4e3c1-654b-43d0-b4ae-dab687695a53" class="numbered-list" start="1"><li>This requires the integration of people, processes, and technology</li></ol></li></ol></li></ol><p id="9289b09f-7bf0-415b-901f-0f4b7c5c9a5c" class="">
+</p><p id="3082a45b-14ab-49e4-b194-e95c7c8d8987" class="">These four factors contribute to the opportunity, motivation, and capability to learn (especially from failures) and thus change</p><ul id="2e477648-3c94-4da2-92ad-9bc9a6af4431" class="bulleted-list"><li style="list-style-type:disc">Learning organizations are better able to change and transform themselves because of their greater capacity for acquiring, retaining, and transferring knowledge</li></ul><ul id="8d5048b9-fb30-4a31-8ba1-2010e3935a2f" class="bulleted-list"><li style="list-style-type:disc">Learning is an important prerequisite for organizational successful change and transformation</li></ul><p id="4fdd8311-2265-474b-8d17-e4c095c47fd1" class="">
+</p><h1 id="bbaeebdf-6f4e-422a-a0d8-4f20faad56c4" class="">15.3 Issues in the Change Process</h1><p id="2b69dba5-e37f-4a33-8aac-e1c0eab0cea6" class="">The simple sketch of the change process presented earlier neglects several important issues that organizations must confront during the process</p><ul id="3f889e5c-382b-4572-afc2-b3a6e3c0efe8" class="bulleted-list"><li style="list-style-type:disc">These issues constitute problems that must be overcome if the process is to be effective</li></ul><h2 id="d8fa14fa-66fd-4afd-8ed4-77c7dd5958da" class="">Diagnosis </h2><p id="1338ada6-94af-4cb2-b315-fa971c55d979" class=""><mark class="highlight-red_background">Diagnosis is the systematic collection of information relevant to impending organizational change</mark></p><ul id="a169cad6-7a95-48e9-9929-2833b83d0bad" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-red_background">Proper diagnosis clarifies the problem and suggests what should be changed and the appropriate strategy for implementing change without resistance</mark></li></ul><ul id="6b9a1e5d-ad8f-4354-a2c5-a31e6895111a" class="bulleted-list"><li style="list-style-type:disc">Initial diagnosis can provide information that contributes to unfreezing by showing that a problem exists<ul id="11d568d6-3571-483f-8bf0-7138ed59eb25" class="bulleted-list"><li style="list-style-type:circle">Once unfreezing occurs, further diagnosis can clarify the problem and suggest just what changes should be implemented<ul id="94064462-b4e4-443c-968b-c7f32d891428" class="bulleted-list"><li style="list-style-type:square"><mark class="highlight-red_background">Unfortunately, many firms imitate the change programs of their competitors, or other visible firms, without doing a careful diagnosis of their own specific needs</mark></li></ul></li></ul></li></ul><p id="63a01a97-0137-437f-b76e-e0c5656e6a03" class="">
+</p><p id="0e24a800-185e-4788-9ffd-ba2b156fb481" class="">For complex, non-routine problems, there is considerable merit in seeking out the diagnostic skills of a change agent</p><ul id="9fcc8796-28d7-4484-ad7c-804996ada8a2" class="bulleted-list"><li style="list-style-type:disc">Change agents are experts in the application of Behavioral Science to organizational diagnosis and change<ul id="81012299-6495-4c52-95dc-abafdb7de333" class="bulleted-list"><li style="list-style-type:circle">Some large firms have in-house change agent who are available for a consultation, for other firms, change agents can be hired<ul id="7ffc2481-c96e-4f11-a800-d8bc18c32240" class="bulleted-list"><li style="list-style-type:square">In any event, the change agent brings an independent objective perspective to the diagnosis</li></ul></li></ul></li></ul><p id="6c508b14-2182-46a3-84a9-d3c20bc2f991" class="">
+</p><p id="94759f07-dba4-42af-b74e-aa53f1747c26" class="">It is possible to obtain diagnostic information through a combination of observations, interviews, questionnaires, and the scrutiny of records</p><ul id="155a7006-4e2e-454a-bf6c-b74a3425c4f2" class="bulleted-list"><li style="list-style-type:disc">The importance of careful diagnosis cannot be overemphasized</li></ul><h2 id="cb3cab9b-a6e1-47f8-a360-15c51acc463b" class="">Resistance</h2><p id="a9397499-bb3f-467a-817a-d9484abe0f7e" class="">People are creatures of habit, and change is frequently resisted by those at whom it is targeted</p><h3 id="cbb30d3f-6507-410f-9c24-3e61631c5e14" class="">Causes of Resistance</h3><p id="f4e4c799-5cd0-4800-ad40-4c434776e4da" class="">Resistance to change occurs when people either overtly or covertly fail to support the change effort; but why does such failure of support occur, leading to a lack of readiness for change?</p><ol type="1" id="8b6c3650-32ce-4388-8183-9223d0ae759f" class="numbered-list" start="1"><li>Politics and self-interest<ol type="a" id="62607a06-b24a-4fc2-9a0c-8c2de1a45bd2" class="numbered-list" start="1"><li>People might feel that they personally will lose status, power, or even their jobs with the advent of the change</li></ol></li></ol><ol type="1" id="c5db971a-e889-423a-8743-f23947ffd828" class="numbered-list" start="2"><li>Low individual tolerance for change<ol type="a" id="f88d5a30-6a59-4501-be1f-a4a53f416113" class="numbered-list" start="1"><li>Predispositions in personality makes some people uncomfortable with changes in establish routines</li></ol></li></ol><ol type="1" id="0fb72bf6-86a9-4765-ac3b-18108d692594" class="numbered-list" start="3"><li>Lack of trust<ol type="a" id="ac90e5ab-cf62-4dab-94ec-759e685e4828" class="numbered-list" start="1"><li>People might clearly understand the arguments being made for change, but do not trust the motives of those proposing the change</li></ol></li></ol><ol type="1" id="d0df55be-a7c3-4dd4-a5e4-d69bc6f5e7e2" class="numbered-list" start="4"><li>Different assessments of the situation<ol type="a" id="51766a23-7be8-4bab-b8bb-35cf57b796c5" class="numbered-list" start="1"><li>The targets of change might sincerely feel that the situation does not warrant the proposed change, and that the advocates of change have misread the situation<ol type="i" id="9e999c17-e7e0-422c-a68e-48908e9fee31" class="numbered-list" start="1"><li>For example, at UPS, managers saw the introduction of scanning bar-coded packages as a way to help customers trace goods<ol type="1" id="fd99c308-cddb-429a-9178-c2770152af85" class="numbered-list" start="1"><li>Employees cite it as a way to track them and spy on them</li></ol></li></ol></li></ol></li></ol><ol type="1" id="47fa9afe-4b5e-465d-8ecc-d74b5031fbc0" class="numbered-list" start="5"><li>Strong emotions<ol type="a" id="a50432ea-577d-4f41-a8d2-15b3944a59ef" class="numbered-list" start="1"><li>Change has the capacity to induce strong emotions in people trying to make sense of the change; emotions that often make people feel helpless, resistant, and even ill</li></ol></li></ol><ol type="1" id="b734ed8f-59e4-4883-9081-6ce7856f3094" class="numbered-list" start="6"><li>Strong organizational identification<ol type="a" id="a2fe75c4-3656-4c1e-88dd-bd026359cb6c" class="numbered-list" start="1"><li>People who identify very strongly with an organization often resist any change, seeing themselves as guardians of its traditional values and practices<ol type="i" id="192e7622-ec2b-4f35-b792-dd74a534b60a" class="numbered-list" start="1"><li>Much resistance to mergers-and-acquisitions stems from the notion that the ‘bond’ between the person and the ‘old’ organization will be broken in the new merged firm</li></ol></li></ol></li></ol><ol type="1" id="a5d1a8b7-50af-419b-95bb-eecec17f5b7e" class="numbered-list" start="7"><li>A resistant organizational culture<ol type="a" id="a00f07a3-85da-4e02-80a5-afd839bc7093" class="numbered-list" start="1"><li>Some organizational cultures have especially stressed and rewarded stability and tradition</li></ol></li></ol><ol type="1" id="a0d934a9-620a-4e6d-bf86-dfc978b92b97" class="numbered-list" start="8"><li>Multiple incompatible changes<ol type="a" id="ab5bb3ef-7b78-41ef-ae1a-b1e6167234c9" class="numbered-list" start="1"><li>Especially in large organizations, multiple change initiatives might be occurring at the same time<ol type="i" id="3ce12423-888b-4b12-8bdf-5df3d3347648" class="numbered-list" start="1"><li>If these are disconnected and viewed as inconsistent or contradictory, resistance may be multiplied by cynicism</li></ol></li></ol><p id="c657ad59-feaa-4057-95f2-76752926d539" class="">Underlying many of these reasons for resistance are two major themes:</p><ol type="1" id="5be5bb84-4492-4716-bd7d-247957299b4c" class="numbered-list" start="1"><li>Change is unnecessary because there&#x27;s only a small gap between the organization&#x27;s current and ideal identity</li></ol><ol type="1" id="b2c284b8-2bae-4c50-80e7-4291186ed479" class="numbered-list" start="2"><li>Change is unobtainable (or threatening) because the gap between the current and ideal identities is too large<ol type="a" id="d04b4707-86a2-4e01-9dae-84e602fc958b" class="numbered-list" start="1"><li>This diagram shows that a moderate identity gap is probably most conducive to increased acceptance of change because it unfreezes people while not provoking maximum resistance</li></ol></li></ol><h3 id="4daeb1aa-a636-4bb7-8158-3b8fbff1bc3f" class="">Time and Resistance</h3><p id="75133062-e02a-4cda-91a2-12b83ea0c998" class="">There are considerable differences in how people react to change over time</p><p id="bbc0a948-5f96-4007-8b8d-29b79879e1bb" class="">Some people are “champions” of change, welcoming it from the beginning and maintaining change-supported perceptions over time</p><ul id="90f75d8e-aa4e-403c-a286-17fa3238b3bd" class="bulleted-list"><li style="list-style-type:disc">Others are “doubters,” resisting change from the get-go and persisting in their resistance</li></ul><ul id="5e519cc5-fe59-47a8-8e0d-a9e0e5ba465a" class="bulleted-list"><li style="list-style-type:disc">Some employees are “converts” who are resistant at first but come to see the value of change</li></ul><ul id="5992902d-ad40-451b-bda9-9a9abb4194b8" class="bulleted-list"><li style="list-style-type:disc">And finally we have “defectors,” which have initial change-supportive perceptions but become resistant over time</li></ul><p id="317c800e-faf1-4ab8-89d7-f640849dbf43" class="">
+</p><p id="cc8b3db5-014d-4e80-9197-64de6198af68" class="">It is important to foster positive perceptions for change early and sustain them over time</p><ul id="af14f816-58ea-4d86-8d3d-bd01c6af1da5" class="bulleted-list"><li style="list-style-type:disc">This is because Champions have more momentum for change than converts, and defectors actually exhibit less momentum than people who were doubters all along</li></ul><h3 id="8c2e7214-d358-4ad4-9f64-075b1c9cec49" class="">Dealing with Resistance</h3><p id="b0f16cc4-d475-418b-b099-fd9028cc624d" class="">Low tolerance for change is mainly an individual matter, and it can often be overcome with supportive patient supervision</p><ul id="0e54184c-4444-4979-8ee9-aeea89f52a40" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">If politics and self-interest are at the root of resistance, it might be possible to co-opt the reluctant by giving them a special desirable role in the change process, or by negotiating special incentives for change</mark></li></ul><ul id="e30d3fa2-a53b-493f-8785-598c4800ce65" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">If misunderstanding, lack of trust, or different assessments, are provoking resistance, good communication can pay off</mark><ul id="05619694-1a7f-461d-8035-345f3640010d" class="bulleted-list"><li style="list-style-type:circle">Contemporary organizations are learning that obsessive secrecy about strategy and competition can have more internal costs than external benefits</li></ul><ul id="1235eb06-5ffe-4a1c-8773-38971c36ab00" class="bulleted-list"><li style="list-style-type:circle">It is particularly critical that lower-level managers understand the diagnosis underlying intended change, and the details of the change so that they can convey this information to employees accurately</li></ul></li></ul><ul id="d49b0b2a-8355-4491-8716-30c0413b2173" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-orange_background">Involving the people who are the targets of change in the change process often reduces the resistance</mark><ul id="02f78edf-0fb2-4e93-bc0e-b5645e929f03" class="bulleted-list"><li style="list-style-type:circle">This is especially appropriate when there&#x27;s adequate time for participation, when true commitment to the change is critical, and when the people who will be affected by the change have unique knowledge to offer</li></ul></li></ul><p id="1f9cb292-4cb3-4812-8f5b-ecae9931edab" class="">
+</p><p id="85d85b4c-9cc0-4c6c-9d8f-77ed7bf421db" class="">One research study of CEOs who were transformational leaders noted the following unfreezing practices:</p><ol type="1" id="c1275465-7aa4-4102-babc-963304c6cb7e" class="numbered-list" start="1"><li>An atmosphere is established in which dissent is not only tolerated but encouraged<ol type="a" id="99a57ca7-58be-4e74-a2fe-4011135d563f" class="numbered-list" start="1"><li>Proposals and ideas are given tough, objective reviews, and disagreement is not viewed as disloyalty</li></ol></li></ol><ol type="1" id="291f6221-731d-46ca-8190-8dce355eadd1" class="numbered-list" start="2"><li>The environment is scanned for objective information about the organization&#x27;s true performance<ol type="a" id="5e37eb25-86b0-4e7a-9088-6ff1d25e02f0" class="numbered-list" start="1"><li>This might involve putting lots of Outsiders on the board of directors, or sending technical types out to meet customers</li></ol></li></ol><ol type="1" id="595bfcd5-6117-4faa-8442-b69026fdd3b4" class="numbered-list" start="3"><li>Organizational members are sent to other organizations and even other countries to see how things are done elsewhere</li></ol><ol type="1" id="cbf61432-0b66-4b9c-a07a-ef51748245e2" class="numbered-list" start="4"><li>The organization compares itself along a wide range of criteria against the competition, rather than simply comparing its performance against last year&#x27;s<ol type="a" id="98cb0485-8c8a-4c6d-8fe4-1b76a06079e5" class="numbered-list" start="1"><li>This avoids complacency</li></ol></li></ol><p id="d70c6613-fa49-424c-ba5e-5c838cf118df" class="">
+</p><p id="b208df08-26d3-4392-a547-4ef5e9bca223" class="">Transformational leaders are skilled at using the new ideas that stem from these practices to create a revised vision about what the organization can do or be</p><ul id="e65e377a-73da-4cf6-ab88-d0e65aedfcf1" class="bulleted-list"><li style="list-style-type:disc">They are also adept at countering employee cynicism so that the proposed change is not seen as the new “flavour of the month”</li></ul><ul id="636176a1-da35-45b0-8c3b-56ab5fd98886" class="bulleted-list"><li style="list-style-type:disc">They are good at inspiring trust, and encouraging followers to subordinate their individual self-interest for the good of the organization</li></ul><h2 id="12610649-0ab6-484d-ac88-82f1f37d3182" class="">Evaluation and Institutionalization</h2><p id="eb1a67ac-81ca-4272-893c-c1d36c606510" class="">It seems only reasonable to evaluate changes to determine whether they have accomplished what they were supposed to, and whether that accomplishment is now considered adequate</p><p id="7ca2c69a-9613-485a-a3c8-2abfe57b5f63" class="">
+</p><p id="a5d1af79-1c38-40ce-953e-9128a1036e6e" class="">Organizations are notorious for doing a weak job of evaluating “soft” change programs that involve skills, attitudes, and values; it is possible to do a thorough evaluation by considering a range of variables:</p><ol type="1" id="6584b8f9-01a9-4497-935d-fbffc1e44d3d" class="numbered-list" start="1"><li>Reactions<ol type="a" id="829bf0a1-b55d-468d-9e98-21e715fe382a" class="numbered-list" start="1"><li>Did participants like the change program?</li></ol></li></ol><ol type="1" id="2793e9bc-d16b-465e-96b1-9728aa03b1a8" class="numbered-list" start="2"><li>Learning<ol type="a" id="e2a37056-9f3d-42f1-a468-f2051f688052" class="numbered-list" start="1"><li>What knowledge was acquired in the program?</li></ol></li></ol><ol type="1" id="2a0a7432-64d5-4727-82dc-7671d6094e0b" class="numbered-list" start="3"><li>Behavior<ol type="a" id="2003b1ef-69d8-4fa6-a1b3-c66315eb257f" class="numbered-list" start="1"><li>What changes in job behavior occurred?</li></ol></li></ol><ol type="1" id="75f5467f-34d9-40b2-878d-d0e15f982764" class="numbered-list" start="4"><li>Outcomes<ol type="a" id="9310bea2-03f8-43af-8574-2a7c535e1ebe" class="numbered-list" start="1"><li>What changes in productivity, absence, and so on, occurred?</li></ol><p id="b22a3508-78dc-4fad-b423-a561d1715c88" class="">
+</p></li></ol><p id="d2821357-8f0a-44bb-8f58-d3750b54b7fd" class="">To an extent, reactions measure resistance, learning reflects change, and behaviour reflects successful refreezing</p><ul id="70f1709f-0594-48f0-806a-9f0125c048e6" class="bulleted-list"><li style="list-style-type:disc">Outcomes indicate whether refreezing is useful for the organization</li></ul><p id="193e347f-f0e3-47bc-90ec-2272ad2c6218" class="">
+</p><p id="95c78ce9-eb1f-478e-a5ac-e195ec72ad2d" class="">If the outcome of change is evaluated favorably, the organization will wish to institutionalize that change</p><ul id="7565da46-cc0c-4ee6-970f-2f81f7a0738a" class="bulleted-list"><li style="list-style-type:disc">This means that the change becomes a permanent part of the organizational system, a social fact that persists over time, despite possible turnover by the members who originally experienced that change</li></ul><p id="587f3a6f-661e-432d-a4e1-a4cb3c0576dd" class="">
+</p><p id="12201477-2f2a-43f9-8fd0-ff6ee46d101d" class="">It is one thing to institutionalize a simple training program but quite another to do the same for complex interventions that can be judged from a variety of perspectives</p><ul id="f6f2f16a-f63d-453a-a4f2-3d08c21a4ae6" class="bulleted-list"><li style="list-style-type:disc">Studies of more complex change efforts indicate that a number of factors can inhibit institutionalization</li></ul><p id="adf62095-8da7-45f9-aa5b-fe2c8e171a7d" class="">
+</p><p id="17e6f7ad-1868-4280-b43e-f9f81f889665" class="">For example promised extrinsic rewards (ex: pay bonus) might not be developed to accompany changes</p><ul id="58c14805-679b-4646-9cf9-fea9b5f22d78" class="bulleted-list"><li style="list-style-type:disc">Similarly, initial changes might provide intrinsic rewards that create higher expectations that cannot be fulfilled</li></ul><ul id="5896d192-47e8-4db8-9350-16d6c42525ee" class="bulleted-list"><li style="list-style-type:disc">Institutionalization might also be damaged if new hires are not carefully socialize to understand the unique environment of the changed organization</li></ul><ul id="94789dbf-0cc9-4543-a565-87b5996f5b2f" class="bulleted-list"><li style="list-style-type:disc">Environmental pressures such as decreased sales or profits can cause management to regress to more familiar behaviours, and abandon change</li></ul><h1 id="ac062244-adaa-4b3b-a25e-5f22acdc1484" class="">Slide Extras</h1><h2 id="a859700e-e093-46b1-9130-632eebe79d58" class="">Assumptions</h2><p id="1a1ec0e8-0a39-4848-83a2-5ae4da3e76eb" class="">Deeply-held, unconscious beliefs about reality; examples include:</p><ol type="1" id="7987020a-a075-4ba3-85ea-855416f3b9e3" class="numbered-list" start="1"><li>The nature of reality and truth<ol type="a" id="52397ddc-686f-42bf-847e-d1f3704e727e" class="numbered-list" start="1"><li>Derived from debates? Reliance on wisdom? Social consensus?</li></ol></li></ol><ol type="1" id="b48fe888-8197-409b-a821-d7565c5564f1" class="numbered-list" start="2"><li>The nature of time<ol type="a" id="9ecfcdf4-6408-4b63-a81f-2077c722ad17" class="numbered-list" start="1"><li>Perspectives on the past, present, and future</li></ol></li></ol><ol type="1" id="4849caf6-06b2-4289-985c-9dbd6f673e6a" class="numbered-list" start="3"><li>The nature of human nature<ol type="a" id="4afeeded-ca60-46a7-b3f4-d69c63af698c" class="numbered-list" start="1"><li>Good? neutral? evil? fixed or changeable?</li></ol></li></ol><ol type="1" id="fb75375e-bef4-428a-9c80-7fcf8a40c302" class="numbered-list" start="4"><li>The nature of human relationships<ol type="a" id="207113f8-0098-4c96-b513-34d7f4cdfe7d" class="numbered-list" start="1"><li>Competitive or cooperative? individualism or collectivism?</li></ol></li></ol><ol type="1" id="f786a0b5-6318-41a9-a0d9-842db304541c" class="numbered-list" start="5"><li>Homogeneity versus diversity<ol type="a" id="890dc131-0c01-407e-a03f-37c39bb9dba2" class="numbered-list" start="1"><li>Dominant set of cultural beliefs vs. different values and beliefs</li></ol></li></ol><h2 id="7a48f19f-a224-400f-a4a7-b7e8be378d24" class="">Diagnosing a Culture</h2><ol type="1" id="ae0da4be-5696-49db-82af-fc80d5f98dd9" class="numbered-list" start="1"><li>Core characteristics<ol type="a" id="94ad3242-ffa8-448e-a5bb-e5f06fb47944" class="numbered-list" start="1"><li>Identity</li></ol><ol type="a" id="fa609267-4fb7-4d52-8890-27ceb34ce9b3" class="numbered-list" start="2"><li>Uniting factors<ol type="i" id="04b5b9bd-2df2-477d-be5b-fbd8bd37f6fb" class="numbered-list" start="1"><li>“what defines our organization?”</li></ol></li></ol></li></ol><ol type="1" id="cb72d498-98c7-486d-9a18-61698144d15c" class="numbered-list" start="2"><li>Tone from the top<ol type="a" id="21760c2c-dcab-49f1-89ef-5dd610df6599" class="numbered-list" start="1"><li>Leader characteristics</li></ol><ol type="a" id="18fbf6a3-a210-4163-8348-dd6c3ad34013" class="numbered-list" start="2"><li>Management styles<ol type="i" id="e0cc9c2e-a7de-405b-87a2-8519fa53a12a" class="numbered-list" start="1"><li>“how do our leaders act?”</li></ol></li></ol></li></ol><ol type="1" id="1a02e341-00cc-46f4-9ac1-3c2e3b76f8f9" class="numbered-list" start="3"><li>Performance<ol type="a" id="627d5234-1c73-4b27-859a-9918422d08bc" class="numbered-list" start="1"><li>Strategy</li></ol><ol type="a" id="e7980b5c-3250-450e-b692-797bfa187de6" class="numbered-list" start="2"><li>Concept of success<ol type="i" id="eaa07c07-4cc7-4e1b-833a-3014bcb58e08" class="numbered-list" start="1"><li>“what does it mean to do well here?”</li></ol></li></ol></li></ol><ol type="1" id="66fe7a24-dc97-4394-9ee1-8e38a31623a4" class="numbered-list" start="4"><li>Social interaction<ol type="a" id="310b501c-c964-4555-be60-8faf553a9069" class="numbered-list" start="1"><li>Socialization</li></ol><ol type="a" id="3e8df744-967f-4664-9a8b-5c600f652cff" class="numbered-list" start="2"><li>Language and stories<ol type="i" id="af730e16-0e07-4765-9a00-f77db2df55f2" class="numbered-list" start="1"><li>“what do people talk about here?”</li></ol></li></ol></li></ol><h2 id="0e953f3d-b351-4ad1-b414-eafb4ae372e1" class="">Types of Change</h2><ol type="1" id="a76dc162-c902-4e6a-91dd-21c4f9d88804" class="numbered-list" start="1"><li>Individual<ol type="a" id="ddc592c5-36b9-4a0f-86e1-bcc67091613f" class="numbered-list" start="1"><li>New role or responsibility</li></ol><ol type="a" id="02e250b3-1269-4af3-919a-000119969af2" class="numbered-list" start="2"><li>New process or performance expectation</li></ol><ol type="a" id="b63475d2-9289-4cd5-91b7-79982a295d16" class="numbered-list" start="3"><li>New location or culture</li></ol></li></ol><ol type="1" id="a6bfe7f6-e0c2-464c-a410-ae39adad4127" class="numbered-list" start="2"><li>Group<ol type="a" id="2c37f904-8182-45e1-959d-b15ed1cabbc1" class="numbered-list" start="1"><li>Performance review or audit</li></ol><ol type="a" id="5a8e3de3-9ae6-4b17-9ebe-fc740d098cce" class="numbered-list" start="2"><li>Improvement of existing product or policy</li></ol><ol type="a" id="23700517-6c85-45c3-9d39-19a9190f8227" class="numbered-list" start="3"><li>New process or product</li></ol></li></ol><ol type="1" id="bf8aeddc-9339-471c-9eb7-6035ff11b3e4" class="numbered-list" start="3"><li>Organization<ol type="a" id="086e63ac-881b-4b54-a577-55944ab55104" class="numbered-list" start="1"><li>New product development</li></ol><ol type="a" id="78649449-e286-4da5-8d2f-9b660688acf3" class="numbered-list" start="2"><li>New or adjacent market entry</li></ol><ol type="a" id="b83c85a4-11da-4e0a-b7bb-64a482616208" class="numbered-list" start="3"><li>New leaders, strategy, or direction</li></ol><ol type="a" id="b2a28ad7-6cab-422e-916a-0ae81a49b016" class="numbered-list" start="4"><li>Organizational redesign or restructuring</li></ol><ol type="a" id="79d71708-a897-4624-9ee4-d8516acc02bf" class="numbered-list" start="5"><li>Merger or acquisition</li></ol></li></ol><h2 id="4fbc01e0-dd72-4dc9-ab5c-5b336ef1140d" class="">Personal Reasons why People Resist Change</h2><ol type="1" id="7013ceb9-18fc-401e-b426-120702e17ec8" class="numbered-list" start="1"><li>Loss of control</li></ol><ol type="1" id="27f151e4-0580-4ae4-9cbe-54ecf1b8bba9" class="numbered-list" start="2"><li>Uncertainty, fear of the unknown</li></ol><ol type="1" id="d5b9d226-1453-4f05-b348-e46a9969208e" class="numbered-list" start="3"><li>Stepping outside one&#x27;s “comfort zone”</li></ol><ol type="1" id="6816accd-3866-4601-b15b-61c8125eb29a" class="numbered-list" start="4"><li>Fear of failure or incompetence; not having needed skills, or looking foolish</li></ol><ol type="1" id="1c96edb0-f9df-46e6-a466-b45347e60139" class="numbered-list" start="5"><li>An imposed change</li></ol><ol type="1" id="55c6e0b6-91f7-4214-b135-f2e763c87a64" class="numbered-list" start="6"><li>Not enough information</li></ol><ol type="1" id="57721149-845b-4991-bafa-de5954ccb46a" class="numbered-list" start="7"><li>Not understanding the purpose or benefits of the change</li></ol><ol type="1" id="82b522e0-f9ab-4786-9122-baa9df892bb9" class="numbered-list" start="8"><li>Lack of clarity on expected outcomes</li></ol><ol type="1" id="ec4429e9-6c7d-44be-9d2d-a8ef4751134e" class="numbered-list" start="9"><li>Timing issues: too soon, too slow, or too frequent</li></ol><ol type="1" id="91111efa-f989-4d46-ae42-6ec1f09e4e19" class="numbered-list" start="10"><li>Multiple demands; experiencing other changes at the same time</li></ol><ol type="1" id="19dbf8cf-ae38-48a1-9cc4-1887699bb281" class="numbered-list" start="11"><li>Genuine sense of loss</li></ol><h2 id="7b395fb8-57ed-418c-ae1d-ed6933920a04" class="">Transformational Leadership</h2><ol type="1" id="4f2bd0ec-0959-4a63-a2fc-26a4a2d40e2e" class="numbered-list" start="1"><li>Takes a holistic view</li></ol><ol type="1" id="e499863c-ab66-4087-a273-793930be0071" class="numbered-list" start="2"><li>Top management support<ol type="a" id="bae85d35-81db-42f9-bfce-2fc69ac9ba16" class="numbered-list" start="1"><li>Supportive supervision</li></ol></li></ol><ol type="1" id="25b1f978-5e25-42bc-9ac6-15b677f1dde6" class="numbered-list" start="3"><li>Education and communication<ol type="a" id="8506a346-537b-4e7e-b3ca-8942be0204ad" class="numbered-list" start="1"><li>Avoid misinformation or poor communication</li></ol></li></ol><ol type="1" id="c1f0a6b8-9686-4cd4-ba76-d6dc242ebd4f" class="numbered-list" start="4"><li>Participation and involvement<ol type="a" id="6ae5074f-7777-443b-8509-4a9707347472" class="numbered-list" start="1"><li>Those that are opposed are brought into the decision process</li></ol></li></ol><ol type="1" id="545f4f27-12db-4a4c-a944-6acb02ee7903" class="numbered-list" start="5"><li>Facilitation and support<ol type="a" id="44c08276-2a07-4c73-bca7-2ae77ae9592d" class="numbered-list" start="1"><li>Provision of various efforts to facilitate adjustment</li></ol></li></ol><ol type="1" id="2fdc61c5-ce20-4674-863d-0f618225c1d8" class="numbered-list" start="6"><li>Reward contributors<ol type="a" id="0464b174-8131-4407-9891-779fc7176efc" class="numbered-list" start="1"><li>Reward people who helped make the change a success</li></ol></li></ol><ol type="1" id="ffeecadd-c908-4e64-9a68-81006829cd39" class="numbered-list" start="7"><li>Co-opt the reluctant individuals</li></ol><h2 id="52a5b59c-6f61-4068-a52f-8c09b2ad4938" class="">Factors that can Inhibit Institutionalization</h2><ol type="1" id="03e97232-51b3-49b4-bf0a-c0b88b1e83a4" class="numbered-list" start="1"><li>Lack of extrinsic rewards</li></ol><ol type="1" id="f43041ec-270c-4a4d-9df1-eadaaea6ca5c" class="numbered-list" start="2"><li>Higher expectations that cannot be fulfilled</li></ol><ol type="1" id="df68f51d-72ce-44fc-af4e-541fd466c93b" class="numbered-list" start="3"><li>New hires are not carefully socialized</li></ol><ol type="1" id="7c7f9675-2037-4f3c-ba6e-9ea8e36a8f56" class="numbered-list" start="4"><li>Employee turnover</li></ol><ol type="1" id="076e23e7-6346-4a11-832b-3db2d96c0500" class="numbered-list" start="5"><li>Key Management supporters of the change effort resign or are transferred</li></ol><ol type="1" id="808e91e8-ddc8-4da4-902f-4836856ec53f" class="numbered-list" start="6"><li>Environmental pressures cause management to regress to more familiar behaviours and abandon change efforts</li></ol></li></ol><p id="cc471a7b-444b-4717-ba50-070adc506c67" class="">
+</p></div></article></body></html>

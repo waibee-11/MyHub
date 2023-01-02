@@ -1,0 +1,741 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>9: Leadership</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="35e03ba1-ca3d-4031-a229-59c0c98675cd" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_5.png" style="object-position:center 40%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🪐</span></div><h1 class="page-title">9: Leadership</h1></header><div class="page-body"><h1 id="85a784a3-f295-4625-b9a6-11b176b7c128" class="">9.1 What is Leadership?</h1><p id="11f54815-eebe-4223-ae6d-b4176718cd38" class="">Leadership occurs when particular individuals exert influence on the goal achievement of others in an organizational context</p><ul id="c6ed5bb8-e0a7-463f-81df-3dea15e6696b" class="bulleted-list"><li style="list-style-type:disc">Effective leadership exerts influence in a way that achieves organizational goals by enhancing the productivity, innovation, satisfaction, and commitment of the workforce</li></ul><ul id="a94500fd-2025-436a-9aac-ca06d36ee4bc" class="bulleted-list"><li style="list-style-type:disc">Leadership is about motivating people and gaining their commitment about what needs to be done and how to get there<ul id="b58f0a25-2b14-47c0-8e3f-474ff9490232" class="bulleted-list"><li style="list-style-type:circle">Effective leaders can change the way people think, feel, and behave, and they can have a positive effect on individuals groups units and even entire organizations</li></ul><ul id="82a95d5d-7b7f-4a17-97af-3d764f495bbe" class="bulleted-list"><li style="list-style-type:circle">Leadership has a strong effect on an organization&#x27;s strategy, success, and very survival</li></ul></li></ul><p id="0965339a-d016-428e-bc44-a5ad0c109abb" class="">
+</p><p id="ad6610ac-a0f3-4a9d-93d1-7c132ea84760" class="">Strategic leadership refers to a leader’s ability to anticipate, envision, maintain flexibility, think strategically, and work with others to initiate changes that will create a viable future for the organization</p><ul id="adb6eb2f-6137-4fed-b518-0acd3465bf9c" class="bulleted-list"><li style="list-style-type:disc">Strategic leaders can provide an organization with a sustainable competitive advantage by helping their organizations compete in turbulent and unpredictable environments, and by exploiting growth opportunities</li></ul><ul id="7a26459a-0c87-4a3d-bf5f-fb1aeeca71d3" class="bulleted-list"><li style="list-style-type:disc">Strategic leaders are open and honest in their interactions with the organization stakeholders, and they focus on the future</li></ul><p id="e0a958ef-af11-4615-a5b3-b366b4fe8466" class="">
+</p><p id="73c2525c-b463-44eb-a0d9-acd0af20af44" class="">In theory, any organizational member can exert influence on other members, thus engaging in leadership</p><ul id="33b0eff0-53a6-4f4f-a3fb-b2c399110152" class="bulleted-list"><li style="list-style-type:disc">In practice though, some members are in a better position to be leaders than others</li></ul><p id="99401066-656e-4149-adfa-9b877e40ef85" class="">
+</p><p id="d832873d-c230-4652-a620-76ecc3146f83" class="">Individuals might also emerge to occupy informal leadership roles or what is known as emergent leadership</p><ul id="9b385957-b1bf-4c3c-9e5f-3e07a02cf8f6" class="bulleted-list"><li style="list-style-type:disc">Emergent leadership refers to the degree to which an individual with no formal status or authority is perceived by one or more team members as exhibiting leader-like influence<ul id="db8bcbd8-1644-4c3a-aadc-b9317d0a0779" class="bulleted-list"><li style="list-style-type:circle">It is the extent to which one is perceived by others as a leader</li></ul></li></ul><p id="e5c49d74-5b79-45c3-a7b5-333825e3f2fd" class="">
+</p><p id="2e021df5-d2e6-400e-ba48-c3230295f50a" class="">When different group members take on the role of leader at various times, it is known as shared leadership</p><ul id="d2494d87-0914-4cda-a8cd-d522f522a9fc" class="bulleted-list"><li style="list-style-type:disc">Multiple team members emerge as informal leaders</li></ul><ul id="8f4b03d1-f62e-47ad-8512-70d69c94fc2e" class="bulleted-list"><li style="list-style-type:disc">Research demonstrates that shared leadership is positively related to team performance and team creativity</li></ul><ul id="0c472ad4-314c-4645-b9c5-a3d99f1dc62d" class="bulleted-list"><li style="list-style-type:disc">Since informal leaders do not have formal authority, they must rely on being well-liked or being perceived as highly skilled to exert influence</li></ul><h1 id="fb37b114-4d24-40b5-bff4-8faeac3df7ab" class="">9.2 Are Leaders Born or Made? The Trait Theory of Leadership</h1><p id="71a72348-098a-4e4c-ba07-6fbf6470ea36" class="">The implicit assumption is that those who become leaders and do a good job of it possess a special set of traits that distinguish them from the masses of followers</p><ul id="0771247c-5003-41c1-a0ba-35e8d2d4fccd" class="bulleted-list"><li style="list-style-type:disc">This approach to leadership is known as the trait theory of leadership<ul id="a877b2a5-c90b-4b1b-8af1-37c58a9a2b90" class="bulleted-list"><li style="list-style-type:circle">According to the trait theory of leadership, leadership depends on the personal qualities or traits of the leader</li></ul></li></ul><h2 id="d66078ee-3233-45d8-ab60-52224396c3e9" class="">Research on Leadership Traits</h2><p id="2b6b3b00-499f-4358-bb60-30f66d3d61b4" class="">What is a trait anyway?</p><ul id="ad0672a8-1be3-4eae-bae1-39e57727863a" class="bulleted-list"><li style="list-style-type:disc">Traits are personal characteristics of individuals, such as physical characteristics, intellectual ability, and personality</li></ul><p id="d48619cb-8b07-4209-bdfa-c32934d32c35" class="">
+</p><p id="f7784a64-2cf3-4c90-b8c5-6c21d2b3e1da" class="">Research on leadership has mostly focused on traits with demographics (gender, age, education), task competence (intelligence), and interpersonal attributes (extraversion)</p><ul id="fe281296-55e8-4d5d-ac67-b071b2a799fa" class="bulleted-list"><li style="list-style-type:disc">Research has shown that many traits are not associated with whether people become leaders, or how effective they are as leaders</li></ul><ul id="8b6fe349-8ccb-45ef-a5c8-0775c6c1c01a" class="bulleted-list"><li style="list-style-type:disc">Research also shows that some traits are associated with leadership</li></ul><p id="4e86ffda-15b4-4d6e-b057-62b4bf270421" class="">As you might expect, leaders tend to be higher than average on these dimensions, although the connections are not very strong</p><p id="ee83f4a0-e635-4e2d-ad40-52fd84c7d91b" class="">All five of the big five dimensions of personality (OCEAN) have been found to be related to leadership emergence, and success </p><ol type="1" id="56534ef5-1184-42bb-b532-8f0609177445" class="numbered-list" start="1"><li>With extraversion and conscientiousness being the most consistent predictors of leadership effectiveness<ol type="a" id="850bc239-ab36-4b10-b7d3-48455630c1f4" class="numbered-list" start="1"><li>A recent review concluded that the personalities of top executives can influence firm performance</li></ol></li></ol><ol type="1" id="5e2c57c4-cb02-487f-afb4-2fb94b33d7b8" class="numbered-list" start="2"><li>A personality trait that has been linked to leadership behaviours and effectiveness is narcissism <ol type="a" id="b479a623-b312-4ba3-8bed-f267d8b892d0" class="numbered-list" start="1"><li>Narcissism is a personality trait that combines grandiosity (self-importance, appearance), attention-seeking, an unrealistically inflated self-view, a need for that self-view to be continuously reinforced through self-regulation, and a general lack of regard for others<ol type="i" id="57ea59b0-dd26-4b23-a0ce-5527ca458961" class="numbered-list" start="1"><li>Narcissistic CEOs engage in questionable behavior such as bullying, fraud, and distorting financial information</li></ol><ol type="i" id="fd1a30bc-fb91-4fb8-a033-0cae35ac558f" class="numbered-list" start="2"><li>They are also more likely to make risky decisions, to spend more on research and development and acquisitions, and to manipulate policies to achieve desired results</li></ol><ol type="i" id="813843a7-cf28-4203-b786-30667d87105b" class="numbered-list" start="3"><li>However, there is also some evidence that CEO narcissism is positively related to innovation, growth, and firm performance<ol type="1" id="cfaf9003-2ef0-4056-bbb2-16c27b1eae8a" class="numbered-list" start="1"><li>CEO narcissism can have both beneficial and detrimental effects on organizations</li></ol></li></ol></li></ol></li></ol><p id="8ddaa6e3-d61e-4f09-93e4-145f7db7584e" class="">
+</p><p id="8ce8a441-2be7-4221-b35c-283be252b5a9" class="">One individual difference variable that seems to be especially important for leadership emergence and effectiveness, is motivation to lead</p><ul id="c91e877a-5fa9-48f0-a9dd-b58fac34d189" class="bulleted-list"><li style="list-style-type:disc">Motivation to lead (MTL) is the desire to attain leadership roles and to expand effort to fulfill leader role requirements</li></ul><h2 id="796ea07c-3cef-4ad2-a83b-c768e6c8684a" class="">Limitations of the Trait Approach</h2><p id="4266c022-694c-437c-ac8d-da66fda643f8" class="">Even though some traits appear to be related to leadership emergence and leadership effectiveness, there are several reasons why the trait approach is not the best means of understanding and improving leadership</p><p id="3b64ac91-ade0-4c07-86ce-168815bad551" class="">
+</p><p id="154715ff-a8e3-462e-a798-e989a8ae0744" class="">In many cases, it is difficult to determine whether traits make the leader, or whether the opportunity for leadership produces the traits</p><ul id="e5f8437c-b09b-4422-82ee-5c0027b2a0ce" class="bulleted-list"><li style="list-style-type:disc">For example, do dominant individuals tend to become leaders, or do employees become more dominant after they successfully occupy leadership roles?<ul id="037116cd-dfe2-46ed-8d31-d4167dafcc11" class="bulleted-list"><li style="list-style-type:circle">If the former is true, we might wish to seek dominant people and appoint them to leadership roles</li></ul><ul id="e471ffc5-f825-4be3-8c76-8b2e5139793a" class="bulleted-list"><li style="list-style-type:circle">If the latter is true, this strategy will not work</li></ul></li></ul><p id="882e5cea-fbb2-4e1c-934d-474cbbd645b8" class="">
+</p><p id="e532ecec-2420-4f83-806f-4c0632f14e66" class="">Furthermore, because the trait approach leads us to believe that a person is more likely to become a leader or to be a more effective leader simply because they possess certain traits</p><ul id="961f3af6-161c-49f0-bb86-269e7d73acec" class="bulleted-list"><li style="list-style-type:disc">It can lead to bias and discrimination when evaluating a leader’s effectiveness, and when making decisions about promoting people to leadership positions</li></ul><p id="8f4ab60f-134f-46d6-9b62-3cb00441923f" class="">
+</p><p id="e695b5f3-a05c-4261-8cb4-39682f4a2273" class="">According to leadership categorization theory, people are more likely to view somebody as a leader and to evaluate them as a more effective leader when they possess prototypical (particular type of person) characteristics of leadership</p><ul id="b2749a6e-79b8-4c34-b4ec-6e4710bfe69e" class="bulleted-list"><li style="list-style-type:disc">For example, research has found that leaders but not employees, were more often assumed to be white by white and non-white research participants, regardless of the percentage of white individuals in an organization and in leadership positions</li></ul><ul id="97c4d932-973b-47ce-a351-fc3afe9d9f3f" class="bulleted-list"><li style="list-style-type:disc">White and non-white participants also evaluated white leaders as more effective and as having more leadership potential than non-white leaders when the leader was credited with their organization&#x27;s success<ul id="eae89cd0-4a3f-4f2c-8d31-40dbdf2acbaf" class="bulleted-list"><li style="list-style-type:circle">Thus, it is not a good idea to focus exclusively on traits when making a decisions and judgments about leadership potential and effectiveness</li></ul></li></ul><p id="bf36b2d2-3dda-4a08-8593-b59aa7e51214" class="">
+</p><p id="3491b04e-22ce-4a88-a980-51be07497b22" class="">The most crucial problem of the trait approach to leadership is its failure to consider the situation in which leadership occurs</p><ul id="9d4747e3-3f60-4836-8bdc-102c93b54ff7" class="bulleted-list"><li style="list-style-type:disc">Intuitively, it seems reasonable that top executives and first-level supervisors might require different traits to be successful</li></ul><ul id="8d288e53-2b0d-4b86-9630-fc23c02d0463" class="bulleted-list"><li style="list-style-type:disc">Similarly physical capabilities might be useful in directing a logging crew, but irrelevant to managing a team of scientists</li></ul><p id="3929ae2f-7b77-4bc8-ad02-0f5cc12f4fba" class="">
+</p><p id="506df2a9-6fa4-4c2d-99b6-5a55db4313cb" class="">In summary, although there are some traits that are associated with leadership, success traits alone are not sufficient for successful leadership</p><ul id="27f924f7-ab22-43a3-9622-2e9de92ee876" class="bulleted-list"><li style="list-style-type:disc">Traits are only a precondition for certain actions that a leader must take to be successful</li></ul><h1 id="eb3bb322-db59-48eb-a5db-c851120f5c8a" class="">9.3 The Behaviour of Leaders</h1><p id="0208babd-8947-410a-9e14-fd4e76e15203" class="">The trait approach is mainly concerned with what leaders bring to a group setting</p><ul id="4190c2da-dfef-4864-a37f-f5768bc76fd6" class="bulleted-list"><li style="list-style-type:disc">The limitations of this approach gradually promoted an interest in what leaders do in group settings</li></ul><p id="9675f51f-61c9-42d9-a1c3-e3e2ad09f01e" class="">
+</p><p id="97a6f173-a1a6-4cea-99c6-a57cfc45ab04" class="">What are the crucial behaviours such leaders engage in and how do these behaviours influence employee performance and satisfaction?</p><h2 id="fc3dffb0-ac1c-4c82-91ff-b9b9b647d50a" class="">Consideration and Initiating Structure</h2><p id="ff41522f-79d5-4bff-917a-0dcd98b560f2" class="">Consideration is the extent to which a leader is approachable and shows personal concern and respect for employees</p><ul id="13066e80-5d48-4137-b575-11f0093baff2" class="bulleted-list"><li style="list-style-type:disc">The considerable leader is seen as friendly and egalitarian (behaving in a way that everyone must be equal), expresses appreciation and support, and is protective of group welfare</li></ul><p id="739f86f7-9923-44dc-8541-15704c44f46c" class="">
+</p><p id="47019275-63da-4574-8622-c2032b8242b1" class="">Initiating structure is the degree to which a leader concentrates on group goal attainment</p><ul id="b222eee2-62b0-4aae-9119-01072e7a3b55" class="bulleted-list"><li style="list-style-type:disc">The structuring leader clearly defines and organizes their own role, and the roles of followers, stresses standard procedures, schedules the work to be done, and assigns employees to particular tasks</li></ul><p id="6efd50b5-31a3-4df2-8b40-3e129021ceb1" class="">
+</p><p id="558b5a64-9375-4b54-904d-851fc870d192" class="">It is important to note that consideration and initiating structure are not incompatible; a leader could be high, low, or average on one or both dimensions</p><h2 id="7ff864e0-9d00-4384-8c97-21cf08bddbd7" class="">The Consequences of Consideration and Structure</h2><p id="e4594605-c186-47d3-8184-83f73f849003" class="">The association between leader consideration, initiating structure, and employee responses, has been the subject of hundreds of research studies</p><ul id="3c8aa780-c1af-4c04-8558-fd1f74bd3aac" class="bulleted-list"><li style="list-style-type:disc">In general, this research shows that consideration and initiating structure, both contribute positively to employee motivation, job satisfaction and leader effectiveness<ul id="5d85adf7-5e2f-477a-b171-5e64351a198f" class="bulleted-list"><li style="list-style-type:circle">However, consideration tends to be more strongly related to follower satisfaction (leader satisfaction and job satisfaction), motivation, and leader effectiveness</li></ul><ul id="ca7452de-5632-475a-a9bf-345e477958a3" class="bulleted-list"><li style="list-style-type:circle">While, initiating structure is slightly more strongly related to leader job performance and group performance</li></ul></li></ul><p id="b2a29c50-4aae-470f-a17c-4a40a0c6ae8c" class="">
+</p><p id="c40ea6e5-aaa5-44cc-ba30-700eb1b5f76e" class="">In addition, there is some evidence that the relative importance of consideration and initiating structure varies according to the nature of the leadership situation</p><ul id="50164c51-5f8d-43c1-9c5d-288a08ffad67" class="bulleted-list"><li style="list-style-type:disc">The effects of consideration and initiating structure often depend on the characteristics of the task, the employee, and the setting in which work is performed</li></ul><h2 id="4fbfb3a8-7901-4b72-8c5b-e94d7e11fa8b" class="">Leader Reward and Punishment Behaviours</h2><p id="02c8e827-87d5-4bef-a05e-f82db99cea0c" class="">Two additional leader behaviours that have been the focus of research are leader reward behaviour, and leader punishment behavior</p><ul id="814f6748-a4cc-464d-ab0a-26216b78eb55" class="bulleted-list"><li style="list-style-type:disc">Leader reward behavior provides employees with compliments, tangible benefits, and desired special treatment<ul id="38b3801c-4d6e-4a3c-9087-81ae1a9e5fb3" class="bulleted-list"><li style="list-style-type:circle">When such rewards are made contingent on meeting performance goals and expectations (contingent reward behaviour), employees should perform at a high level and experience job satisfaction</li></ul><ul id="b42eea93-8b53-41f9-a9e0-2f71bfc9509b" class="bulleted-list"><li style="list-style-type:circle">Under such leadership, employees have a clear picture of what is expected of them and they understand that positive outcomes will occur if they achieve these expectations</li></ul></li></ul><ul id="9402bbb1-5133-4e4c-8e40-4cca87a52177" class="bulleted-list"><li style="list-style-type:disc">Leader punishment behavior involves the use of reprimands or unfavorable task assignments, and the active withholding of raises, promotions, and other rewards<ul id="8caa586d-e798-41b6-a58e-110a649b8b03" class="bulleted-list"><li style="list-style-type:circle">You will recall that punishment is extremely difficult to use effectively, and when it is perceived as random, and not contingent on employee behavior, employees react negatively with great dissatisfaction</li></ul></li></ul><p id="34d7281c-7f24-4298-a2ad-d7ca4cc2a35c" class="">
+</p><p id="696f0272-b93b-4d70-971a-e79a395abcc5" class="">Research on leader reward and punishment behavior has found them to be very effective</p><ul id="18881859-fa3e-4021-8f98-718044b32d0b" class="bulleted-list"><li style="list-style-type:disc">Contingent reward behaviour is positively related to employees perceptions (trust), attitudes (job satisfaction, organizational commitment), and behaviour (effort, performance, organizational citizenship behaviour)</li></ul><ul id="45056e90-c131-4fa1-97ef-a85348e7886c" class="bulleted-list"><li style="list-style-type:disc">And while contingent leadership punishment and behaviour is related to more favorable employee perceptions, attitudes, and behaviour, non-contingent punishment behaviour is related to unfavorable outcomes</li></ul><ul id="1d516464-7926-4c39-8cff-fa362dbfabc2" class="bulleted-list"><li style="list-style-type:disc">Furthermore, the relationships are much stronger when rewards and punishment are made contingent on employee behavior, which means that the manner in which leaders administer rewards and punishment is a critical determinant of the effectiveness<ul id="46a76e6a-8f93-4797-a878-fec5c6844430" class="bulleted-list"><li style="list-style-type:circle">One of the reasons that leader reward and punishment behaviours are positively related to employee attitudes and behaviours is that they lead to more positive perceptions of justice, and lower role ambiguity</li></ul></li></ul><p id="9cd1e8de-fca0-4829-a000-a81cc9dad419" class="">
+</p><h1 id="4a5d116c-e53b-459e-98ae-39c8a5bb0e61" class="">9.4 Situational Theories of Leadership</h1><p id="e576c28b-482d-43f8-a4b5-a18188e2dead" class="">We have referred to the potential impact of the situation on leadership effectiveness several times</p><ul id="61b32819-8aae-4e44-bc68-5323ee947828" class="bulleted-list"><li style="list-style-type:disc">Specifically, the situation refers to the setting in which influence attempts occur<ul id="f916e85b-7c40-4296-9b90-e5bf5f515245" class="bulleted-list"><li style="list-style-type:circle">The basic premise of situational theories of leadership is that the effectiveness of a leadership style is contingent on the setting</li></ul><ul id="f7a57638-9a2d-4d0c-8106-aa456d094db7" class="bulleted-list"><li style="list-style-type:circle">The setting includes the characteristics of the employees, the nature of the task they are performing, and the characteristics of the organization</li></ul></li></ul><h2 id="961a3e16-ef81-4c57-a733-f3dc31e3e757" class="">Fiedler’s Contingency Theory</h2><p id="0dd43517-8b62-44ee-a136-dbcfd60360ae" class="">Fred Fiedler spent decades developing and refining the first situational theory of leadership, called contingency theory</p><ul id="22ad630a-c93b-4456-9d8f-0813e1a36b52" class="bulleted-list"><li style="list-style-type:disc">This name stems from the notion that the association between leadership orientation, and group effectiveness, is contingent on the extent to which the situation is favorable for the exertion of influence<ul id="153c03d7-f5f9-41b2-b86d-31e18c4e15bd" class="bulleted-list"><li style="list-style-type:circle">In other words, some situations are more favorable for leadership than others, and these situations require different orientations on the part of the leader</li></ul></li></ul><p id="476c32bd-3fdb-4091-a5cd-f3a6161f33cf" class="">
+</p><p id="958cbfd9-2a62-4510-a2ca-44bcc7206481" class="">Leadership orientation is measured by having leaders describe their least-preferred coworker (LPC)</p><ul id="ca128de2-088c-4f37-bd18-7d91120269c8" class="bulleted-list"><li style="list-style-type:disc">This person may be a current or past coworker</li></ul><ul id="8ef65b8a-2cdf-4d1b-8442-39e2b2db0995" class="bulleted-list"><li style="list-style-type:disc">In either case, it is someone with whom the leader has had a difficult time getting the job done<ul id="38e14a02-f315-478e-9d5f-fe2d42766212" class="bulleted-list"><li style="list-style-type:circle">The leader who describes the LPC relatively favorably (high LPC score), can be considered relationship-oriented - meaning that, despite the fact that the LPC is or was difficult to work with, the leader can still find positive qualities in the LPC</li></ul><ul id="836bd8dd-8e69-4057-b20d-0dd08cf91217" class="bulleted-list"><li style="list-style-type:circle">On the other hand the leader who describes the LPC unfavorably (low LPC score) can be considered task-oriented</li></ul></li></ul><p id="15b19d48-6baf-4fc0-bf91-9715ebc8f0b5" class="">
+</p><p id="d872f5c9-336c-4bb0-a74c-49bdfd34c4e2" class="">Fiedler has argued that the LPC score reveals a personality trait that reflects the leader’s motivational structure</p><ul id="8e1a9003-8378-4a9a-8216-09262dd66c17" class="bulleted-list"><li style="list-style-type:disc">High LPC leaders are motivated to maintain interpersonal relations, while low LPC leaders are motivated to accomplish the task</li></ul><ul id="e329dbd0-d222-487f-994d-2249cad5dd3a" class="bulleted-list"><li style="list-style-type:disc">Despite the apparent similarity, the LPC score is not a measure of consideration or initiating structure<ul id="81fb8ed0-8348-4e74-8389-44f2e0e06a46" class="bulleted-list"><li style="list-style-type:circle">These are observed behaviours, while the LPC score is an attitude of the leader toward work relationships</li></ul></li></ul><p id="57b0e61b-31a8-4423-bb43-c0532891a4b0" class="">
+</p><p id="903fec03-654d-48aa-967c-656d5edd9e25" class="">Situational favorableness is the ‘contingency’ part of contingency theory</p><ul id="84061feb-7da9-4a93-9802-8103c70944fa" class="bulleted-list"><li style="list-style-type:disc">That is, it specifies when a particular LPC orientation should contribute most to group effectiveness</li></ul><ul id="be01727b-cb7a-4f18-ac64-f26935bda3e4" class="bulleted-list"><li style="list-style-type:disc">A situation is considered to be most favorable when the relationship between the leader and the group members is good (leader-member relations), that the task at hand is highly structured (task structure), and when the leader has been granted formal authority by the organization to tell others what to do (position power)</li></ul><ul id="58db8899-46f8-4e8d-a882-20d1ce826643" class="bulleted-list"><li style="list-style-type:disc">The situation is least favorable when leader member relations are poor, the task is unstructured, and their leader has weak position power</li></ul><p id="ab95a268-e800-45a7-bb12-a79ba84eb130" class="">We can arrange the possible combinations of situational factors into eight octants that form a continuum of favorability</p><ul id="b2122668-65d8-4566-8837-d08b26257086" class="bulleted-list"><li style="list-style-type:disc">This model indicates that a task orientation (low LPC) is most effective when the leadership situation is very favorable (octants I, II, III), or when it is very unfavorable (octant VIII)</li></ul><ul id="1b1293a8-a365-4c3a-8b66-773f949f91ac" class="bulleted-list"><li style="list-style-type:disc">On the other hand, a relationship orientation (high LPC) is most effective in conditions of medium favorability (octants IV, V, VI, and VII)</li></ul><p id="56b22c64-2020-43f7-846a-653adee9a866" class="">
+</p><p id="9be246ef-1727-410a-8ec7-827c0e928606" class="">Why is this so?</p><p id="c5abd2d5-b820-4ca0-b935-94699a52d2a0" class="">Fiedler argues that leaders can ‘get away’ with a task orientation when the situation is favorable; and employees are ‘ready’ to be influenced</p><ul id="2265468a-4e94-4544-8174-66cb6949ba6c" class="bulleted-list"><li style="list-style-type:disc">Conversely, when the situation is very unfavorable for leadership, task orientation is necessary to get anything accomplished</li></ul><ul id="78242d6a-8490-4fbe-99a3-1479d9efb099" class="bulleted-list"><li style="list-style-type:disc">In conditions of medium favorability, the boss is faced with some combination of an unclear task or a poor relationship with employees<ul id="29ebaedc-1082-440a-9238-604a03308812" class="bulleted-list"><li style="list-style-type:circle">Here a relationship orientation will help to make the best of a situation that is stress provoking but not impossibly bad</li></ul></li></ul><h2 id="c6fbf843-6a21-4c17-9077-6061f91d5229" class="">House’s Path-Goal Theory</h2><p id="b6f03bb8-b7de-42ef-9398-6eb8e743068b" class="">Robert House proposed a situational theory of leadership called path-goal theory</p><ul id="b46883e6-8a22-4a21-95ff-bcb27d24b19e" class="bulleted-list"><li style="list-style-type:disc">This theory is concerned with the situations under which various leader behaviours are most effective</li></ul><h3 id="f2e898a3-d872-43e1-9b66-8d8730802e9a" class="">The Theory</h3><p id="83e6c2a2-0d43-4de8-a034-7ff69f5d0c89" class="">According to House, the most important activities of leaders are those that clarify the paths to various goals of interest to employees</p><ul id="ae020d7f-784a-4dc2-b0a6-e16854c3b12a" class="bulleted-list"><li style="list-style-type:disc">Such goals might include a promotion, a sense of accomplishment, or a pleasant work climate</li></ul><ul id="9433e4d5-6939-4200-8116-619e886e5ddf" class="bulleted-list"><li style="list-style-type:disc">In turn, the opportunity to achieve such goals should promote job satisfaction, leader acceptance, and high effort<ul id="56af03cf-980c-4c00-89bf-6457113d5a53" class="bulleted-list"><li style="list-style-type:circle">Thus, the effective leader forms a connection between employee goals and organizational goals</li></ul></li></ul><p id="d199c236-766d-4b70-b5c2-302f498169fd" class="">
+</p><p id="35d2c8cb-af44-4abc-94c0-36564f0d627e" class="">House argues that to provide job satisfaction and leader acceptance, leader behavior must be perceived as immediately satisfying, or as leading to future satisfaction</p><ul id="aca10487-3d2d-43d9-b049-5a8f5c8023da" class="bulleted-list"><li style="list-style-type:disc">Leader behaviour that employees see as unnecessary or unhelpful will be resented</li></ul><ul id="69257ee8-3666-415b-b338-b8763398090c" class="bulleted-list"><li style="list-style-type:disc">House contends that, to promote employee effort, leaders must make rewards dependant on performance, and ensure that employees have a clear picture of how they can achieve these rewards<ul id="f4bd23f5-2c90-4755-93f0-ecde0e4fbb81" class="bulleted-list"><li style="list-style-type:circle">To do this, the leader might have to provide support through direction, guidance, and coaching<ul id="c08e7083-d1b9-4eaf-8e51-f83eb4e46b07" class="bulleted-list"><li style="list-style-type:square">For example, the bank teller who wishes to be promoted to supervisor should exhibit superior effort when their boss promises a recommendation contingent on good work and explains carefully how the teller can do better in their current job</li></ul></li></ul></li></ul><h3 id="12d780a8-ebbe-44b1-a5c1-5275d5a36f19" class="">Leader Behaviour</h3><p id="cf7a29dd-9e19-47f1-aace-91c7a8208958" class="">Path goal theory is concerned with the following four specific kinds of leader behavior:</p><ol type="1" id="e6fb4191-8ff3-4b13-a09e-217dadc95f94" class="numbered-list" start="1"><li>Directive behavior<ol type="a" id="84e2e655-2860-4a5a-8c98-c78f8c77bd19" class="numbered-list" start="1"><li>Directive leaders schedule work, maintain performance standards, and let employees know what is expected of them (identical to initiating structure)</li></ol></li></ol><ol type="1" id="5198d5ff-cbae-49bb-82ba-7da497de7cd7" class="numbered-list" start="2"><li>Supportive behavior<ol type="a" id="104fb52c-088b-47c7-b2bf-52ab067f6b4e" class="numbered-list" start="1"><li>Supportive leaders are friendly, approachable, and concerned with pleasant interpersonal relationships (identical to consideration)</li></ol></li></ol><ol type="1" id="af9a3d65-73e7-4853-9466-7c7268c95fdb" class="numbered-list" start="3"><li>Participative behavior<ol type="a" id="cec59156-7ed2-4981-b12c-0b2cc0ef10d2" class="numbered-list" start="1"><li>Participative leaders consult with employees about work-related matters and consider their options</li></ol></li></ol><ol type="1" id="47677d3d-89cc-41f1-afb5-1aa08db3f40f" class="numbered-list" start="4"><li>Achievement-oriented behaviour<ol type="a" id="7a01c92a-9041-48a2-b6a0-1b18cddd8df5" class="numbered-list" start="1"><li>Achievement-oriented leaders encourage employees to exert high effort and strike for a high level of goal accomplishment</li></ol></li></ol><p id="0fc6a28a-c88f-4aaa-9144-0105b692d7ae" class="">
+</p><p id="a827a0d1-94f6-4399-a953-fcbfec4a8b8c" class="">According to the theory, the effectiveness of each set of behaviours depends on the situation that the leader encounters</p><h3 id="faf2658d-0514-418a-a50e-b3bab6561c14" class="">Situational Factors</h3><p id="fd9b546f-56a1-4a1b-b860-6174e2a3d570" class="">Path goal theory concerns itself with two primary classes of situational factors</p><ol type="1" id="40db189d-5412-4d98-bc24-7fa549b37ed7" class="numbered-list" start="1"><li>Employee characteristics</li></ol><ol type="1" id="31f414fe-0bee-4499-add0-c54025ad2196" class="numbered-list" start="2"><li>Environmental factors</li></ol><p id="081f1382-8c75-452a-9e44-3da6f4e9ab44" class="">This diagram illustrates the role of these situational factors in the theory</p><ul id="511eaddd-693b-4d20-8f08-e4c53f727c4b" class="bulleted-list"><li style="list-style-type:disc">Put simply, the impact of leader behaviour on employee satisfaction, effort, and acceptance of the leader, depends on the nature of the employees and the work environment</li></ul><p id="10076b66-16b4-45c9-803f-c31173461274" class="">According to the theory, different types of employees need or prefer different forms of leadership, here are a few examples:</p><ol type="1" id="8ac04cbe-694d-4706-93e1-77f20f6a25dd" class="numbered-list" start="1"><li>Employees who are high need achievers should work well under achievement-oriented leadership</li></ol><ol type="1" id="a19bad39-834f-4de5-b634-fa0164665847" class="numbered-list" start="2"><li>Employees who prefer being told what to do should respond fast to a directive leadership style</li></ol><ol type="1" id="4b26d455-63f6-4fd2-89d0-8e9883d93a06" class="numbered-list" start="3"><li>When employees feel that they have rather low task abilities, they should appreciate directive leadership and coaching behavior<ol type="a" id="a0ebaff0-46b1-4795-9a6d-62491114a069" class="numbered-list" start="1"><li>When they feel quite capable of performing the tasks, they will begin to view such behaviours as unnecessary and irritating</li></ol></li></ol><p id="f136e654-5ce9-4736-b6cc-1eebe4714fa5" class="">As you can observe from these examples, leaders might have to tailor their behaviour to the needs, abilities, and personalities of individual employees</p><p id="b584a45f-d507-4b1b-a567-d0ccf64d9251" class="">Also according to the theory, the effectiveness of leader behaviour depends on the particular work environment, such as the following examples:</p><ol type="1" id="52c9990b-0007-493d-abc3-106bc2846351" class="numbered-list" start="1"><li>When tasks are clear and routine, employees should perceive directive leadership as redundant and unnecessary imposition<ol type="a" id="e2e89e42-73a3-4a6f-b8a2-991ded721372" class="numbered-list" start="1"><li>Making use of directive leadership here should reduce satisfaction and acceptance of the leader</li></ol><ol type="a" id="93335dab-b0dd-4e06-a81b-6aab27ef4edf" class="numbered-list" start="2"><li>Similarly, participative leadership would not seem to be useful when tasks are clear, since there is little in which to participate</li></ol></li></ol><ol type="1" id="f7b80379-02b1-46d8-a293-322169909fc4" class="numbered-list" start="2"><li>When tasks are challenging, but ambiguous, employees should appreciate both directive and participative leadership<ol type="a" id="50d734ac-3061-43b0-840f-cff792fafc13" class="numbered-list" start="1"><li>Such styles should clarify the path to good performance and demonstrate that the leader is concerned with helping employees to do a good job</li></ol></li></ol><ol type="1" id="5ca68778-6cdd-427f-a633-a783f8f460fc" class="numbered-list" start="3"><li>Frustrating dissatisfied jobs should increase employee appreciation of supportive behavior<ol type="a" id="836f50f0-fe00-4d93-b90c-949577c84088" class="numbered-list" start="1"><li>To some degree, such support should compensate for a disliked job, although it should probably do little to increase effort</li></ol></li></ol><p id="9c4e396d-8fd3-4422-8383-69e506f184cd" class="">
+</p><p id="9fc47503-c8b0-414a-8707-cb470053df77" class="">As you can see from these examples of environmental factors, effective leadership should take advantage of the motivating and satisfying aspects of jobs, while offsetting or compensating for those job aspects that demotivate or dissatisfy</p><ul id="4f4cdf3f-ad5b-4193-96d9-23befbf0b4b7" class="bulleted-list"><li style="list-style-type:disc">There is substantial evidence that supportive or considerate leader behaviour is most beneficial in supervising routine, frustrating or dissatisfied jobs, and some evidence that directive or structuring leader behaviour is most effective on ambiguous, less structured jobs<ul id="0b5fe7f0-7aad-49b0-aba5-f85871570dbc" class="bulleted-list"><li style="list-style-type:circle">The theory appears to work better in predicting an employees’ job satisfaction and acceptance of the leader, than in predicting job performance</li></ul></li></ul><p id="24127bb5-aeab-4714-80d0-8e8513ace5fc" class="">
+</p><h1 id="f1a6401d-89ab-4407-845c-d5e30e80c937" class="">9.5 Participative Leadership: Involving Employees in Decisions</h1><p id="d46a85d6-7752-4674-97bd-1e557032a193" class="">In the discussion of path-goal theory, we raised the issue of participative leadership</p><h2 id="a78eedbd-3eb5-484b-8d09-f34a6dc98398" class="">What is Participative Leadership?</h2><p id="dd393056-8379-490d-9bef-f49a50c3b808" class="">At a very general level, participative leadership means involving employees in making work-related decisions</p><ul id="da601b74-7544-4ed7-9da3-71e64e152c9a" class="bulleted-list"><li style="list-style-type:disc">The term involving is intentionally broad</li></ul><p id="aa0f891f-381f-4211-b2ec-0a338a56151a" class="">This is Illustrated in the diagram</p><ul id="1306fb2a-4a44-41b7-90a7-c59b675c9ec0" class="bulleted-list"><li style="list-style-type:disc">Here we see that leaders can vary in the extent to which they involve employees in decision-making<ul id="80b42880-79ae-4726-bc53-56a008fa24f4" class="bulleted-list"><li style="list-style-type:circle">Minimally, participation involves obtaining employee opinion before making a decision</li></ul><ul id="2bb50e15-ca74-489e-ab28-cd9755200a8f" class="bulleted-list"><li style="list-style-type:circle">Maximally, it allows employees to make their own decisions within agreed-on limits<ul id="4a665412-696d-41f0-af8b-9021027053e7" class="bulleted-list"><li style="list-style-type:square">As the “area of freedom” on the part of employees increases, the leader is behaving in a more participative manner</li></ul></li></ul></li></ul><p id="2a6e036c-1669-4aab-a509-1e1f8cbc9958" class="">
+</p><p id="d834ee5f-02a1-4cbe-ac61-be4ba31d6f2b" class="">There is, however, an upper limit to the area of employee freedom available under participation</p><ul id="a1fec182-6302-4421-939f-ec220da2d04a" class="bulleted-list"><li style="list-style-type:disc">Participative leadership should not be confused with the abdication (failure to fulfill a responsibility) of leadership which is almost always ineffective</li></ul><p id="3dae9aa8-e90b-4aaa-a647-f802e466181f" class="">
+</p><p id="cfbb82b4-a573-4988-8a08-014d660f9f97" class="">Participation can involve individual employees or the entire group of employees that reports to the leader</p><ul id="144a4f82-2f14-4f59-84e1-535979a35fb7" class="bulleted-list"><li style="list-style-type:disc">For example, participation on an individual basis might work best when setting performance goals for particular employees, planning employee development, or dealing with problem employees</li></ul><ul id="39973ca9-26ab-48e5-9642-9a261fd57c5d" class="bulleted-list"><li style="list-style-type:disc">On the other hand, the leader might involve the entire work group in decision-making when determining vacation schedules, arranging for telephone coverage during the lunch hour, or deciding how to allocate scarce resources, such as travel money, or administrative help<ul id="4df90fb8-e6da-4543-be54-f4e809df140c" class="bulleted-list"><li style="list-style-type:circle">As these examples suggest, the choice of an individual or group participation strategy should be tailored to specific situations</li></ul></li></ul><h2 id="94c8c5f3-0c16-40f4-8aed-c615d51c3285" class="">Potential Advantages of Participative Leadership</h2><p id="3dafe618-3ab4-4fef-b8a0-f7a115adc951" class="">Just why might participation be a useful leadership technique?</p><h3 id="d99c83f2-8eab-4eed-9939-001cfe9483fc" class="">Motivation and Performance</h3><p id="aebcee46-e5fb-49f0-9057-6a85e62caa77" class="">Participation can increase the motivation of employees</p><ul id="b19daad0-8e91-4ca3-a9ab-66f0c247d21a" class="bulleted-list"><li style="list-style-type:disc">In some cases, participation permits them to contribute to the establishment of work goals and to decide how they can accomplish these goals</li></ul><ul id="6c92ac32-d38f-4f88-a2f7-d40fa202d82c" class="bulleted-list"><li style="list-style-type:disc">It might also occur to you that participation can increase intrinsic motivation by enriching employees’ jobs<ul id="668a1bdb-5f98-44f5-85f0-180e77eaa610" class="bulleted-list"><li style="list-style-type:circle">Enriched jobs include high task variety and increased employee autonomy</li></ul></li></ul><ul id="dcb9e189-0213-40ee-9b53-9b4f971a8a65" class="bulleted-list"><li style="list-style-type:disc">Participation add some variety to the job and promotes autonomy by increasing the “area of freedom”</li></ul><ul id="bc10c467-34b2-47b3-847f-e5b6c7907f7a" class="bulleted-list"><li style="list-style-type:disc">There is also substantial evidence that employees who have the opportunity to participate in work related decisions report more job satisfaction and higher task performance and organizational citizenship behavior toward the organization than those who do not<ul id="2a98f8bf-4b55-48dd-adf9-9de17053f03c" class="bulleted-list"><li style="list-style-type:circle">These results are due in part to a positive effect on employee empowerment, and trust in one’s supervisor</li></ul></li></ul><h3 id="ed367b7c-e76b-4bad-803a-66b2046548b1" class="">Quality</h3><p id="1f7ab0c2-8bf4-4533-9233-5bf5bba1a935" class="">Participation can enhance quality in at least two ways</p><ol type="1" id="8c0ab52b-72b5-4a75-8099-c962ec0d381a" class="numbered-list" start="1"><li>An odd saying argues that “two heads are better than one”<ol type="a" id="0628f40c-4caa-42bb-a773-85488222e6f1" class="numbered-list" start="1"><li>While this is not always true, there do seem to be many cases in which two heads, lead to higher quality decisions than the leader could make alone</li></ol><ol type="a" id="f2613860-ad27-4e03-95bb-8565480acd26" class="numbered-list" start="2"><li>In particular, this is most likely when employees have special knowledge to contribute to the decision or if the boss’s knowledge has become outdated</li></ol></li></ol><ol type="1" id="a3db3dd5-fee7-4f61-9358-1d90a9a6a938" class="numbered-list" start="2"><li>High levels of participation often empower employees to take direct action to solve problems without checking every detail with the boss<ol type="a" id="35f13dff-e1a3-430d-b8fe-cce734320d2d" class="numbered-list" start="1"><li>Empowerment gives employees the authority, opportunity, and motivation to take initiative and solve problems</li></ol></li></ol><h3 id="731fadf7-b468-44de-bc36-98ef55d83127" class="">Acceptance</h3><p id="32738ba4-f59f-4f3a-9b17-2d36c781eaee" class="">Even when participation does not promote motivation or increase the quality of decisions, it can increase the employees’ acceptance of decisions</p><ul id="5cd2274c-294e-4200-9b92-0d0e34ce89e2" class="bulleted-list"><li style="list-style-type:disc">This is especially likely when issues of fairness are involved<ul id="0aec1c91-1703-48b2-b6eb-0aafd4d6c17c" class="bulleted-list"><li style="list-style-type:circle">For example, consider the problems of scheduling vacations or telephone coverage during lunch hours</li></ul><ul id="4a1ef813-8c00-41c5-8be1-d21bcb3ed2e9" class="bulleted-list"><li style="list-style-type:circle">Here the leader could probably make high-quality decisions without involving employees<ul id="c6c5353d-bef6-49cb-9494-dba1a7dfe2a5" class="bulleted-list"><li style="list-style-type:square">However, the decisions might be totally unacceptable to the employees because they perceive them as unfair</li></ul></li></ul></li></ul><ul id="653bdba4-abb2-4fcf-8e3b-eba2be993831" class="bulleted-list"><li style="list-style-type:disc">Involving employees in decision-making could result in solutions of equal quality that do not provoke dissatisfaction<ul id="e394fa4b-372f-4cb8-a23f-e746fd2abe77" class="bulleted-list"><li style="list-style-type:circle">Public commitment and ego involvement probably contribute to the acceptance of such decisions</li></ul></li></ul><h2 id="d424777a-1da0-49ce-923a-325c837b6046" class="">Potential Problems of Participative Leadership</h2><h3 id="111e0428-9c12-4b9c-aa6e-f78316e49ed1" class="">Time and Energy</h3><p id="ac0b381a-6480-4360-ba25-3d5d16d9d4f9" class="">Participation is not a state of mind, it involves specific behaviours on the part of the leader (soliciting ideas, calling meetings), and these behaviours use time and energy</p><ul id="36166a31-41bc-4c7a-9de8-187895535313" class="bulleted-list"><li style="list-style-type:disc">When a quick decision is needed, participation is not an appropriate leadership strategy</li></ul><h3 id="9a688dd3-e730-4459-9670-05972e3a04ec" class="">Loss of Power</h3><p id="7f521378-b180-46d3-9047-dc7a27952f28" class="">Some leaders feel that a participative style will reduce their power and influence</p><ul id="e7467d11-e165-4484-8e5d-1a289b8a667e" class="bulleted-list"><li style="list-style-type:disc">Sometimes they respond by asking employees to make trivial decisions of the: “what colour should we paint the lounge” type<ul id="cb0b7ecf-415a-4efe-a78d-56d315603e21" class="bulleted-list"><li style="list-style-type:circle">Clearly the consequences of such decisions (for motivation, quality, and acceptance) are near zero</li></ul></li></ul><ul id="df61531b-b86a-4990-bed8-fcfb78789ea9" class="bulleted-list"><li style="list-style-type:disc">A lack of trust in employees and a fear that they will make mistakes is often the hallmark of an insecure manager</li></ul><h3 id="45635e60-383c-4c64-905b-7a8ea9ef4589" class="">Lack of Receptivity or Knowledge</h3><p id="9aa77f93-e7d6-49c6-916a-a10d1ebe9829" class="">Employees might not be receptive to participation</p><ul id="1c9f745c-609d-4193-85c0-1ca999759a1c" class="bulleted-list"><li style="list-style-type:disc">When the leader is distrusted, or when a poor labor climate exists, they might resent “having to do management&#x27;s work”<ul id="d71239b9-5fb3-4e5c-aca0-9065396f9cef" class="bulleted-list"><li style="list-style-type:circle">Even when receptive, employees might lack the knowledge to contribute effectively to decisions</li></ul><ul id="f3495166-ca2c-4479-8653-2276931168ff" class="bulleted-list"><li style="list-style-type:circle">Usually, this occurs because they are unaware of external constraints on their decisions</li></ul></li></ul><h2 id="cbde0caf-aaea-4347-92d8-6b010467de60" class="">Vroom and Jago’s Situational Model of Participation</h2><p id="e5c7bd98-d727-4c16-a819-c9d85749b291" class="">(Does not appear on class PowerPoint, skipping for now)</p><h1 id="7a4008ba-a5d9-4363-9ca7-8444da2bcf69" class="">9.6 Exchange Relationship-Based Theories of Leadership</h1><p id="c15fdfea-5648-4673-b367-f567272f9773" class="">In the previous sections of the chapter, we have focused on leadership traits and behaviours</p><ul id="4c8b9e40-9a8d-4fd6-9b61-7f3fe0938be4" class="bulleted-list"><li style="list-style-type:disc">In this section, we describe three leadership theories that have to do with the nature or type of relationship between leaders and followers</li></ul><h2 id="907a69ef-0acd-40b6-86ab-1b0a459f101a" class="">Leader-Member Exchange (LMX) Theory</h2><p id="07ea0897-0552-4b53-bc6c-e86400dee603" class="">Unlike other theories of leadership that focus on leader traits and behaviours, leader membership exchange, or LMX Theory, focuses on the relationship that develops between a leader and an employee</p><ul id="a480934b-5e68-4073-8e48-1ab31855a8ec" class="bulleted-list"><li style="list-style-type:disc">So, it is considered a social exchange relationship-based approach to leadership</li></ul><p id="c65ceab0-d81c-488e-8504-1d38f72e011e" class="">
+</p><p id="dc1e55ad-d7af-4291-8907-0842c6ad8948" class="">The basic idea behind LMX theory is that over time and through the course of their interactions, different types of relationships develop between leaders and employees</p><ul id="60890ab7-90d6-457f-abf9-d27285d38160" class="bulleted-list"><li style="list-style-type:disc">As a result, each relationship that a leader develops with an employee will be different and unique, and these relationships will differ in terms of the quality of the relationship</li></ul><ul id="23473094-74e9-4770-83ac-4224e527472d" class="bulleted-list"><li style="list-style-type:disc">Effective leadership processes result when leaders and employees develop and maintain high-quality social exchange relationships</li></ul><p id="911ecf9b-b1fb-4d80-b8ef-d77ae1fc53ab" class="">
+</p><p id="5f52807b-19cc-4bb1-ba64-9d167b4e2e10" class="">However not all of the relationships a leader forms with employees in a work group will be of high quality</p><ul id="2c26d2d3-99a6-4a46-b522-46e26ccd3196" class="bulleted-list"><li style="list-style-type:disc">This is something known as LMX differentiation (LMXD), which refers to the variability in the quality of LMX relationships between members of the same work group</li></ul><p id="12780d8d-bdee-46dc-b919-0d092e0269d8" class="">
+</p><p id="1c2eca2a-bfe0-4002-91a0-4574aadceabd" class="">The basis for the effects of LMX on employees is social exchange theory and the norm of reciprocity</p><ul id="cb7d7440-352a-40a5-b788-ac1eccc04b17" class="bulleted-list"><li style="list-style-type:disc">Social exchange theory assumes (as a fact) that individuals who are treated favorably by others will feel a sense of obligation to reciprocate by responding positively and returning that favorable treatment in some manner<ul id="302283c5-4136-47fa-baab-d9378d956360" class="bulleted-list"><li style="list-style-type:circle">This is to say that employees in a high-quality relationship with their supervisor will reciprocate with extra effort and higher commitment and performance</li></ul></li></ul><p id="4e681c23-0338-485a-a6d1-4e5b5917708f" class="">
+</p><p id="0fd388de-b874-4168-97b6-7a75ed4fadef" class="">High-quality relationships, or high LMX, involve a high degree of mutual influence and obligation as well as trust, loyalty, open communication, and respect between a leader and an employee</p><ul id="5200a25d-c374-4ccb-8e18-cd3dca9c2b0a" class="bulleted-list"><li style="list-style-type:disc">High LMX leaders provide employees with challenging tasks and opportunities, greater latitude and discretion, task-related resources, and recognition</li></ul><ul id="e6d29b93-dd5f-4554-91b8-421b8f0206ee" class="bulleted-list"><li style="list-style-type:disc">In high-quality relationships, employees perform tasks beyond their job descriptions as suggested by social exchange theory</li></ul><p id="929d1cc2-ee93-4325-b0d0-22887f732265" class="">
+</p><p id="3ed011c8-9b6e-4595-9090-6dd259cc2cdd" class="">At the other extreme are low quality relationships, or low LMX</p><ul id="7f71aba9-5ac0-4b1c-8248-5ee72b859559" class="bulleted-list"><li style="list-style-type:disc">Low LMX is characterized by low levels of trust, respect, obligation, and mutual support</li></ul><ul id="1c3df591-30e4-452d-aa20-1903b231e643" class="bulleted-list"><li style="list-style-type:disc">In low-quality relationships, the leader provides less attention and latitude to employees, and so employees do only what their job descriptions and formal role requirements demand of them</li></ul><h3 id="19683d6c-a5ea-4105-9fcf-a6a4b7ee90d3" class="">Research Evidence</h3><p id="8eb1ee09-2dec-43cf-a4ff-2307bc69bddc" class="">Relationships between leaders and employees do differ in terms of the quality of the relationship and that this has implications for work outcomes</p><ul id="116e9b4d-26c6-440d-b055-38c7e898afeb" class="bulleted-list"><li style="list-style-type:disc">Employees with higher-quality LMX have higher self-efficacy, overall satisfaction, satisfaction with supervision, organizational commitment, organizational citizenship behaviour (OCB), role clarity, job performance, creativity, career outcomes, and lower role conflict, counterproductive performance, and turnover intentions</li></ul><p id="35eb5748-51b6-4c6d-a621-20c25bc6c989" class="">
+</p><p id="e99ebe35-f243-4033-a120-7ad7cc26518c" class="">The relationship between LMX and performance, and organizational citizenship behaviour, is primarily due to greater levels of trust</p><ul id="cce3d5e2-a216-46ff-a685-c9ab4523e630" class="bulleted-list"><li style="list-style-type:disc">In general, research on LMX theory has found that higher quality LMX relationships are associated with positive outcomes for leaders, employees, work units and organizations, and these relationships have been found to generalize across cultures</li></ul><p id="9f947bfb-e1b7-4744-be9e-b48b5e1bfe0f" class="">
+</p><p id="9c21f9a8-922f-4e13-945f-97d1cae5b360" class="">However, there is some evidence that LMX differentiation can be detrimental to group harmony and processes, which can be harmful to group performance</p><ul id="ebf8b8cd-efd5-4437-a7f8-399818b84109" class="bulleted-list"><li style="list-style-type:disc">The negative effect of LMX differentiation on group effectiveness seems to be especially likely when the reason for LMX differentiation is based on a leader&#x27;s personal liking of group members<ul id="9fe00f50-847c-498f-b709-d447f6bb8a7c" class="bulleted-list"><li style="list-style-type:circle">When LMX differentiation is based on group members performance, it is positively related to group performance<ul id="a19007f4-b23b-47a2-b72b-883d3be85f70" class="bulleted-list"><li style="list-style-type:square">So you can say that the effect of LMX differentiation on group effectiveness depends on how a leader differentiates group members</li></ul></li></ul></li></ul><h2 id="615eb432-3218-4689-ab15-7deed23fc5f3" class="">Transactional and Transformational Leadership Theory</h2><p id="1358c0ae-a7bb-459d-b2a9-fe07306e53fe" class="">So far in the chapter we have been describing traditional theories of leadership involving an approach to leadership that is known as transactional leadership, which is the most common style of leadership in organizations</p><ul id="b643418b-0dce-41d1-8b15-88644b708da9" class="bulleted-list"><li style="list-style-type:disc">Transactional leadership is leadership that is based on a straightforward exchange relationship between the leader and the followers; leaders set goals and provide direction and support, employees perform well and the leader rewards them</li></ul><ul id="5d6b35f0-01fc-4758-bb7d-8d877cabcf8b" class="bulleted-list"><li style="list-style-type:disc">The leader uses a participatory style, and the employees come up with good ideas</li></ul><p id="51fb4ed8-f218-45f8-a54d-d1f321dcb165" class="">
+</p><p id="9ba59028-845e-40b9-a706-81d0f92543af" class="">Transactional leadership behavior involves contingent reward behavior, which as discussed earlier in the chapter, involves rewarding followers for meeting performance goals and expectations, and management by exception</p><ul id="f8dbd79c-c1e6-4dbf-9274-2581c9879005" class="bulleted-list"><li style="list-style-type:disc">As in path goal theory, the leader clarifies expectations and establishes the rewards for meeting them</li></ul><p id="53c743c1-aaff-4ebe-8853-3d28823fafdf" class="">
+</p><p id="a6c766af-4e65-40d1-b5ce-2c716eeb3847" class="">Management by exception is the degree to which leaders take corrective action on the basis of results of leader-follower transactions</p><ul id="c23aa130-756a-41f9-85eb-86034899aba3" class="bulleted-list"><li style="list-style-type:disc">They monitor follower behavior, anticipate problems, and take corrective actions before the behaviour creates serious problems</li></ul><p id="8c426964-ebbd-4d3d-a7da-6c21105fdcc2" class="">
+</p><p id="78256fa0-d92a-4c5f-af6e-aaa767afe91b" class="">There are two forms of management by exception:</p><ol type="1" id="e5aa32ed-a6a1-4d18-bb7e-2a28b2130e1d" class="numbered-list" start="1"><li>Management by exception-active (MBEA)<ol type="a" id="dc698dfd-242f-4049-a15f-cd1c007a702a" class="numbered-list" start="1"><li>This involves routinely monitoring the behaviour of followers and actively searching for and correcting deviations from the norm as they happen</li></ol></li></ol><ol type="1" id="338b0f4a-568d-4607-8912-fe9eff256201" class="numbered-list" start="2"><li>Management by exception-passive (MBEP)<ol type="a" id="1af0e253-8e09-419f-8516-ea5764f3c513" class="numbered-list" start="1"><li>This involves correcting mistakes only after they have occurred</li></ol></li></ol><p id="4390b2fe-1899-4652-aa55-767f1547cb3b" class="">
+</p><p id="ea27195a-3b10-441a-9e31-969bef8939a5" class="">Although it might be difficult to do well, such leadership is routine in the sense that it is directed mainly toward bringing employee behaviour in line with organizational goals</p><ul id="45a7402a-c860-42e5-a1b5-40961d9cfb74" class="bulleted-list"><li style="list-style-type:disc">Research on transactional leadership has found that it is positively related to follower task performance and contextual performance (organizational citizenship behaviour), and this is due mostly to contingent reward behavior, rather than management by exception</li></ul><p id="5c28fc74-4774-4c4a-83bf-58962c0a1ca0" class="">
+</p><p id="b576855d-3cb0-453d-9da4-fde97570a061" class="">However, you might be aware of some dramatic examples of leadership in which leaders have a more profound effect on followers, by giving them a new vision that instills true commitment to a project, a department, or an organization</p><ul id="6e6d0eae-4015-42eb-b187-ed87d169b3c7" class="bulleted-list"><li style="list-style-type:disc">Such leadership is called transformational leadership because the leader changes the beliefs and attitudes of followers to correspond to this new vision, and motivates them to achieve performance beyond expectations</li></ul><ul id="84bc6e05-9114-4d5d-a62a-c675d7d9ec64" class="bulleted-list"><li style="list-style-type:disc">Leaders tend to go beyond playing a more institutional figurehead role, and even beyond a transactional leadership role to truly transform employees’ thinking and the nature of their business</li></ul><p id="f6d8b3a6-3973-4dac-ab2d-8d31457b6a39" class="">
+</p><p id="0e1e2f25-6889-4269-9f0a-8ba5819fda5e" class="">Transformational leadership can occur in less visible settings as well</p><ul id="cbab969a-bc67-4259-acc6-71fdaecdbca3" class="bulleted-list"><li style="list-style-type:disc">For example, a new coach might revitalize a sorry peewee soccer team, or an energetic new director might turn around a moribund (at the point of death) Community Association using the same types of skills</li></ul><p id="276904b6-07fb-4855-a1ea-4f1b09a15340" class="">
+</p><p id="9d746d2f-4762-4956-8461-6f904025ecc8" class="">But what are the behaviours of these transformational leaders who encourage considerable effort and dedication on the part of followers?</p><ul id="b11c0a4c-f817-46fd-a84b-97dee8e1fd9d" class="bulleted-list"><li style="list-style-type:disc">Transformational leaders are usually good at the transactional aspects of clarifying paths to goals and rewarding good performance<ul id="743ec284-cd7e-4a57-8f6b-de92e4840aa9" class="bulleted-list"><li style="list-style-type:circle">But there are also other qualities that set transformational leaders apart from their transactional colleagues</li></ul></li></ul><p id="b21dc38d-0d77-442a-af10-48992bb6c67f" class="">
+</p><p id="4a2cf072-89c6-4da2-bf16-18ee5d35d767" class="">In particular, there are four key dimensions of transformational leader behavior:</p><h3 id="dbe8b6b5-91fb-4284-bfbb-cfd77a511828" class="">Intellectual Stimulation</h3><p id="409ad413-9fb3-4bdb-9ac1-2564906ebb71" class="">Intellectual stimulation contributes, in part, to the ‘new vision’ aspect of transformational leadership</p><ul id="47cbbdcb-9ee1-4365-a0d9-7759d8c61a01" class="bulleted-list"><li style="list-style-type:disc">People are stimulated to think about problems, issues, and strategies in new ways</li></ul><ul id="714e9021-3e3a-4623-bda5-69a8276b863d" class="bulleted-list"><li style="list-style-type:disc">The leader challenges options, takes risks, and solicits followers ideas<ul id="eb3991ec-6b52-4145-9fec-afa79b566dfe" class="bulleted-list"><li style="list-style-type:circle">Often, creativity and novelty are at work here</li></ul></li></ul><h3 id="f55fdc56-e907-4cd5-a211-9f449a38a318" class="">Individualized Consideration</h3><p id="6794164f-0b08-4a87-a894-c9d521dc0e1e" class="">Individualized consideration involves treating employees as distinct individuals, indicating concern for their needs and personal development, and serving as a mentor or coach when appropriate</p><ul id="4dcc6b16-7aa8-4aff-8585-d8ffb1e2ed28" class="bulleted-list"><li style="list-style-type:disc">The emphasis is on one-on-one attempts to meet the concerns and needs of the individual in question, in the context of the overall goal or mission</li></ul><h3 id="79f1a42c-fe12-45fe-9396-13e27ed3e890" class="">Inspirational Motivation</h3><p id="569186db-4c95-43d8-86d8-3515e2cf6979" class="">Inspirational motivation involves the communication of visions that are appealing and inspiring to followers</p><ul id="37df5194-d29b-43b0-b724-87b56ae295be" class="bulleted-list"><li style="list-style-type:disc">Leaders with inspirational motivation have a strong vision for the future based on values and ideals</li></ul><ul id="f344c139-1a91-41c7-974b-a36560cb1d92" class="bulleted-list"><li style="list-style-type:disc">They stimulate enthusiasm, challenge followers with their high standards, communicate optimism about future goal attainment, and provide meaning for the task at hand</li></ul><h3 id="cf05ebc0-bdb5-4a72-af8a-59ee527a5f00" class="">Charisma (or Idealized Influence)</h3><p id="d1aa6dfb-3180-4887-bbae-ee1b4b54ad48" class="">Charisma is the fourth, and by far the most important aspect of transformational leadership</p><ul id="b24539b7-a3b8-4268-9075-8ec46e8975c4" class="bulleted-list"><li style="list-style-type:disc">Charisma is a term stemming from a Greek word meaning “favoured” or “gifted”</li></ul><ul id="7a150a7e-b0b9-407a-b83d-658947a7844f" class="bulleted-list"><li style="list-style-type:disc">Charismatic individuals have been portrayed throughout history as having personal qualities that give them the potential to have extraordinary influence over others</li></ul><ul id="38706757-8971-4b3f-a3fc-df6b4d5cf231" class="bulleted-list"><li style="list-style-type:disc">They tend to command strong loyalty, and devotion, and this, in turn, inspires enthusiastic dedication and effort directed toward the leaders chosen mission<ul id="84220cd0-2fa2-4c16-8885-c08a07bba44c" class="bulleted-list"><li style="list-style-type:circle">Followers come to trust and identify with charismatic leaders and to internalize the values and goals they hold</li></ul><ul id="c7eb1fba-1a79-45e8-83e1-e2f452402544" class="bulleted-list"><li style="list-style-type:circle">Charisma provides the emotional aspect of transformational leadership</li></ul></li></ul><p id="2838d879-1b71-455d-aa32-b4439fe31696" class="">
+</p><p id="28137ffd-28c9-461a-ba66-8d12ae6f122d" class="">It appears that the emergence of Charisma is a complex function of traits, behaviours, and being in the right place at the right time</p><ul id="a7efbdb4-bd5e-4bac-ae69-6c8b46c74c89" class="bulleted-list"><li style="list-style-type:disc">Prominent traits include self-confidence, dominance, and a strong conviction in one&#x27;s beliefs</li></ul><ul id="3a457548-82a1-4c43-9470-1b8d8b98d8dc" class="bulleted-list"><li style="list-style-type:disc">Charismatic leaders often act to create an impression of personal success and accomplishment</li></ul><ul id="fa6db855-0835-42f2-96f8-d0e13f0a8a48" class="bulleted-list"><li style="list-style-type:disc">They hold high expectations for follower performance while at the same time expressing confidence in followers’ capabilities<ul id="3a8ba5c7-0e8d-4843-b0ec-115d09459229" class="bulleted-list"><li style="list-style-type:circle">This enhances the self-esteem of the followers</li></ul></li></ul><ul id="8daa931c-e770-4a0c-8cb7-69b40d388ad6" class="bulleted-list"><li style="list-style-type:disc">The goals set by charismatic leaders often have a moral or ideological flavour</li></ul><ul id="26c92470-a3ec-4811-ad34-75b7c913524a" class="bulleted-list"><li style="list-style-type:disc">In addition, charismatic leaders often emerge to articulate the feelings of followers in times of stress or discord (disagreement)<ul id="a3fb97e3-0ece-49ce-855a-6a03253fd23a" class="bulleted-list"><li style="list-style-type:circle">If these feelings go against an existing power structure, the leader might be perceived as especially courageous</li></ul></li></ul><h3 id="189b0296-3a21-4a01-876c-b6530877dfb3" class="">Research Evidence</h3><p id="fc54cd0c-9b1d-43fe-add2-fc1e4efcd055" class="">Several reviews of research on transformational leadership have concluded that transformational leadership is strongly related to follower motivation, work engagement, satisfaction, organizational commitment, leader performance, leader effectiveness, and individual, group, and organizational performance</p><ul id="32cb4443-1bb4-48ee-96e5-7baf8dd59e69" class="bulleted-list"><li style="list-style-type:disc">In addition, charismatic leadership has been found to be strongly related to follower satisfaction, and leadership effectiveness</li></ul><p id="b48594f0-446c-4180-a449-e6bb5c32372e" class="">
+</p><p id="7175f0b8-148c-4930-bed5-53acf9ad796d" class="">Comparisons between transformational leadership and contingent reward behaviours indicate that transformational leadership is more strongly related to follower satisfaction with the leader and with leader effectiveness </p><ul id="702d1e01-50ff-4aae-a0da-dee41949350e" class="bulleted-list"><li style="list-style-type:disc">While contingent reward behaviour is more strongly related to follower job satisfaction and leader job performance</li></ul><ul id="51e37e4b-4e68-473c-b840-9b0facd006b8" class="bulleted-list"><li style="list-style-type:disc">However, compared to other forms of leader behavior (initiating structure, consideration, contingent reward behaviour), transformational leadership has been found to be the most consistent predictor of effective leadership</li></ul><ul id="7e275ae6-c058-4925-89a1-4e8a641069c2" class="bulleted-list"><li style="list-style-type:disc">CEO transformational leadership is positively related to organizational performance, especially under conditions of environmental uncertainty and in small to medium-sized organizations</li></ul><p id="b2ff36c2-628f-43ba-877d-c5be83bac9af" class="">
+</p><p id="f0cd7d2d-d6b8-4681-a9a3-0b8f10925ab3" class="">Transformational leadership seems to be especially effective during times of change, and for obtaining employees’ commitment to a change</p><ul id="43c5381b-b428-41f4-b927-5b30f241a5d3" class="bulleted-list"><li style="list-style-type:disc">Employees with transformational leaders have been found to be more committed to, and less likely to, resist a large-scale organizational change</li></ul><h1 id="25ecc7be-b969-470c-8b45-75c7cb72d1a4" class="">9.7 Theories of Positive Leadership</h1><p id="490bf983-d713-4fbd-ab8f-777e068502e8" class="">Positive leadership focuses on leader behaviours and interpersonal dynamics the increase followers’ confidence and result in positive outcomes, beyond task compliance, such as motivating followers to go beyond expectations, positive self development, and pro-social behaviours</p><ul id="02ddfa66-9420-4472-b908-2c5e78b657e3" class="bulleted-list"><li style="list-style-type:disc">In this section we describe four theories of positive leadership</li></ul><h2 id="8da92a76-0fee-441d-a093-9fcdbdba413d" class="">Empowering Leadership</h2><p id="dd04cd16-81ae-4907-8a72-c2897f01f5d8" class="">Traditional theories of leadership focus on how leaders influence and motivate employees to work toward organizational goals, largely through initiating structure and directive behaviours</p><ul id="dfa6501f-816f-427b-9b79-8ab04f5e2357" class="bulleted-list"><li style="list-style-type:disc">These theories were developed at a time when organizations were more hierarchical and bureaucratic</li></ul><p id="7698d539-d69c-49ee-a53e-8ad96ea7bb35" class="">
+</p><p id="e6397dd3-c4a6-404f-a133-0574264805c0" class="">Many organizations today, however, are flatter, more flexible, and less bureaucratic, and employees in these organizations have more autonomy and responsibility in how they perform their jobs</p><ul id="10781327-5b0d-4332-965e-4c649f7fed1a" class="bulleted-list"><li style="list-style-type:disc">This calls for a style of leadership that enables employees to make decisions and take actions on their own without direct supervision, or what is known as empowering leadership</li></ul><p id="173e3ceb-f8bc-490f-82e5-7cc3b84ca72a" class="">
+</p><p id="5f59f5fd-d2a9-4b8c-8a6f-d206649bb054" class="">Empowering leadership involves implementing conditions that enable power to be shared with employees</p><ul id="19c3bb85-d9ea-48d8-a015-53277d26d9d5" class="bulleted-list"><li style="list-style-type:disc">Empowering leaders highlight the significance of employees’ work, provide participation and autonomy in decision-making, express confidence in employees’ capabilities, and remove bureaucratic constraints or hindrances to performance<ul id="05cbc802-9465-4586-a6c0-59a1c3b316a7" class="bulleted-list"><li style="list-style-type:circle">As a result, employees experience a state of psychological empowerment that consists of a feeling that their work is personality important (meaning), a belief in their ability to successfully perform more tasks (competence), freedom to choose how to initiate and carry out their tasks (self-determination), and a belief that their behaviour is making a difference (impact)</li></ul></li></ul><ul id="9b415b5f-965d-4651-98de-63abb51dea6f" class="bulleted-list"><li style="list-style-type:disc">Empowering leadership provides employees with a greater feeling of control over their work and a sense that they can make a difference in their organization’s effectiveness</li></ul><p id="f7b04a29-f0e3-4b0f-8319-c087bb125c91" class="">
+</p><p id="5b015ebf-9c90-472c-8775-a8b89f856b4b" class="">Empowering leadership has been found to be associated with high self-efficacy, and this was related to higher job performance and customer service satisfaction</p><ul id="2f4b244d-362d-4ec1-b796-ec1d8acaa56c" class="bulleted-list"><li style="list-style-type:disc">Employees with less Product/Industry knowledge and experience benefited the most from empowering leadership</li></ul><ul id="22c015db-d9b6-4bf2-85ad-d1b0289275e6" class="bulleted-list"><li style="list-style-type:disc">A study on teams found that those with empowering leaders improve their performance over time to a greater extent than teams with directive leaders<ul id="1730796c-6aed-46d3-8a12-46735b8e336a" class="bulleted-list"><li style="list-style-type:circle">Empowering leadership has also been found to be important for facilitating the creativity and socialization of newly hired employees</li></ul></li></ul><h2 id="3336fddf-0acd-4001-bccf-381a9d23d8b0" class="">Ethical Leadership</h2><p id="2e92e936-2b19-4d7c-ab08-c7315c4704a5" class="">Ethical leadership involves the demonstration of normatively appropriate conduct (openness, fairness, honesty) through personal actions and interpersonal relationships, and the promotion of such conduct to followers through two-way communication, reinforcement, and decision-making</p><ul id="f30363aa-99a6-4394-a173-5d5581f028a3" class="bulleted-list"><li style="list-style-type:disc">Ethical leaders model what is considered to be normatively appropriate behaviour, such as honesty, trustworthiness, fairness, and care</li></ul><ul id="247cea8a-c91e-4391-8f69-863614726433" class="bulleted-list"><li style="list-style-type:disc">They make ethics salient (noticeable) in the workplace and draw attention to it by engaging in explicit ethics-related communications and by setting ethical standards</li></ul><ul id="6b9d2d39-0192-4cda-b1ed-5ada85813b2a" class="bulleted-list"><li style="list-style-type:disc">They reward ethical behavior, discipline those who do not follow ethical standards, and punish unethical behavior</li></ul><ul id="a1722222-502e-4551-874e-4f09bd08dc7d" class="bulleted-list"><li style="list-style-type:disc">Ethical leaders also consider the ethical consequences of their decisions and make principled and fair decisions that can be observed and emulated by others</li></ul><ul id="1fd6eca0-9805-4088-9769-992950211186" class="bulleted-list"><li style="list-style-type:disc">Ethical leaders care about people and the broader society, and seek to do the right thing personally and professionally</li></ul><p id="e638b903-b2d9-4e3d-8916-3c8508b8d0fb" class="">
+</p><p id="e5a5dc4e-c521-4170-bfe6-84c0778df95f" class="">Several reviews of research on ethical leadership have found that ethical leadership is positively related to more favorable evaluations of leaders, positive job attitudes and greater performance, work engagement, and negatively related to job stress and strains, turnover intentions, and counterproductive work behaviours such as employee deviance</p><ul id="b8daede7-ed49-4f5f-a36a-592a48358da2" class="bulleted-list"><li style="list-style-type:disc">Ethical leadership behaviour is also positively related to employees’ psychological well-being</li></ul><ul id="3a7fc382-ff5d-4b74-af7d-86b9b8159118" class="bulleted-list"><li style="list-style-type:disc">The relationship between ethical leadership and positive work outcomes was found to be due to trust in the leader<ul id="179734a2-1e0a-4753-a3d6-f26d1f50a002" class="bulleted-list"><li style="list-style-type:circle">In other words, employees trust ethical leaders and trust leads to more positive job attitudes and job performance</li></ul></li></ul><p id="c3e85aba-4d51-416c-a7fe-703d446fb737" class="">
+</p><p id="787ec944-5785-4613-9492-dfc60205f79f" class="">It is worth noting that the positive relationships between ethical leadership, trust, and work outcomes is for promotion-focused ethical leadership behavior, which involves the encouragement of normatively appropriate behaviour</p><ul id="6fc185a3-7aad-45c5-81c5-b7214325d27b" class="bulleted-list"><li style="list-style-type:disc">In contrast, prevention-focused ethical leadership behavior, which involves the discouragement of normatively inappropriate behaviour, has been found to be negatively related to trust and work outcomes</li></ul><ul id="51aee9b5-1a6a-4e8e-be42-0275fda168e6" class="bulleted-list"><li style="list-style-type:disc">Furthermore, the positive effects of promotion-focused ethical leadership behavior are strongest when the leader is perceived to be a moral person</li></ul><p id="0ce9735d-a31a-40a1-9f96-50e67963fcff" class="">
+</p><p id="be0a3137-f2d5-4ff6-b315-db38100646a4" class="">Finally, it is also worth noting that the extent to which an organization has an ethical organizational climate is influenced by ethical leadership</p><ul id="7186d39e-5217-43b7-8588-e0b508437740" class="bulleted-list"><li style="list-style-type:disc">Ethical organizational climate is the shared perceptions that employees have about ethical policies, practices, and procedures, in formal organizational systems</li></ul><ul id="e5179b5f-6274-4988-a102-b7127ea12c6e" class="bulleted-list"><li style="list-style-type:disc">In other words, the ethical behaviour of leaders has a significant positive influence on the ethical climate of an organization<ul id="c5bcd64a-133c-405b-96d9-380bf2575367" class="bulleted-list"><li style="list-style-type:circle">Employees who perceive their leaders as ethical are more likely to view their work context as ethical, and to engage in ethical behaviours</li></ul></li></ul><h2 id="ca2cf464-8303-472b-a3e7-a2f16cfde674" class="">Authentic Leadership</h2><p id="4f971c01-9e08-4bd2-a6ed-a3978a85691c" class="">Authentic leadership is a positive form of leadership that involves being true to oneself</p><ul id="f54dc457-01d1-429f-8574-8d2a188c0966" class="bulleted-list"><li style="list-style-type:disc">Authentic leaders know and act upon their true values, beliefs, and strengths, and they help others do the same<ul id="df716c09-7b00-4dad-8402-7feca6e3410a" class="bulleted-list"><li style="list-style-type:circle">Their conduct and behaviour is guided by their internal values</li></ul><ul id="39858308-b1c8-4677-95b4-d27fd739cdf1" class="bulleted-list"><li style="list-style-type:circle">There is a consistency between their true values, beliefs, and actions<ul id="4733925d-be7f-45fc-b427-b56b682a9d55" class="bulleted-list"><li style="list-style-type:square">Authentic leaders earn the respect and trust of their followers</li></ul><ul id="c6df1a6a-30ea-4880-9d33-125748e9a221" class="bulleted-list"><li style="list-style-type:square">Authentic leaders are perceived by their followers as being high in moral perspective and as open and fair in decision-making</li></ul></li></ul></li></ul><p id="f5f73fc2-fcfe-4651-ab83-5a9a40e7ecce" class="">
+</p><p id="b355d3ea-aef1-40f8-8a08-ae949ab71a75" class="">Authentic leadership involves four distinct but related behaviours:</p><ol type="1" id="108e689f-2d2f-457d-b9dd-47b2085697e5" class="numbered-list" start="1"><li>Self-awareness<ol type="a" id="7235674c-e5f9-451f-9096-85363278f63a" class="numbered-list" start="1"><li>An accurate understanding of one’s strengths and weaknesses and an awareness of one&#x27;s impact on others</li></ol><ol type="a" id="aac4095e-b81a-469b-ab96-139cf6ddaa56" class="numbered-list" start="2"><li>Authentic leaders gain insight into themselves through interactions with others and possess accurate self-knowledge</li></ol></li></ol><ol type="1" id="8b4d0aee-78b1-44a4-a1a1-4749daae0f94" class="numbered-list" start="2"><li>Relational transparency<ol type="a" id="8bb8aab6-b1af-4675-b36c-b414690b6f15" class="numbered-list" start="1"><li>The presenting of one&#x27;s true or authentic self to others and the open sharing of information and expressions of one&#x27;s true thoughts and feelings</li></ol></li></ol><ol type="1" id="00913c80-f53c-4592-a79d-ba0787c49a63" class="numbered-list" start="3"><li>Balanced processing<ol type="a" id="a2950187-fc9b-4644-9710-4741c3ce44c7" class="numbered-list" start="1"><li>The objective analysis of all relevant information before making a decision and consideration of views that challenge when&#x27;s own position</li></ol></li></ol><ol type="1" id="69f0b72d-192f-42de-947d-9eaedbd30e60" class="numbered-list" start="4"><li>Internalized moral perspective<ol type="a" id="8d9ce2cd-ab2e-4351-99cb-ee04440662c2" class="numbered-list" start="1"><li>Internal moral standards and values that guide behaviour and decision-making</li></ol><ol type="a" id="9942885f-36a1-4032-9008-4594426965b6" class="numbered-list" start="2"><li>Authentic leaders exhibit behaviour that is consistent with their internal values and standards, and they resist social pressures</li></ol></li></ol><p id="ae0a0b10-d283-473b-ab15-0fca59cc37dc" class="">
+</p><p id="5f71322d-775b-4c10-9e74-0b5b2aecdc4e" class="">Authentic leadership has positive effects on a work-related outcomes</p><ul id="a800b922-ddc6-48d1-b2f4-be8095340dd7" class="bulleted-list"><li style="list-style-type:disc">Followers of authentic leaders have found to have higher trust in the leader, organizational commitment, job satisfaction, and satisfaction with the supervisor and to exhibit higher organizational citizenship behavior, work engagement, ethical, and prosocial behaviours</li></ul><p id="09248ee2-a2ef-4f05-97c0-ac137d670f98" class="">
+</p><p id="ac43aeb1-494e-41fa-b8d2-021dfbbab8b3" class="">Authentic leadership has also been found to have a positive effect when work groups</p><ul id="1961dc0a-17f6-469d-a6b5-6be55bd1ad25" class="bulleted-list"><li style="list-style-type:disc">For example, in a study on work groups in a large bank, authentic leadership was positively related to the psychological capital of the group (self-efficacy, hope, optimism, and resilience) and trust among group members, which led to a higher level of group citizenship behaviours and performance<ul id="cc7f1af3-88fd-4a5b-8f83-5a9ff03572a4" class="bulleted-list"><li style="list-style-type:circle">Team member authenticity was related to higher quality teamwork behaviour, and team productivity</li></ul></li></ul><h2 id="7fd69394-db43-485f-9e87-7ff26d70ae17" class="">Servant Leadership</h2><p id="cc3602dc-18f2-4990-ab32-79701bd39298" class="">Servant leadership is a form of leadership that involves going beyond one&#x27;s own self-interest and having a genuine concern to serve others and a motivation to lead</p><ul id="3bb82a9f-c992-4689-b9ca-596e87e2a5a4" class="bulleted-list"><li style="list-style-type:disc">Unlike other theories of leadership, the focus of servant leadership is a concern for the needs of followers and their well-being</li></ul><ul id="d97f8269-a88d-4f3e-b22b-931406ca2468" class="bulleted-list"><li style="list-style-type:disc">Servant leadership emphasizes the needs of followers and their growth and development as well as the needs of communities within and outside of the organization<ul id="0e8378ae-cfb6-4e54-8f8b-4da3bd36a8d0" class="bulleted-list"><li style="list-style-type:circle">A servant leader is somebody who wants to serve first and lead second, rather than somebody who wants to lead first</li></ul><ul id="a9fbf25c-151c-4dd3-88a0-3968f1eac443" class="bulleted-list"><li style="list-style-type:circle">They place the needs of their followers before their own needs and focus on helping their followers grow to reach their maximum potential</li></ul></li></ul><p id="22ff4c79-3cee-49b6-839a-1176fe970381" class="">
+</p><p id="66221076-114b-4fd5-8bb2-559c872c899d" class="">Six key characteristics of servant leaders:</p><ol type="1" id="22abaa88-4807-419e-b824-deaab353b3ef" class="numbered-list" start="1"><li>Empowering and developing people<ol type="a" id="3b51ee57-cd15-44de-b28f-51461f26839a" class="numbered-list" start="1"><li>Providing others with a sense of personal power and encouraging their personal development; a belief in the intrinsic value of each individual and the realization of each person&#x27;s abilities and what the person can still learn</li></ol></li></ol><ol type="1" id="c4fcd1a7-1b4b-456d-a020-cd99bb215c8b" class="numbered-list" start="2"><li>Humility<ol type="a" id="7865a14f-f003-4965-bc3e-a798ed160795" class="numbered-list" start="1"><li>Actively seeking the contributions of others and a placing their interests first<ol type="i" id="b81abca3-cbab-4025-baf1-0a95640ca130" class="numbered-list" start="1"><li>Facilitating the performance of others and providing them with support</li></ol></li></ol></li></ol><ol type="1" id="255ba0d9-35ae-4a59-a43f-ae40bd6c5d99" class="numbered-list" start="3"><li>Authenticity<ol type="a" id="30ff4c2b-d23d-4bcc-8463-83fc855e092f" class="numbered-list" start="1"><li>This involves expressing one&#x27;s true self in ways that are consistent with one&#x27;s inner feelings and thoughts, and accurately representing internal states, intentions, and commitments</li></ol></li></ol><ol type="1" id="aeadff1f-794b-43e7-b556-1568339e4575" class="numbered-list" start="4"><li>Interpersonal acceptance<ol type="a" id="ba215d2a-6867-4155-88a2-1f4a33c130ad" class="numbered-list" start="1"><li>The ability to understand and experience the feelings of others and to create an atmosphere of trust in which others will feel accepted</li></ol></li></ol><ol type="1" id="bc16b9fc-2f04-48a2-9eb8-05eb798bb9e5" class="numbered-list" start="5"><li>Providing direction<ol type="a" id="4f65e071-c346-407e-866f-ba19a5ea9bb5" class="numbered-list" start="1"><li>Ensuring that people know what is expected of them and considering followers’ abilities, needs, and input when providing direction</li></ol></li></ol><ol type="1" id="454a6b5c-6549-487c-8c2e-14930f4a6345" class="numbered-list" start="6"><li>Stewardship<ol type="a" id="9e3b5bd5-7574-41d7-9052-0e5cc8833e83" class="numbered-list" start="1"><li>Focusing on service rather than control and self-interest and encouraging others to act in the common interest</li></ol></li></ol><p id="2562441b-fec4-4b11-be93-fdcb7df7388f" class="">
+</p><p id="aa73a3b0-ecc1-4d22-8e02-16a7d2574db9" class="">Research on servant leadership indicates that servant leadership is positively related to trust in management, perceptions of organizational justice, needs satisfaction, job satisfaction, organizational commitment, work engagement, job performance, and creative performance</p><ul id="7be3c5c9-b312-431c-92b0-6257fe8ae7b1" class="bulleted-list"><li style="list-style-type:disc">Servant leadership has also been found to be related to organizational citizenship behaviours because it increases employees’ self-efficacy, commitment to the supervisor, and perceptions of procedural justice<ul id="5b0473dc-0f9f-401d-85f2-54802edbd2d4" class="bulleted-list"><li style="list-style-type:circle">A study of departments in a chain of grocery stores found that employees in departments that had servant leaders, had a higher perception of being treated fairly and were more likely to exhibit helping behaviours</li></ul></li></ul><h1 id="dff690d3-9713-41c1-8552-a598e43344b9" class="">9.8 Gender and Leadership</h1><p id="bca2f9ba-1952-4696-88db-26379389babd" class="">Different socialization experiences could lead men and women to learn different ways of exerting influence on others</p><ul id="4894ab96-564e-4e07-a7ea-a1304b1301ac" class="bulleted-list"><li style="list-style-type:disc">On the other hand, men and women should be equally capable of gravitating towards the style that is most appropriate in a given setting</li></ul><p id="68eeeabd-7531-4985-95da-85e5ec6b8adf" class="">
+</p><p id="e9d4dc3b-d341-4af2-bc52-cbbdcd9d618d" class="">A number of reviews have found that there are some differences in leadership style between men and women in organizational settings</p><ul id="9e3f105a-de3a-433e-ab04-9c78741d0b27" class="bulleted-list"><li style="list-style-type:disc">Some have concluded that women tend to be more participative or democratic than men, and as a result they are changing the business world</li></ul><ul id="ca7d876f-adb4-4f53-8ced-4ea24b6578ca" class="bulleted-list"><li style="list-style-type:disc">One theory holds that women have better social skills, which enable them to successfully manage the give and take that participation requires<ul id="ba0b6de3-83ef-4267-8dca-2d03623284a2" class="bulleted-list"><li style="list-style-type:circle">Another theory holds that women avoid more autocratic styles because they violate gender stereotypes and lead to negative reactions</li></ul></li></ul><p id="22103189-0884-4c1c-a3bf-5daaae37b98d" class="">
+</p><p id="709331ff-7b16-4638-a45d-56ba8e68131d" class="">Another study found female leaders to be more transformational than male leaders, and they also engaged in more of the contingent reward behaviours associated with transactional leadership</p><ul id="8c72897f-6633-4100-a019-0c83ab3116a7" class="bulleted-list"><li style="list-style-type:disc">Male leaders engaged in more of the other components of transactional leadership, such as management by exception and laissez-faire leadership<ul id="f6e9408d-75ed-49bf-a5a6-07b292061924" class="bulleted-list"><li style="list-style-type:circle">Laissez-faire is a passive form of leadership that involves the avoidance or absence of leadership and is negatively related to leader effectiveness</li></ul></li></ul><p id="9eea8fd4-2d4a-4c9f-abc5-8b34bb55ace2" class="">
+</p><p id="ddcea89e-dc99-4543-a43a-74292bb7f429" class="">What is more interesting about the findings is that those aspects of leadership style in which women exceed men are all positively related to leadership effectiveness</p><ul id="63dc9e78-9d73-4b53-bba2-e07a0ab0640f" class="bulleted-list"><li style="list-style-type:disc">While those leadership aspects in which men exceed women have weak, negative, or null relations to leadership effectiveness<ul id="79fb7cf5-ecd0-4f35-872a-6987ce555972" class="bulleted-list"><li style="list-style-type:circle">The findings attest to the ability of women to be highly effective leaders in contemporary organizations</li></ul></li></ul><p id="29c7aa84-815d-49e6-81b2-849bb8378757" class="">
+</p><p id="d990c585-d70c-4ecf-8c9f-bd937b47d61c" class="">So do men and women differ in leadership effectiveness?; there are some differences but only in certain situations</p><ul id="31179b5b-7804-4f4e-8f53-e546d895e3f1" class="bulleted-list"><li style="list-style-type:disc">For example, men are perceived as more effective in organizations that are masculine and male dominated (government), while women are, similarly, for their counterparts (social service organizations, educational organizations)</li></ul><ul id="bdbd658c-fffc-4e69-b487-ef1c06523782" class="bulleted-list"><li style="list-style-type:disc">Women are also perceived as more effective leaders in middle management positions</li></ul><ul id="0e286bc2-ace5-4283-b613-d724dd132202" class="bulleted-list"><li style="list-style-type:disc">There is some evidence that having more women on an organization’s board of directors and top management team and a female CEO is associated with an organization’s financial performance, especially in countries with greater gender egalitarianism (equality)</li></ul><p id="1acc200f-891d-4417-b3e8-54068c2d687e" class="">
+</p><p id="617defcd-42d5-439e-a964-6d8822abac1b" class="">While the evidence clearly indicates that women can be highly effective leaders, the reality is that women still hold very few senior leadership positions in Canadian organizations</p><ul id="2ca5df9f-57a6-402c-ade4-60c0d3df5de4" class="bulleted-list"><li style="list-style-type:disc">Women currently only hold 6 percent of CEO positions at S&amp;P 500 companies</li></ul><ul id="d54fe4b8-4023-4e67-8513-98631401cc02" class="bulleted-list"><li style="list-style-type:disc">Women executives earn 56% less on average than men and the gap is even wider for racialized women, who earn 32% less than non-visible minority women</li></ul><p id="259b83e7-eb4d-4989-8dd8-fffe95659057" class="">
+</p><p id="f5ed107d-d772-4368-86f3-69075f21c946" class="">For decades, the explanation has been the glass ceiling metaphor</p><ul id="1d8bd5ef-5c96-4160-b0bf-39bcd4c5bb90" class="bulleted-list"><li style="list-style-type:disc">The invisible barrier that prevents women from advancing to senior leadership positions in organizations<ul id="6bca2144-ee33-4fc9-9622-5a98df859504" class="bulleted-list"><li style="list-style-type:circle">The lack of women leaders is the sum of all of the barriers women face rather than one particular barrier (the glass ceiling) at the top of the organization</li></ul></li></ul><p id="913699d4-7c86-4bcc-ae74-b39a6de513eb" class="">
+</p><p id="eba57638-5e3d-4573-bc79-85fe7fccea82" class="">According to role congruity theory (RCT), prejudice against female leaders is the result of an incongruity between the perceived characteristics of women and the perceived requirements of leadership roles</p><ul id="9fa57e7d-33bd-4c4c-898b-2116909d84b9" class="bulleted-list"><li style="list-style-type:disc">For example, leaders are perceived as similar to men and not very similar to women, as more ‘agentic’ than communal, and as more masculine than feminine</li></ul><ul id="fa104b95-668d-4c8a-b88a-63294bfafcac" class="bulleted-list"><li style="list-style-type:disc">Men are perceived as having agentic traits, which convey assertion and control and are generally associated with effective leadership<ul id="369664e0-4ad0-4aa1-ad9c-7e99c028aaab" class="bulleted-list"><li style="list-style-type:circle">Women are perceived as having communal traits, which convey a concern for the compassionate treatment of others</li></ul></li></ul><h1 id="26886b6a-9b24-40d9-86ab-b92e9c410e0c" class="">9.9 Culture and Leadership</h1><p id="4a402985-82c9-4597-af73-16c73cc82205" class="">If you consider the cultural differences in values, you might be wondering how this affects leadership, and if leadership styles are equally effective across cultures?</p><ul id="4f408a9f-6b59-4e88-b3de-6f8f54b1137d" class="bulleted-list"><li style="list-style-type:disc">Researchers have found that citizens in each nation have implicit assumptions regarding requisite leadership qualities, something known as implicit leadership theory<ul id="98020e2f-d405-46a9-963f-91927b9cf125" class="bulleted-list"><li style="list-style-type:circle">According to implicit leadership theory, individuals hold a set of beliefs about the kinds of attributes, personality characteristics, skills, and behaviours, that contribute to or impede outstanding leadership</li></ul><ul id="0e8cef7a-439e-4333-80bd-b42fdbe7e389" class="bulleted-list"><li style="list-style-type:circle">These belief systems are assumed to affect the extent to which an individual accepts and responds to others as leaders</li></ul></li></ul><ul id="f7109305-7436-4c20-812b-d6c87e5877b5" class="bulleted-list"><li style="list-style-type:disc">The six global leadership dimensions are as follows</li></ul><ol type="1" id="34bd8aef-fee3-41f6-8255-8af927196ad6" class="numbered-list" start="1"><li>Charismatic / Value-based<ol type="a" id="00e96c2d-06a8-4328-ba24-a423c4685129" class="numbered-list" start="1"><li>A broadly defined leadership dimension that reflects the ability to inspire, to motivate, and to expect high performance outcomes from others on the basis of firmly held core beliefs</li></ol></li></ol><ol type="1" id="c87995fd-1c9b-4147-ba0f-3ac03742de18" class="numbered-list" start="2"><li>Team oriented<ol type="a" id="b8a4ab6c-8694-423e-883d-380afc453862" class="numbered-list" start="1"><li>A dimension that emphasizes effective team building and implementation of a common purpose or goal among team members</li></ol></li></ol><ol type="1" id="c327d18f-89b1-42b1-b049-85779e65e594" class="numbered-list" start="3"><li>Participative<ol type="a" id="b1a2e283-30e3-404d-b0ef-010fb720bb98" class="numbered-list" start="1"><li>The degree to which managers involve others in making and implementing decisions</li></ol></li></ol><ol type="1" id="143c40a7-c3a1-4cb7-bb8d-55e3935459c5" class="numbered-list" start="4"><li>Humane oriented<ol type="a" id="41c60046-71a9-4753-a4e5-d335d8715094" class="numbered-list" start="1"><li>A dimension that reflects supportive and considerate leadership, but also includes compassion and generosity</li></ol></li></ol><ol type="1" id="166fd81d-e3dd-4c54-a390-12ae4b398954" class="numbered-list" start="5"><li>Autonomous<ol type="a" id="c74778ad-66d6-49b7-a1dd-fdc0453adbcf" class="numbered-list" start="1"><li>Independent and individualistic leadership</li></ol></li></ol><ol type="1" id="5b9a72b9-2903-46cb-9e79-4ff2b0794072" class="numbered-list" start="6"><li>Self-protective<ol type="a" id="0e5c29c4-f854-4cfd-a318-72212f9badef" class="numbered-list" start="1"><li>a dimension that focuses on ensuring the safety and security of the individual</li></ol></li></ol><p id="8fc4d979-9ffb-4d04-9d5a-2d792fbb70f0" class="">
+</p><p id="9ad795c6-6d28-4e51-a14e-7e8a3e8e0571" class="">Compared to other culture clusters, Canada and the United States score high on the charismatic/ value-based, participative, and humane oriented dimensions, low on the self-protective dimension, and medium on the team oriented, and autonomous dimensions</p><p id="e45ed858-9bb0-452b-8186-08a96fe8019d" class="">
+</p><p id="fabbba12-d84c-44de-b352-0a086785e1c9" class="">While cultures do differ on many aspects of leadership effectiveness, they also have many similarities</p><ul id="3e7ec1f3-057e-45e2-ba14-3c2ec9692a4f" class="bulleted-list"><li style="list-style-type:disc">In fact, it was found that many attributes such as being honest, decisive, motivational, and dynamic, to be universally desirable</li></ul><ul id="20076c53-6865-4d3f-ab35-71c418cfd9fb" class="bulleted-list"><li style="list-style-type:disc">It was also found that leadership attributes such as being loners, irritable, egocentric, and ruthless, to be deemed ineffective</li></ul><ul id="714a1d2e-0c04-4d64-9dab-b4ce4b384be9" class="bulleted-list"><li style="list-style-type:disc">There are some attributes that are culturally contingent; meaning that they are effective in some cultures but are either ineffective or even dysfunctional in others</li></ul><p id="d64637a8-5b98-4b7e-b6d9-6bff971c1a96" class="">
+</p><p id="57417147-846d-4da9-9748-4795f8b4b7e1" class="">Managers need to understand the similarities and differences in what makes someone an effective leader across cultures if they are to be effective global leaders</p><p id="a5a27ee6-492d-4234-a097-a97ac2e767ec" class="">
+</p><h1 id="894644a3-8e83-4d94-a662-02d5073035dd" class="">9.10 Global Leadership</h1><p id="e2368c00-bb43-4d78-a0ac-410754309225" class="">Global leadership involves having leadership capabilities to function effectively in different cultures and being able to cross language, social, economic, and political borders</p><ul id="1b7c9343-1c63-42be-9b4b-06273ab7d5a4" class="bulleted-list"><li style="list-style-type:disc">The essence of Global Leadership is the ability to influence people who are not like the leader and come from different cultural backgrounds</li></ul><ul id="9325b3b5-baae-409c-83af-11111b99f727" class="bulleted-list"><li style="list-style-type:disc">This means that to succeed, global leaders need to have a global mindset, tolerate high levels of ambiguity, and exhibit cultural adaptability and flexibility</li></ul><p id="e431259a-47b6-422f-8b72-57d6f4dae70b" class="">
+</p><p id="be069b5c-93d1-41f5-82ef-90c771bd0902" class="">But what makes a leader a good global leader? There are four characteristics to this:</p><ol type="1" id="54f146c0-47f5-484b-835d-3011b464209a" class="numbered-list" start="1"><li>Unbridled inquisitiveness<ol type="a" id="7dfd543e-6fc7-4abb-836a-a3c54bd9ea22" class="numbered-list" start="1"><li>Global leaders must be able to function effectively in different cultures in which they are required to cross language, social, economic, and political borders</li></ol><ol type="a" id="c2f29a51-70ef-48b2-90de-a0b75052404c" class="numbered-list" start="2"><li>A key characteristic of global leaders is that they relish the opportunity to see and experience new things</li></ol></li></ol><ol type="1" id="150b6290-139a-4bba-96ef-b85ed811afd6" class="numbered-list" start="2"><li>Personal character<ol type="a" id="778ffc8c-449d-4a8e-bed3-c67f516e4dc2" class="numbered-list" start="1"><li>Personal character consists of two components:<ol type="i" id="43db2c1a-3800-4c36-86f0-e36cca2b201e" class="numbered-list" start="1"><li>An emotional connection to people from different cultures<ol type="1" id="13eb54c1-4e97-4991-9232-a1cac57ad1b6" class="numbered-list" start="1"><li>The ability to connect with others involves a sincere interest and concern for them and a willingness to listen to and understand others’ viewpoints</li></ol></li></ol><ol type="i" id="2bbd424a-96ac-477f-8845-767d14f66252" class="numbered-list" start="2"><li>Uncompromising integrity<ol type="1" id="7f18ab36-39da-4bc8-b72a-076ebdd2c936" class="numbered-list" start="1"><li>Global leaders also demonstrate an uncompromising integrity by maintaining high ethical standards and loyalty to their organizations’ values</li></ol><ol type="1" id="c7a214c5-5bdc-4b63-a12d-76ba4161b63c" class="numbered-list" start="2"><li>This demonstration of integrity results in a high level of trust throughout the organization</li></ol></li></ol></li></ol></li></ol><ol type="1" id="22a21e6b-2466-4c2b-af24-8d2e6019f906" class="numbered-list" start="3"><li>Duality<ol type="a" id="001f69fd-a364-4285-8936-e65c19e62621" class="numbered-list" start="1"><li>For global leaders, duality means that they must be able to manage uncertainty and balance global and local tensions</li></ol><ol type="a" id="7717a2d8-7ef5-4b4a-8f9d-dc121d79b35b" class="numbered-list" start="2"><li>Global leaders are able to balance the tensions and dualities of global integration and local demands</li></ol></li></ol><ol type="1" id="3a00f479-869c-4358-8cf1-3af61290ad43" class="numbered-list" start="4"><li>Savvy<ol type="a" id="d6202ae7-92b8-4291-92b2-4fd19606179b" class="numbered-list" start="1"><li>Because of the greater challenges and opportunities of global business, global leaders need to have a business and organization savvy</li></ol><ol type="a" id="87b63b85-91e9-4fd0-a555-e33764a9bd71" class="numbered-list" start="2"><li>Global business savvy means that global leaders understand the conditions they face in different countries and are able to recognize new market opportunities for their organization&#x27;s goods and services<ol type="i" id="3c686477-f5f4-40ff-9b23-679bbe261103" class="numbered-list" start="1"><li>Organizational savvy means that global leaders are well informed of their organization&#x27;s capabilities and international ventures</li></ol></li></ol></li></ol><p id="8d8c58bc-a56e-45ee-947b-bf030c2d14ee" class="">
+</p><p id="06eeaa8b-c9dc-477a-98ce-8540cf29bba0" class="">Individuals with the potential to become global leaders have experience working or living in different cultures, speak more than one language, and have an aptitude for global business</p><ul id="a57f8798-07c5-40a5-8e01-d5976f8c19c8" class="bulleted-list"><li style="list-style-type:disc">However, becoming an effective global leader requires extensive training that consists of travel to foreign countries, teamwork with members of diverse backgrounds, and formal training programs that provide instruction on topics such as international and global strategy, business and ethics, cross-cultural communication, and multicultural team leadership</li></ul><p id="d86f3298-fe8a-4de1-b6fc-344446d76b2c" class="">
+</p><p id="4a565ef5-6310-484d-ab62-756ddcf6a4cf" class="">The most powerful strategy for developing global leaders is work experience, transfers, and international assignments</p><ul id="962105fd-3c3d-4825-ace2-fe975605d32e" class="bulleted-list"><li style="list-style-type:disc">To be successful in the global economy, it is critical for an organization to identify and develop leaders who have the capability to become global leaders</li></ul><h1 id="708577a8-39af-4a01-82b1-451bfa9eaced" class="">9.11 What Style of Leadership is Best?</h1><p id="a793032e-7eb1-4525-8456-250cd174d40a" class="">It depends</p><p id="0f9f4150-23a2-41ec-b204-58090da9611d" class="">First, it is important to recognize that an effective leader needs to be capable of employing various styles of leadership</p><ul id="76522c4c-7b13-421e-a48d-858687ddcab3" class="bulleted-list"><li style="list-style-type:disc">For example, you noted earlier that consideration and initiating structure are not incompatible, and that a leader can be high, low, or average on one or both dimensions</li></ul><ul id="c29d6e0a-9b9e-4fc1-9d79-163a6accafee" class="bulleted-list"><li style="list-style-type:disc">It was also noted that the best leaders are both transformational and transactional</li></ul><p id="d831cdda-50f7-4689-8098-d8b5db11810f" class="">
+</p><p id="dbb11653-7a7b-4228-8f38-486a55dd36d8" class="">Second, we know from the situational theories of leadership that the most effective style of leadership depends on the situation</p><ul id="87041314-fb5a-4501-b078-5843ba5d13e1" class="bulleted-list"><li style="list-style-type:disc">Based on what we have covered in this chapter, the situation consists of the nature of the task, employee characteristics, characteristics of the organization, and national culture</li></ul><p id="a045f8fb-83f4-407c-b0d4-9d84269de512" class="">
+</p><p id="556496aa-dd93-4c22-b2c6-9942ac15ba2e" class="">Third, it is also important to understand how a leader influences followers and the processes and mechanisms that link leadership to leadership effectiveness</p><ul id="2beec655-e085-4461-a3fb-82a392d3d92a" class="bulleted-list"><li style="list-style-type:disc">Although there are many possible mechanisms, they can be grouped into the following three categories: cognitive, affective, and behavioral<ul id="76ad49f6-c386-4054-b2a2-244928a4ebb6" class="bulleted-list"><li style="list-style-type:circle">So to be an effective leader, a leader must influence followers’ cognitions such as self-efficacy and justice perceptions; followers’ affect, such as attitudes and emotions, and followers’ behavior, such as actions and motivation<ul id="9ff1618d-b0bb-4737-b535-7660a388f1b6" class="bulleted-list"><li style="list-style-type:square">In other words, the effectiveness of leadership depends on the extent to which a leader influences followers cognitive, affective, and behavioral tendencies</li></ul></li></ul></li></ul><p id="04b624ae-994f-4eb0-bdb8-232cdacf4024" class="">In this diagram, when the style of leadership is matched to the situation, a leader will be effective in terms of employee, group, and organizational performance, as a result of the leaders influence on cognitive, affective, and behavioral mechanisms</p><h1 id="8561205b-1de1-4796-93ad-53e395b4fc15" class="">Slide Extras</h1><h2 id="76cd277d-f213-41fc-bd3a-d7aaa639dca9" class="">Components in Leadership Definition</h2><ol type="1" id="c8bf1925-7528-4d2a-a964-dd4396a63102" class="numbered-list" start="1"><li>Influence<ol type="a" id="edfc9a31-7050-4fed-81bc-dd376b0ea80e" class="numbered-list" start="1"><li>Using power to affect others</li></ol></li></ol><ol type="1" id="f31d90a7-558d-487e-afbe-a85bac1c1570" class="numbered-list" start="2"><li>Process<ol type="a" id="dddc98f4-61c7-4915-80a9-777b2821677d" class="numbered-list" start="1"><li>Two-way, interactive process</li></ol></li></ol><ol type="1" id="5890df5f-81db-48d3-92da-72541317a073" class="numbered-list" start="3"><li>Group<ol type="a" id="1677a831-2890-407e-a39c-795c5917c212" class="numbered-list" start="1"><li>Leadership requires followers</li></ol></li></ol><ol type="1" id="36781ccf-4f2a-4079-85e2-915a2c5e3b7a" class="numbered-list" start="4"><li>Common goal achievement<ol type="a" id="4dbcd3e5-74cb-49bb-98d5-011953164443" class="numbered-list" start="1"><li>Directing a group of people toward the achievement of something together</li></ol></li></ol><h2 id="19bbb428-09da-490d-8252-8ef7c46a227f" class="">Managing versus Leading</h2><ol type="1" id="35039586-54bb-4804-8e10-d34becb7f1ea" class="numbered-list" start="1"><li>Managing<ol type="a" id="34356051-b206-48a1-b3b6-becfd8e96ce4" class="numbered-list" start="1"><li>“Running a tight ship”<ol type="i" id="fb73f0fd-4213-4a57-b42f-253929ea4534" class="numbered-list" start="1"><li>Managers change</li></ol><ol type="i" id="d7ff49c3-c88e-426a-a1cd-06dfe60e9a85" class="numbered-list" start="2"><li>Tenacity</li></ol><ol type="i" id="08070b68-83d2-401b-bde3-9ee2fb9d8eb0" class="numbered-list" start="3"><li>Specifics</li></ol><ol type="i" id="61c424f7-6e99-4b73-9c5f-24f92442a4d9" class="numbered-list" start="4"><li>Concrete data</li></ol><ol type="i" id="b5e9d4a3-4d46-4703-ac6a-1f56f1689a1f" class="numbered-list" start="5"><li>Ability to interpret</li></ol><ol type="i" id="615e5edc-bdb1-4936-81d1-f2d93087b589" class="numbered-list" start="6"><li>Aptitude to tell</li></ol><ol type="i" id="7865ea49-4d41-4ba1-9869-9aa0805f4ad2" class="numbered-list" start="7"><li>Internal Focus</li></ol><ol type="i" id="518d9cad-950f-439f-815e-6640c78c8fcb" class="numbered-list" start="8"><li>Self discipline</li></ol><ol type="i" id="4dad74fe-92e9-4013-a026-6d0e7f067b09" class="numbered-list" start="9"><li>Commitment to task at hand</li></ol><ol type="i" id="1ace9f99-25e3-4f70-a137-755d548e25e7" class="numbered-list" start="10"><li>Accountable to a team</li></ol></li></ol></li></ol><ol type="1" id="fcc7e60d-ef02-45b6-a48c-35c1f79b3bc4" class="numbered-list" start="2"><li>Leading<ol type="a" id="c4beb463-44f3-4ffd-9e12-0355102eb283" class="numbered-list" start="1"><li>“Inspiring the crew”<ol type="i" id="a5861a83-4a97-467f-808f-181856fbf563" class="numbered-list" start="1"><li>Inspires change</li></ol><ol type="i" id="6db663a9-5751-4256-a39a-5a9a02bc4083" class="numbered-list" start="2"><li>Vision</li></ol><ol type="i" id="e311e25f-28cf-4e72-bcdf-5e62d52ababf" class="numbered-list" start="3"><li>Imagination</li></ol><ol type="i" id="2ae71f0e-1d73-4353-af11-23aaa6b3a9ec" class="numbered-list" start="4"><li>Abstract thinking</li></ol><ol type="i" id="d87abe6b-9244-4cb6-bf5b-22160c66d14e" class="numbered-list" start="5"><li>Ability to articulate</li></ol><ol type="i" id="40600d70-230e-4c58-8c2b-82f025a6b7e5" class="numbered-list" start="6"><li>Aptitude to sell</li></ol><ol type="i" id="88b3acb7-3173-44c3-bcd1-985321c64c01" class="numbered-list" start="7"><li>External Focus</li></ol><ol type="i" id="399cae3c-703d-4d5f-845c-a5915f98e274" class="numbered-list" start="8"><li>Risk-taking</li></ol><ol type="i" id="6ea1534f-94c6-4119-bc75-81e5bcec54bd" class="numbered-list" start="9"><li>Confidence in uncertainty</li></ol><ol type="i" id="5a3941bf-e877-4f31-b0ce-90a97f9868cd" class="numbered-list" start="10"><li>Accountable to the entire organization</li></ol></li></ol></li></ol><h2 id="3f0f4cc2-6b9d-4b7a-a6c5-13eecc3e527a" class="">The Level 5 Hierarchy</h2><ol type="1" id="13c261fc-d0a3-49c4-8008-b3dd708f616d" class="numbered-list" start="1"><li>Level one - highly capable individual<ol type="a" id="2b4d3e0c-72a4-44d6-a9dd-5c79088c42ad" class="numbered-list" start="1"><li>Makes productive contributions through talent, knowledge, skills, and good work habits</li></ol></li></ol><ol type="1" id="5d37466d-ff04-424a-8af9-8bc98d02777b" class="numbered-list" start="2"><li>Level two - contributing team member<ol type="a" id="9e9a90d4-c397-48ae-9d18-a72b3b05ceea" class="numbered-list" start="1"><li>Contributes individual capabilities to the achievement of group objectives and works effectively with others in a group setting</li></ol></li></ol><ol type="1" id="df4fc201-9ebf-4e93-87de-97f53164d670" class="numbered-list" start="3"><li>Level three - competent manager<ol type="a" id="8cfa006c-c3ae-43b5-8f2d-6aef476c9178" class="numbered-list" start="1"><li>Organizes people and resources toward the effective and efficient pursuit of predetermined objectives</li></ol></li></ol><ol type="1" id="812d9fbf-d309-457b-bd61-31ea3024c4b4" class="numbered-list" start="4"><li>Level four - effective leader<ol type="a" id="8798bcdb-846d-4622-a524-5d41a56fdd4d" class="numbered-list" start="1"><li>Catalyzes commitment to and vigorous pursuit of a clear and compelling vision, stimulating higher performance standards</li></ol></li></ol><ol type="1" id="208b3ed2-265e-4eda-b806-f9ca1f63abf1" class="numbered-list" start="5"><li>Level five - level five executive<ol type="a" id="546500f7-c7b1-4f0a-adf5-d951c56c9460" class="numbered-list" start="1"><li>Builds enduring greatness through a paradoxical blend of personal humility and professional will<ol type="i" id="38f3e6d2-9b53-42f8-b1d7-d38045015076" class="numbered-list" start="1"><li>Focus first on the people</li></ol><ol type="i" id="a5df6d3e-1779-4640-9b3c-7cfa2e2afa03" class="numbered-list" start="2"><li>Follow the Stockdale paradox<ol type="1" id="ea92d771-734f-4754-85a5-362dbcb3310b" class="numbered-list" start="1"><li>The unwavering faith that you can and will prevail in the end regardless of any difficulties</li></ol></li></ol><ol type="i" id="60ce4f42-0743-412c-ba0a-9a3d128fc9ce" class="numbered-list" start="3"><li>Build-up breakthrough flywheel<ol type="1" id="9082598a-c7f8-483d-bce5-2ea2be05d14b" class="numbered-list" start="1"><li>A metaphor where pushing with great effort will get the flywheel to inch forward, and with persistent effort, you can get the flywheel to complete one entire rotation</li></ol></li></ol><ol type="i" id="cd0ccc54-79bc-442a-bc77-47ea44e4e656" class="numbered-list" start="4"><li>Live the Hedgehog concept<ol type="1" id="5159d2aa-d3eb-4d4f-a2bb-20f791ab66f7" class="numbered-list" start="1"><li>Brands identify what sets them apart from comparable companies</li></ol></li></ol><ol type="i" id="9f9c0e9c-b48e-47d9-8196-12bfecf3330e" class="numbered-list" start="5"><li>Technology accelerators</li></ol><ol type="i" id="d8808006-7469-434b-8154-737ffe735e84" class="numbered-list" start="6"><li>Build a culture of discipline</li></ol></li></ol></li></ol><h2 id="733c5b6b-b1e7-422e-9ad2-36d6ae3401e4" class="">Blanchard and Hersey&#x27;s Situational Leadership Model</h2><p id="c25cd567-3f61-4c15-9db5-eb1767bd8946" class="">There is no one best style of leadership</p><ul id="c280fb6c-9196-41f3-9196-271e339e041c" class="bulleted-list"><li style="list-style-type:disc">Leaders are effective if they are able to adapt their style of leadership to the situation</li></ul><ul id="ee0b6189-43af-4ac4-85cf-01708dbf02de" class="bulleted-list"><li style="list-style-type:disc">There are two dimensions of leader behavior to be adapted:<ul id="676b8c4d-f8de-462d-98ab-fb9706ab7fc2" class="bulleted-list"><li style="list-style-type:circle">Task or directive behavior</li></ul><ul id="5122c148-a221-4e6a-862c-9df690def6d0" class="bulleted-list"><li style="list-style-type:circle">Relationship or supportive behavior</li></ul></li></ul><h2 id="33fedbd4-2c33-4808-9449-68da3f53c0bb" class="">Transformational Leadership</h2><p id="90941e70-bb9d-48c5-9674-b45ec1c02c18" class="">Five behaviours set transformational leaders apart from transactional leaders:</p><ol type="1" id="c18f9aed-21d3-43bf-acd9-a014bf200c92" class="numbered-list" start="1"><li>Visioning<ol type="a" id="f4d5f4d0-40a7-469d-bb47-e636f04620fe" class="numbered-list" start="1"><li>Communicates a compelling vision of the future</li></ol></li></ol><ol type="1" id="30bbb642-618c-4229-8ef7-2093d3fa7521" class="numbered-list" start="2"><li>Inspiring<ol type="a" id="f32cdf41-ddf9-4df6-810a-8f805eeb5ad5" class="numbered-list" start="1"><li>Communicates the vision with passion, energy, and conviction</li></ol></li></ol><ol type="1" id="fdbbf863-5ede-49bf-8b62-ff3eb0900253" class="numbered-list" start="3"><li>Stimulating<ol type="a" id="cecdaf41-838c-42cb-8806-54017e30312c" class="numbered-list" start="1"><li>The leader arouses interests in new ideas and new Solutions</li></ol></li></ol><ol type="1" id="180d3005-8767-413f-aab1-d792b18a7ca8" class="numbered-list" start="4"><li>Coaching<ol type="a" id="2ad118ff-4a72-41b8-b1b0-43a92aec9706" class="numbered-list" start="1"><li>Gives personal attention, treats each employee individually, coaches, and advises</li></ol></li></ol><ol type="1" id="bc5a3934-cb82-423a-bde6-539dc4eb89b7" class="numbered-list" start="5"><li>Team building<ol type="a" id="c8bda4ac-1c30-450f-87d2-f9337df853e7" class="numbered-list" start="1"><li>The leader builds teams by selecting individuals with complementary skills, and encourages the team to work together</li></ol></li></ol><h2 id="4305e160-7260-476a-b18f-d360bf54f9be" class="">Key Characteristics of Charismatic Leaders</h2><ol type="1" id="3522cebc-5dbd-4e1f-b110-bec475d0d75f" class="numbered-list" start="1"><li>Self confidence<ol type="a" id="2aa4c0b0-3475-448e-9731-d51fd192909f" class="numbered-list" start="1"><li>They have complete confidence in their judgment and ability</li></ol></li></ol><ol type="1" id="2d24114b-f6f6-442e-8f4c-934cf1188b10" class="numbered-list" start="2"><li>A vision<ol type="a" id="68fbad68-b961-44c0-91ad-3ace87296677" class="numbered-list" start="1"><li>This is an idealized goal that proposes a future better than the status quo</li></ol><ol type="a" id="d26aadd4-bba9-4811-b274-a6ec957d06d9" class="numbered-list" start="2"><li>The greater the disparity between the idealized goal and the status quo, the more likely that followers will attribute extraordinary vision to the leader</li></ol></li></ol><ol type="1" id="d10eae7e-3884-46ba-b6ed-2a6cd2fb1cfc" class="numbered-list" start="3"><li>Ability to articulate the vision<ol type="a" id="f1ddbbf2-1d57-408e-818d-a93975745295" class="numbered-list" start="1"><li>They are able to clarify and state the vision interim set are understandable to others</li></ol><ol type="a" id="e21fc4a4-4574-4d87-acf6-f0c328f2cc92" class="numbered-list" start="2"><li>This articulation demonstrates an understanding of the followers needs, and hence acts as a motivating force</li></ol></li></ol><ol type="1" id="01c3a296-b419-4678-82aa-2d6461306667" class="numbered-list" start="4"><li>Strong convictions about the vision<ol type="a" id="60edf9e3-6826-4d8a-ad47-3c0caa078e27" class="numbered-list" start="1"><li>Charismatic leaders are perceived as being strongly committed and willing to take on high personal risk, incur high costs, and engage in self-sacrifice to achieve the vision</li></ol></li></ol><ol type="1" id="7cd8b2ab-fef3-4057-b838-ad237d214caf" class="numbered-list" start="5"><li>Behaviour that is out of the ordinary<ol type="a" id="b07c7436-d7eb-4659-83b7-dbc5f02c191d" class="numbered-list" start="1"><li>Those with charisma engage in behaviour that is perceived as being novel, unconventional, and counter to norms</li></ol><ol type="a" id="922e5f1f-3c61-44f3-bdbd-732cfafb7744" class="numbered-list" start="2"><li>When successful, these behaviours evoke surprise and admiration in followers</li></ol></li></ol><ol type="1" id="0d931f91-10cf-4c97-ac1e-0b55593e55e9" class="numbered-list" start="6"><li>Perceived as being a change agent<ol type="a" id="7ce9b5aa-be1e-4706-ae5d-8ed564c2e360" class="numbered-list" start="1"><li>Charismatic leaders are perceived as agents of radical change rather than as caretakers of the status quo</li></ol></li></ol><ol type="1" id="faedb9d5-53b0-471d-be2c-57eae7072de9" class="numbered-list" start="7"><li>Environment sensitivity<ol type="a" id="634ffd9a-0382-4c20-aad5-b9c0c4a9d547" class="numbered-list" start="1"><li>These leaders are able to make realistic assessments of the environmental constraints and resources needed to bring about change</li></ol></li></ol><h2 id="76f96a30-4d43-40b6-a9a6-a46afb5c8e4b" class="">Ten Commitments of Leadership</h2><ol type="1" id="54487b49-0c05-49f0-a80f-cad9eca57aec" class="numbered-list" start="1"><li>Challenging the process<ol type="a" id="6a865be0-edc8-4913-9ec0-50afab2481b5" class="numbered-list" start="1"><li>Searching out challenging opportunities to change, grow, innovate, and improve</li></ol><ol type="a" id="fea7bfef-a67a-40f7-82cd-9fc45ae93159" class="numbered-list" start="2"><li>Experiment, take risks, and learn from the accompanying mistakes</li></ol></li></ol><ol type="1" id="46e0ec10-f4b2-4c16-b327-62526616000f" class="numbered-list" start="2"><li>Inspiring a shared vision<ol type="a" id="b0344eac-f606-4b48-98cf-9132a70706d9" class="numbered-list" start="1"><li>Envision an uplifting and ennobling future</li></ol><ol type="a" id="47b2239a-f147-43ed-b346-804aaca9b0fb" class="numbered-list" start="2"><li>Enlist others in a common vision by appealing to their values, interests, hopes, and dreams</li></ol></li></ol><ol type="1" id="d254d027-19ec-4a4d-8666-bfb32e22d957" class="numbered-list" start="3"><li>Enabling others to act<ol type="a" id="18bb7feb-a4bf-42a5-82bc-7de03cc08297" class="numbered-list" start="1"><li>Foster collaboration by promoting cooperative goals and building trust</li></ol><ol type="a" id="5a9ed53c-fb48-43d7-8c29-b69c13eb4a68" class="numbered-list" start="2"><li>Strengthen people by giving power away, providing choice, developing competence, assigning critical tasks, and offering visible support</li></ol></li></ol><ol type="1" id="3bdb2e44-ff9a-45ef-90b1-75876ba37cac" class="numbered-list" start="4"><li>Modelling the way<ol type="a" id="50dcb142-5e66-4b44-aed8-52f77510f068" class="numbered-list" start="1"><li>Set the example by behaving in ways that are consistent with shared values</li></ol><ol type="a" id="3f36dd43-11e9-4571-a97a-1a855e2ce7da" class="numbered-list" start="2"><li>Achieve small wins that promote consistent progress and build commitment</li></ol></li></ol><ol type="1" id="c1805adb-4ecc-4a60-b5e0-7d126ca5e7c9" class="numbered-list" start="5"><li>Encouraging the heart<ol type="a" id="f1ae675a-78a9-4615-abda-7b839a8efa69" class="numbered-list" start="1"><li>Recognize individual contributions to the success of every project</li></ol><ol type="a" id="d94d8763-59c8-49f2-a9ce-200b72990dab" class="numbered-list" start="2"><li>Celebrate team accomplishments regularly</li></ol></li></ol></div></article></body></html>

@@ -1,0 +1,724 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>13: Conflict and Stress</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b668bea5-df05-45ac-80d9-00419b7158d6" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/rijksmuseum_avercamp_1608.jpg" style="object-position:center 70%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🧨</span></div><h1 class="page-title">13: Conflict and Stress</h1></header><div class="page-body"><h1 id="995ad85e-9367-4c92-9ad2-0a3ed45dbf5b" class="">13.1 Conflict and its causes in organizations</h1><p id="e613944f-2baf-45a3-a64b-a511b693d6a3" class="">Conflict is a process that occurs when one person, group, or organizational subunit frustrates the goal attainment of another</p><ul id="bd2d7a9a-eb87-4723-9da6-95bf85ba4e55" class="bulleted-list"><li style="list-style-type:disc">Conflict involves antagonistic attitudes and behaviours<ul id="631ae3af-004e-425a-b24f-882dbcd7fa6f" class="bulleted-list"><li style="list-style-type:circle">Conflicting parties might develop a dislike for each other, see each other as unreasonable, and develop a negative stereotypes of their opposites</li></ul><ul id="b0c973d3-71e3-4dd6-aea5-77bd627656e9" class="bulleted-list"><li style="list-style-type:circle">Antagonistic behaviours might include name-calling, sabotage, or even physical aggression</li></ul></li></ul><h2 id="17dcdf6b-2d8b-4b6c-bc56-341be0c953c1" class="">Group identification and Intergroup bias</h2><p id="f6598414-6817-49c2-9f83-a2220a2dbb71" class="">Research has shown how identification with a particular group or class of people can set the stage for organizational conflict</p><ul id="742505e4-c3ef-429f-b0e9-43543235652c" class="bulleted-list"><li style="list-style-type:disc">Even without interaction or cohesion, people have a tendency to develop a more positive view of their own ‘in group’ and a less positive view of the ‘out-group’ of which they are not a member</li></ul><p id="7f5fe7bb-6159-4539-8582-2d7925247326" class="">
+</p><h3 id="98424e7c-8037-45ac-9994-1b6f6fb99318" class="">Why does Intergroup bias occur?</h3><ul id="cd9b2680-106b-40c2-86a5-aa39edc3ddae" class="bulleted-list"><li style="list-style-type:disc">Self-esteem is a critical factor, bolstered by emotions that favour one&#x27;s own group</li></ul><ul id="eb837abf-d3a4-4465-8082-b2d4421154de" class="bulleted-list"><li style="list-style-type:disc">Identifying with the successes of one&#x27;s own group and disassociating oneself from group failures boosts self-esteem and provides comforting feelings of social solidarity</li></ul><p id="24518b96-c6d5-403b-b379-87c712b02c45" class="">
+</p><p id="a97b4214-7b86-4e50-8325-c15b54a70c21" class="">In organizations, there are a number of groups or classes with which people might identify</p><ul id="b99a5f0e-d735-46d9-94c7-68e1098e6101" class="bulleted-list"><li style="list-style-type:disc">These might be based on personal characteristics, job function (sales, marketing, accounting) or job level (manager, non-manager)</li></ul><ul id="2b70a4ae-e00e-4f42-9ac8-bb91642a4b71" class="bulleted-list"><li style="list-style-type:disc">Furthermore differences between groups might be accentuated by real differences in power, opportunity, client services, and so on</li></ul><h2 id="861fd8ec-0b95-4aa6-b7d9-5f7d0b89621f" class="">Interdependence</h2><p id="6680a1a5-a343-44f4-8c9c-5238e1549c8b" class="">When individuals or subunits are mutually dependent on each other to accomplish <span style="border-bottom:0.05em solid">their own</span> goals, the potential for conflict exists</p><ul id="fd2526ac-9507-46ea-8657-4c8a1ada8b1f" class="bulleted-list"><li style="list-style-type:disc">For example the sales staff is dependent on the marketing department for sales leads and for infrastructure such as research, advertising, promotions, and brochures</li></ul><ul id="efa29c01-0532-4cc0-9a10-b07ea60af20e" class="bulleted-list"><li style="list-style-type:disc">On the other hand, marketing depends on the sales staff meeting revenue targets that signal that marketing is operating effectively<ul id="94705b0e-f619-488d-baea-dd17d968045a" class="bulleted-list"><li style="list-style-type:circle">If problems occur, stereotyping and name-calling can happen, with marketers seeing sales personal as ‘glorified order takers’ and sales seeing marketing as ‘occupants out of touch with the gritty realities of the marketplace’</li></ul></li></ul><p id="bacd697e-974d-46dc-849f-fd4f38fb392f" class="">
+</p><p id="48e51715-4bf0-48eb-93b8-b19f5c0f640f" class="">Interdependence sets the stage for conflict due to two reasons:</p><ol type="1" id="d018fe50-0e34-4b55-9803-703a6e47e4c6" class="numbered-list" start="1"><li>It necessitates interaction between the parties so that they can coordinate their interests</li></ol><ol type="1" id="e08525df-f42b-41d7-b86d-54dccbe7da8f" class="numbered-list" start="2"><li>Interdependence implies that each party has some power over the other</li></ol><p id="697bdfe5-8c81-4f6f-aee6-36676a9dbcb2" class="">
+</p><p id="dee9391d-5436-442b-8c7f-150d159fbf17" class="">Though it is important to note that interdependence does not necessarily have to create conflict</p><h2 id="d77b6991-437f-42f2-b2cf-8e3e6a0978ae" class="">Differences in power, status, and culture</h2><h3 id="9d85f291-3820-46b2-bef2-0a7ddece9d3d" class="">Power</h3><p id="af73112d-fb6c-46fc-8861-5a752ea4d871" class="">If dependence is not mutual but one way, the potential for conflict increases</p><ul id="ae86b812-d2dc-429e-a104-6a114d7a81ce" class="bulleted-list"><li style="list-style-type:disc">If party A needs the collaboration of party B to accomplish its goals but party B does not require party A&#x27;s assistance, antagonism may develop<ul id="3ab81d8e-cbf1-4244-8cf2-864619450cd3" class="bulleted-list"><li style="list-style-type:circle">Party B has power over party A and party A has nothing with which to bargain</li></ul></li></ul><h3 id="68ecc39d-1ccf-4499-a6c8-c31657cd646d" class="">Status</h3><p id="f12f35fb-c1c7-4181-8514-d77c8af2d8f3" class="">Status differences provide little impetus for conflict when people of lower status are dependant on those of higher status</p><ul id="8aa84d08-6838-48ec-8910-546d502f9f57" class="bulleted-list"><li style="list-style-type:disc">Unfortunately, this is the way organizations often work and most members are socialized to expect it; though there are some organizations where lower status employees find themselves giving orders to higher status employees<ul id="5f18cb36-4e5d-4f01-bc22-c3c9d719a81b" class="bulleted-list"><li style="list-style-type:circle">In many restaurants, lower status servers give orders and initiate queries to higher status chefs</li></ul></li></ul><h3 id="8a1fb6a0-a8a4-4bd5-9c9a-292d0637c58e" class="">Culture</h3><p id="4d6c8d69-d1ae-400c-aa8e-32782dabebec" class="">When two or more are very different cultures develop in an organization, the clash of beliefs and values can result in overt conflict</p><ul id="2178378d-0227-4e79-9bbc-1e7b0ef8f0bf" class="bulleted-list"><li style="list-style-type:disc">Hospital administrators who develop a strong culture centered on efficiency and cost-effectiveness might find themselves in conflict with physicians who share a strong culture based on providing excellent patient care at any cost</li></ul><h2 id="b5513fa1-5d04-4c64-b7fe-b31420fda811" class="">Ambiguity</h2><p id="325f6e1d-5a96-42dd-a18f-ac2050c8cc90" class="">Ambiguous goals, jurisdictions, or performance criteria can lead to conflict</p><ul id="f2e65c44-e5af-45a2-8def-aa5804a02b53" class="bulleted-list"><li style="list-style-type:disc">Under such ambiguity, the formal and informal rules that govern interaction break down</li></ul><ul id="2d3b6342-83af-4d56-84c9-73ffce48f081" class="bulleted-list"><li style="list-style-type:disc">In addition, it might be difficult to accurately assign praise for good outcomes or blame for bad outcomes when it is hard to see who was responsible for what<ul id="a1117994-e5c6-4d1c-bccf-780ac645f841" class="bulleted-list"><li style="list-style-type:circle">For example, if sales drop following the introduction of a ‘new and improved’ product, the design group might blame the marketing department for a poor advertising campaign</li></ul><ul id="2d57158a-37b1-4f9c-836d-c13026e22b59" class="bulleted-list"><li style="list-style-type:circle">In response, the marketers might claim that the ‘improved’ product is actually inferior to the old product</li></ul></li></ul><p id="fec3d627-526d-4d39-a760-d26324105bca" class="">
+</p><p id="4957abc6-79e7-4525-9ee4-9c392c6b5589" class="">Ambiguous performance criteria are a frequent cause of conflict between managers and employees</p><ul id="431086ff-4f9c-4af6-8e10-92c728f6e738" class="bulleted-list"><li style="list-style-type:disc">The basic scientist who is charged by a chemical company to ‘discover new knowledge’ might react negatively when her boss informs her that her work is inadequate<ul id="62fd6262-1d18-4c56-9565-88149dadf301" class="bulleted-list"><li style="list-style-type:circle">This rather open-ended assignment is susceptible to a variety of interpretations</li></ul></li></ul><h2 id="979d7f8f-3786-47d6-be92-1c6af0f8541f" class="">Scarce resources</h2><p id="0bf1f402-0089-48f4-b55c-58013b7d4fd5" class="">Differences in power are magnified when resources become scarce</p><ul id="0e7bde35-51f6-435e-ad9b-7be629c8931c" class="bulleted-list"><li style="list-style-type:disc">Limited budget money, administrative support, or lab space can contribute to conflict</li></ul><h1 id="ff038357-9f13-464e-819b-0bd44be7df74" class="">13.2 Types of conflict</h1><p id="edc5e0f2-84e6-4bd9-9def-7356e2bd84d5" class="">It is helpful to distinguish between relationship, task, and process conflict</p><ul id="dc729ab1-7ab9-472e-9807-9a0519a4d7dc" class="bulleted-list"><li style="list-style-type:disc">Relationship conflict concerns tensions among individuals that have to do with the relationship per se, not the task at hand</li></ul><ul id="5dc72032-c51f-4f76-85f1-5fe74fd610a6" class="bulleted-list"><li style="list-style-type:disc">Task conflict concerns disagreements about the nature of the work to be done</li></ul><ul id="d3c7f1e6-6d54-4153-b065-859efe55fbe1" class="bulleted-list"><li style="list-style-type:disc">Process conflict involves disagreement about how work should be organized and accomplished</li></ul><p id="7099c165-b8f5-4ec9-aec5-2d749355b8bc" class="">
+</p><p id="01ea33ad-890e-46a5-b8af-df6ba79e6fd1" class="">In teams, relationship and process conflict tend to prevent the development of cohesiveness and are thus detrimental to member satisfaction and team performance</p><ul id="88454fd1-737e-43f0-9b1d-23ef51108e56" class="bulleted-list"><li style="list-style-type:disc">Occasionally, some degree of task conflict is actually beneficial for performance, especially when the task is non-routine and requires a variety of perspectives to be considered and when it does not degenerate into relationship conflict; see image below</li></ul><p id="407ceedd-325b-43c3-9b15-47c227f4ac6c" class="">Elevated task conflict coupled with low to minor levels of relationship and process conflict can result in constructive conflict that promotes good decisions and positive organizational change</p><ul id="267dac55-efb4-45a8-a072-8a46c6c9660c" class="bulleted-list"><li style="list-style-type:disc">The parties involved in the conflict agree that its benefits outweigh its cost</li></ul><p id="9bb582fd-9806-4325-9fd4-853569b4dd82" class="">
+</p><p id="a84aac5b-6ad5-43a1-85e0-a027da1a7b77" class="">If conflict can be constructive, then there are times when we might use conflict stimulation to foster change; how does a manager know when some conflict might be a good thing?</p><ul id="dc34804f-528e-44b4-9c64-ea025b3bcd0c" class="bulleted-list"><li style="list-style-type:disc">One signal is the existence of a “friendly rut,” in which peaceful relationships take precedence over organizational goals</li></ul><ul id="d30d9f6e-b880-4e7c-9a69-34c7272b1188" class="bulleted-list"><li style="list-style-type:disc">Another is seen when parties that should be interacting closely withdraw from each other to avoid overt conflict</li></ul><ul id="ef136b79-a71a-4846-8473-26b9aa53c0b0" class="bulleted-list"><li style="list-style-type:disc">A third signal occurs when conflict is suppressed or downplayed by denying differences, ignoring controversy, and exaggerating points of agreement</li></ul><p id="84f6866f-6d07-40d9-932e-1e66445977c0" class="">
+</p><p id="e6071b26-b4af-461f-a555-53c7f847cd8e" class="">The causes of conflict, such as scarcity and ambiguity, can be manipulated by managers to achieve change</p><h2 id="aaed9fc6-c252-4587-8e86-4aa4796a8f2b" class="">Conflict Dynamics</h2><p id="248cc033-6286-41fb-b2aa-4882845318af" class="">A number of events occur when one or more of the causes of conflict takes effect; when conflict begins, we often see the following events transpire:</p><ol type="1" id="963502d3-f8bb-4c5d-a2bf-a9a7dc589967" class="numbered-list" start="1"><li>“Winning” the conflict becomes more important than developing a good solution to the problem at hand</li></ol><ol type="1" id="71c0df6d-1b5c-45ff-8cec-3506a9979a87" class="numbered-list" start="2"><li>The parties begin to conceal information from each or to pass on distorted information</li></ol><ol type="1" id="75244131-5143-4d64-a79a-819ab59b2371" class="numbered-list" start="3"><li>Each side becomes more cohesive; deviants who speak of conciliation are punished, and strict conformity is expected</li></ol><ol type="1" id="fb0cbb59-5acc-49d8-a458-22e51a5d6c76" class="numbered-list" start="4"><li>Contact with the opposite party is discouraged except under formalized, restricted conditions</li></ol><ol type="1" id="79caddcc-26f4-4f1d-a2b0-0903e61ca3a1" class="numbered-list" start="5"><li>While the opposite party is negatively stereotyped, the image of one’s own position is boosted</li></ol><ol type="1" id="23a68d7b-06a5-4323-8fc8-07d975c0cad1" class="numbered-list" start="6"><li>On each side, more aggressive people who are skilled at engaging in conflict may emerge as leaders</li></ol><p id="97e05f4d-2d02-45ae-9c46-5ecba9976e7b" class="">
+</p><p id="21680499-d8e3-4eca-b287-4b2b8cb2dbfa" class="">What begins as a problem of identity, interdependence, ambiguity, or scarcity quickly escalates to the point that the conflict process itself becomes an additional problem </p><ul id="d7734ae3-a3ef-4ad4-96e5-bfe1bcf43972" class="bulleted-list"><li style="list-style-type:disc">The elements of this process then work against the achievement of a peaceful solution</li></ul><h1 id="56f5c140-030f-4040-a2d3-086854e469e0" class="">13.3 Modes of managing conflict</h1><p id="ba6a040d-1ed6-4c49-a96e-1000f7f37c20" class="">How do you tend to react to conflict situations? Are you aggressive? Do you tend to hide your head in the sand? </p><ul id="bc5da111-210d-46ce-b4ce-7152185b488f" class="bulleted-list"><li style="list-style-type:disc">Several basic reactions can be thought of as styles or strategies for dealing with conflict</li></ul><ul id="62d3cdc8-ce58-4f4c-9ec7-eebe6082ea64" class="bulleted-list"><li style="list-style-type:disc">These approaches to managing conflict are a function of both how assertive you are in trying to satisfy your own group’s concerns and how cooperative you are in trying to satisfy those of the other party or group (see diagram below)</li></ul><h2 id="f82f309a-dd50-480b-8df5-d99f6484d381" class="">Avoiding</h2><p id="af02cfcb-0ef7-4f17-944c-3a79c90686aa" class="">The avoiding style is characterized by low assertiveness of one’s own interests and low cooperation with the other party</p><ul id="8d6a568e-ab67-4dbc-af3e-0461dc02ea25" class="bulleted-list"><li style="list-style-type:disc">This is the “hiding one’s head in the sand” response</li></ul><p id="60eeda75-7d3f-4d4b-bf73-bdeecb7738e1" class="">
+</p><p id="95ab294e-c3ae-41f7-8912-28324d4fb913" class="">Although avoidance can provide some short-term stress reduction from the rigours of conflict, it does not really change the situation</p><ul id="6847f489-ae8e-44d6-958d-447c90e2152b" class="bulleted-list"><li style="list-style-type:disc">Likewise, its effectiveness is often limited</li></ul><p id="0c47af02-133b-4a93-97ed-7132fc996895" class="">
+</p><p id="2c668b31-9054-4331-8e93-03849bf4f4e0" class="">Avoidance does have its place in some situations. and can sometimes be a sensible response, such as:</p><ul id="791f3e1a-c7db-46f2-9bd3-6070bb1b56ff" class="bulleted-list"><li style="list-style-type:disc">If the issue is trivial (of little value or importance)</li></ul><ul id="d5b8c0ad-f6d3-4c31-8fc6-50463591bb16" class="bulleted-list"><li style="list-style-type:disc">If information is lacking</li></ul><ul id="5e6b909a-87c3-4aa0-be3d-4ffa6166516c" class="bulleted-list"><li style="list-style-type:disc">If people need to cool down</li></ul><ul id="f6473bd1-1d6b-49fd-9552-5ac7bc9c0650" class="bulleted-list"><li style="list-style-type:disc">If the opponent is very powerful and hostile</li></ul><h2 id="c60ecbc0-83cc-4e38-9aa6-82e2ed1d4273" class="">Accommodating</h2><p id="a3a8640e-07c8-449e-9ca0-519400dc91fc" class="">Cooperating with the other party’s wishes while not asserting one’s own interests is the hallmark of accommodating</p><ul id="e2579543-1d89-4f79-bbd0-2099cf432eef" class="bulleted-list"><li style="list-style-type:disc">If people see accommodation as a sign of weakness, it does not bode well for future interactions<ul id="0593cca9-47ff-4aa1-bb89-a4fd6320f27e" class="bulleted-list"><li style="list-style-type:circle">Accommodation can be an effective reaction when you are in the wrong, the issue is more important to the other party, or you want to build goodwill</li></ul></li></ul><h2 id="31cc72c3-53e8-480e-ae63-d64a2a84a065" class="">Competing</h2><p id="3fd9d120-6adf-4e98-8b3a-54a5ddd606ad" class="">A competing style tends to maximize assertiveness for your own position and minimize cooperative responses</p><ul id="2c70763c-3937-4d4b-bfc8-0984ea048ed2" class="bulleted-list"><li style="list-style-type:disc">In competing, you tend to frame the conflict in strict win-lose terms</li></ul><p id="7ae1efdd-81dc-4faa-930c-812b4f4769fd" class="">
+</p><p id="04cb6c19-09f6-4df6-9f12-adc0de365c0f" class="">Full priority is given to your own goals, facts, or procedures</p><ul id="94311197-d3e1-412d-8375-b508182982e1" class="bulleted-list"><li style="list-style-type:disc">The competing style holds promise when you have a lot of power, you are sure of your facts, the situation is truly win-lose, or you will not have to interact with the other party in the future</li></ul><h2 id="b6612837-87c9-4c77-be83-661241277946" class="">Compromise</h2><p id="f99cc735-f64d-48e0-869f-a7208c18cf0e" class="">Compromise combines intermediate levels of assertiveness and cooperation</p><ul id="6d9dadb2-047b-4898-96a0-4d96d11f3e17" class="bulleted-list"><li style="list-style-type:disc">Thus, it is itself a compromise between pure competition and pure accommodation</li></ul><ul id="b0d640d6-98f8-4902-b5e4-bc4ba3b5cf87" class="bulleted-list"><li style="list-style-type:disc">In a sense, you attempt to satisfice (accept an available option as satisfactory) rather than maximize your outcomes and hope that the same occurs for the other party</li></ul><p id="d7177492-4547-4177-a692-d0d504b4a254" class="">
+</p><p id="ad74265e-9aa6-47b7-8c46-227b66c6f8be" class="">Compromise places a premium on determining rules of exchange between the two parties</p><ul id="e2837fa6-a95d-436c-aa32-a6503cc97e04" class="bulleted-list"><li style="list-style-type:disc">It always contains the seeds for procedural conflict in addition to whatever else is being negotiated</li></ul><p id="a4a730a6-c447-4fd2-9650-4fdc7118417a" class="">
+</p><p id="50b268a2-f972-4e11-b732-42f98d5fe990" class="">Also, compromise does not always result in the most creative response to conflict</p><ul id="30b27467-b9c5-4a12-a84b-3afdb8ffc205" class="bulleted-list"><li style="list-style-type:disc">It’s not so useful for resolving conflicts that stem from power asymmetry, because the weaker party may have little to offer the stronger party<ul id="930d2b9a-557a-40e7-9fcf-fba31a90dbf5" class="bulleted-list"><li style="list-style-type:circle">It is, however, a sensible reaction for conflict stemming from scarce resources and a good reaction for when other strategies fail </li></ul></li></ul><h2 id="c82838b7-c942-43e4-b9b5-c86f2617fac6" class="">Collaborating</h2><p id="76bca44c-08a5-4018-a982-a5f133781775" class="">In the collaborating mode, both assertiveness and cooperation are maximized in the hope that an integrative agreement occurs that fully satisfies the interests of both parties</p><ul id="33615635-bff3-48a0-86b8-20105ff76370" class="bulleted-list"><li style="list-style-type:disc">Emphasis is put on a win-win resolution, in which there is no assumption that someone must lost something<ul id="fc374fef-a6a0-463a-a022-82924764c2a5" class="bulleted-list"><li style="list-style-type:circle">Rather, it is assumed that the solution to the conflict can leave both parties in a better condition</li></ul></li></ul><p id="13d607fe-3bd2-4897-baf2-8e2bcb231955" class="">
+</p><p id="3ee76ab9-9424-4833-bb5e-5c458386a2a9" class="">Collaborating probably works best when the conflict is not intense and when each party has information that is useful to the other</p><ul id="7ce869fd-2c91-4424-91f4-fa514a7e4fd4" class="bulleted-list"><li style="list-style-type:disc">Although effective collaboration can take time and practice to develop, it frequently enhances productivity and achievement</li></ul><p id="ee7f7499-9dff-4495-a2c6-49caa1361489" class="">This diagram shows likely outcomes of the various modes of managing conflict when they are used repeatedly</p><ul id="d9e7df2c-aef1-46fd-9c99-ff507e87060d" class="bulleted-list"><li style="list-style-type:disc">Avoiding and accommodating lead to conflict suppression<ul id="6758bdd2-0b65-40da-8e32-cc0c30f6fee1" class="bulleted-list"><li style="list-style-type:circle">This expression of conflict is not very visible, but it often doesn&#x27;t solve core problems and leads to more visible conflict in the future</li></ul></li></ul><ul id="d9699242-5819-492a-8041-d8d7d677e03b" class="bulleted-list"><li style="list-style-type:disc">Destructive conflict, resulting from the frequent use of the assertive style is highly visible and severely damages group functioning and performance</li></ul><ul id="52b58f68-73e9-4066-b1d1-eaa5d103bb9a" class="bulleted-list"><li style="list-style-type:disc">Constructive conflict is most likely to emerge from collaboration and compromise<ul id="aadb35d1-f34d-47e5-9eb3-ee51d0f6af13" class="bulleted-list"><li style="list-style-type:circle">Organizations should strive to enlarge the “green zone” for constructive conflict and minimize suppressed and destructive conflict</li></ul></li></ul><h1 id="74de33f6-86c9-48eb-8969-728c35a8ac3a" class="">13.5 A model of stress in organizations</h1><p id="2fbf4ea1-50c7-4d0a-b4eb-c8db2cff6c3e" class="">Studies from around the globe point to a substantial societal cost burden due to the impact of work stress on productivity loss and damaged health</p><h2 id="f0e5b0dc-c0e7-4f26-977a-4ee693a3b3e2" class="">Stressors</h2><p id="9da5f0dc-a9be-429c-8a3c-417952b5abeb" class="">Stressors are environmental events or conditions that have the potential to induce stress</p><ul id="cd52bd18-6c86-4d22-a3d0-c45d5295b7fc" class="bulleted-list"><li style="list-style-type:disc">These include such things as extreme heat, extreme cold, isolation, or hostile people<ul id="ad9c6269-a769-4e6f-b1e0-5835b0722686" class="bulleted-list"><li style="list-style-type:circle">An individual’s personality often determines the extent to which a potential stressor becomes a real stressor and actually induces stress</li></ul></li></ul><h2 id="6b94300f-e801-4cb3-bdd6-79893cd8b896" class="">Stress</h2><p id="3e8ed772-0276-4b85-86db-f5fa371d3d9c" class="">Stress is a psychological reaction to the demands inherent in a stressor that has the potential to make a person feel tense or anxious because the person does not feel capable of coping with these demands</p><ul id="6796850f-825a-4478-a414-f9c5b97d1f4e" class="bulleted-list"><li style="list-style-type:disc">Though, not all stress is intrinsically bad; all people require a certain level of stimulation from their environment, and moderate levels of stress can serve this function<ul id="abc62100-b43f-4426-8dda-193d8b3910a0" class="bulleted-list"><li style="list-style-type:circle">Stress becomes a problem when it leads to especially high levels of anxiety and tension</li></ul></li></ul><h2 id="bba2e869-cb47-4a70-9b9a-268d84bb3f75" class="">Stress reactions</h2><p id="b94e807f-72d0-4a34-a20f-e64785d7d7ea" class="">Stress reactions are the behavioral, psychological, and physiological consequences of stress</p><ul id="51217308-edce-407e-ab58-e50940df563d" class="bulleted-list"><li style="list-style-type:disc">Some of these reactions are passive responses over which the individual has little direct control, such as elevated blood pressure or reduced immune function</li></ul><ul id="84072424-8aab-4ca9-9009-d90db0efa4cb" class="bulleted-list"><li style="list-style-type:disc">Other reactions are active attempts to cope with some previous aspect of the stress episode</li></ul><p id="8972a673-a709-4a99-a7e6-2e7917db9719" class="">This diagram indicates that stress reactions that involve coping attempts might be directed toward dealing directly with the stressor or simply reducing the anxiety generated by stress</p><p id="1a39b43a-b9f2-4796-a31f-47102561a5e1" class="">
+</p><p id="3f64bc54-a548-495f-b6d9-9c2d5935ba2d" class="">Often, reactions that are useful for the individual in dealing with a stress episode may be very costly to the organization</p><ul id="11c1c8cf-f2ad-4c7e-9f2d-82c235397f2a" class="bulleted-list"><li style="list-style-type:disc">The individual who is conveniently absent from work on the day of a difficult inventory check might avoid personal stress but leave the organization short-handed, provoking stress in others</li></ul><h2 id="e7965fb2-1e9d-46e8-8558-7729bda12f30" class="">Personality and stress</h2><p id="4a2bfa6d-9c8c-409b-a193-02a7d28217f5" class="">Personality can have an important influence on the stress experience; let’s look at three key personality traits</p><h3 id="c4673bea-fe9f-4d66-ac04-bcae43f936be" class="">Locus of control</h3><p id="9fda9d2a-e5a0-4730-b7a3-3640ad28b6fe" class="">Locus of control concerns people’s beliefs about the factors that control their behaviour</p><ul id="21ca0b4c-4732-4f53-9a94-3d3ee14007f9" class="bulleted-list"><li style="list-style-type:disc">Internals believe they control their own behaviour, while externals believe their behaviour is controlled by luck, fate, or powerful people</li></ul><p id="044f3e63-aed2-4b89-8706-84e8702329ae" class="">
+</p><p id="8a7da532-f2a8-47d4-9bcd-f3cffa4fc501" class="">Externals are more likely to feel anxious in the face of potential stressors, while internals are more likely to confront stressors directly because they assume that this response will make a difference</p><h3 id="55056f96-a854-4813-97c7-6fcaa2ee2636" class="">Type A behaviour pattern</h3><p id="16203e56-6065-41bd-99d5-f00db5666dbb" class="">Type A behaviour pattern is a personality pattern that includes aggressiveness, ambitiousness, competitiveness, hostility, impatience, and a sense of time urgency</p><ul id="da29a1da-ba98-46cf-8295-1da52fa645ab" class="bulleted-list"><li style="list-style-type:disc">Type A people report heavy workloads, long work hours, and many conflicting work demands</li></ul><ul id="e687495e-8d74-4854-b856-39b8aa853e3c" class="bulleted-list"><li style="list-style-type:disc">They have a strong need to control their work environment, a full-time task that stimulates their feelings of time urgency and leads them to overextend themselves physically</li></ul><ul id="e1f7de8d-51ac-4ebc-8d91-81fa56311b14" class="bulleted-list"><li style="list-style-type:disc">Type A’s also tend to have repressed anger as well as sometimes exaggerated cynicism and distrust of others<ul id="184dbfff-0b8c-4eb6-8870-ecd40f4c5698" class="bulleted-list"><li style="list-style-type:circle">When these factors are prominent in a Type A individual’s personality, stress is definitely going to have its impact</li></ul></li></ul><p id="baf306ef-17dc-4297-8f82-5b4e3cb69dd4" class="">
+</p><p id="e999daab-cf02-4231-be56-5b3da23afc81" class="">Type A individuals can be workaholics</p><ul id="3f1edc54-dd68-466c-b0f4-e9f2a73a9f3f" class="bulleted-list"><li style="list-style-type:disc">Workaholism is an addiction to work in which one has an internal compulsion to work, thinks persistently about work, and works excessively</li></ul><ul id="9adfe53a-e20f-4293-a030-c0596f10c1b7" class="bulleted-list"><li style="list-style-type:disc">Although they tend to be achievement-oriented perfectionists, these traits do not pay off<ul id="adf1b522-bae3-4955-aecd-22449f135c2c" class="bulleted-list"><li style="list-style-type:circle">Rather, these people tend to be stressed, burned out, dissatisfied, in poor health, and they do not perform better than their laid-back colleagues</li></ul></li></ul><h3 id="5b9a0c85-7329-45bb-ba24-423f6aa5d5f7" class="">Negative affectivity</h3><p id="cf2f8c26-9e14-41e3-9e11-6b2ec318cb86" class="">Negative affectivity is the propensity to view the world, including oneself and other people, in a negative light</p><ul id="5e90bb3d-39bb-4d2c-942e-81c6e8c74d63" class="bulleted-list"><li style="list-style-type:disc">People high in negative affectivity tend to be pessimistic (seeing the worst aspect of things) and downbeat </li></ul><ul id="b7f1d2ce-4a48-45fd-af1f-a4ec5cdccde1" class="bulleted-list"><li style="list-style-type:disc">They tend to report more work stressors and feel more subjective stress<ul id="46114133-a7a0-4fd0-ac48-39a3e3bc874a" class="bulleted-list"><li style="list-style-type:circle">They are particularly likely to feel stressed in response to the demands of a heavy workload</li></ul></li></ul><p id="e8cf271d-9d21-452e-8d47-686d6d4e06ca" class="">
+</p><p id="ba0f4bf8-fd03-4f69-ade8-fbde514f555d" class="">Several factors might be responsible for the susceptibility to stress of those who are high in negative affectivity, these include:</p><ol type="a" id="e17d19f7-9f11-484d-a113-2f5c15cb28f1" class="numbered-list" start="1"><li>A predisposition to perceive stressors in the workplace</li></ol><ol type="a" id="e6e3e5ba-81d7-4118-b024-55379d1545ae" class="numbered-list" start="2"><li>Hypersensitivity to existing stressors</li></ol><ol type="a" id="d9ff853d-dcc0-46d6-8894-bfbaf18f4448" class="numbered-list" start="3"><li>A tendency to gravitate to stressful jobs</li></ol><ol type="a" id="d6e30b69-6be8-4098-a2ff-17a589beb562" class="numbered-list" start="4"><li>A tendency to provoke stress through their negativity</li></ol><ol type="a" id="eac3c1a8-44f0-44af-a4fe-45a93e5b45cc" class="numbered-list" start="5"><li>The use of passive, indirect coping styles that avoid real sources of stress</li></ol><p id="2908d24a-5807-43ab-9a5f-5b956dda1b8c" class="">
+</p><h1 id="759227b7-41e7-41dc-bcc8-32fd9089a322" class="">13.6 Stressors in organizational life</h1><p id="645fd0b3-e964-4937-9d86-e75d8c026ba1" class="">Here we’ll examine potential stressors in detail</p><h2 id="8b93e5ee-5d0f-45cf-a685-8209b59b1856" class="">Executive and managerial stressors</h2><p id="2de71427-fdf6-467b-9ab4-fe95380d877f" class="">Executives and managers make key organizational decisions and direct the work of others; they are likely to experience various forms of stress as a result of this</p><h3 id="e1ade368-94c2-4ee0-9b5b-3fa29129dd5f" class="">Role overload</h3><p id="1f798ed9-3103-4d98-a780-e8525f0f5e63" class="">Role overload occurs when one must perform too many tasks in too short a time period or work too many hours; a common stressor for managers</p><ul id="3a81a6b4-d010-48d8-82cb-480bf1bba4b3" class="bulleted-list"><li style="list-style-type:disc">The open-ended nature of the managerial job is partly responsible for this heavy and protracted workload</li></ul><ul id="5dd7bba4-7965-4af0-8418-cf86d6bc34ac" class="bulleted-list"><li style="list-style-type:disc">Management is an ongoing process, and there are few signposts to signify that a task is complete and that rest and relaxation are permitted</li></ul><p id="b3febba2-874c-47aa-9a9c-e974f0a472cf" class="">
+</p><p id="1a7bdc8f-e051-47b2-9f35-ab30b19d057a" class="">A heavy workload often provokes conflict between a managers’ role as an organizational member and their role as a spouse or parent</p><ul id="08d499cc-7800-4b8c-bbff-74b57315c330" class="bulleted-list"><li style="list-style-type:disc">Role overload may provoke stress, at the same time preventing managers from enjoying the pleasures of life that can reduce stress</li></ul><h3 id="19ee037b-0626-4886-bc87-64fcee0d8025" class="">Heavy responsibility</h3><p id="a8dac0f7-fa0b-4bfe-8673-20c9028bcd0a" class="">The workload of an executive is heavy, and it can have extremely important consequences for the organization and its members</p><ul id="77f71f47-6451-41fb-86d1-534eca5c6a55" class="bulleted-list"><li style="list-style-type:disc">A VP of labour relations might be in charge of a negotiation strategy that could result in either labour peace or a protracted and bitter strike<ul id="4dc0f463-d0af-472e-92b0-91485c29ddd9" class="bulleted-list"><li style="list-style-type:circle">To amplify this, the personal consequences of an incorrect decision can be staggering</li></ul></li></ul><p id="1815275c-265a-471c-8834-c05f6e32032f" class="">
+</p><p id="94786d6c-0583-4079-ae19-efbe3475eb41" class="">Executives are responsible for people as well as things, and this influence over the future of others has the potential to induce stress</p><ul id="a76ed4f6-bf51-40df-b2fc-4c487ab135cb" class="bulleted-list"><li style="list-style-type:disc">An executive who must terminate the operation of an unprofitable division, putting many out of work, or a manager who must lay off an employee which can lead to guilt and tension</li></ul><h2 id="4930be04-46a7-48db-837c-2961213b259b" class="">Operative-level stressors</h2><p id="ed1dbe99-a357-4d44-aa4f-fd7451e4ee00" class="">Operatives are individuals who occupy non-professional and non-managerial positions in organizations</p><ul id="d9126219-3342-485c-889c-153421636626" class="bulleted-list"><li style="list-style-type:disc">In a manufacturing organization, operatives perform the work on the shop floor and range from skilled craftspeople to unskilled labourers<ul id="e652596e-e170-4f27-af7c-9ed317079a2f" class="bulleted-list"><li style="list-style-type:circle">Operatives are sometimes exposed to a special set of stressors</li></ul></li></ul><h3 id="0a4ac142-5a0b-41cc-8880-c0d56209cc67" class="">Poor physical working conditions</h3><p id="853b4bff-e474-491a-8d83-5e9189cf9edb" class="">Operative-level employees are more likely than managers and professionals to be exposed to physically unpleasant and even dangerous working conditions</p><ul id="65a7fc94-9387-4577-ad8f-f515ac267e79" class="bulleted-list"><li style="list-style-type:disc">Many employees still face the change of accidents and excessive heat, cold, noise, and pollution</li></ul><h3 id="ae7cf35f-71cf-4910-b333-ca0ebc644f6c" class="">Poor job design</h3><p id="1a440072-b0f3-48a9-b7d8-459ab6435cc9" class="">Bad job design can provoke stress at any organizational level, though the designs of lower-level blue- (labourers) and white-collar (administrative) jobs are particular culprits</p><ul id="f8d09cf3-f9b7-479f-9a96-5ae1250561a7" class="bulleted-list"><li style="list-style-type:disc">It might seem paradoxical that jobs that are too simple or not challenging enough can act as stressors</li></ul><ul id="30787dc4-37de-4807-a3ea-0d91e46e16bb" class="bulleted-list"><li style="list-style-type:disc">However, monotony and boredom can prove extremely frustrating to people who feel capable of handling more complex tasks<ul id="acd22778-2508-4f98-b716-2d49c7abab2a" class="bulleted-list"><li style="list-style-type:circle">Research has found that job scope can be a stressor at levels that are either too low or high</li></ul></li></ul><h2 id="b0a06919-bfd7-49e9-80a1-f92deb4bcc6e" class="">Boundary role stressors, burnout, and emotional labour</h2><p id="0c2d210d-9b1a-4b23-ac87-2f39a8b5576d" class="">Boundary roles are positions in which organizational members are required to interact with members of other organizations or with the public</p><ul id="f6c9089c-53f5-428b-bf06-da2cdeff70bd" class="bulleted-list"><li style="list-style-type:disc">VP public relations are responsible for representing their company to the public</li></ul><p id="1720d108-c8c2-45fe-aad0-c1ba97da84a1" class="">
+</p><p id="245a5326-9f7a-4084-87fc-9f8d3d0249fd" class="">People are especially likely to experience stress as they straddle the imaginary boundary between the organization and its environment</p><ul id="33369ce3-5c69-4e04-92a2-b6b83e511135" class="bulleted-list"><li style="list-style-type:disc">This is another form of role conflict in which one’s role as an organizational member might be incompatible with the demands made by the public or other organizations<ul id="494b7d4e-0fa1-440e-81eb-870421cdd3c5" class="bulleted-list"><li style="list-style-type:circle">Another example, thinking of a sales rep that is faced with the dilemma of doing the primary job (selling) while protecting another function (software development) from unreasonable demands that could result in broken contract<ul id="0bf1f526-626d-4324-8d4f-7b4db1f39806" class="bulleted-list"><li style="list-style-type:square">The sales rep probably could make an outstanding offer to a client (involving a new custom software application) but this would place too much pressure on software developers to follow through</li></ul></li></ul></li></ul><p id="5a33a113-ed6c-4ef6-b431-5e27567d9c4f" class="">A particular form of stress (and accompanying stress reactions) experienced by some boundary role occupants is burnout</p><ul id="229704ab-2823-40ec-ae73-bf84e92fa058" class="bulleted-list"><li style="list-style-type:disc">A syndrome made up of emotional exhaustion, cynicism, and low self-efficacy</li></ul><p id="7537931e-363d-4c54-b664-23fe74b8a159" class="">
+</p><p id="4896c7e4-a2ee-4241-924d-969f8e50d081" class="">Burnout follows a process that begins with emotional exhaustion (left side of above diagram)</p><ul id="64c51b11-e358-47de-8c94-963cfab888c6" class="bulleted-list"><li style="list-style-type:disc">Person feels fatigued in the morning, drained by the work, and frustrated by the day’s events<ul id="ff96e6f1-714c-451c-9344-88b0146186c4" class="bulleted-list"><li style="list-style-type:circle">One way to deal with this extreme exhaustion is to become cynical and distance oneself from one’s clients, the ‘cause’ of exhaustion</li></ul><ul id="553a63db-d858-45e9-bf63-1c1c9e097413" class="bulleted-list"><li style="list-style-type:circle">This might involve depersonalizing them, treating them like objects, and lacking concern for what happens to them<ul id="1c0d8312-6c9b-448f-bdad-e654ac86ab36" class="bulleted-list"><li style="list-style-type:square">Finally, the burned-out individual develops feelings of low self-efficacy and low personal accomplishment - “I can’t deal with these people,” “I’m not helping them,” “I don’t understand them”</li></ul></li></ul></li></ul><p id="a1419484-c8bf-48f3-b68b-a69ef8b93aaa" class="">
+</p><p id="bdf06bd5-606c-4d19-aaa7-7e288f837057" class="">Burnout is common among people who entered their jobs with especially high ideals</p><ul id="e5db29b1-36af-4d04-a682-2a5074d87d44" class="bulleted-list"><li style="list-style-type:disc">Their expectations of being able to “change the world” are badly frustrated when they encounter the reality shock of troubled clients (who generally are unappreciative) and the inability of the organization to help them<ul id="f4302854-a8b1-439c-9e37-0a821c4d4d07" class="bulleted-list"><li style="list-style-type:circle">Nurses get upset when patients die</li></ul></li></ul><p id="683671e7-525a-45fa-a0e7-99dc0fad57a0" class="">
+</p><p id="0abea059-0fd2-4f4c-887c-2c5ea5fb6438" class="">Gender is relevant here too; women are more likely to report emotional exhaustion, and men are more likely to report depersonalization</p><ul id="c072aca6-091a-4825-965a-040a6ba4678c" class="bulleted-list"><li style="list-style-type:disc">In general, those with high self-esteem, high conscientiousness, and internal control report less burnout</li></ul><p id="def10e92-dbad-4e42-85a5-588966e56899" class="">
+</p><p id="93fea0e2-7e71-427a-86e8-868363a36f8c" class="">Consequences of burnout?</p><ol type="1" id="46ba4c03-1fbc-4031-88d8-bb3dc8483c68" class="numbered-list" start="1"><li>Some individuals bravely pursue a new occupation, often experiencing guilt about not having been able to cope in the old one<ol type="a" id="1021e1d0-6222-4053-8ddb-f59b98a031c5" class="numbered-list" start="1"><li>The burned out nurse may go into nursing education to avoid contact with sick patients</li></ol></li></ol><ol type="1" id="42c333bf-62ec-4b20-a1f1-d0bd35b8a559" class="numbered-list" start="2"><li>Others stay in the same occupation but seek a new job<ol type="a" id="b424282f-a825-4c4a-8c2e-d267f6dd4083" class="numbered-list" start="1"><li>Doing little to contribute to the mission of the organization and exhibiting poor performance and excessive absenteeism</li></ol><ol type="a" id="29a2245f-9563-440c-a998-0db31848f1cb" class="numbered-list" start="2"><li>Paradoxically, staying put and suffering is pretty common, because people experiencing burnout have trouble making decisions</li></ol></li></ol><p id="53c91d2f-a49c-481c-a158-7c90b529497c" class="">
+</p><p id="12daf9eb-1501-4c06-8e36-b11a32bbafa0" class="">Much boundary role stress stems from the frequent need for such employees to engage in “emotional labour”</p><ul id="54832d2a-96da-487b-836e-b14ede59eb49" class="bulleted-list"><li style="list-style-type:disc">Regulating oneself to suppress negative emotions or to exaggerate positive ones<ul id="cba01c33-a50e-4cca-9caf-66513e367ee6" class="bulleted-list"><li style="list-style-type:circle">Salon employees are supposed to act friendly and sympathetic to rude clients<ul id="ac4ca283-fc56-4831-9e22-93b90e8cb463" class="bulleted-list"><li style="list-style-type:square">Obviously, this takes a toll on mental and emotional resources over time</li></ul></li></ul></li></ul><h2 id="70fcb38d-ac5d-489a-93b4-0e0bcb642cc0" class="">The job demands-resources model and work engagement</h2><p id="b3ab25f4-512a-4a66-b619-6c1cdafb815d" class="">It is obvious that organizations should strive to avoid causing burnout and the extreme detachment from the job that it causes</p><ul id="84556c56-92c4-4207-afc8-43a5bfe7c658" class="bulleted-list"><li style="list-style-type:disc">Organizations should strive to foster high work engagement and enthusiasm for the job<ul id="9febe2be-2237-4ad0-b04b-4c6adc226e9e" class="bulleted-list"><li style="list-style-type:circle">Work engagement can be defined as a ‘positive work-related state of mind that is characterized by vigor, dedication, and absorption’<ul id="042b6ba6-baa6-4e62-995d-c82560d85bf0" class="bulleted-list"><li style="list-style-type:square">Vigor involves high levels of energy and mental resilience at work</li></ul><ul id="e68d89a7-d7da-497e-aa04-a96f9a27ac5e" class="bulleted-list"><li style="list-style-type:square">Dedication means being strongly involves in your work and experiencing a sense of significance</li></ul><ul id="c8c9c48b-9277-4e07-a84b-43fc1cf28260" class="bulleted-list"><li style="list-style-type:square">Absorption means to be fully concentrated on and engrossed in your work</li></ul></li></ul></li></ul><p id="79baa52b-8799-485a-a4f8-0e06657f35ec" class="">
+</p><p id="bb5969f2-8b46-441f-b0cd-fd753668eff5" class="">But what determines whether employees tend towards engagement versus burnout?</p><ul id="496baadb-9b51-47e3-9b7b-547ef3d202a3" class="bulleted-list"><li style="list-style-type:disc">According to the job demands-resources model, work can be described in terms of demands and resources<ul id="490b89b4-b85b-451a-a1df-c69689d13122" class="bulleted-list"><li style="list-style-type:circle">Job demands are physical, psychological, social, or organizational features of a job that require sustained psychical or psychological effort that in turn can result in physiological or psychological costs<ul id="ee6cd2b5-a01f-4bfb-ba50-7538d393e38a" class="bulleted-list"><li style="list-style-type:square">Common demands include work overload, time pressure, role ambiguity, and role conflict</li></ul><ul id="8d0b9f45-5e38-4d0c-a879-877bd969aa9d" class="bulleted-list"><li style="list-style-type:square">Resources refers to features of a job that are functional in that they help achieve work goals, reduce job demands, and stimulate personal growth, learning, and development<ul id="e3e7060a-a6ab-433e-be4a-3687a18ea0c6" class="bulleted-list"><li style="list-style-type:disc">Job resources can come from the organization (pay, opportunities, job security), interpersonal and social relations (team climate), the organization of work (role clarity, participation), and task itself (task significance, autonomy)</li></ul></li></ul></li></ul></li></ul><p id="d13155ad-af04-4d71-a274-b3013733e54c" class="">
+</p><p id="1cee8943-b7d0-4fe4-b909-a38896c2ed21" class="">A central assumption of the model is that high job resources foster work engagement while high job demands exhaust employees physically and mentally and lead to burnout</p><h2 id="748e2d2d-abc7-4fb0-8424-5dac983030f4" class="">Some general stressors</h2><p id="7e2a15e5-6abb-4c64-86aa-71af85641f2d" class="">These can be faced by anyone regardless of role</p><h3 id="002051c0-9bf1-400f-9f30-3fd12ebdba57" class="">Counterproductive work behaviour</h3><p id="89bcf373-a586-42ec-b019-65c7d52e6ec6" class="">Intentional verbal or physical behaviour meant to harm one’s organization or individuals such as co-workers or customers</p><ul id="20237759-de6b-48a3-9f75-be7ae306b1e2" class="bulleted-list"><li style="list-style-type:disc">Often involves interpersonal conflict, which can be a potent stressor</li></ul><p id="673d3e4d-4179-48ff-8995-a321090a7403" class="">
+</p><p id="456262eb-c052-4fd3-b6ec-1c5943658350" class="">A particular counterproductive manifestation of conflict is workplace bullying</p><ul id="3cf0816f-cf31-4e75-85fe-2dca1e69ebae" class="bulleted-list"><li style="list-style-type:disc">Bullying is repeated negative behaviour that is directed toward one or more individuals of lower power or status and creates a hostile work environment<ul id="c870356f-66bd-41dd-a21a-2818cf93f105" class="bulleted-list"><li style="list-style-type:circle">Research has demonstrated that it is a potent source of stress, negative well-being, and sickness absenteeism</li></ul></li></ul><p id="bc2acf5e-97f4-4064-96b2-726e3a4782d5" class="">
+</p><p id="c445d944-526e-4c0c-83df-02d67c77217e" class="">The role of differential power is most apparent when managers engage in the bullying of subordinates, a condition called abusive supervision</p><ul id="43e5163e-5b0f-442f-bc53-5a90049401bd" class="bulleted-list"><li style="list-style-type:disc">This can be especially damaging to employee well-being because managers control considerable resources of interest to employees (promotions, pay increase) and are a natural place to turn to for support when experiencing abuse<ul id="fe8eda7c-7928-491c-8f37-6fcc76e41d00" class="bulleted-list"><li style="list-style-type:circle">Organizations should pay careful attention to who is assigned to leadership positions, especially since abusive supervision is tied to reduced subordinate citizenship and increased health problems</li></ul></li></ul><p id="c9f4d6a9-f958-4f25-959c-d3a5e06957b2" class="">
+</p><p id="155ea33c-575c-44ad-a789-0665959c8471" class="">Cyberbullying is a newer form in which the abuse occurs electronically via email, texting, social media, or blogs </p><p id="86228e70-cfdf-4ce9-aaef-89d7809d14e6" class="">
+</p><p id="faefff56-865e-4fec-9856-c9e23bbc8979" class="">Particularly when it is intentional, ostracism can be a potent stressor, and it is sometimes employed with the above-mentioned forms of counterproductivity, especially abusive supervision</p><ul id="18f06bba-1a03-47bf-af66-391d2eba267a" class="bulleted-list"><li style="list-style-type:disc">Workplace ostracism occurs when a group or individual persistently fails to interact with a co-worker when it would be normal to do so<ul id="ead1bf5b-9bcb-4e64-8486-4f4829c85ed3" class="bulleted-list"><li style="list-style-type:circle">Could involve shunning, ignoring, or excluding the person<ul id="b25bc5a4-cf6c-4184-a195-8707558e1d34" class="bulleted-list"><li style="list-style-type:square">Ostracism is associated with negative wellbeing and poor performance; this can lead to social isolation</li></ul></li></ul></li></ul><p id="f1c7f952-550f-4b1c-8bc3-fedd37e8950c" class="">
+</p><p id="e20bf48b-d498-4fbb-a06c-2dc0e7c15e4a" class="">Final form of counterproductive behaviour is sexual harassment</p><ul id="99223c8d-540c-401e-9933-a05d3f572766" class="bulleted-list"><li style="list-style-type:disc">Major workplace stressor with serious consequences that are similar to or more negative than those of the other types of stressors<ul id="382c504c-cfbc-4bbb-96ce-cda35f2e1108" class="bulleted-list"><li style="list-style-type:circle">Results in decreased morale, job satisfaction, organizational commitment, job performance, and increased absenteeism, turnover, and job loss</li></ul></li></ul><h3 id="12535be5-8bec-4508-97ff-6ed78fd9c3bf" class="">Work-family conflict</h3><p id="32f8104c-be78-409e-b902-6e5b2a823d43" class="">Occurs when either work duties interfere with family life or family life interferes with work responsibilities; such conflict results in burnout; two facts of life in contemporary society have increased the stress and burnout stemming from interrole conflict between a member of one’s family and the member of an organization</p><ol type="1" id="52b8d5b3-922e-4eab-bdcc-bbd39bbfcec3" class="numbered-list" start="1"><li>Increase in the number of households in which both parents work and the increase in the number of single-parent families has led to a number of stressors centered around child care</li></ol><ol type="1" id="89ccbf8a-0bf5-4ddd-971b-f36e5355cb1e" class="numbered-list" start="2"><li>Increased lifespans have meant that many people in the prime of their careers find themselves providing support for elderly parents, some of which many be seriously ill</li></ol><p id="25da1a98-08ce-4ce0-bbcb-1787cfdaba18" class="">
+</p><p id="09610e03-ff3f-421c-b151-718719c3e54d" class="">Occupations that require a high degree of teamwork or responsibilities for others tend to provoke the most work-family conflict (police detectives, firefighters, family doctors)</p><h3 id="05ce946e-3890-4e9d-98ef-6df7074309e5" class="">Job insecurity and change</h3><p id="7ceebf06-1c07-4aab-a9ab-b6988ceb86bf" class="">Secure employment is an important goal for almost everyone and stress may be encountered when it is threatened</p><ul id="9a708dbf-694a-4d76-833f-d6f276797a29" class="bulleted-list"><li style="list-style-type:disc">The trend toward mergers and acquisitions, along with reengineering, restructuring, and downsizing, has lead to increasingly high levels of stress among employees who either have lost their jobs or must live with the threat of more layoffs, the loss of friends and co-workers, and increased workload</li></ul><p id="c119e86c-426a-4d33-9f5d-0d8e573f41f4" class="">
+</p><p id="fcae38bf-1e59-4d90-bfff-6ed78cff46a6" class="">At the operative level, unionization has provided a degree of employment security for some, but the vagaries (unexpected changes) of the economy and the threat of technology hang heavily over many workers</p><p id="84da7568-51e8-42a0-8ddd-5a5783a011ef" class="">
+</p><p id="46d0f753-e3a6-4538-820b-5aeb95601cfd" class="">Pressures for corporate performance have made cost-cutting a top priority, and one of the surest ways to cut costs in the short run is to reduce executive positions and thus reduce the total management payroll</p><h3 id="427049d5-be35-4828-94a6-cfa8e1266577" class="">Role ambiguity</h3><p id="c8dabb1e-c171-41cf-a680-bb8497fa68ca" class="">Role ambiguity can provoke stress</p><ul id="576e6c88-1c18-48ce-b6a6-d7b557fc50b6" class="bulleted-list"><li style="list-style-type:disc">Role ambiguity occurs when the goals of one’s job or the methods of performing the job are unclear<ul id="bea0c948-7597-4fdd-97ca-d0171abbd32e" class="bulleted-list"><li style="list-style-type:circle">Such a lack of direction can prove stressful, especially for people who are low in their tolerance for such ambiguity<ul id="c2edba3f-7e89-4911-962c-24f798cfe42c" class="bulleted-list"><li style="list-style-type:square">The president of a firm might be instructed by the board of directors to increase profits and cut costs<ul id="0df1e88c-6536-4de5-ae21-6b9a3e7234c2" class="bulleted-list"><li style="list-style-type:disc">While this goal seems clear enough, the means by which it can be achieved might be unclear</li></ul></li></ul></li></ul></li></ul><h3 id="20b34875-d6d8-47eb-8d0b-afd0779a1992" class="">Techno-stressors</h3><p id="da74db3a-cd86-40d9-9a7f-616a1755eff0" class="">Stress originating from the need for people to use and to master a variety of workplace information and communication technology, there are five dimensions to this:</p><ol type="1" id="25a7bf5f-1093-4152-b4f9-9d33cfc88a1b" class="numbered-list" start="1"><li>Techno-overload<ol type="a" id="d94f254d-985c-4176-bf4c-7f9d54ae0218" class="numbered-list" start="1"><li>The feeling that too many people have access to us, there are too many technology features to master, or too much information to process</li></ol></li></ol><ol type="1" id="f4e41587-e4ec-456f-b543-9b097dde0112" class="numbered-list" start="2"><li>Techno-invasion<ol type="a" id="c1d17ba7-2aa3-41ef-9a28-a0da623abe8f" class="numbered-list" start="1"><li>The feeling that work demands have invaded non-work time, we must be constantly and immediately available, and our behaviour is monitored</li></ol></li></ol><ol type="1" id="f5085635-9206-4011-8bae-23aa637da0b7" class="numbered-list" start="3"><li>Techno-uncertainty<ol type="a" id="a5291d87-bc08-43d7-ad69-e180afc0f12d" class="numbered-list" start="1"><li>The perception that technology is changing too often, that policies regarding technology use are unclear, or that text-based messages are prone to misinterpretation</li></ol></li></ol><ol type="1" id="e76831c8-8433-4559-bfde-120eadf119be" class="numbered-list" start="4"><li>Techno-complexity<ol type="a" id="e7f6d676-eabc-4c8d-983d-fae041796cba" class="numbered-list" start="1"><li>The feeling that new technology introduces complication and hassles to our everyday work</li></ol></li></ol><ol type="1" id="1ae48a47-5737-48ac-83f8-332030223ed8" class="numbered-list" start="5"><li>Techno-insecurity<ol type="a" id="a89ce705-0d33-4097-a951-af2948b05c84" class="numbered-list" start="1"><li>The fear that others are more adept at adapting to and using new technology than we are or that it could threaten our job</li></ol></li></ol><p id="d1f24f8a-72ac-440b-a0b2-db092437976e" class="">
+</p><p id="8a20f4c9-32de-4c13-a08f-01a8eabd4716" class="">These facets of techno-stress are additional sources of some of the previously mentioned causes of stress</p><h1 id="93ef9afe-8320-449b-89b9-380d7a1dfb42" class="">13.7 Reactions to organizational stress</h1><p id="f71b4d1b-8525-44bf-b8a5-06424930e5da" class="">We examine the reactions that people who experience organizational stress might exhibit</p><ul id="93b4bc09-e4dd-408e-a5ce-5ae6d0e6e567" class="bulleted-list"><li style="list-style-type:disc">Reactions that result in additional resources can be seen as good coping with stress</li></ul><ul id="7ab8c3ef-afc2-4de5-8af3-3a30ff2c2bad" class="bulleted-list"><li style="list-style-type:disc">Reactions that increased demands constitute bad coping</li></ul><h2 id="bd5e5ca0-96e1-4981-9f8a-873a2fa7ec53" class="">Behavioral reactions to stress</h2><p id="67244681-fb56-49fd-89bf-3a771d5bc0c1" class="">Behavioral reactions to stress are overt activities the stressed individual uses in an attempt to cope; they include problem-solving, seeking social support, modified performance, withdrawal, presenteeism, and the use of addictive substances</p><h3 id="4cd6e11a-4162-4791-9520-dd00a5a70d88" class="">Problem solving</h3><p id="d3f9d8d5-cebb-477e-8de3-786fbcc1bc55" class="">Problem solving is directed toward terminating the stressor or reducing its potency and not toward simply making a person feel better in the short run</p><ul id="d324d4d5-095b-4cc1-830c-479f6354ab39" class="bulleted-list"><li style="list-style-type:disc">Problem solving is reality-oriented and while it is not always effective in combating the stressor, it reveals flexibility and realistic use of feedback</li></ul><p id="a5467b41-e38a-4eb7-b354-2c55c0125227" class="">
+</p><p id="9eeeb8a9-17c8-474f-a301-e82c38805342" class="">Most examples of problem-solving response are undramatic because it is generally the routine, sensible, obvious, approach that an objective observer might suggest; here are a few examples:</p><ol type="1" id="79103328-a5f0-4868-bcc2-adfc78e91be6" class="numbered-list" start="1"><li>Delegation<ol type="a" id="f1bbc10f-618e-4337-92d9-80de9aee00dd" class="numbered-list" start="1"><li>A busy executive reduces her stress provoking workload by delegating some of her many tasks to a capable assistant</li></ol></li></ol><ol type="1" id="dcbf4578-a33d-4eaa-b110-2cc5bf7ea727" class="numbered-list" start="2"><li>Time management<ol type="a" id="ae821f00-07b8-490b-a141-9f0069247e58" class="numbered-list" start="1"><li>A manager who finds the day too short writes a daily schedule that requires his subordinates to make formal appointments to see him, and instructs his secretary to screen phone calls more selectively</li></ol></li></ol><ol type="1" id="5f86ea5d-9961-4e8f-a75d-3a35eec2733b" class="numbered-list" start="3"><li>Talking it out<ol type="a" id="a58a93a2-9aab-4198-998e-820891cebe60" class="numbered-list" start="1"><li>An engineer who is experiencing stress because of poor communication with her non-engineer superior resolves to sit down with the boss and hammer out an agreement</li></ol></li></ol><ol type="1" id="29e35719-c7d0-4f3c-8235-af1f71f93ed7" class="numbered-list" start="4"><li>Asking for help<ol type="a" id="87ab52da-078d-421c-8211-61ac716ff9ef" class="numbered-list" start="1"><li>A salesperson who is anxious about his company&#x27;s ability to fill a difficult order asks the production manager to provide a realistic estimate of the probable delivery day</li></ol></li></ol><ol type="1" id="fe65345a-d25b-4c0e-a86d-de620751491b" class="numbered-list" start="5"><li>Searching for alternatives<ol type="a" id="0e4e2bed-23b5-431b-90d4-9529a5d58294" class="numbered-list" start="1"><li>A programmer who finds her monotonous job stress provoking applies for a transfer to a more interesting position with identical pay</li></ol></li></ol><h3 id="1c0fb3d2-82bd-4203-86bf-338746352226" class="">Seeking social support</h3><p id="40eb3b00-8d88-4cde-a768-87ade4132e3d" class="">Social support simply refers to having close ties with other people</p><ul id="23c8de8f-de85-4cb3-a856-c5c80c732d32" class="bulleted-list"><li style="list-style-type:disc">In turn, these close ties can affect stress by bolstering self-esteem, providing useful information, offering comfort and humour, or even providing material resources (borrowing money from a friend)</li></ul><p id="61db1c0b-a653-40c3-b302-1722ba55d028" class="">
+</p><p id="e9291001-1c3d-4772-8231-563dbd75e188" class="">The benefits of social support are double-barreled:</p><ol type="1" id="62261478-d347-472f-b60b-8cdf58e6c8a0" class="numbered-list" start="1"><li>People with stronger social networks exhibit better psychological and physical well-being</li></ol><ol type="1" id="9b84b598-ee96-4f6f-b1bf-c94e44861990" class="numbered-list" start="2"><li>When people encounter stressful events, those with good social networks are likely to cope more positively<ol type="a" id="1f0c3c36-a3b8-4d4e-b3ac-0d99516c9244" class="numbered-list" start="1"><li>Therefore, it can be said that a social network can offset stress</li></ol></li></ol><p id="b7cc8dd0-6ef8-4dbf-97c5-7800e652bf5b" class="">
+</p><p id="ce8605d8-b821-48e7-81c3-ed59cdfcccd6" class="">Unfortunately, some organizational cultures, especially those that are very competitive do not encourage members to seek support in a direct fashion</p><ul id="1a67196b-6f56-4e71-ab9a-d18b83cdda3b" class="bulleted-list"><li style="list-style-type:disc">In this case, relationships that people develop in professional associations can sometimes serve as an informed source of social support</li></ul><h3 id="bc477617-1c80-4d49-a005-c7f691771631" class="">Performance changes</h3><p id="51e9620e-20f4-4575-bb06-220f9b544923" class="">Stress or stressors frequently cause reduced job performance; though this could be made more specific</p><ul id="b082a41f-4ac1-452c-8f46-5eff5d9a5d5f" class="bulleted-list"><li style="list-style-type:disc">Some stressors are ‘hindrance’ stressors in that they directly damage goal attainment<ul id="6da02a7b-e338-4ed1-b991-e1d1ddf012c7" class="bulleted-list"><li style="list-style-type:circle">These include things like role ambiguity and interpersonal conflict; such stressors can damage performance</li></ul></li></ul><ul id="eecfc25c-d9d2-41f6-b71c-11147af7843b" class="bulleted-list"><li style="list-style-type:disc">Some stressors are challenging<ul id="ef555cb7-a8ca-4c77-9372-9c808beb5651" class="bulleted-list"><li style="list-style-type:circle">These include factors such as heavy workload and responsibilities; such stressors can damage performance but they sometimes can be stimulate it via added motivation</li></ul></li></ul><ul id="6eacdd43-72e4-4a2a-af0a-a2f40735d63f" class="bulleted-list"><li style="list-style-type:disc">Organizational citizenship behaviours are especially likely to decrease under stressful conditions</li></ul><h3 id="4d72df49-4434-4511-9706-c6388aba8ef0" class="">Withdrawal and presenteeism</h3><p id="840e68a5-10a8-47a2-b426-855f7334732b" class="">Withdrawal from the stressor is one of the most basic reactions to stress</p><ul id="e2dcc324-70a1-45d0-a6ab-2eaf5216865f" class="bulleted-list"><li style="list-style-type:disc">In organizations, withdrawal takes the form of absence and turnover<ul id="895ab8ca-8b2c-41d2-b4d3-e3f90e350681" class="bulleted-list"><li style="list-style-type:circle">Compared with problem-solving reactions to stress, absenteeism fails to attack the stressor directly</li></ul></li></ul><p id="0c572d2c-1924-4704-86b2-a847d764faae" class="">
+</p><p id="0d25db04-2c3f-47ee-b04e-11bbe69d9ce0" class="">When the person returns to the job, the stress is still there</p><ul id="a1244450-0967-42e0-a3c9-e6b2a9f296fc" class="bulleted-list"><li style="list-style-type:disc">From this perspective, absence is a dysfunctional reaction to stress for both the individual and the organization</li></ul><ul id="646ddaf9-c128-4092-b564-c1bbc884e068" class="bulleted-list"><li style="list-style-type:disc">The same can be said about turnover if a person resigns from a stressful job at the spur of the moment merely to escape stress<ul id="232735e8-fd2c-4e36-846d-fe0b565960b9" class="bulleted-list"><li style="list-style-type:circle">There is a good notion behind well-planned resignation however, in which the intent is to assume another job should be less stressful</li></ul><ul id="64a16843-c0a3-408e-ad3c-f2ccb337eb6a" class="bulleted-list"><li style="list-style-type:circle">Well planned resignation is considered to be a problem-solving reaction that should benefit both the individual and the organization</li></ul></li></ul><p id="b52769e8-1837-4388-93e4-472143dcd5ed" class="">
+</p><p id="a8f902bc-10e9-4fe6-9e95-217f3d673858" class="">Ironically, stress can also prompt the opposite of withdrawal to the extent that people go to work ill</p><ul id="c989c82a-e42c-44ff-992b-ee3799aab212" class="bulleted-list"><li style="list-style-type:disc">This is known as presenteeism<ul id="adbf5791-ba98-48c0-9b92-c5a93109888a" class="bulleted-list"><li style="list-style-type:circle">Presentees are at work but they are not working at full capacity</li></ul></li></ul><p id="020704a0-b154-4c71-926b-5bec54e92c94" class="">
+</p><p id="c89572b0-af01-4559-89f3-4a779f514538" class="">What would cause people to go to work even though they are suffering from asthma, migraines and respiratory problems?</p><ul id="80f795f1-00b1-4602-8d57-ba52500ca565" class="bulleted-list"><li style="list-style-type:disc">Many factors are stress-related<ul id="2cdb1ef8-8453-4928-8267-39e6eae7054d" class="bulleted-list"><li style="list-style-type:circle">Therefore, some stressors can cause both absenteeism and presenteeism</li></ul><ul id="0bfd49d2-33c3-4207-b369-f99a29463cda" class="bulleted-list"><li style="list-style-type:circle">High job demands and time pressures have been associated with presenteeism<ul id="127de6a6-b487-4305-87cf-a763ace1fd92" class="bulleted-list"><li style="list-style-type:square">People feel under pressure to get work done and sense the work piling up if they are absent</li></ul><ul id="d591736d-008b-48c1-9224-e368422b4abf" class="bulleted-list"><li style="list-style-type:square">This is especially likely if there is understaffing<ul id="2f8ad27c-4376-4761-8333-970182324351" class="bulleted-list"><li style="list-style-type:disc">Bullying and harassment are related to presenteeism, causing stress but often occurring to those with little power and few options to take time off</li></ul><ul id="89580045-86a8-4c59-9ae0-ca5f74878053" class="bulleted-list"><li style="list-style-type:disc">Depression, frequently associated with stress is a common health problem connected to presenteeism</li></ul></li></ul></li></ul></li></ul><h3 id="f2077fda-be7d-4165-a21a-8fcd4280c2a1" class="">Use of addictive substances</h3><p id="08e411d1-5856-47b3-a3ac-504c40f052e3" class="">Smoking, drinking, and drug use represent the least satisfactory behavioral responses to stress for both the individual and the organization</p><ul id="ea80da09-e246-4179-b08b-6164363daad7" class="bulleted-list"><li style="list-style-type:disc">These activities fail to terminate stress episodes, and they leave employees less physically and mentally prepared to perform their jobs<ul id="803ba820-1157-4fbc-a91f-b8c7da01528f" class="bulleted-list"><li style="list-style-type:circle">The use of addictive substances are associated to some degree with work-related stress</li></ul></li></ul><h2 id="b0aaab72-eb9c-4a75-8eca-b45d9aaee3ff" class="">Psychological reactions to stress</h2><p id="85db565d-32b2-4392-8af8-92b440448529" class="">Psychological reactions to stress primarily involve emotions and thought processes rather than overt behavior, although these reactions are frequently revealed in the individual speech and actions</p><p id="61b219fd-9c86-4ec3-8346-44a89a6948e9" class="">
+</p><p id="a5366491-4d53-4c7f-affd-9b9f9a4f62fd" class="">Defensive mechanisms are psychological attempts to reduce the anxiety associated with stress</p><ul id="a8518705-00fc-4e1f-87a6-6dc0ec160273" class="bulleted-list"><li style="list-style-type:disc">Note that, by definition, defense mechanisms concentrate on anxiety reduction rather than on actually confronting or dealing with the stressor</li></ul><p id="5d73e37f-d24a-40ed-b297-2d18195a090c" class="">
+</p><p id="e0f22062-2531-4f64-8129-eaabe519ff7d" class="">Here are some common defense mechanisms:</p><ol type="1" id="196f2920-2efc-4e97-9bcc-85b0f0463872" class="numbered-list" start="1"><li>Rationalization<ol type="a" id="1d292995-d727-44ef-bf08-ae59cd1df214" class="numbered-list" start="1"><li>Attributing socially acceptable reasons or motives to one&#x27;s actions so that they will appear reasonable and sensible, at least to oneself<ol type="i" id="2f9fa956-026d-48b3-bd5e-648067d0ce43" class="numbered-list" start="1"><li>A male nurse who becomes very angry and abusive when learning that he will not be promoted to supervisor might justify his anger by claiming that the female head nurse discriminates against men</li></ol></li></ol></li></ol><ol type="1" id="ef6fcc56-345f-4c26-a827-3834e4f951fb" class="numbered-list" start="2"><li>Projection<ol type="a" id="cc4767c6-0ad1-43a4-9488-8e454fa8f975" class="numbered-list" start="1"><li>Attributing one&#x27;s own undesirable ideas and motives to others so that they seem less negative<ol type="i" id="d25e9671-0598-42bf-8c98-6bd0dafb0108" class="numbered-list" start="1"><li>A sales executive who is undergoing conflict about offering a bribe to an official of a foreign government might reason that the official is corrupt</li></ol></li></ol></li></ol><ol type="1" id="0c563dd2-8dc6-4786-aa17-cbf7fc65829e" class="numbered-list" start="3"><li>Displacement<ol type="a" id="35d933e9-1bb8-40a7-bcb6-eb16d3a3852e" class="numbered-list" start="1"><li>Directing feelings of anger and a ‘safe’ target rather than expressing them where they may be punished<ol type="i" id="fb42a67d-5578-4d21-ac6a-e803a14f49c5" class="numbered-list" start="1"><li>A construction worker who is severely criticized by the boss for sloppy workmanship might take out his frustrations in an evening hockey league</li></ol></li></ol></li></ol><ol type="1" id="99ac1d7c-bb4f-4d21-bbcb-af76b2a86416" class="numbered-list" start="4"><li>Reaction formation<ol type="a" id="5c8a0174-b2ae-4eb3-89bd-618c029c8a3c" class="numbered-list" start="1"><li>Expressing oneself in a manner that is directly opposite to the way one truly feels rather than risking negative reactions to one’s true position<ol type="i" id="74585bb1-40c9-419a-b861-30bd13ab4e71" class="numbered-list" start="1"><li>A low status member of a committee might vote with the majority on a crucial issue rather than stating his true position and opening himself up to attack</li></ol></li></ol></li></ol><ol type="1" id="91271142-6e64-425d-b5bf-5f8093b1c930" class="numbered-list" start="5"><li>Compensation<ol type="a" id="d89b0f76-d555-4e26-b8d4-2ad45848bdbd" class="numbered-list" start="1"><li>Applying one’s skills in a particular area to make up for failure in another area<ol type="i" id="d3199278-4623-4b0d-804c-1265a29a33f1" class="numbered-list" start="1"><li>A professor who is unable to get research published might resolve to become a superb teacher</li></ol></li></ol></li></ol><p id="e7c4d95d-9163-41e9-b8de-aff208b9d988" class="">
+</p><p id="f9fe5493-a603-4eb3-b234-21c18203b4c9" class="">Is the use of defense mechanisms a good or bad reaction to stress?</p><ul id="27ba56a3-613e-48ba-8c9f-7af091b2a73a" class="bulleted-list"><li style="list-style-type:disc">Used occasionally to temporarily reduce anxiety, they are useful reactions</li></ul><p id="14543219-c01b-4828-bda4-6be103c52591" class="">
+</p><p id="adbf6621-3512-40ac-af49-2ebbe050ce8a" class="">When the use of defense mechanisms becomes a chronic reaction to stress however, the picture changes radically</p><ul id="64f1622a-a703-40e4-b7d5-6839fc0e1f1f" class="bulleted-list"><li style="list-style-type:disc">The problem stems from the very character of defense mechanisms; they simply do not change the objective character of the stressor, and the basic conflict or frustration remains in operation<ul id="de721442-b740-4ed0-be61-f10338ed35f2" class="bulleted-list"><li style="list-style-type:circle">Stress might increase with the knowledge that a defense mechanism has been essentially ineffective</li></ul></li></ul><h2 id="5dedf2ae-eedd-47d4-bf57-2622cdfa8c0d" class="">Physiological reactions to stress</h2><p id="7f0586ff-3611-478c-963e-ba358bded330" class="">Can work-related stress kill you? This is clearly an important question for organizations and it is even more important for individuals who experience excessive stress at work</p><ul id="37ba6dd6-792f-4a1a-9de1-b19b76817e83" class="bulleted-list"><li style="list-style-type:disc">Work stress is associated with electrocardiogram irregularities and elevated levels of blood pressure, cholesterol, and pulse</li></ul><ul id="cbb7828b-ed2b-46e8-a96c-1fbf48c3afa0" class="bulleted-list"><li style="list-style-type:disc">Stress has also been associated with the onset of diseases such as respiratory and bacterial infections due to its effects on the immune system</li></ul><h2 id="15ea423c-b7fb-4e2c-ba9c-eee03148c351" class="">Organizational strategies for managing stress</h2><p id="79c7741b-b227-4174-bd7a-56eeb16896d0" class="">A discussion of personal and organizational strategies to manage stress; these strategies either reduce demands or enhance resources:</p><h3 id="fec039d0-4177-414e-aacd-e393ab7ba8f2" class="">Job redesign</h3><p id="037ca6d0-2dba-409d-a684-afc00c48d910" class="">Organizations can redesign jobs to reduce the stressful characteristics</p><ul id="ed023c01-72b7-49ca-94bd-a63716cc762d" class="bulleted-list"><li style="list-style-type:disc">It is possible to redesign jobs anywhere in the organization <ul id="67ebc2db-baa4-4031-9b78-c1494e8ce81e" class="bulleted-list"><li style="list-style-type:circle">Overloaded executives might be given an assistant to reduce the number of tasks that they must perform</li></ul></li></ul><p id="ece5e7b8-2752-4136-8190-5174141c3a86" class="">
+</p><p id="b397f220-d966-4713-977f-f166d8b940f2" class="">Especially for service jobs, there is growing evidence that providing more autonomy in the how services are delivered can alleviate stress and burnout</p><ul id="64a1c1c7-bbd8-4107-8628-8483c03e8377" class="bulleted-list"><li style="list-style-type:disc">Boundary role service jobs require a high degree of emotional regulation in any event and some autonomy allows employees to cope with emotional labour by adjusting their responses to the needs of the moment in line with their own personalities</li></ul><p id="d89e575e-e69c-4282-be39-e21d40f53fcc" class="">
+</p><p id="fa6cafce-4409-46dc-bcf1-58327220d94d" class="">Stressful job designs often emerge from heavy-handed downsizing, restructurings, and mergers</p><ul id="d76eac0e-d3d1-4b21-a77d-50fac55ae363" class="bulleted-list"><li style="list-style-type:disc">Common symptoms of such jobs are extreme role overload, increased responsibilities without corresponding authority to act, and the assignment of tasks for which no training is provided</li></ul><h3 id="be1573c0-5d87-4157-afe4-af044630139a" class="">“Family-friendly” human resource policies</h3><p id="4f13e04a-6aa7-4658-990d-97588ce206ff" class="">To reduce stress associated with dual-careers, childcare, and eldercare, many organizations institute family-friendly human resource policies to improve work-life balance</p><ul id="6b25941e-090b-4de7-afd2-6d8da570100f" class="bulleted-list"><li style="list-style-type:disc">A welcome form of material support consists of corporate daycare centres</li></ul><ul id="5b165521-06bf-44ba-b293-4ba1abe8e387" class="bulleted-list"><li style="list-style-type:disc">Flexibility is also important and includes flextime, telecommuting, job sharing, and part-time work as well as family leave policies that allow time off for caring for infants, sick children, and aged dependents</li></ul><p id="fcfae7c5-3406-4bc2-b907-a1ab2b0d6e0b" class="">
+</p><p id="5b544e9e-f29d-4a7d-a5b8-adc8f6c4b8f6" class="">Although many firms boast about having such flexible policies, a common problem is convincing managers to encourage employees to make use of these in an era of downsizing and lean staffing</p><ul id="2c4c52ca-15a2-4275-9577-2b93cc656583" class="bulleted-list"><li style="list-style-type:disc">Another problem is a mismatch between the type of flexibility available and that needed<ul id="c1ca5fbd-4ac8-43a5-82da-65ea7253b743" class="bulleted-list"><li style="list-style-type:circle">Lower-level employees might benefit the most from flex time, but it is often unavailable to them</li></ul></li></ul><p id="02968103-3eb2-4dea-8456-45197541d064" class="">
+</p><p id="8956c2be-07ba-475b-97f4-9feeadf0c139" class="">In general, perceptions of flexibility, a reasonable workload, supportive supervision, and a supportive culture are associated with less work-family conflict, higher job satisfaction, and organizational commitment</p><h3 id="7c79c99a-c83f-44f3-80b3-5c8a38d53cd6" class="">Stress management programs</h3><p id="b057ac18-4f4d-4b73-9b41-040adba4530a" class="">Some organizations employ programs designed to help employees manage work-related stress</p><ul id="0cd13527-a66b-4222-95fb-db05c4bb47b8" class="bulleted-list"><li style="list-style-type:disc">Some programs help mentally healthy employees prevent problems due to stress</li></ul><ul id="42b7f005-cd4c-4f07-b073-caa498e11dab" class="bulleted-list"><li style="list-style-type:disc">Others are therapeutic in nature, aimed at individuals who are already experiencing stress and burnout</li></ul><p id="869dd568-9b54-4199-91e0-e3b810ae8781" class="">
+</p><p id="eeafc26b-b12f-47b7-86ba-99cc12e56d84" class="">Mindfulness training has received particular recent attention</p><ul id="00e8ec14-2fc3-47e3-a2fb-1321c192ccd3" class="bulleted-list"><li style="list-style-type:disc">Mindfulness is a state in which people are highly aware of and attentive to what is happening in the present<ul id="d62ed635-b83a-41c5-a7cd-6a2006a63fc9" class="bulleted-list"><li style="list-style-type:circle">Rather than relying on past experiences or future projections that focus on the self, the present is processed as it is<ul id="2a4c848e-0e08-4052-9464-8bda68d8c19f" class="bulleted-list"><li style="list-style-type:square">Mindfulness has been associated with positive health and well-being</li></ul><ul id="d72bfa1f-3414-4124-bef7-5f9690e4526d" class="bulleted-list"><li style="list-style-type:square">Its particular relevance to work stress is that it seems to make people less sensitive to stressors, less inclined toward negative mood, and recover from stressful events more quickly, leading them to be more resilient</li></ul></li></ul></li></ul><h3 id="07e5ac2c-1a77-44be-87c8-ebc9f4c9332f" class="">Work-life balance, fitness, and wellness programs</h3><p id="ae0996a2-9a56-4fea-ad60-4b487a5afc4c" class="">Many people have argued that a balanced lifestyle that includes a variety of leisure activities combined with a healthy diet and physical exercise can reduce stress and counteract some of the adverse physiological effects of stress</p><ul id="6f1b82cf-6873-4dbf-9993-7421389b0a7e" class="bulleted-list"><li style="list-style-type:disc">For some organizations, work-life balance programs and quality-of-life benefits have become a strategic retention tool</li></ul><ul id="1c6a4d62-1b21-4f6c-a236-8f1f0cd01822" class="bulleted-list"><li style="list-style-type:disc">Employees are increasingly demanding work-life balance benefits, and employers are realizing that by providing them they can increase commitment and reduce turnover</li></ul><p id="2a1cc1eb-646d-4990-af22-6d8d4f815096" class="">
+</p><p id="c2ede17c-b6ad-431e-9a51-00250d3cf94b" class="">Fitness training is associated with improved mood, a better self concept, reduced absenteeism enhanced job satisfaction, and reports of better performance</p><h1 id="f14c5b1a-1393-4b42-acd2-3f4d86211df6" class="">Slide Extras</h1><h2 id="f3072e0a-25d2-4796-b274-75b77ff360fe" class="">Individual Approaches to Reducing Stress</h2><ol type="1" id="b1e79227-ee4b-4f8e-a5b3-72312870be40" class="numbered-list" start="1"><li>Perform a ritual</li></ol><ol type="1" id="1e04b850-02a9-47b1-8ad9-6d6a4bcf1634" class="numbered-list" start="2"><li>Move your body frequently</li></ol><ol type="1" id="b3b6657e-dc47-4701-94a8-f72c3ecddd00" class="numbered-list" start="3"><li>Make positive face-to-face connection with other people a price</li></ol><ol type="1" id="5598d77b-38f3-4539-8db3-a0c6db0e159d" class="numbered-list" start="4"><li>When you can’t change the stressor, learn to avoid, alter, adapt, or accept</li></ol><ol type="1" id="d225f28d-0bd2-4dca-be8f-c019e91db369" class="numbered-list" start="5"><li>Reduce your intake of alcohol, nicotine, and caffeine</li></ol><ol type="1" id="fe752654-2673-4ffb-b448-be3dbd8babdf" class="numbered-list" start="6"><li>Do something you enjoy every day</li></ol><ol type="1" id="32e0b79b-cd3d-4b70-8138-7c94e48ea2a5" class="numbered-list" start="7"><li>Get all the restful sleep that you need to feel your best</li></ol><h2 id="23142c84-3996-421e-859c-dcb8172e4c70" class="">Sleep Deprivation</h2><ol type="1" id="856fdb1f-fe79-45ec-b9fe-193e898c0e9a" class="numbered-list" start="1"><li>Reduction in IQ</li></ol><ol type="1" id="fe1efc53-8168-4f0c-863a-57678178777c" class="numbered-list" start="2"><li>Wreaks havoc with the immune system / increases inflammation</li></ol><ol type="1" id="e3a99109-2741-4e24-b3e9-e928ab58c4b2" class="numbered-list" start="3"><li>Will make you overweight</li></ol><ol type="1" id="7cc48b6c-15dd-46c4-82ce-4445246c7371" class="numbered-list" start="4"><li>Leads to high blood pressure</li></ol><ol type="1" id="3ad9b359-9396-40d4-a5ec-5082440da9a7" class="numbered-list" start="5"><li>Reduction in concentration and productivity</li></ol><ol type="1" id="58f16f08-ee3f-4257-affc-c1098b9e38bb" class="numbered-list" start="6"><li>Leads to heart problems</li></ol><ol type="1" id="c3f5191d-0bc9-4858-a073-e8d419afdd93" class="numbered-list" start="7"><li>Greater risk of type 2 diabetes and insulin resistance</li></ol><ol type="1" id="738ff4c0-5740-4071-b231-f1420acd4f66" class="numbered-list" start="8"><li>Higher levels of depression</li></ol><ol type="1" id="c1d263e4-d18c-4b86-8bc8-8331bb68b861" class="numbered-list" start="9"><li>Spike in breast cancer rates</li></ol><ol type="1" id="565d3187-f9df-4aa5-bd36-c4f3e79c61db" class="numbered-list" start="10"><li>Pulling an all-nighter is worse than 6 months of unhealthy eating</li></ol><ol type="1" id="bcef9884-b0a1-4aaa-995e-bdaac13750ba" class="numbered-list" start="11"><li>Sleep deprived leaders are less inspiring</li></ol><ol type="1" id="783cdcca-4307-4e66-ae7a-e2ab11a2ca1d" class="numbered-list" start="12"><li>To the brain, “sleep deprivation is like drinking too much”</li></ol><ol type="1" id="024075eb-b04c-448a-9ab2-7da36e560a81" class="numbered-list" start="13"><li>Induces impairment</li></ol><ol type="1" id="ab620e91-0984-4818-aa81-6a7ec05b2d31" class="numbered-list" start="14"><li>Leads to presenteeism<ol type="a" id="9f8cd239-de56-4f55-9b64-1835d76bb9de" class="numbered-list" start="1"><li>Being on the job with illness or other medical issues can cut individual productivity by 1/3 or more</li></ol><ol type="a" id="d317265d-1dd8-4274-aae8-f6a64747df73" class="numbered-list" start="2"><li>Contributes to over 80 billion dollars in loss to companies each year</li></ol></li></ol><ol type="1" id="747ed309-48f5-41f1-bb2d-fc5dcbc00b7b" class="numbered-list" start="15"><li>Staying up an hour later doesn&#x27;t mean you gain an hour in productivity<ol type="a" id="016d0cbc-a3b6-46e6-9ec3-bc8cc70f146b" class="numbered-list" start="1"><li>Losing sleep is directly linked to poor focus and memory</li></ol></li></ol></div></article></body></html>

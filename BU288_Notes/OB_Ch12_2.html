@@ -1,0 +1,712 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>12: Power and Politics</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b87607c9-4200-4235-ab97-60d2680f7597" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/nasa_multi-axis_gimbal_rig.jpg" style="object-position:center 80%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🎗️</span></div><h1 class="page-title">12: Power and Politics</h1></header><div class="page-body"><h1 id="a4245a7a-df8c-45e6-93af-3240e286259d" class="">12.1 What is Power?</h1><p id="f971fe26-551b-49c4-969e-23519a2e7dff" class="">Power is the capacity to influence others who are in a state of dependence</p><ul id="99f0a98f-1556-44ab-822c-bde38ee99e42" class="bulleted-list"><li style="list-style-type:disc">First, notice that power is the capacity to influence the behaviour of others; it’s not always perceived or exercised<ul id="4e4e72ac-5bcf-4f75-bf34-35b7b369f125" class="bulleted-list"><li style="list-style-type:circle">Most professors hold a great degree of potential power over students in terms of grades, assignment load, and the ability to embarrass students in class</li></ul><ul id="d00db1c5-2e4a-4c0e-ad36-e2aa1ce22716" class="bulleted-list"><li style="list-style-type:circle">Under normal circumstances, professors use only a small amount of this power</li></ul></li></ul><ul id="bbf98bad-e642-4a05-b671-b2690610eaf8" class="bulleted-list"><li style="list-style-type:disc">Second, the fact that the target of power is dependant on the power holder does not imply that a poor relationship exists between the two<ul id="05f8a30b-6df1-40dd-b125-7f0ad338690b" class="bulleted-list"><li style="list-style-type:circle">For instance, your friends have power to influence your behaviour and attitudes because you are dependant on them for friendly reactions and social support; you can exert reciprocal influence for similar reasons</li></ul></li></ul><ul id="870f489d-e2b0-4874-b2f0-ba499ea02fdf" class="bulleted-list"><li style="list-style-type:disc">Third, power can flow in any direction in an organization<ul id="1e395406-68c7-406d-ac96-4d9266164a50" class="bulleted-list"><li style="list-style-type:circle">Often members at higher organizational levels have more power than those at lower levels, however, in specific cases reversals can occur</li></ul><ul id="26ba415c-2104-4983-a2be-edc03cd7dc80" class="bulleted-list"><li style="list-style-type:circle">For example, the junior auditor who obtains compromising information about the CEO may be in a powerful position if this CEO wishes to maintain a good reputation in the organization</li></ul></li></ul><ul id="7a73487d-5e5f-47cc-8f9c-66208b33eff9" class="bulleted-list"><li style="list-style-type:disc">Fourth, power asymmetry does not require an organizational hierarchy and it can be driven by an algorithm<ul id="2bced9e4-b04b-4ef5-b7a0-a5be6eaf7998" class="bulleted-list"><li style="list-style-type:circle">Vendors on online platforms such as Uber and Airbnb report considerable anxiety concerning negative customer reviews as they can lead to serious sanctions from the platform operator</li></ul></li></ul><ul id="959bedaa-2970-4223-9a02-5f791e879d68" class="bulleted-list"><li style="list-style-type:disc">Finally, power is a broad concept that applies to both individuals and groups<ul id="c6c6fb6d-7780-4289-b261-5cf10530afc5" class="bulleted-list"><li style="list-style-type:circle">On the one hand, an individual marketing manager might exert considerable influence over the staff who report to her</li></ul><ul id="bc09676e-a7c6-420a-b3f7-29a4c25de835" class="bulleted-list"><li style="list-style-type:circle">On the other hand, the marketing department at XYZ Foods might be the most powerful department in the company, able to get its way more often than other departments</li></ul></li></ul><h2 id="00ba50a3-c32d-4e02-afd7-aed7b792a105" class="">The Bases of Individual Power</h2><p id="d3d93e7b-987f-4a21-a9d5-4e9d713d7d59" class="">Power can be found in the position that you occupy in the organization or the resources that you are able to command</p><ul id="dec34e6c-5797-46cc-b930-4f00edf695ea" class="bulleted-list"><li style="list-style-type:disc">The first base of power; legitimate power is dependant on one&#x27;s position or job</li></ul><ul id="81a49327-4007-4511-b94c-18b1c2843959" class="bulleted-list"><li style="list-style-type:disc">The other bases (reward, coercive, referent, expert) involve the control of important resources</li></ul><h3 id="b8e170cc-4579-437e-bac7-e10c730985ed" class="">Legitimate Power</h3><p id="0490cf81-e99f-42e6-b448-62cbfcf09928" class="">Legitimate power derives from a person&#x27;s position or job in the organization</p><ul id="67d6a8ec-ac4f-46fe-b84b-ade9b226ca7a" class="bulleted-list"><li style="list-style-type:disc">It constitutes the organization&#x27;s judgment about who is formally permitted to influence whom, and it is often called ‘authority’</li></ul><ul id="9af98bd2-88dc-41fe-9fa0-24f3f5e4a228" class="bulleted-list"><li style="list-style-type:disc">As we move up the organization&#x27;s hierarchy, we find that members possess more and more legitimate power</li></ul><ul id="f690321d-2527-4cf8-b55b-8089b92bd4d7" class="bulleted-list"><li style="list-style-type:disc">In theory, organizational equals (vice presidents) have equal legitimate power, but in reality some people are more likely than others to invoke their legitimate power</li></ul><p id="3ff0f72a-b4ac-4129-9eae-8195a0798d48" class="">
+</p><p id="ad1a957d-9a86-4923-a172-53d404a3e230" class="">Organizations differ greatly in the extent to which they emphasize and reinforce legitimate power</p><ul id="55604293-0b7a-4153-a1ad-5ecd2fe4ebcd" class="bulleted-list"><li style="list-style-type:disc">For example, on one hand, you have the military, which has many levels of command, differentiating uniforms, and rituals (saluting), all designed to emphasize legitimate power</li></ul><ul id="8979932b-f0e3-438c-b54a-d95fa3408d43" class="bulleted-list"><li style="list-style-type:disc">On the other hand, the academic hierarchy of universities tends to downplay differences in the legitimate power of lecturers, professors, chairpeople, and deans</li></ul><p id="d99fa4a8-24fb-43c0-9ec7-86b82a647514" class="">
+</p><p id="8bc5e089-2d0b-4b8b-a176-df3fb7dbc7c3" class="">When legitimate power works, it often does so because people have been socialized to accept its influences by parents, teachers, and government officials</p><h3 id="293b5193-97c6-4491-9fe6-627e54af3ce9" class="">Reward Power</h3><p id="117e6a75-616f-4a90-a300-935b495fffb3" class="">Reward power means that the power holder can exert influence by providing positive outcomes and preventing negative outcomes, and it often backs up legitimate power</p><ul id="64ef21d2-d4b0-4592-a870-c5b1bb6fdf1f" class="bulleted-list"><li style="list-style-type:disc">Managers are given the chance to recommend raises, do performance evaluations, and assign preferred tasks to employees</li></ul><ul id="a8b2ec40-0c85-42da-96bf-4f88a6787510" class="bulleted-list"><li style="list-style-type:disc">Of course, any organizational member can attempt to exert influence over others with praise, compliments, and flattery, which also constitute rewards</li></ul><h3 id="d0044258-ea49-4b31-bbbe-2eae1c3befa5" class="">Coercive Power</h3><p id="b5d69c1b-0cb9-4eac-9082-a5ed99e7560e" class="">Coercive power is available when the power holder can exert influence using punishment and threat</p><ul id="b5f32b9b-1f4f-413c-b6f9-2f83d91ff447" class="bulleted-list"><li style="list-style-type:disc">Like reward power, it is often a support for legitimate power</li></ul><ul id="76b9ca98-821e-473d-bf62-dc7fa8b37114" class="bulleted-list"><li style="list-style-type:disc">Managers might be permitted to dock pay, assign unfavourable tasks, or block promotions</li></ul><ul id="539f476c-73d6-442e-a346-af74a5bc32bb" class="bulleted-list"><li style="list-style-type:disc">In Chapter 2, we pointed out that the use of punishment to control behaviour is problematic because of emotional side effects<ul id="2137f5a1-4cc0-4a2b-8742-470271c3b766" class="bulleted-list"><li style="list-style-type:circle">So, it is not surprising that when managers use coercive power, it is generally ineffective and can provoke considerable employee resistance</li></ul></li></ul><h3 id="b3d96900-0d14-420c-ba3c-4b412e74a84c" class="">Referent Power</h3><p id="7703ec66-31da-4acf-8ebc-39681299de33" class="">Referent power exists when the power holder is well-liked by others</p><ul id="3b2b9a5c-8446-4ff3-82ac-f9d5194aa210" class="bulleted-list"><li style="list-style-type:disc">It is not surprising that people we like readily influence us</li></ul><ul id="116f0998-4514-4008-aa45-604361067711" class="bulleted-list"><li style="list-style-type:disc">We are prone to consider their points of view, ignore their failures, seek their approval, and use them as role models</li></ul><p id="3c4e450a-8fed-4766-869b-c1c7326d4466" class="">
+</p><p id="640c5a01-e9f2-4e99-a427-b5b174a9d712" class="">Referent power is especially potent because it stems from identification with the power holder</p><ul id="51087bb9-fd7b-4a39-891b-a2817099e1f0" class="bulleted-list"><li style="list-style-type:disc">It represents a truer or deeper base of power than reward or coercion, which may stimulate mere compliance to achieve rewards or avoid punishment<ul id="bfd54cfa-54cb-40bf-9838-e0ce5af0bf84" class="bulleted-list"><li style="list-style-type:circle">In this sense, charismatic leaders have referent power</li></ul><ul id="488f8b13-a7f4-4e9f-a4cd-77f352edc3fd" class="bulleted-list"><li style="list-style-type:circle">Also, anyone in the organization may be well-liked, irrespective of their other bases of power; so it is available to everyone</li></ul></li></ul><p id="a5e80197-fd17-4d40-9157-fb8c56420438" class="">
+</p><p id="614b989b-c16a-4f07-b3e1-bfa970a81bf6" class="">Friendly interpersonal relations often permit influence to extend across the organization, outside the usual channels of legitimate authority, reward, and coercion</p><ul id="7f953d02-d82c-436b-a1ee-a95de8553cf1" class="bulleted-list"><li style="list-style-type:disc">For example, a production manager who becomes friendly with an engineer through participation in a task force might later use this contact to ask for a favour in solving a production problem</li></ul><h3 id="c8c42c3a-34cc-419e-807e-a0c9fbd3f786" class="">Expert Power</h3><p id="2d5a1cc5-6c10-4647-b91b-29aeba6b73dd" class="">A person has expert power when they have special information or expertise that the organization values</p><ul id="e2bcb477-ad1a-4df4-b455-77e8ca9a3156" class="bulleted-list"><li style="list-style-type:disc">The more crucial and unusual this expertise, the greater the expert power available</li></ul><ul id="620071ea-89e7-45e3-8ef6-d432734ff6c5" class="bulleted-list"><li style="list-style-type:disc">So, expert power corresponds to difficulty of replacement</li></ul><p id="de932a3c-7828-4b3f-97e7-5c652af56b04" class="">
+</p><p id="d78ee854-dd7c-459d-85b0-d79b8fa4b70e" class="">One of the most fascinating aspects of expert power occurs when lower-level organizational members accrue it</p><ul id="867ca72e-19f0-4550-88e8-6366e2ddb965" class="bulleted-list"><li style="list-style-type:disc">Many administrative assistants have acquired expert power through long experience in dealing with clients, keeping records, or sparring with the bureaucracy<ul id="f7f34595-2137-495a-bcca-c9c64705a5c1" class="bulleted-list"><li style="list-style-type:circle">Frequently, they have been around longer than those they serve</li></ul><ul id="e10e12ab-5b72-47d4-82af-99a02687121b" class="bulleted-list"><li style="list-style-type:circle">In this case, it is not unusual for bosses to create special titles and develop new job classifications to reward their expertise and prevent their resignation</li></ul></li></ul><p id="6e2765c8-5c0c-460f-86f0-4edc0b64ed52" class="">
+</p><p id="73453e1e-b711-4389-a2ec-69154ef88bf9" class="">Of all the bases of managerial power, expertise is most commonly associated with employee effectiveness</p><ul id="d4240ee3-f806-42dc-98fb-1a20b7c450e5" class="bulleted-list"><li style="list-style-type:disc">Research shows that employees perceive women managers as more likely than male managers to be high in expert power<ul id="3a835eff-9fa9-406f-b186-45112b90462b" class="bulleted-list"><li style="list-style-type:circle">Women often lack easy access to more organizationally based forms of power, and expertise is free for self development</li></ul></li></ul><p id="04053d61-75f5-4264-b65c-fe2c3f39c6ac" class="">This table summarizes likely employee responses to various bases of managerial power</p><ul id="da0d5d54-7f74-4929-80e2-dab26ecf1a2a" class="bulleted-list"><li style="list-style-type:disc">Coercion is likely to produce resistance and lack of cooperation</li></ul><ul id="3f539b52-7980-40d3-810a-892626c43c54" class="bulleted-list"><li style="list-style-type:disc">Legitimate power and reward power are likely to produce compliance with the bosses wishes</li></ul><ul id="e99aab32-d4a9-40b0-b430-8ae87c1620fa" class="bulleted-list"><li style="list-style-type:disc">Referent and expert power are more likely to generate true commitment and enthusiasm for the manager&#x27;s agenda</li></ul><h1 id="88d84a47-303f-454c-9180-91ee333389de" class="">12.2 How do People Obtain Power?</h1><h2 id="ff998966-a34f-46d6-a9e2-f28a6861347e" class="">Doing the Right Things</h2><p id="fba3b7e0-3aca-4a1d-a671-122ab0027044" class="">Activities lead to power when they are extraordinary, highly visible, and especially relevant to the solution of organizational problems</p><h3 id="ccc9edfb-90b5-4ed1-a889-26a924ee3f67" class="">Extraordinary Activities</h3><p id="22ccd960-ce34-46c8-a237-c5c026bc7f8d" class="">Excellent performance of a routine job might not be enough to obtain power</p><ul id="123adbbf-66c8-46a7-91ca-9f45fe58941e" class="bulleted-list"><li style="list-style-type:disc">What one needs is excellent performance in unusual or non-routine activities<ul id="58d0fe7f-f9cd-43f1-a58e-96f29664c71a" class="bulleted-list"><li style="list-style-type:circle">Occupying new positions, managing substantial changes, and taking great risks</li></ul><ul id="0b9c86cd-ab58-4efd-9f4e-a7c04a58b3c2" class="bulleted-list"><li style="list-style-type:circle">Consider the manager who establishes and directs a new customer service program; <ul id="4df2df0d-7379-41a9-8f4c-1a8a505fa985" class="bulleted-list"><li style="list-style-type:square">This is a risky, major change that involves the occupancy of a new position, and if successful the manager should acquire substantial power</li></ul></li></ul></li></ul><h3 id="5c665d11-8560-4635-b399-553e37b08702" class="">Visible Activities</h3><p id="dec9b6c9-301f-4866-8ce7-15321dc1091e" class="">Extraordinary activities will fail to generate power if no one knows about them</p><ul id="e4051ee9-1142-4574-9f56-65fe15e7929e" class="bulleted-list"><li style="list-style-type:disc">People who have an interest in power are especially good at identifying visible activities and publicizing them<ul id="14714bec-977b-4257-a640-c93f1a14fc85" class="bulleted-list"><li style="list-style-type:circle">An innovative surgeon whose techniques are reported in the newspaper will enhance their influence in the hospital</li></ul></li></ul><h3 id="fb75a976-0f43-4ee3-b434-3d30a233be02" class="">Relevant Activities</h3><p id="036000ce-7f8b-4b38-8990-aab6d7ae1ecd" class="">Extraordinary, visible work may fail to generate power if no one cares</p><ul id="08df7192-b2c7-473f-b819-f07eb651194d" class="bulleted-list"><li style="list-style-type:disc">If nobody sees the work as relevant to the solution of important organizational problems, it will not add to one’s influence<ul id="16e38b7e-bb45-4a47-a35e-17efd50bf5ff" class="bulleted-list"><li style="list-style-type:circle">An English professor who wins two Pulitzer Prizes (journalism awards) will probably not accrue much power if their small college is financially strapped and hurting for students<ul id="d82f9bd1-1ce2-4a75-a6b6-cc0e9c5df816" class="bulleted-list"><li style="list-style-type:square">Whereas in another college that has adequate students and financial capability, this would induce much more influence</li></ul></li></ul></li></ul><h2 id="8bc69b3f-f7bd-41e8-9fd9-d10a313ed8da" class="">Cultivating the Right People</h2><p id="6186c6f4-2b8c-4cfc-b35a-0089714f0d10" class="">Developing informal relationships with the right people can be a useful means of acquiring power</p><h3 id="7f091c15-de93-49dd-a173-79fbb0e71528" class="">Outsiders</h3><p id="b693da9d-71ab-436a-828c-e47593bd0fe7" class="">Establishing good relationships with key people outside one’s organization can lead to increased power within the organization</p><ul id="9aa825b5-7650-44a0-a9c3-4b4efb41d0bf" class="bulleted-list"><li style="list-style-type:disc">Sometimes this power is merely a reflection of the status of the outsider, but all the same, it may add to one’s internal influence<ul id="9773eff9-3166-4ed4-9312-ff3b3374b6c0" class="bulleted-list"><li style="list-style-type:circle">An assistant director of a hospital who is friendly with the president of the Canadian Medical Association might fend themselves holding power by association</li></ul></li></ul><h3 id="2013e8f7-173b-45e4-92b6-52a6a2f03032" class="">Subordinates</h3><p id="e2c2c03d-9aeb-4425-80ec-7001589f22f9" class="">It might seem unlikely that power can be enhanced by cultivating relationships with subordinates</p><ul id="2b35bca3-a7c1-4ba7-bcdb-1d03721d3a45" class="bulleted-list"><li style="list-style-type:disc">However, an individual can gain influence if they are closely identified with certain up-and-coming subordinates<ul id="54f1137d-ef5e-46ce-86ee-898c2e8e6659" class="bulleted-list"><li style="list-style-type:circle">In academics, some professors are better known for the brilliant PhD students they have supervised than for their own published work</li></ul><ul id="dbf7301e-d364-4365-be82-3b16bd3a86e3" class="bulleted-list"><li style="list-style-type:circle">And that outstanding subordinate might even one day become one’s boss</li></ul><ul id="5d79ee8d-2a4f-4174-991d-2dd54b0ffb1b" class="bulleted-list"><li style="list-style-type:circle">Having cultivated the relationship earlier, one might then be rewarded with special influence</li></ul></li></ul><h3 id="c7917669-9892-4adc-958e-4fbbb9e6f05e" class="">Peers</h3><p id="e2d2ab81-ae76-40ea-925f-0aae83365c09" class="">Cultivating good relationships with peers is mainly a means of ensuring that nothing gets in the way of one’s future acquisition of power</p><ul id="f5c7ad3f-66a2-40d2-ac16-0187a578fa12" class="bulleted-list"><li style="list-style-type:disc">As one move sup through the ranks, favours can be asked of former associates, and fears of being “backstabbed” for a past misdeed are precluded</li></ul><ul id="bb07f9a4-5a4f-42d3-ba82-5c1375f77bbd" class="bulleted-list"><li style="list-style-type:disc">Organizations often reward good “team players” with promotions on the assumption that they have demonstrated good interpersonal skills<ul id="3679352b-c0f7-4083-82f2-4b4f6e80f7f1" class="bulleted-list"><li style="list-style-type:circle">Likewise, people often avoid contact with peers whose reputation is seen as questionable</li></ul></li></ul><h3 id="ca50a3a8-76dd-431e-9296-0c89c237ea70" class="">Superiors</h3><p id="bead6123-f53c-4289-89c6-6347aa6a3c0c" class="">Liaisons with key superiors probably represent the best way of obtaining power through cultivating others</p><ul id="101db09c-149c-4e87-bdbd-d30c3263c9d5" class="bulleted-list"><li style="list-style-type:disc">Such superiors are often called mentors or sponsors because of the special interest they show in a promising subordinate</li></ul><ul id="9727f0a0-e2ee-4fbc-b321-6803844d7423" class="bulleted-list"><li style="list-style-type:disc">Mentors can provide power in several ways<ul id="4aa49085-3e16-4d01-a207-042bd6534630" class="bulleted-list"><li style="list-style-type:circle">It is useful to be identified as a protégé of someone higher in the organization</li></ul><ul id="4bfd35ba-ae00-4fb2-ac36-847d48175b82" class="bulleted-list"><li style="list-style-type:circle">Mentors can provide special information and useful introductions to other “right people”<ul id="9ca4de1c-24b7-4996-ac75-cddd473508b9" class="bulleted-list"><li style="list-style-type:square">This contributes to power as you are developing a social network that leads to the accumulation of social capital that can be used to influence people over and above formal sources of power</li></ul></li></ul></li></ul><h1 id="08ee90f8-4986-4c66-8039-17e8ba3cb1cb" class="">12.3 Empowerment; Putting Power where it is Needed</h1><p id="d84b4486-0473-4a5c-937f-39abb058461d" class="">Empowerment means giving people the authority, opportunity, and motivation to take initiative to solve organizational problems</p><ul id="150155ce-05c2-47c7-9823-2f8fb0d9e6b0" class="bulleted-list"><li style="list-style-type:disc">In practice, having the authority to solve an organizational problem means having legitimate power</li></ul><ul id="e78d797f-e194-4cb8-9b3e-91815fac3276" class="bulleted-list"><li style="list-style-type:disc">Having opportunity usually means freedom from bureaucratic barriers and other system problems that block initiative<ul id="d4db26e6-a8fd-4dd1-99d7-ccf8c9de9082" class="bulleted-list"><li style="list-style-type:circle">In a service encounter, if you have ever heard “that’s not my job,” you have been the victim of limited opportunity</li></ul><ul id="3a858647-2e91-400a-915c-64f3e3427d25" class="bulleted-list"><li style="list-style-type:circle">Opportunity also includes any relevant training and information about the impact of one’s actions on other parts of the organization</li></ul></li></ul><ul id="de82eff9-f203-4997-bd19-198c57175274" class="bulleted-list"><li style="list-style-type:disc">The motivation part of empowerment suggest hiring people who will be intrinsically motivated by power and opportunity and aligning extrinsic rewards with successful performance<ul id="a86ff8b6-cccb-40e2-81b3-2816c050ce18" class="bulleted-list"><li style="list-style-type:circle">Leaders who express confidence in subordinates’ abilities and foster conditions that facilitate the sharing of power can contribute to empowerment</li></ul></li></ul><p id="fde84add-1963-4546-a3ed-fc2a7546fcd5" class="">
+</p><p id="836f261e-72c7-4909-b157-43079ac042c7" class="">People who are empowered have a strong sense of self-efficacy, the feeling that they are capable of doing their jobs well and making things happen</p><ul id="06285401-e33b-43e8-9535-0c3fa51611b3" class="bulleted-list"><li style="list-style-type:disc">Empowering frontline employees can be critical in service organizations, where providing customers with a good initial encounter or correcting any problems that develop can be essential for repeat business</li></ul><p id="779c871c-ed9c-42fa-9801-2e731cd1b4d1" class="">
+</p><p id="ae954c02-9811-4e88-882f-7137d730b076" class="">Empowerment fosters job satisfaction, organizational commitment, organizational citizenship behaviour, and high performance</p><ul id="82d18af5-93dd-40f5-a4b8-131b740ccca9" class="bulleted-list"><li style="list-style-type:disc">Empowerment, however, does not mean providing employees with a maximum amount of unfettered power, but rather, used properly, empowerment puts power where it is needed to make the organization effective</li></ul><p id="65b8fe65-7f35-4321-b655-ed908bb5b875" class="">
+</p><p id="85649e6b-21d8-4f6b-908b-faf72365de46" class="">Can organizational members have too much power?</p><p id="6c6073ce-e1e9-4409-ae15-565b298d50ab" class="">This diagram illustrates the answer:</p><ul id="618f6cb9-5cf0-4dc4-9f51-642043b322f0" class="bulleted-list"><li style="list-style-type:disc">People are empowered, and should exhibit effective performance, when they have sufficient power to carry out their jobs</li></ul><ul id="37a141ab-56d1-46e9-b17f-717a18bfd23a" class="bulleted-list"><li style="list-style-type:disc">Excessive power can lead to abuse and ineffective performance<ul id="c859733b-3660-48f1-86f9-99aba31cebfd" class="bulleted-list"><li style="list-style-type:circle">Excessive power tend to make power holders inattentive to others, insensitive to their emotions, and unable to appreciate their perspectives, and this is not a recipe for constructive social interactions</li></ul></li></ul><h2 id="19940cff-786b-446e-b31f-896943a3538c" class="">Influence Tactics; Putting Power to Work</h2><p id="791b2e44-4a5b-41dd-a34f-4abfc3e6c39b" class="">How does power result in influence?</p><ul id="4a0371e2-f227-444a-bdfd-570efce633b9" class="bulleted-list"><li style="list-style-type:disc">Research has shown that various influence tactics convert power into actual influence</li></ul><p id="85baa041-a04d-44f5-b8f6-fa96a004e0ec" class="">
+</p><p id="9267f5f8-6095-4334-8e7a-46d19173d620" class="">There are specific behaviours that people use to affect others and manage others’ impressions of themselves:</p><ol type="1" id="f7484b14-2b18-4bf5-a987-98163352b058" class="numbered-list" start="1"><li>Assertiveness<ol type="a" id="c2d5b820-084e-4a45-b105-6378528ca9ea" class="numbered-list" start="1"><li>Ordering, nagging, setting deadlines, and verbally confronting others</li></ol></li></ol><ol type="1" id="b5c6a1fc-15c8-485c-ab7a-de6a998c9be5" class="numbered-list" start="2"><li>Ingratiation<ol type="a" id="e366f505-522e-405c-9033-8b1265645d65" class="numbered-list" start="1"><li>Using flattery, acting friendly, polite, or humble; opinion conformity</li></ol></li></ol><ol type="1" id="e5c5561f-c967-4f5a-9d16-b7019f93c8ab" class="numbered-list" start="3"><li>Self promotion<ol type="a" id="75755c12-7e03-4a97-8174-dc292fe7acd8" class="numbered-list" start="1"><li>Touting one&#x27;s accomplishments, image enhancement, name dropping</li></ol></li></ol><ol type="1" id="bf7d2f29-13e5-4433-ac31-d7c5f8f79fb5" class="numbered-list" start="4"><li>Rationality<ol type="a" id="cfaaa2ca-7352-4786-94ca-caea5800074c" class="numbered-list" start="1"><li>Using logic, reason, planning, and compromise</li></ol></li></ol><ol type="1" id="7066c3a2-6ec0-43e7-9850-356080e78025" class="numbered-list" start="5"><li>Exchange<ol type="a" id="9f90e0d0-e978-45f9-93b1-1957b130b7ed" class="numbered-list" start="1"><li>Doing favours or offering to trade favours</li></ol></li></ol><ol type="1" id="038d6b10-114d-4f58-9be8-708091f953d1" class="numbered-list" start="6"><li>Upward appeal<ol type="a" id="dacf93e1-7aec-4384-8a3e-a897d89bfb62" class="numbered-list" start="1"><li>Making formal or informal appeals to organizational superiors for intervention</li></ol></li></ol><ol type="1" id="933a9702-21d7-43d3-be4f-ff4f641a7296" class="numbered-list" start="7"><li>Coalition formation<ol type="a" id="4bdb4cbc-2980-4f06-9380-0952e3ccf6d3" class="numbered-list" start="1"><li>Seating United Support from other organizational members</li></ol></li></ol><p id="bb2db7fd-1bcd-4819-bc84-813f15671c77" class="">
+</p><p id="f840bb5e-34ce-4263-ac8a-e957b3f48ec2" class="">What determines which influence tactics you might use?</p><ul id="9dfe3c4e-b937-4856-884b-92d561d03bc5" class="bulleted-list"><li style="list-style-type:disc">For one thing, your bases of power<ul id="cfd20bcc-6fa1-4d44-8adf-4ac18905af5f" class="bulleted-list"><li style="list-style-type:circle">Other things being equal, someone with coercive power might gravitate toward assertiveness, someone with referent power might gravitate toward ingratiation, and someone with expert power might try rationality or self-promotion</li></ul></li></ul><ul id="143843c9-bb3f-4a04-ab2f-5c51c9a8f37b" class="bulleted-list"><li style="list-style-type:disc">It is also dependant on just whom you are trying to influence - subordinates, peers, or superiors<ul id="11d16542-0de0-4a6d-a221-7facd5cfa210" class="bulleted-list"><li style="list-style-type:circle">Subordinates are more likely to be the recipients of assertiveness than peers or superiors</li></ul><ul id="ed9b6a82-c18b-4d62-b420-a410ef9f899f" class="bulleted-list"><li style="list-style-type:circle">Rationality and ingratiation, is most likely to be directed towards supervisors</li></ul><ul id="d9607f6d-db12-4180-b805-44ef0f093845" class="bulleted-list"><li style="list-style-type:circle">Self-promotion seems universally employed</li></ul></li></ul><p id="3dd09276-bf4d-4bc9-9e9c-2de4f17f9cde" class="">
+</p><p id="e90415f1-5f90-4e2d-a3a0-cb34d0ad4da0" class="">Which influence tactics are most and least effective?</p><ul id="ad4ff13c-42f4-4043-94c1-7114cd43074a" class="bulleted-list"><li style="list-style-type:disc">Particularly ineffective is a ‘shotgun style’ that is high on all tactics with particular emphasis on assertiveness and exchange</li></ul><ul id="45ece2c3-7a40-4a5e-a86b-919226458963" class="bulleted-list"><li style="list-style-type:disc">Self-promotion and ingratiation are both effective in job search (interview) situations<ul id="8b6a072b-a49c-41e4-a127-4f6b02f254d7" class="bulleted-list"><li style="list-style-type:circle">However, both tactics have been shown to have mixed effects on job performance ratings, suggesting that great care must be employed not to overdo them</li></ul><ul id="16015145-8665-4cac-b05d-8e62415645ed" class="bulleted-list"><li style="list-style-type:circle">Top managers who used ingratiation with their CEOs were inclined to receive appointments to corporate boards with whom the CEO was connected</li></ul></li></ul><h1 id="ecae398a-491c-49ee-a0ed-57cadd8f3c2d" class="">12.4 Who wants Power?</h1><p id="7e6b2337-7bc5-4cff-acb0-44e1daceaa70" class="">The answer would seem to be everybody</p><ul id="b258ab21-8d55-405b-ba5f-f277b24c807f" class="bulleted-list"><li style="list-style-type:disc">There are considerable individual differences in the extent to which individuals pursue and enjoy power<ul id="73d0234a-fba2-4d0c-a03f-1ee7973de00c" class="bulleted-list"><li style="list-style-type:circle">Some people consider power a manifestation of evil<ul id="3270887b-edd4-4cf7-bbcd-262c01ced133" class="bulleted-list"><li style="list-style-type:square">This is due in no small part to the historic image of power seekers that some psychologists and political scientists have portrayed</li></ul><ul id="31e2d11b-5321-4186-9321-ff24250fde69" class="bulleted-list"><li style="list-style-type:square">They make Power Seekers seem like neurotics who are covering up feelings of inferiority, striving to compensate for childhood deprivation, or substituting power for lack of affection<ul id="bde1910a-d2df-4234-be27-1c9166b399e1" class="bulleted-list"><li style="list-style-type:disc">Underlying this negative image of power seeking is the idea that some power seekers feel weak and resort primarily to coercive power to cover up, compensate, or substitute for this weakness</li></ul></li></ul></li></ul></li></ul><p id="487eab82-c4a0-43d7-8884-b0d2298f4e94" class="">
+</p><p id="a6a6277b-4652-405a-bbc6-fe1dfc7cc935" class="">Can one use power responsibly to influence others? Yes</p><ul id="90054917-3a60-4241-ae78-c2e05e6ad55e" class="bulleted-list"><li style="list-style-type:disc">In chapter 5 we discussed McClelland’s research on need for power (n pow)<ul id="7b059aff-1528-4d12-a33a-4570c51bed25" class="bulleted-list"><li style="list-style-type:circle">This is the need to have strong influence over others</li></ul><ul id="ab87839a-86d8-4040-b2b1-6da99b508b3b" class="bulleted-list"><li style="list-style-type:circle">This need is a reliable personality characteristic - some people have more n pow than others<ul id="1e4520e6-36e0-4c90-bf82-4df6b59cf1da" class="bulleted-list"><li style="list-style-type:square">People who are high in n pow in its ‘pure’ form conform to the negative stereotype depicted before - they are rude, sexually exploitive, abuse alcohol, and show a great concern with status symbols</li></ul><ul id="01633357-21a6-459c-88fe-375958449046" class="bulleted-list"><li style="list-style-type:square">However, when it is responsibly used and controlled, these negative properties are not observed</li></ul></li></ul></li></ul><p id="8f954cb2-04c1-47d1-91bc-ac249a72e0fd" class="">
+</p><p id="de035d5b-4555-4f22-a7e7-f1a1b22b2343" class="">McClelland argues that the most effective managers have the following attributes:</p><ol type="1" id="4fac540b-069c-4654-997d-312e25db12b3" class="numbered-list" start="1"><li>Have high n pow</li></ol><ol type="1" id="ed43d67c-f33a-45f6-a0f5-fdb4dae4ffa2" class="numbered-list" start="2"><li>Use their power to achieve organizational goals</li></ol><ol type="1" id="a706e65f-2137-4646-a6f8-1ebef3fa35e3" class="numbered-list" start="3"><li>Adopt a participative or coaching leadership style</li></ol><ol type="1" id="7016f576-f773-4f59-b8db-8afdff2826dd" class="numbered-list" start="4"><li>Are relatively unconcerned with how much others like them</li></ol><p id="4c9b6f2c-75c2-43de-858f-68b01a942490" class="">
+</p><p id="1050f2f5-695c-48d5-a412-806090e7e682" class="">McClelland calls such managers institutional managers because they use their power for the good of the institution rather than for self-aggrandizement</p><ul id="ffb8a044-451d-42ca-9425-802ff6c95df9" class="bulleted-list"><li style="list-style-type:disc">They refrain from coercive power and do not play favorites, since they are not worried about being well-liked</li></ul><ul id="5fd61f7a-5fc8-4628-9576-5aeb142a54ad" class="bulleted-list"><li style="list-style-type:disc">His research reveals that institutional managers are more effective than personal power managers (who use power for personal gain), and affiliative managers (more concerned with being liked than with exercising power)</li></ul><p id="f029d3ba-3ce9-492e-98d7-28e013e1a535" class="">
+</p><h1 id="9c37671a-adb8-4523-9470-0bb79ed185c5" class="">12.5 Controlling Strategic Contingencies; How Subunits Obtain Power</h1><p id="d876de65-82fc-42ea-80bf-27395effe1a7" class="">In the section we shift our concern to subunit power</p><ul id="69702f87-54a5-40d0-841c-86342cfee649" class="bulleted-list"><li style="list-style-type:disc">Most straightforwardly, the term subunit applies to organizational departments</li></ul><ul id="52ab1476-3e0d-42bf-8d08-c40ad41879e9" class="bulleted-list"><li style="list-style-type:disc">In some cases, subunits could also refer to particular jobs, such as those held by a software engineers or environmental lawyers</li></ul><p id="b0841f44-b983-4dfc-8705-5d41adc03754" class="">
+</p><p id="796a202f-e43a-482f-8bff-2a4598e69c77" class="">How do organizational subunits acquire power? How do they achieve influence that enables them to grow in size? get a bigger share of the budget? obtain better facilities? and have greater impact on decisions?</p><ul id="95cd2ee3-09f4-4583-bf34-dd31e18576eb" class="bulleted-list"><li style="list-style-type:disc">In short, they control strategic contingencies, which are critical factors affecting organizational effectiveness<ul id="3ae57bf3-a018-4deb-ae77-7748fa8938af" class="bulleted-list"><li style="list-style-type:circle">This means that the work other subunits perform is contingent on the activities and performance of a key subunit</li></ul></li></ul><p id="b90dd4d7-9b59-4396-8a0a-04d23943db7a" class="">
+</p><p id="6800f096-ee55-4136-ab9f-c1996d200347" class="">We see the critical role of dependents in power relationships</p><ul id="9970aeb4-bcbc-44f2-8b42-f56f4593a6a4" class="bulleted-list"><li style="list-style-type:disc">If some subunits are dependant on others for smooth operations (or just their existence), they are susceptible to influence</li></ul><p id="5c61534d-de03-4eaa-b92a-7211b9e14b4d" class="">
+</p><p id="b814d569-ef36-411e-96bd-097b426e75fa" class="">Here are the conditions under which subunits can control strategic contingencies:</p><h2 id="45857535-c303-45da-95fd-1e43ec96f326" class="">Scarcity</h2><p id="72d9c6b3-605e-49ea-b3c6-f155c6af3398" class="">Differences in subunit power are likely to be magnified when resources become scarce</p><ul id="7e456b07-5c44-44f2-b338-a4a3317e4720" class="bulleted-list"><li style="list-style-type:disc">When there is plenty of budget money, or office space, or support staff, for all of subunits they will seldom waste their energies jockeying for power<ul id="93ea62ed-dab9-4834-ab0b-b554c8f56f32" class="bulleted-list"><li style="list-style-type:circle">If cutbacks occur, however, differences in power will become apparent<ul id="4c745d6b-c48e-42a1-96a5-b0494431165d" class="bulleted-list"><li style="list-style-type:square">For example, well-funded quality of work-life programs or organizational development efforts might disappear when economic setbacks occur because the subunits that control them are not essential to the firm&#x27;s existence</li></ul></li></ul></li></ul><p id="b1470305-ecbe-48ec-91f0-fbcdd6a5101d" class="">
+</p><p id="60077f8e-01f9-449d-9f24-273a3e4e5a40" class="">Subunits tend to acquire power when they are able to secure scarce resources that are important to the organization as a whole</p><h2 id="2f948157-7147-418f-acc2-98457236b893" class="">Uncertainty</h2><p id="85ca1dfd-c640-44b4-93af-0331f893e0d2" class="">Organizations detest the unknown</p><ul id="48551d1e-388f-4419-bfc4-53a41695eccc" class="bulleted-list"><li style="list-style-type:disc">Unanticipated events wreak havoc with financial commitments, long-range plans, and tomorrow&#x27;s operations</li></ul><p id="234b2e72-ea2c-41ea-9bb7-b107d3730441" class="">
+</p><p id="142f2ecf-bcaf-4aa7-b817-5ea09a5732c8" class="">The basic sources of uncertainty exists mainly in the organization&#x27;s environment: </p><ul id="dddf18a6-5d12-44f6-b946-46f3aa4fe732" class="bulleted-list"><li style="list-style-type:disc">Government policies might change, sources of supply and demand might dry up, or the economy might take an unanticipated turn</li></ul><p id="fd973df9-a722-425b-8187-8c6cdfedf177" class="">
+</p><p id="58cfbbba-0c17-4bba-bef6-9b9da56d59ac" class="">Subunits that are most capable of coping with uncertainty will tend to acquire power</p><ul id="45b723e3-812c-47fd-bb65-5ec996d1f564" class="bulleted-list"><li style="list-style-type:disc">By the same logic, uncertainty promotes confusion, which permits changes in power priorities as the organizational environment changes</li></ul><p id="9f6978a5-12b8-43f2-9825-9c7ea13c827b" class="">
+</p><p id="3b3c899a-f1cd-477f-9938-11e6ab03b7b6" class="">Changes in the sources of uncertainty frequently lead to shifts in subunit power</p><ul id="2aaee37b-c144-4bd2-845e-137f53822c76" class="bulleted-list"><li style="list-style-type:disc">For example, IT departments gained power when they assisted employees to work from home during the COVID-19 pandemic, and departments concerned with environmental impact have gained power with the imperative for ‘green’ organizations</li></ul><h2 id="06c12179-4c0a-4105-9965-9b3af08df3a4" class="">Centrality</h2><p id="a46c4094-d693-4cd5-b1ce-518b25052a7c" class="">Other things being equal, subunits whose activities are most central to the mission or workflow of the organization should acquire more power than those whose activities are more peripheral</p><p id="6d2da62f-bf16-4b1d-b91b-33cb4f08ad09" class="">
+</p><p id="29090950-d7b8-44c9-912c-9270ee61413d" class="">A subunits activities can be central in at least three senses</p><ol type="1" id="f361561a-c89e-4d3e-a318-53f4c21cd6b2" class="numbered-list" start="1"><li>It may influence the work of most other subunits<ol type="a" id="ba636a34-6e7e-48fc-9661-14ab56d71be2" class="numbered-list" start="1"><li>The finance or accounting department is a good example since their authority to approve expenses and make payments affects every other department in the firm</li></ol></li></ol><ol type="1" id="b428f8d5-6314-42cd-8013-03c6a727feb8" class="numbered-list" start="2"><li>When a subunit has an especially crucial impact on the quantity or quality of the organization&#x27;s key product or service<ol type="a" id="e7088d7b-4285-49f8-a3ed-a64c814ed1db" class="numbered-list" start="1"><li>In car companies, subunits concerned with autonomous vehicles have gravitated from the fringe to the core, as the potential of driverless cars has emerged</li></ol></li></ol><ol type="1" id="fa61b1d8-5b08-4716-b16d-6f86c01a7f7c" class="numbered-list" start="3"><li>A subunit’s activities are more central when their impact is more immediate<ol type="a" id="f8e3b51c-98d9-4447-86cc-b532e8f658ec" class="numbered-list" start="1"><li>Consider a large city government with a fire department, a police department, and a public works department<ol type="i" id="16ba691d-6bb3-49c0-9ba1-b323e37ccc23" class="numbered-list" start="1"><li>The impact of a lapse in fire or police services will be felt more immediately than a lapse in street repairs (public works)<ol type="1" id="db79623b-7a2f-4835-a705-94d97628c6e7" class="numbered-list" start="1"><li>Giving the former departments more potential for power acquisition</li></ol></li></ol></li></ol></li></ol><h2 id="10295b39-db1f-4689-9810-31a8526820f1" class="">Substitutability</h2><p id="b1be7b25-4b6d-451e-93ae-b64d639bea47" class="">A subunit will have relatively little power if others inside or outside the organization can perform its activities</p><ul id="526aebaa-3a43-442a-85d2-cec7a8fde692" class="bulleted-list"><li style="list-style-type:disc">If the subunits staff is non-substitutable, however, it can acquire substantial power</li></ul><ul id="5da4d5fe-32b8-4934-872e-a2d2f206d666" class="bulleted-list"><li style="list-style-type:disc">One crucial factor here is the labour market for the specialty performed by the sub-unit<ul id="c5e36d98-d7f7-49c9-b57b-8a0e30d1e875" class="bulleted-list"><li style="list-style-type:circle">The market for scientists and engineers is notoriously cyclical<ul id="f61802db-9630-458b-96d9-bfbe0ce1e342" class="bulleted-list"><li style="list-style-type:square">When jobs are plentiful, these professionals command high salaries and high influence in organizations</li></ul><ul id="83e61ff6-beca-4c08-b3f8-cdd7326cbffb" class="bulleted-list"><li style="list-style-type:square">When jobs are scarce, this power wanes (weakens)</li></ul></li></ul></li></ul><p id="9ee36361-2a2c-4050-bfc0-53e09caab290" class="">
+</p><p id="02abe063-0ccf-4f08-80a9-2691f53bfe13" class="">If work can be contracted out, the power of the sub-unit that usually performs these activities is reduced</p><ul id="b96c90b0-d90e-4429-9fb1-765b272f9e9b" class="bulleted-list"><li style="list-style-type:disc">Examples include temporary office help and security services<ul id="fba6e9f9-fa89-4b3e-a2fe-c0293c2f5c38" class="bulleted-list"><li style="list-style-type:circle">The subunits that control these activities often lack power because the “threat of going outside” can counter their influence attempts</li></ul></li></ul><p id="0488f239-63a8-44eb-b15e-6cb336bd436d" class="">
+</p><p id="3b55838a-0a96-4123-80c6-2b6fb9a9bbaf" class="">Changes in how work is accomplished can also affect substitutability</p><ul id="bf6d06d8-cd41-4639-9f15-f8698947d1ac" class="bulleted-list"><li style="list-style-type:disc">Increased use of crowdsourcing and more open forms of innovation mean the internal R&amp;D units, used to having levels of secrecy, may lose power<ul id="8bf44d60-49a4-4f86-9deb-dcbd00c81245" class="bulleted-list"><li style="list-style-type:circle">Some of their work might now be performed by outsiders and even competitors</li></ul></li></ul><h1 id="f6367c52-ad5c-4ab7-a575-fa084a4bfdf7" class="">12.6 Organization Politics; Using and Abusing Power</h1><h2 id="075eec62-21fa-4bed-9d3a-37dc9012b63c" class="">The Basics of Organizational Politics</h2><p id="18fcbeb9-1ca9-44b6-bdf3-5f5155805911" class="">Organizational politics is the pursuit of self-interest within an organization whether or not the self-interest corresponds to organizational goals</p><ul id="c2601d3f-16fc-4d5d-ac4c-dbd798a90575" class="bulleted-list"><li style="list-style-type:disc">A lot of times, politics involves using means of influence that the organization does not sanction (give permission for), or pursuing ends or goals that it does not sanction</li></ul><ul id="1168249d-3aeb-4edb-89d8-ba73bd93ab9a" class="bulleted-list"><li style="list-style-type:disc">Political activity is self-conscious and intentional<ul id="bd9ca1f9-2c24-4cda-a7dc-b32c953acc8a" class="bulleted-list"><li style="list-style-type:circle">Politics can either be an individual activity or subunit activity; meaning that either one person or a whole department could act politically</li></ul></li></ul><p id="723b0b89-3987-45f5-8b41-3aca15e28827" class="">This exhibit is the association between influence means and influence ends that determines whether activities are political and whether these activities benefit the organization</p><ol type="1" id="dfdaaa52-0e52-4e8a-87db-d544c7db4653" class="numbered-list" start="1"><li>Sanctioned means / Sanctioned ends<ol type="a" id="01dfe34b-46fe-4f45-9232-9aae38e7c27e" class="numbered-list" start="1"><li>Power is used routinely to pursue agreed-on goals</li></ol><ol type="a" id="a5394dce-9c7a-41e4-ad46-599d6107b35b" class="numbered-list" start="2"><li>Accepted means of influence are employed to achieve sanctioned outcomes<ol type="i" id="97b25ea4-9e36-4064-8ed3-44ffae86e717" class="numbered-list" start="1"><li>A manager agrees to recommend a raise for an employee if she increases her net sales by 30% in the next 6 months (there is nothing political about this)</li></ol></li></ol></li></ol><ol type="1" id="098023b8-4919-4376-be74-591813a383d4" class="numbered-list" start="2"><li>Sanctioned means / Non-sanctioned ends<ol type="a" id="7df717ad-a039-4b90-9d4f-616bcba9689a" class="numbered-list" start="1"><li>Acceptable means of influence are abused to pursue goals that the organization does not approve of<ol type="i" id="32da456b-e92a-4551-8f14-9f63fe972ac0" class="numbered-list" start="1"><li>A head nurse agrees to assign a subordinate nurse to a more favorable job if the nurse agrees not to report the supervisor for stealing medical supplies</li></ol><ol type="i" id="a0c105a8-7b94-4220-9175-9a1519b62eca" class="numbered-list" start="2"><li>While job assignment is often a sanctioned means of influence, covering up theft is not a sanctioned end</li></ol></li></ol></li></ol><ol type="1" id="fdfb723c-feb7-4db7-ab18-8f8aef63b5b0" class="numbered-list" start="3"><li>Non-sanctioned means / Sanctioned ends<ol type="a" id="0f1f7541-7741-4546-af36-f180b764b47f" class="numbered-list" start="1"><li>Ends that are useful for the organization are pursued through questionable means<ol type="i" id="e29ff053-720c-4e3a-aeaf-7615d9e3c699" class="numbered-list" start="1"><li>Although Qatar officials were pursuing a sanctioned end - hosting the 2022 World Cup - the alleged use of bribery and vote buying as a means of influence were not sanctioned tactics</li></ol></li></ol></li></ol><ol type="1" id="180064d6-6bfb-44e4-a290-487e0a37a424" class="numbered-list" start="4"><li>Non-sanctioned means / Non-sanctioned ends<ol type="a" id="c5e8de69-ca69-4545-b4d7-89cc85e73043" class="numbered-list" start="1"><li>This quadrant exemplifies the most flagrant abuse of power, since disapproved tactics are used to pursue disapproved outcomes<ol type="i" id="99daa29f-f763-4b20-a4e4-a36cf2c05b23" class="numbered-list" start="1"><li>For example, to increase his personal power, the head of an already overstaffed legal department wishes to increase its size<ol type="1" id="23831392-ca3b-4d34-ba11-ace796dd4e73" class="numbered-list" start="1"><li>He intends to hire several of his friends in the process</li></ol><ol type="1" id="c2070c50-91d9-4c54-80f4-a7e26b45c6b2" class="numbered-list" start="2"><li>To do this, he falsifies his workload documents and promises special service to the accounting department in exchange for the support of its manager</li></ol></li></ol></li></ol></li></ol><p id="2681822a-ef51-48db-a989-cb22f3d11264" class="">
+</p><p id="17f9ca52-302d-48ff-9fca-07c896191199" class="">Do political activities occur under particular conditions or in particular locations in organizations? Research suggests the following:</p><ol type="1" id="e3ac36fd-6f32-44da-975f-c576af1beb96" class="numbered-list" start="1"><li>Managers report that most political maneuvering occurs at middle and upper management levels rather than at lower levels</li></ol><ol type="1" id="59ebf705-1a81-4ed4-ad2d-864a9085be4b" class="numbered-list" start="2"><li>Some subunits are more prone to politicking than others<ol type="a" id="252ccf1c-fcaa-4c7d-9254-1c81b62ecd19" class="numbered-list" start="1"><li>Clear goals and routine tasks (production) might provoke less political activity than vague goals and complex tasks (R&amp;D)</li></ol></li></ol><ol type="1" id="bcec3d4c-79ee-4c40-a5f2-239f477379e9" class="numbered-list" start="3"><li>Some issues are more likely than others to stimulate political activity<ol type="a" id="35177a77-babb-448a-8767-13eeea493cf6" class="numbered-list" start="1"><li>Budget allocation, reorganization, and personnel changes are likely to be the subjects of politicking</li></ol></li></ol><ol type="1" id="8eec347f-5659-4c76-a33a-f0ee6510bdfe" class="numbered-list" start="4"><li>In general, scarce resources, uncertainty, and important issues provoke political behavior<ol type="a" id="d1d5635b-70a5-4d62-bbd0-bbd569deb63d" class="numbered-list" start="1"><li>Highly political climates result in lower job satisfaction, commitment, and organizational citizenship, and increased stress and turnover intentions</li></ol></li></ol><h2 id="07110165-67b7-41d6-8945-dab6a2e1eb8c" class="">The Facets of Political Skill</h2><p id="c5bdf823-bdfd-4392-804d-01bc5ae0ea79" class="">It is one thing to engage in organizational politics, but it is another thing to do it skillfully because pursuing self-interest can encounter resistance</p><ul id="30a9dabc-fac7-47f4-a0d9-749ccec54749" class="bulleted-list"><li style="list-style-type:disc">Political skill is the ability to understand others at work and to use that knowledge to influence others to act in ways that enhance one&#x27;s personal or organizational objectives</li></ul><p id="dfc4b383-4f2b-47ca-aa93-49b553d42ac9" class="">
+</p><p id="78aceefb-f1bf-4cbe-b80a-e66345faf2ac" class="">Notice that this definition includes two aspects - comprehending others, and translating this comprehension into influence; there are four facets to political skill:</p><ol type="1" id="01d8f953-c4eb-44e9-8311-e4fb243e8e20" class="numbered-list" start="1"><li>Social astuteness<ol type="a" id="840f8e5a-004f-48d3-8d98-ccfd30c23fe5" class="numbered-list" start="1"><li>Good politicians are careful observers who are tuned in to others needs and motives</li></ol><ol type="a" id="a81aae96-b43e-4582-86f5-bd1230680b63" class="numbered-list" start="2"><li>They can read people and, thus, possess emotional intelligence</li></ol><ol type="a" id="104ce8e5-ded3-43cb-b12f-e12edb7bf651" class="numbered-list" start="3"><li>They are active self monitors (Ch 2) who know how to present themselves to others</li></ol></li></ol><ol type="1" id="79d270d6-6f4d-4f86-ae3f-1b61149fa5ad" class="numbered-list" start="2"><li>Interpersonal influence<ol type="a" id="cfb8e803-2883-4dde-8b21-d4f9cb383ada" class="numbered-list" start="1"><li>The politically skilled have a convincing and persuasive interpersonal style but employ it flexibly to meet the needs of the situation</li></ol></li></ol><ol type="1" id="3d95d9b8-a47c-4ba8-934e-2400002e6629" class="numbered-list" start="3"><li>Apparent sincerity<ol type="a" id="e0d769d8-e452-415d-b215-830d93d78e58" class="numbered-list" start="1"><li>Influence attempts will be seen as manipulative unless they are accompanied by sincerity<ol type="i" id="f63bd7a1-c68f-472f-9b75-700fb853cc20" class="numbered-list" start="1"><li>A good politician comes across as genuine and exhibits high integrity</li></ol></li></ol></li></ol><ol type="1" id="b2b4d60d-bfc2-45e5-9155-6cd83ca61d4b" class="numbered-list" start="4"><li>Networking ability<ol type="a" id="fb1cfe0c-b3fa-47e0-b2d7-a950cf1feef2" class="numbered-list" start="1"><li>Networking involves establishing good relations with key organizational members or outsiders to accomplish one’s goals<ol type="i" id="0f138343-6af7-4185-a6d9-56ff851eaadc" class="numbered-list" start="1"><li>Networks provide a channel for favours to be asked for and given</li></ol><ol type="i" id="b9b8e190-e935-4fe8-9673-182bd3816ed8" class="numbered-list" start="2"><li>An effective network enhances one&#x27;s organizational reputation, which makes it more easy to influence</li></ol></li></ol></li></ol><p id="47b96abd-41f7-4b75-808b-172c76c445d3" class="">
+</p><p id="c87405ff-65b8-4b90-8fa3-cc56fe945886" class="">Political skill, as measured by these four facets, is positively related to individual job performance, job satisfaction, and career success, and negatively related to burnout and perceptions of stressors</p><ul id="55ad3e7e-d364-4ded-a0f9-71f42aa3f00a" class="bulleted-list"><li style="list-style-type:disc">Teams that have members with elevated political skill tend to be more cohesive and perform better</li></ul><p id="8638383e-ea1d-485e-8a85-4f59eb06594e" class="">
+</p><p id="132f1d07-032a-4288-8e67-13d6cd5535f9" class="">Networking involves developing informal social contacts to enlist the cooperation of others when their support is necessary; there are several aspects to networking:</p><ol type="1" id="2f6fd549-7dd5-4712-82cf-ab7f3e2ac6f8" class="numbered-list" start="1"><li>Maintaining contacts<ol type="a" id="aa7af215-ec63-4692-b278-ad6582525c55" class="numbered-list" start="1"><li>Giving business cards, sending gifts, thank you notes, so on</li></ol></li></ol><ol type="1" id="735179f9-4efa-45d1-9799-2ed1020de65f" class="numbered-list" start="2"><li>Socializing<ol type="a" id="e2a98d25-9aa0-427d-bdcb-c3cc9b878a25" class="numbered-list" start="1"><li>Playing golf, participating in company sports leagues, having drinks after work, so on</li></ol></li></ol><ol type="1" id="ffd52a9e-5ca9-4e95-94f5-db5422782506" class="numbered-list" start="3"><li>Engaging in professional activities<ol type="a" id="359e0b40-997d-4f84-9196-7637a1e54e60" class="numbered-list" start="1"><li>Giving a workshop, accepting a speaking engagement, teaching, publishing, so on</li></ol></li></ol><ol type="1" id="6547dbaa-2e29-4368-a344-548ed0f86e0b" class="numbered-list" start="4"><li>Participating in community activities<ol type="a" id="4bf256c4-0be3-4f0d-b724-854e30af8814" class="numbered-list" start="1"><li>Being active in civic groups, clubs, church events, so on</li></ol></li></ol><ol type="1" id="3d4880eb-f353-4d80-b755-987327cfc308" class="numbered-list" start="5"><li>Increasing internal visibility<ol type="a" id="686131da-39db-4982-ad3d-fa0385099fda" class="numbered-list" start="1"><li>Accepting high-profile work projects, sitting on important committees and task forces</li></ol></li></ol><p id="57a195d6-1b76-43c5-887b-1380e92ef45e" class="">
+</p><p id="714d7165-aebd-4844-8746-cca563f4e993" class="">If it wasn&#x27;t obvious, those high in self-esteem and extraversion were more likely to engage in networking behaviours</p><ul id="7cb66bc0-b60c-4a81-9d86-492ec7b7c237" class="bulleted-list"><li style="list-style-type:disc">Likewise, it was found that engaging in professional activities and increasing internal visibility were most associated with career success (compensation, promotions, and perceived success)</li></ul><ul id="8dbbf197-b599-45d8-8824-feaf2554bfa2" class="bulleted-list"><li style="list-style-type:disc">Being central in a large network provides power because you have access to considerable resources, such as knowledge</li></ul><h2 id="bda84f78-177f-44c1-a209-b780d6b27d55" class="">Machiavellianism; The Hard Side of Politics</h2><p id="c690f088-1939-4ae8-8fd0-205d6d4c2b39" class="">Have you ever known people who had the following characteristics?</p><ol type="1" id="d48b3ef5-9110-4ef3-ba4c-487304728f5c" class="numbered-list" start="1"><li>Act very much in their own self-interest, even at the expense of others</li></ol><ol type="1" id="50d08376-abf8-4270-9718-8f90c3dd6784" class="numbered-list" start="2"><li>A cool and calculating, especially when others get emotional</li></ol><ol type="1" id="372f69c3-94b3-48ce-981a-91adf7411251" class="numbered-list" start="3"><li>Manifest high self-esteem and self-confidence</li></ol><ol type="1" id="11bec9ff-d057-4a7a-84b2-f75a84f4ac04" class="numbered-list" start="4"><li>Form alliances with powerful people to achieve their goals</li></ol><p id="0c5fd8a1-7ba7-4321-aab0-60ee8679371d" class="">
+</p><p id="53ea40a3-ecd8-4cd0-aab4-776252f544dc" class="">These are characteristics of individuals who are high on a personality dimension known as Machiavellianism</p><ul id="de5e36e6-cb0d-4eba-af3f-2da032b216a3" class="bulleted-list"><li style="list-style-type:disc">Machiavellianism is a set of cynical beliefs about human nature, morality, and the permissibility of using various tactics to achieve one’s ends<ul id="5931f8f0-d017-46cb-b3ab-d579851ca37d" class="bulleted-list"><li style="list-style-type:circle">It is a stable personality trait<ul id="cabd23c0-535a-47c8-9f4c-5cdf57ab8a27" class="bulleted-list"><li style="list-style-type:square">Compared with “low machs”, “high machs” are more likely to advocate the use of lying and deceit to achieve desired goals, and to argue that morality can be compromised to fit the situation in question</li></ul><ul id="d3b866b2-a305-46f7-ac61-b8496bd40b59" class="bulleted-list"><li style="list-style-type:square">High machs also assume that many people are excessively gullible and do not know what is best for themselves</li></ul><ul id="df8f0629-0946-42c9-bb36-ebabecb56fdd" class="bulleted-list"><li style="list-style-type:square">In social situations the high mach acts in an exceedingly practical manner assuming that the ends justify the means<ul id="cbd642b7-becc-437a-9453-6d99a94e0d76" class="bulleted-list"><li style="list-style-type:disc">Not surprisingly, tend to be convincing liars and good at ‘psyching out’ competitors by creating diversions</li></ul></li></ul></li></ul><ul id="34bc0cd4-b152-4b8a-b5fd-9d0671d96476" class="bulleted-list"><li style="list-style-type:circle">They are willing to form coalitions with others to outmaneuver or defeat people who get in their way<ul id="abf9d33f-4f6e-4302-9893-a449eaefa9f0" class="bulleted-list"><li style="list-style-type:square">In summary high machs are likely to be enthusiastic organizational politicians</li></ul></li></ul></li></ul><p id="d7a47673-b998-40db-85ab-29f776fec8fa" class="">
+</p><p id="a459e487-cd92-4728-8016-3d0511db55b5" class="">Do high machs feel guilty about the social tactics that they utilize?</p><ul id="535a9416-9003-4e83-82d5-962ae1dd1c7b" class="bulleted-list"><li style="list-style-type:disc">Since they are cool and calculating, rather than emotional, high machs seem to be able to insulate themselves from the negative social consequences of their actions</li></ul><p id="115d15ba-6c67-4219-884d-c225b9aae723" class="">
+</p><p id="3467a1e1-bc3d-43b3-b189-ae1b12792c7f" class="">High machs are able to accurately identify situations in which their tactics will work:</p><ol type="1" id="693bce64-116e-48c0-94ed-281d940d0f5b" class="numbered-list" start="1"><li>The high mach can deal face-to-face with those who are the object of influence</li></ol><ol type="1" id="c66c53c5-6ec3-4e5e-b8da-53fed55da917" class="numbered-list" start="2"><li>The interaction occurs under fairly emotional circumstances</li></ol><ol type="1" id="c724823f-3bc5-4eb6-9857-5b1fae755291" class="numbered-list" start="3"><li>The situation is fairly unstructured, with few guidelines for appropriate forms of interaction</li></ol><p id="3d088af6-b91a-40d4-80d0-03510962e9b5" class="">
+</p><p id="b73a3c06-63cf-4cb1-afb8-1817c0f76e24" class="">In combination, these characteristics reveal a situation in which high machs can use their tactics because emotion distract others</p><ul id="5001c6cf-0072-4a6c-aae7-b6c10c78dad2" class="bulleted-list"><li style="list-style-type:disc">By remaining calm and rational, they can create a social structure that facilitates their personal goals at the expense of others</li></ul><ul id="e1333627-9354-4211-9d01-a1831fb1b231" class="bulleted-list"><li style="list-style-type:disc">They are highly skilled at getting their way when power vacuums, or novel situations confront a group, department, or organization</li></ul><p id="e15d5ee7-e02a-4868-9fd8-d3ca9f35e1ce" class="">
+</p><p id="2c83fab0-a866-4ca6-9ac4-d28073793a23" class="">Imagine a small family business whose president dies suddenly without any plans for succession</p><ul id="a7ee38b3-1f0c-4886-ad50-2e114204e1bb" class="bulleted-list"><li style="list-style-type:disc">In this power vacuum, a high mach vice president would have an excellent chance of manipulating the choice of a new president<ul id="73d50c56-603a-418b-9a6a-ac9dffe8bf44" class="bulleted-list"><li style="list-style-type:circle">The situation is novel, emotion provoking, and unstructured, since no guidelines for succession exist</li></ul><ul id="582c2019-d114-45b3-beae-f8c5300c4f50" class="bulleted-list"><li style="list-style-type:circle">As well, the decision-making body would be small enough for face-to-face influence and coalition formation</li></ul></li></ul><h2 id="d491991a-b28f-4877-a50d-0b1ab563fc3c" class="">Knowledge Hiding; The Invisible Side of Politics</h2><p id="1075f776-b085-4cdf-9228-1e7e715168f1" class="">Knowledge hiding is political behaviour that entails intentionally concealing or withholding information that has been requested or is relevant to another organizational member</p><ul id="399329ee-2677-4170-922d-b0f6498688c9" class="bulleted-list"><li style="list-style-type:disc">Although the sharing of knowledge is essential for organizational success, many individuals and organizational units conceal information that is essential for effectiveness</li></ul><p id="3a10e88c-6dc2-4cf8-8323-0489e06d7622" class="">
+</p><p id="bc3d3f1a-e66c-4dfd-b16c-ac47d43ee5d6" class="">There are three forms of hiding:</p><ol type="1" id="65e3d1fb-5d5b-4e83-ad2b-00c9c0214d8e" class="numbered-list" start="1"><li>Playing dumb<ol type="a" id="91b882c5-01af-41f3-9fe9-900b1a44e304" class="numbered-list" start="1"><li>Pretending to be ignorant about requested knowledge</li></ol></li></ol><ol type="1" id="eed12950-2919-4d59-a6d2-d5ae6a46d232" class="numbered-list" start="2"><li>Evasive hiding<ol type="a" id="139cb8c2-27be-4794-9dc2-4bcf24a635b1" class="numbered-list" start="1"><li>Providing misinformation or falsely promising knowledge in the future</li></ol></li></ol><ol type="1" id="d9eb07b6-52a8-4451-aa9d-0928a542b0c8" class="numbered-list" start="3"><li>Rationalized hiding<ol type="a" id="f08a7374-316c-4b28-a3e1-63b90932bc8f" class="numbered-list" start="1"><li>Justifying the failure to share by claiming extenuating circumstances or blaming others</li></ol></li></ol><p id="05620d35-e3e1-4983-95e3-bc9e4535c1d6" class="">
+</p><p id="2ef7bb58-b88a-4ce5-9539-55c5b43f868a" class="">Distrustful, over-competitive, and over-politicized work environments tend to foster knowledge hiding, as do managers who encourage or tolerate the behaviour</p><ul id="0e49e213-9761-495f-956f-e1b74eae9cb7" class="bulleted-list"><li style="list-style-type:disc">High machs are inclined to knowledge hiding, no surprise</li></ul><ul id="bf9eb1ac-585d-4018-836b-fb9a003d93c5" class="bulleted-list"><li style="list-style-type:disc">Knowledge hiding is damaging to creativity, innovation, and individual performance, and it damages relationships among co-workers</li></ul><h2 id="57ca3d54-0eb7-465b-9710-ec13f3cd7b34" class="">Defensiveness; The Reactive Side of Politics</h2><p id="a3a1acdb-873d-4e7a-83a1-18a4066d09af" class="">Our final form of political behaviour, however, is more reactive in that it concerns the defense or protection of self-interest</p><ul id="5190c97a-f4d8-4a12-a5bd-bd84bdda5369" class="bulleted-list"><li style="list-style-type:disc">The goal here is to reduce threats to one&#x27;s own power by avoiding actions that do not suit one&#x27;s own political agenda, or avoiding blame for events that might threaten one&#x27;s political capital</li></ul><p id="2a319d27-9d61-42be-97d9-cfe5d7934432" class="">
+</p><p id="6f39f88b-9384-49da-91c6-898528ab7dd5" class="">Sometimes the best action is to take no action at all; a number of defensive behaviours can accomplish this mission:</p><ol type="1" id="63035290-3fe4-4456-8c84-c683ac573aee" class="numbered-list" start="1"><li>Stalling<ol type="a" id="efca7159-8ae1-45f6-897c-054c3fc4cddf" class="numbered-list" start="1"><li>Moving slowly when someone asks for your cooperation is the most obvious way of avoiding taking action without actually saying no</li></ol><ol type="a" id="6487bee5-55f2-481b-8f4d-5b049c46cb83" class="numbered-list" start="2"><li>With time, the demand for cooperation may disappear</li></ol></li></ol><ol type="1" id="27a8dc39-21cf-4fe7-85f0-166eddc48cbf" class="numbered-list" start="2"><li>Overconforming<ol type="a" id="adfa3223-466b-49fb-8723-37dfe95e63b4" class="numbered-list" start="1"><li>Sticking to the strict letter of your job description, or to organizational regulations is a common way to avoid action</li></ol><ol type="a" id="740b061e-8c7a-4cbf-ad84-a447273a90d5" class="numbered-list" start="2"><li>However, the over conformer may be happy to circumvent their job description or regulations when it suits their political agenda</li></ol></li></ol><ol type="1" id="9b1977f6-b523-422a-9489-b64879e49974" class="numbered-list" start="3"><li>Buck passing<ol type="a" id="076b6863-01bc-44c6-ae56-00c42605cca0" class="numbered-list" start="1"><li>Having someone else act is an effective way to avoid doing it yourself</li></ol><ol type="a" id="8e4be0bb-4013-48d5-9f55-890376810bb3" class="numbered-list" start="2"><li>Buck passing is especially dysfunctional politics when politician is best equipped to do the job but worries that it might not turn out successfully</li></ol></li></ol><p id="1de4f27b-995a-4084-a8f5-cf09e607dd59" class="">
+</p><p id="fa78c496-3ebd-48da-96c0-339bbc73ed45" class="">Another set of defensive behaviours is oriented around the motto “if you can&#x27;t avoid action, avoid blame for its consequences”:</p><ol type="1" id="43162369-c04d-4fca-b673-de1278790b19" class="numbered-list" start="1"><li>Buffing<ol type="a" id="c4154fb5-30c1-4884-8f9b-3dbef851a6d6" class="numbered-list" start="1"><li>Buffing is the tactic of carefully documenting information, showing that an appropriate course of action was followed</li></ol><ol type="a" id="ba7edd6b-4bfa-4415-bc2c-25949338e6b4" class="numbered-list" start="2"><li>Getting sign-offs, authorizations, and so on, are examples<ol type="i" id="147eaa1d-f7c4-4fc4-a50a-ddad8a702326" class="numbered-list" start="1"><li>Buffing can be sensible behaviour, but it takes on political overtones when doing the documenting becomes more important than making a good decision</li></ol></li></ol></li></ol><ol type="1" id="09f05d7c-980c-42b4-b6f4-d4c27379bd4a" class="numbered-list" start="2"><li>Scapegoating<ol type="a" id="1102fa41-9a6a-4cb2-b880-c2c86ddab9c0" class="numbered-list" start="1"><li>Blaming others when things go wrong is classical political behavior</li></ol><ol type="a" id="8d3215a7-44a1-466f-b122-2abe451ad61e" class="numbered-list" start="2"><li>Scapegoating works best when you have some power behind you<ol type="i" id="590e636f-efae-422b-86f2-86892b489c59" class="numbered-list" start="1"><li>Research has found that more powerful CEOs stayed in office while the scapegoated managers below them were replaced</li></ol></li></ol></li></ol><h1 id="64248b73-30da-4b23-9967-417d858a7678" class="">Slide Extras</h1><h2 id="f0b9fb8f-f2cc-4226-83cd-184c9c1b90d8" class="">Using Power-Influence Tactics</h2><p id="dfedc7b3-65fd-4735-9182-14212c72270e" class="">The ways people use to translate their power bases into specific actions that actually influences</p><ul id="575f82af-7f8d-4aad-97a8-4887ce993bea" class="bulleted-list"><li style="list-style-type:disc">Depending on how much freedom a tactic leaves the person to decide either to yield or to resist the influence attempt:<ul id="6010bac7-7b2c-424e-b099-dd0fe08d99f1" class="bulleted-list"><li style="list-style-type:circle">Hard influence tactics<ul id="9a8f6219-458a-4f93-a07f-bbd567380489" class="bulleted-list"><li style="list-style-type:square">Force behavior change through positional power</li></ul><ul id="2084b67a-dfb9-4f94-87f7-fefc8bde9e1a" class="bulleted-list"><li style="list-style-type:square">Legitimate, reward, and coercion<ul id="5d04347f-e6ff-4592-92e9-9fcd8da8ec77" class="bulleted-list"><li style="list-style-type:disc">More likely to result in resistance and compliance</li></ul></li></ul></li></ul><ul id="de14866d-05bc-4a71-8c14-a849acb3ce09" class="bulleted-list"><li style="list-style-type:circle">Soft influence tactics<ul id="b838ffee-5352-4bb2-9be6-cdef7d45176c" class="bulleted-list"><li style="list-style-type:square">Rely more on personal sources of power and appeal to the target person&#x27;s attitudes and needs</li></ul><ul id="8c2b90a9-6ad9-4568-a0e4-4d7f7539f11d" class="bulleted-list"><li style="list-style-type:square">Reference, expert</li></ul></li></ul></li></ul><h3 id="6ad91dff-3a2e-41a2-a051-12bea6d931bf" class="">Low effectiveness tactics</h3><ol type="1" id="db0eb8b3-a0b8-435c-9a8c-d1e8ee8b8d95" class="numbered-list" start="1"><li>Pressure<ol type="a" id="de7c0345-c106-4b71-9045-570df66e9a2c" class="numbered-list" start="1"><li>Behavior includes the demands, threats, or intimidation to convince others to comply with a request or to support a proposal</li></ol></li></ol><ol type="1" id="ef2af56b-fa08-4a15-af31-d3b4ce7236a8" class="numbered-list" start="2"><li>Assertiveness<ol type="a" id="5a6c3ef2-4f97-4132-b8d4-e86ae896a242" class="numbered-list" start="1"><li>Behavior includes repeatedly making requests, setting timelines for project completion, or expressing anger toward individuals who do not meet expectations</li></ol></li></ol><ol type="1" id="2eaa7c68-9428-4c40-aae4-aa50f7786147" class="numbered-list" start="3"><li>Legitimating<ol type="a" id="2964e51a-a359-4b2f-81bb-43c118661d8d" class="numbered-list" start="1"><li>Demonstrating that a request is legitimate and the agent has the authority to make it</li></ol></li></ol><ol type="1" id="92a608ea-b4dd-4cf2-bbc4-7899ab7d8d4c" class="numbered-list" start="4"><li>Coalition<ol type="a" id="dac1c21d-ec51-42fc-a539-afd7f471303a" class="numbered-list" start="1"><li>Getting the support and aid of other parties to assist in influencing the target person</li></ol></li></ol><p id="fb0c05d1-ea39-4aca-b7b8-2ac6433739c2" class="">
+</p><h3 id="23b63666-93b1-49c9-b607-a1248fac2ce8" class="">Moderate effectiveness tactics</h3><ol type="1" id="8b7bfd81-20e6-4eff-a05d-169dad1e3385" class="numbered-list" start="1"><li>Upward appeal<ol type="a" id="c27c5936-0356-4059-9a6e-24611b969dec" class="numbered-list" start="1"><li>Seeking the approval or acceptance of those in higher positions within the organization prior to making a request of someone</li></ol></li></ol><ol type="1" id="5cb64bb0-fe6e-4807-bd9b-56f33ad60ade" class="numbered-list" start="2"><li>Exchange<ol type="a" id="687d8ad8-c50c-4856-bac0-edebb911367b" class="numbered-list" start="1"><li>Making a promise that others will receive rewards or tangible benefits if they comply with a request or reminds others of a favor that should be reciprocated</li></ol></li></ol><ol type="1" id="f10db6fe-c3c4-48be-99dd-b86ae8ebaef3" class="numbered-list" start="3"><li>Ingratiation<ol type="a" id="3d20499d-e66a-4ca3-94b5-dbc6276c6812" class="numbered-list" start="1"><li>Getting others in a good mood or to think favorably of them before asking them to do something</li></ol></li></ol><ol type="1" id="9d5f54d6-1d22-4638-ad26-f22a5e123482" class="numbered-list" start="4"><li>Personal appeal<ol type="a" id="7380e8e9-0f88-4315-8c30-08bbad8b9d8e" class="numbered-list" start="1"><li>Using the favourable relationship with the target person as the basis for getting a favor</li></ol></li></ol><ol type="1" id="36307492-1347-45fc-8678-db75a4e1e422" class="numbered-list" start="5"><li>Rational persuasion<ol type="a" id="d78d2168-bb03-45de-8c25-d9164e230999" class="numbered-list" start="1"><li>Using logical arguments and factual evidence to explain why a request or proposed activity is important for attaining shared objectives and why it is feasible</li></ol></li></ol><h3 id="9432d6be-6e16-4e22-9b82-ab346b636804" class="">High effectiveness tactics</h3><ol type="1" id="d8ae8105-a849-4154-8cd6-c7f507b00e58" class="numbered-list" start="1"><li>Inspirational appeal<ol type="a" id="cb95b991-1d8c-4cf7-bc9f-e5718404e0ac" class="numbered-list" start="1"><li>Making an emotional request or proposal that arouses enthusiasm by appealing to others’ values and ideals, or by increasing their confidence that they can succeed</li></ol></li></ol><ol type="1" id="ad3cba3a-3c62-4593-99e6-2169cf9be2ca" class="numbered-list" start="2"><li>Consultation<ol type="a" id="c1b3d8fe-480c-48c2-b241-c8a5dd37e9d9" class="numbered-list" start="1"><li>Seeking others participation in making a decision or planning how to implement a proposed policy, strategy, or change</li></ol></li></ol><h2 id="c0df99a6-33d0-4e1f-9635-595400c2ce84" class="">Power of Authority</h2><p id="1399a0b1-c910-42cc-b800-738f0880cd27" class="">The Authority persuasion principle tells us that people defer to experts are those in positions of authority (doctors)</p><p id="22b90902-25b6-4f19-95e4-7c8de5d3d1db" class="">
+</p><p id="5fbf5a54-ca39-4729-9395-268cab638082" class="">Why do we obey authority?</p><ul id="cf5f6966-54ed-4fd3-8880-e88cf62edc34" class="bulleted-list"><li style="list-style-type:disc">Usually authorities possess high levels of knowledge, wisdom, and power</li></ul><p id="1bebb263-47f3-4f0e-8ae0-c149b225cf8b" class="">
+</p><p id="80ea985a-39d3-4cb3-bdf6-035a62579e57" class="">How can the authority persuasion principle be used to exploit us?</p><ul id="2a4d1548-a3c9-44ec-b31c-4f0238cbd8f8" class="bulleted-list"><li style="list-style-type:disc">When people fake it</li></ul><ul id="ee557955-6453-4cc8-ae1b-3e2280e2723d" class="bulleted-list"><li style="list-style-type:disc">We often defer to individuals who have no credentials, but whose titles and clothing suggest that they do and we do not even realize that we do it</li></ul></div></article></body></html>
