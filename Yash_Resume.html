@@ -5,157 +5,134 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="YB_circle.png">
+    <link rel="stylesheet" href="resume_style.css">
     <title>Yash's Resume</title>
 </head>
 <body>
     <section id="head">
-    <table>
-        <tr>
-            <td><img src="https://media-exp1.licdn.com/dms/image/D5603AQFYfp_AzsECww/profile-displayphoto-shrink_200_200/0/1666836351251?e=1675900800&v=beta&t=nV8oEoQwRUJF2iFbB3hUbPIgrwgvNoICHhKtcy5KNHE" alt="Yash Barve"></td>
-            <td><h1>Yash Harshal Barve</h1><p>Machine Learning | Web Development | Graphic Design</p></td>
-        </tr>
-    </table>
+    <h1 class="header">Yash Harshal Barve</h1><p id="header_intro">Machine Learning | Web Development | Graphic Design</p>
     </section>
     <hr>
 
     <section id="education">
-    <h3>Education</h3>
-    <table border="">
-        <thead>
-            <tr>
-                <th>Degree</th>
-                <th>Institute</th>
-                <th>Year</th>
-                <th>Graduation</th>
-            </tr>
-        </thead>
-        <tr>
-            <td>Bachelor of Computer Science</td>
-            <td>University of Waterloo</td>
-            <td>2021 - Present</td>
-            <td>2026</td>
-        </tr>
-        <tr>
-            <td>Bachelor of Business Administration</td>
-            <td>Wilfrid Laurier University</td>
-            <td>2021 - Present</td>
-            <td>2026</td>
-        </tr>
-    </table>
+    <h3 class="sect">Education</h3>
+    <p class="edu_details">Candidate, Bachelor of Computer Science at University of Waterloo | Expecting Graduation in 2026</p>
+    <p class="edu_details">Candidate, Bachelor of Business Administration at Wilfrid Laurier University | Expecting Graduation in 2026</p>
     </section>
     <hr>
 
     <section id="projects">
-    <h3>Projects</h3>
-    <article id="MNIST">
-    <p><b>1. Handwritten Digit Recognition </b><i>using Neural Networks</i></p>
+    <h3 class="sect">Projects</h3>
+    <article id="MNIST" class="course">
+    <p class="course_title"><b>1.</b><a class="link" href="https://github.com/waibee-11/MNIST-ML-Project"><b class="link"> Handwritten Digit Recognition </b></a><i>using Neural Networks in Python</i></p>
     <ul>
-        <li>Used ReLU activation functions to build a 3-layered Neural Network.</li>
-        <li>Used "Adam" optimizer and "Mean Squared Error" loss function to optimize the performance</li>
-        <li>Compiled the model on Google Collab and made use of Tensorflow, Keras, Numpy, Pandas, Matplotlib and Seaborn libraries</li>
-        <li>Tested the model on 10,000 images and achieved an accuracy of 97.1%</li>
+        <li class="course_info_li">Used ReLU activation functions to build a 3-layered Neural Network.</li>
+        <li class="course_info_li">Used "Adam" optimizer and "Mean Squared Error" loss function to optimize the performance</li>
+        <li class="course_info_li">Compiled the model on Google Collab and made use of Tensorflow, Keras, Numpy, Pandas, Matplotlib and Seaborn libraries</li>
+        <li class="course_info_li">Tested the model on 10,000 images and achieved an accuracy of 97.1%</li>
     </ul>
     </article>
 
-    <article id="Arcade">
-    <p><b>2. Game Arcade </b><i>using Python</i></p>
+    <article id="Arcade" class="course">
+    <p class="course_title"><b>2.</b><a class="link" href="https://github.com/waibee-11/Python_Game_Arcade"><b class="link"> Game Arcade </b></a><i>using Python</i></p>
     <ul>
-        <li>Used Python3 to code Hangman, Tic Tac Toe, Quizer, Number Guesser, and Rock Paper Scissor</li>
-        <li>Implemented a text-based user interface. Users were able to play any game, and view previous records</li>
-        <li>Used file management and SQL to store user login credentials, enabling users to sign-in to their accounts</li>
-        <li>Extensively tested the program by developing various test-cases, edge-cases and invited volunteers
+        <li class="course_info_li">Used Python3 to code Hangman, Tic Tac Toe, Quizer, Number Guesser, and Rock Paper Scissor</li>
+        <li class="course_info_li"> Implemented a text-based user interface. Users were able to play any game, and view previous records</li>
+        <li class="course_info_li">Used file management and SQL to store user login credentials, enabling users to sign-in to their accounts</li>
+        <li class="course_info_li">Extensively tested the program by developing various test-cases, edge-cases and invited volunteers
             to try to break the program.</li>
     </ul>
     </article>  
 
-    <article id="Chess">
-    <p><b>3. Chess </b><i>using C++</i></p>
+    <article id="Chess" class="course">
+    <p class="course_title"><b>3.</b><b class="name_of_course"> Chess </b><i>using C++</i></p>
     <ul>
-        <li>Used Object Oriented Programming in C++ to develop Chess</li>
-        <li>Implemented 4 levels of Computer AI</li>
-        <li>Developed a detailed UML, and project workflow plan</li>
-        <li>Conducted extensive testing using edge-cases, and succesfully debugged errors</li>
+        <li class="course_info_li">Used Object Oriented Programming in C++ to develop Chess</li>
+        <li class="course_info_li">Implemented 4 levels of Computer AI</li>
+        <li class="course_info_li">Developed a detailed UML, and project workflow plan</li>
+        <li class="course_info_li">Conducted extensive testing using edge-cases, and succesfully debugged errors</li>
     </ul>
     </article>
     </section>
     <hr>
 
     <section id="projects">
-        <h3>Certifications</h3>
-        <article id="MLS">
-        <p><b>1. Machine Learning Specialization </b><i>by Andrew Ng</i></p>
+        <h3 class="sect">Certifications</h3>
+        <article id="MLS" class="course">
+        <p class="course_title"><b>1.</b><a class="link" href="https://www.coursera.org/account/accomplishments/specialization/CCLNP3PCS3KN"><b class="link"> Machine Learning Specialization </b></a><i>by Andrew Ng, Deeplearning.ai</i></p>
         <ul>
-            <li>Courses completed
+            <li class="course_info_li">Courses completed
                 <ul>
-                    <li>Supervised Learning: <i>Linear Regression, Classification, Gradient Descent, Loss Functions</i></li>
-                    <li>Deep Learning and Neural Networks: <i>Forward and backward propagation, Activation Functions (relu, sigmoid, softmax)</i></li>
-                    <li>Unsupervised Learning: <i>Decision Trees, K-Nearest Neighbours, Recommendation Systems, Reinforcement learning</i></li>
+                    <li class="course_info_li">Supervised Learning: <i>Linear Regression, Classification, Gradient Descent, Loss Functions</i></li>
+                    <li class="course_info_li">Deep Learning and Neural Networks: <i>Forward and backward propagation, Activation Functions (relu, sigmoid, softmax)</i></li>
+                    <li class="course_info_li">Unsupervised Learning: <i>Decision Trees, K-Nearest Neighbours, Recommendation Systems, Reinforcement learning</i></li>
                 </ul>
             </li>
             <li>Completed 9 Coding Labs with a grade of 100%</li>
         </ul>
         </article>
     
-        <article id="DLS">
-        <p><b>2. Deep Learning Specialization </b><i>by Andrew Ng</i></p>
+        <article id="DLS" class="course">
+        <p class="course_title"><b>2.</b><a class="link" href="https://www.coursera.org/account/accomplishments/specialization/FHSDG8M9RTZK"><b class="link"> Deep Learning Specialization </b></a><i>by Andrew Ng, Deeplearning.ai</i></p>
         <ul>
-            <li>Courses completed
+            <li class="course_info_li">Courses completed
                 <ul>
-                    <li>Deep Learning and Neural Networks <i>Forward and backward propagation, Shallow and deep neural networks</i></li>
-                    <li>Improving Deep Neural Networks: <i>Hyperparameter tuning, Regularization, Optimization</i></li>
-                    <li>Structuring Machine Learning Projects: <i>Error Analysis, Bias and Variance, Dev-Test-Validation sets</i></li>
-                    <li>Convolutional Neural Networks: <i>Convolutions, Famous CNN's (VGG, LeNet, MobileNet, etc.), Residual Networks, Object Detection, Face Recognition, Neural Style Transfer</i></li>
-                    <li>Sequence Models: <i>Recurrent Neural Networks, NLP, Word Processing, Speech Recognition, Transformers</i></li>
+                    <li class="course_info_li">Deep Learning and Neural Networks <i>Forward and backward propagation, Shallow and deep neural networks</i></li>
+                    <li class="course_info_li">Improving Deep Neural Networks: <i>Hyperparameter tuning, Regularization, Optimization</i></li>
+                    <li class="course_info_li">Structuring Machine Learning Projects: <i>Error Analysis, Bias and Variance, Dev-Test-Validation sets</i></li>
+                    <li class="course_info_li">Convolutional Neural Networks: <i>Convolutions, Famous CNN's (VGG, LeNet, MobileNet, etc.), Residual Networks, Object Detection, Face Recognition, Neural Style Transfer</i></li>
+                    <li class="course_info_li">Sequence Models: <i>Recurrent Neural Networks, NLP, Word Processing, Speech Recognition, Transformers</i></li>
                 </ul>
-            </li>
+            </li class="course_info_li">
             <li>Completed 9 Coding Labs with a grade of 100%</li>
         </ul>
         </article>  
     
-        <article id="Full Stack">
-        <p><b>3. Full Stack Web Development </b><i>using C++</i></p>
+        <article id="Full Stack" class="course">
+        <p class="course_title"><b>3.</b><a class="link" href="https://www.udemy.com/certificate/UC-17f054a2-7897-4881-a937-f9081d51492f/"><b class="link"> Full Stack Web Development </b></a><i>by Kalob Taulien, Udemy</i></p>
         <ul>
-            <li>Front-end web development: <i>HTML, CSS, Javascript, Bootstap CSS</i></li>
-            <li>Web Apps: <i>React, Node JS, Django</i></li>
-            <li>Languages: <i>Python, Javascript, SQL</i></li>
-            <li>Completed 14 graded projects as a part of the course succesfully</li>
+            <li class="course_info_li">Front-end web development: <i>HTML, CSS, Javascript, Bootstap CSS</i></li>
+            <li class="course_info_li">Web Apps: <i>React, Node JS, Django</i></li>
+            <li class="course_info_li">Languages: <i>Python, Javascript, SQL</i></li>
+            <li class="course_info_li">Completed 14 graded projects as a part of the course succesfully</li>
         </ul>
         </article>
         </section>
         <hr>
 
         <section id="unofficial-work-experience">
-            <h3>Unofficial Work Experience</h3>
-            <article id="OneF1">
-            <p><b>1. Founder, OneF1 </b><i>Graphic Design, Content Creation using Canva</i></p>
+            <h3 class="sect">Work Experience</h3>
+            <article id="OneF1" class="course" class="course_info">
+            <p class="course_title"><b>1.</b><a class="link" href="https://www.instagram.com/onef1_official"><b class="link"> Founder, OneF1 </b></a><i>Graphic Design, Content Creation using Canva</i></p>
             <ul>
-                <li>Use Canva to create weekly Formula-1 related content on Instagram</li>
-                <li>More than 100 followers in 10 months</li>
+                <li class="course_info_li">Use Canva to create weekly Formula-1 related content on Instagram</li>
+                <li class="course_info_li">More than 100 followers in 10 months</li>
             </ul>
             </article>
         
-            <article id="DSC">
-            <p><b>2. Design Executive, Data Science Club at University of Waterloo </b><i>Graphic Design, Content Creation using Canva</i></p>
-            <ul>
-                <li>Use Canva to create Data Science and Machine Learning content for Instagram and LinkedIn</li>
-                <li>Work in a collaborative environment</li>
+            <article id="DSC" class="course">
+            <p class="course_title"><b>2.</b><a class="link" href="https://www.instagram.com/uwaterloodsc/"><b class="link"> Design Executive, Data Science Club at University of Waterloo </b></a><i>Graphic Design, Content Creation using Canva</i></p>
+            <ul class="course_info">
+                <li class="course_info_li">Use Canva to create Data Science and Machine Learning content for Instagram and LinkedIn</li>
+                <li class="course_info_li">Work in a collaborative environment</li>
             </ul>
             </article>  
         </section>
         <hr>
 
         <section id="contact me">
-            <h3>Contact Me</h3>
-            <p><b>E-mail id: </b><i><a href="mailto:11yashbarve@gmail.com" target="_blank">11yashbarve@gmail.com</a></i></p>
-            <p><b>LinkedIn: </b><i><a href="https://www.linkedin.com/in/waibee/" target="_blank">@waibee</a></i></p>
-            <p><b>Instagram: </b><i><a href="https://www.instagram.com/waibee_11/" target="_blank">@waibee_11</a></i></p>
-            <p><b>GitHub: </b><i><a href="https://github.com/waibee-11" target="_blank">@waibee-11</a></i></p>
-            <p><b>Twitter: </b><i><a href="https://twitter.com/waibee_11" target="_blank">@waibee_11</a></i></p>
+            <h3 class="sect">Contact Me</h3>
+            <p class="course_info_li"><b class="course">E-mail id: </b><i><a class="link" href="mailto:11yashbarve@gmail.com" target="_blank">11yashbarve@gmail.com</a></i></p>
+            <p class="course_info_li"><b class="course">LinkedIn: </b><i><a class="link" href="https://www.linkedin.com/in/waibee/" target="_blank">@waibee</a></i></p>
+            <p class="course_info_li"><b class="course">Instagram: </b><i><a class="link" href="https://www.instagram.com/waibee_11/" target="_blank">@waibee_11</a></i></p>
+            <p class="course_info_li"><b class="course">GitHub: </b><i><a class="link" href="https://github.com/waibee-11" target="_blank">@waibee-11</a></i></p>
+            <p class="course_info_li"><b class="course">Twitter: </b><i><a class="link" href="https://twitter.com/waibee_11" target="_blank">@waibee_11</a></i></p>
         </section>
         <hr>
+        <a id="back" href="bu288_notes.html">Go Back</a>
 
         <footer>
-            <p>©2022, Yash Harshal Barve, All Rights Reserved</p>
+            <p id="footer">©2022, Yash Harshal Barve, All Rights Reserved</p>
         </footer>
 
 </body>
