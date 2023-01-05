@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    color: white;
+}
+
+body{
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95)),
+        url("https://yt3.ggpht.com/ytc/AMLnZu9wzV9sAeUpnJRTRdU-8RxAP09fND2iXBHzToCwxA=s900-c-k-c0x00ffffff-no-rj");
+    background-repeat: initial;
+    background-size: auto;
+    background-position-x: center;
+    border: 0;
+    padding: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+h1{
+    font-size: 50px;
+    padding: 0;
+    margin-top: 50px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2{
+    font-size: 15px;
+    padding: 0;
+    margin: 5px 5px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+table{
+    width: 964px;
+    margin-bottom: 20px;
+}
+
+#header_intro{
+    text-align: center;
+    font-family: 'Signika', sans-serif;
+}
+
+hr{
+    margin: 20px 10px;
+}
+
+.sect{
+    text-align: center;
+    font-family: 'Signika', sans-serif;
+    color: aqua;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.edu_details{
+    text-align: center;
+    font-family: 'Signika', sans-serif;
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.course{
+    font-family: 'Signika', sans-serif;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.name_of_course{
+    color: aqua;
+}
+
+.course_title{
+    margin-bottom: 5px;
+}
+
+.course_info{
+    margin-bottom: 15px;
+}
+
+.course_info_li{
+    margin-bottom: 4px;
+}
+
+footer{
+    font-family: 'Signika', sans-serif;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    bottom: 0px;
+    margin-bottom: 20px;
+}
+
+#footer{
+    color: gray;
+}
+
+.link{
+    font-family: 'Signika', sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    color: aqua;
+}
+
+.link:hover{
+    color: white;
+}
+
+#back{
+    font-size: 17px;
+    color: white;
+    padding: 5px;
+    border: 1px solid white;
+    font-family: 'Signika', sans-serif;
+    text-align: center;
+    text-decoration: none;
+}
+
+#back:hover{
+    background-color: aqua;
+    color: black;
+}
