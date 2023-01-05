@@ -115,6 +115,7 @@ footer{
     font-family: 'Signika', sans-serif;
     text-align: center;
     text-decoration: none;
+    margin-bottom: 30px;
 }
 
 #back:hover{
